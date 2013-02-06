@@ -36,6 +36,14 @@
 		5794651316BB70DC00418DD5 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5794650F16BB70DC00418DD5 /* CloseSelected.png */; };
 		5794651416BB70DC00418DD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5794651016BB70DC00418DD5 /* Default.png */; };
 		5794651516BB70DC00418DD5 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 5794651116BB70DC00418DD5 /* HelloWorld.png */; };
+		57BE156F16C20447004350CB /* BaseSceneController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE156916C20447004350CB /* BaseSceneController.cpp */; };
+		57BE157016C20447004350CB /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE156C16C20447004350CB /* BaseScene.cpp */; };
+		57BE157C16C2044E004350CB /* BaseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157416C2044E004350CB /* BaseLayer.cpp */; };
+		57BE157E16C2044E004350CB /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157A16C2044E004350CB /* BaseScene.cpp */; };
+		57BE158316C20730004350CB /* BaseWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE158116C20730004350CB /* BaseWidget.cpp */; };
+		57BE158716C20849004350CB /* BaseWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE158516C20849004350CB /* BaseWidget.cpp */; };
+		57BE158D16C208A7004350CB /* UIBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE158A16C208A7004350CB /* UIBuilder.cpp */; };
+		57BE159016C20BCC004350CB /* SceneFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE158E16C20BCC004350CB /* SceneFactory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +98,23 @@
 		5794650F16BB70DC00418DD5 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		5794651016BB70DC00418DD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5794651116BB70DC00418DD5 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
+		57BE156916C20447004350CB /* BaseSceneController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseSceneController.cpp; sourceTree = "<group>"; };
+		57BE156A16C20447004350CB /* BaseSceneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSceneController.h; sourceTree = "<group>"; };
+		57BE156C16C20447004350CB /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
+		57BE156D16C20447004350CB /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
+		57BE157416C2044E004350CB /* BaseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseLayer.cpp; sourceTree = "<group>"; };
+		57BE157516C2044E004350CB /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
+		57BE157A16C2044E004350CB /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
+		57BE157B16C2044E004350CB /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
+		57BE157F16C2048B004350CB /* GameMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMacros.h; sourceTree = "<group>"; };
+		57BE158116C20730004350CB /* BaseWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseWidget.cpp; sourceTree = "<group>"; };
+		57BE158216C20730004350CB /* BaseWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWidget.h; sourceTree = "<group>"; };
+		57BE158516C20849004350CB /* BaseWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseWidget.cpp; sourceTree = "<group>"; };
+		57BE158616C20849004350CB /* BaseWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWidget.h; sourceTree = "<group>"; };
+		57BE158A16C208A7004350CB /* UIBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIBuilder.cpp; sourceTree = "<group>"; };
+		57BE158B16C208A7004350CB /* UIBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBuilder.h; sourceTree = "<group>"; };
+		57BE158E16C20BCC004350CB /* SceneFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneFactory.cpp; sourceTree = "<group>"; };
+		57BE158F16C20BCC004350CB /* SceneFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,10 +211,16 @@
 		579464B116BB6ED400418DD5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				57BE158816C208A7004350CB /* BinaryBuilder */,
+				57BE158916C208A7004350CB /* Builder */,
+				57BE158C16C208A7004350CB /* UI */,
+				57BE157216C2044E004350CB /* TwoStoreys */,
+				57BE156416C20447004350CB /* ThreeStoreys */,
 				579464F816BB708D00418DD5 /* AppDelegate.cpp */,
 				579464F916BB708D00418DD5 /* AppDelegate.h */,
 				579464FA16BB708D00418DD5 /* HelloWorldScene.cpp */,
 				579464FB16BB708D00418DD5 /* HelloWorldScene.h */,
+				57BE157F16C2048B004350CB /* GameMacros.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -201,6 +232,105 @@
 				579464EE16BB701300418DD5 /* libcocos2dx.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		57BE156416C20447004350CB /* ThreeStoreys */ = {
+			isa = PBXGroup;
+			children = (
+				57BE158016C20730004350CB /* Widgets */,
+				57BE156816C20447004350CB /* SceneControllers */,
+				57BE156B16C20447004350CB /* Scenes */,
+			);
+			path = ThreeStoreys;
+			sourceTree = "<group>";
+		};
+		57BE156816C20447004350CB /* SceneControllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE156916C20447004350CB /* BaseSceneController.cpp */,
+				57BE156A16C20447004350CB /* BaseSceneController.h */,
+			);
+			path = SceneControllers;
+			sourceTree = "<group>";
+		};
+		57BE156B16C20447004350CB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				57BE156C16C20447004350CB /* BaseScene.cpp */,
+				57BE156D16C20447004350CB /* BaseScene.h */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		57BE157216C2044E004350CB /* TwoStoreys */ = {
+			isa = PBXGroup;
+			children = (
+				57BE158416C20849004350CB /* Widgets */,
+				57BE157316C2044E004350CB /* Layers */,
+				57BE157916C2044E004350CB /* Scenes */,
+			);
+			path = TwoStoreys;
+			sourceTree = "<group>";
+		};
+		57BE157316C2044E004350CB /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE157416C2044E004350CB /* BaseLayer.cpp */,
+				57BE157516C2044E004350CB /* BaseLayer.h */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		57BE157916C2044E004350CB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				57BE157A16C2044E004350CB /* BaseScene.cpp */,
+				57BE157B16C2044E004350CB /* BaseScene.h */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		57BE158016C20730004350CB /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				57BE158116C20730004350CB /* BaseWidget.cpp */,
+				57BE158216C20730004350CB /* BaseWidget.h */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		57BE158416C20849004350CB /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				57BE158516C20849004350CB /* BaseWidget.cpp */,
+				57BE158616C20849004350CB /* BaseWidget.h */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		57BE158816C208A7004350CB /* BinaryBuilder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BinaryBuilder;
+			sourceTree = "<group>";
+		};
+		57BE158916C208A7004350CB /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				57BE158E16C20BCC004350CB /* SceneFactory.cpp */,
+				57BE158F16C20BCC004350CB /* SceneFactory.h */,
+				57BE158A16C208A7004350CB /* UIBuilder.cpp */,
+				57BE158B16C208A7004350CB /* UIBuilder.h */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		57BE158C16C208A7004350CB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +430,14 @@
 				5794650316BB70A400418DD5 /* AppController.mm in Sources */,
 				5794650416BB70A400418DD5 /* main.m in Sources */,
 				5794650516BB70A400418DD5 /* RootViewController.mm in Sources */,
+				57BE156F16C20447004350CB /* BaseSceneController.cpp in Sources */,
+				57BE157016C20447004350CB /* BaseScene.cpp in Sources */,
+				57BE157C16C2044E004350CB /* BaseLayer.cpp in Sources */,
+				57BE157E16C2044E004350CB /* BaseScene.cpp in Sources */,
+				57BE158316C20730004350CB /* BaseWidget.cpp in Sources */,
+				57BE158716C20849004350CB /* BaseWidget.cpp in Sources */,
+				57BE158D16C208A7004350CB /* UIBuilder.cpp in Sources */,
+				57BE159016C20BCC004350CB /* SceneFactory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +536,7 @@
 					"\"$(SRCROOT)/../../cocos2dx/include\"",
 					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios\"",
 					"\"$(SRCROOT)/../../cocos2dx/platform/ios\"",
+					"\"$(SRCROOT)/Libs/Jsoncpp/include\"",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
@@ -435,6 +574,7 @@
 					"\"$(SRCROOT)/../../cocos2dx/include\"",
 					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios\"",
 					"\"$(SRCROOT)/../../cocos2dx/platform/ios\"",
+					"\"$(SRCROOT)/Libs/Jsoncpp/include\"",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LIBRARY_SEARCH_PATHS = (

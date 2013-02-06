@@ -1,0 +1,11 @@
+CC的UI
+
+一、二层架构
+	由CCScene,CCLayer组成。
+	CCScene和CCLayer都可以响应操作事件。
+	一般手动创建的Layer,事件在Layer中处理。使用定义文件的事件一般在Scene中处理。
+	根据实际情况来选择。
+二、三层架构
+   加入一个CCSceneController,另外由CCScene,CCLayer组成。
+   事件主要由Controller处理。
+   这个架构，Layer层显得有点多余。所为推荐第一种方式。
