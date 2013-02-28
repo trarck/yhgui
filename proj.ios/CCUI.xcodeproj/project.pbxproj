@@ -36,6 +36,8 @@
 		5794651316BB70DC00418DD5 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5794650F16BB70DC00418DD5 /* CloseSelected.png */; };
 		5794651416BB70DC00418DD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5794651016BB70DC00418DD5 /* Default.png */; };
 		5794651516BB70DC00418DD5 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 5794651116BB70DC00418DD5 /* HelloWorld.png */; };
+		57B5E82416DF4092003FB6DB /* BaseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57B5E81F16DF4092003FB6DB /* BaseLayer.cpp */; };
+		57B5E82516DF4092003FB6DB /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57B5E82216DF4092003FB6DB /* BaseScene.cpp */; };
 		57BE156F16C20447004350CB /* BaseSceneController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE156916C20447004350CB /* BaseSceneController.cpp */; };
 		57BE157016C20447004350CB /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE156C16C20447004350CB /* BaseScene.cpp */; };
 		57BE157C16C2044E004350CB /* BaseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157416C2044E004350CB /* BaseLayer.cpp */; };
@@ -98,6 +100,10 @@
 		5794650F16BB70DC00418DD5 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		5794651016BB70DC00418DD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5794651116BB70DC00418DD5 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
+		57B5E81F16DF4092003FB6DB /* BaseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseLayer.cpp; sourceTree = "<group>"; };
+		57B5E82016DF4092003FB6DB /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
+		57B5E82216DF4092003FB6DB /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
+		57B5E82316DF4092003FB6DB /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
 		57BE156916C20447004350CB /* BaseSceneController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseSceneController.cpp; sourceTree = "<group>"; };
 		57BE156A16C20447004350CB /* BaseSceneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSceneController.h; sourceTree = "<group>"; };
 		57BE156C16C20447004350CB /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
@@ -106,7 +112,7 @@
 		57BE157516C2044E004350CB /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
 		57BE157A16C2044E004350CB /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
 		57BE157B16C2044E004350CB /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
-		57BE157F16C2048B004350CB /* GameMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMacros.h; sourceTree = "<group>"; };
+		57BE157F16C2048B004350CB /* CCUIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIMacros.h; sourceTree = "<group>"; };
 		57BE158116C20730004350CB /* BaseWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseWidget.cpp; sourceTree = "<group>"; };
 		57BE158216C20730004350CB /* BaseWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWidget.h; sourceTree = "<group>"; };
 		57BE158516C20849004350CB /* BaseWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseWidget.cpp; sourceTree = "<group>"; };
@@ -211,6 +217,8 @@
 		579464B116BB6ED400418DD5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				57B5E81E16DF4092003FB6DB /* Layers */,
+				57B5E82116DF4092003FB6DB /* Scenes */,
 				57BE158816C208A7004350CB /* BinaryBuilder */,
 				57BE158916C208A7004350CB /* Builder */,
 				57BE158C16C208A7004350CB /* UI */,
@@ -220,7 +228,7 @@
 				579464F916BB708D00418DD5 /* AppDelegate.h */,
 				579464FA16BB708D00418DD5 /* HelloWorldScene.cpp */,
 				579464FB16BB708D00418DD5 /* HelloWorldScene.h */,
-				57BE157F16C2048B004350CB /* GameMacros.h */,
+				57BE157F16C2048B004350CB /* CCUIMacros.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -232,6 +240,24 @@
 				579464EE16BB701300418DD5 /* libcocos2dx.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		57B5E81E16DF4092003FB6DB /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				57B5E81F16DF4092003FB6DB /* BaseLayer.cpp */,
+				57B5E82016DF4092003FB6DB /* BaseLayer.h */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		57B5E82116DF4092003FB6DB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				57B5E82216DF4092003FB6DB /* BaseScene.cpp */,
+				57B5E82316DF4092003FB6DB /* BaseScene.h */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		57BE156416C20447004350CB /* ThreeStoreys */ = {
@@ -438,6 +464,8 @@
 				57BE158716C20849004350CB /* BaseWidget.cpp in Sources */,
 				57BE158D16C208A7004350CB /* UIBuilder.cpp in Sources */,
 				57BE159016C20BCC004350CB /* SceneFactory.cpp in Sources */,
+				57B5E82416DF4092003FB6DB /* BaseLayer.cpp in Sources */,
+				57B5E82516DF4092003FB6DB /* BaseScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 
-#ifndef CCISO_GAMEMACRO_H_
-#define CCISO_GAMEMACRO_H_
+#ifndef CCUI_MACRO_H_
+#define CCUI_MACRO_H_
 
 #ifdef __cplusplus
     #define NS_YH_BEGIN                     namespace yhge {
@@ -12,16 +12,4 @@
     #define USING_NS_YH
 #endif 
 
-#define FLOAT_ZERO_FLAG 0.00001
-
-//tile width 
-#ifndef TileWidth
-#define TileWidth 64 
-#endif
-//tile height
-#ifndef TileHeight
-#define TileHeight 32 
-#endif
-
-
-#endif //CCISO_GAMEMACRO_H_
+#endif //CCUI_MACRO_H_

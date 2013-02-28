@@ -6,7 +6,6 @@ NS_YH_BEGIN
 
 BaseScene::BaseScene()
 :m_sDefineDataName("")
-,m_pLayer(NULL)
 {
     
     
@@ -14,37 +13,23 @@ BaseScene::BaseScene()
 
 BaseScene::~BaseScene()
 {
-    CC_SAFE_RELEASE(m_pLayer);
+
 }
 
-// on "init" you need to initialize your instance
-bool BaseScene::init()
+CCLayer* BaseScene::getLayer(int nLayerTag)
 {
-
-    if ( !CCScene::init() )
-    {
-        return false;
-    }
-        
-    return true;
+    return (CCLayer*) this->getChildByTag(nLayerTag);
 }
 
-CCLayer* BaseScene::getLayer()
-{
-    if (!m_pLayer) {
-        this->loadLayer();
-        m_tState.isLoaded=true;
-        this->layerDidLoad();
-    }
-    return m_pLayer;
-}
 
 //默认从描述文件中加载
 void BaseScene::loadLayer()
 {
     if(m_sDefineDataName==""){
-        //create a empty layer
-        m_pLayer=new CCLayer();
+        //create a empty layer,named ui
+        CCLayer* defaultLayer=new CCLayer();
+        defaultLayer->setTag(kDefaultLayerTag);
+        this->addChild(defaultLayer, 0, kDefaultLayerTag);
         
     }else{
         //TODO load from define file
@@ -73,13 +58,6 @@ bool BaseScene::isLayerLoaded()
     return m_tState.isLoaded;
 }
 
-void BaseScene::setLayer(CCLayer* pLayer)
-{
-    CC_SAFE_RETAIN(pLayer);
-    CC_SAFE_RELEASE(m_pLayer);
-    m_pLayer = pLayer;
-}
-
 void BaseScene::onEnter()
 {
     this->loadLayer();
@@ -90,9 +68,14 @@ void BaseScene::onEnter()
 void BaseScene::onExit()
 {
     this->layerWillUnload();
-    CC_SAFE_RELEASE(m_pLayer);
-    m_pLayer=NULL;
+    this->removeAllChildrenWithCleanup(true);
+    m_tState.isLoaded=false;
     this->layerDidUnload();
+}
+
+void BaseScene::addLayer(CCLayer* pLayer,int nLayerTag)
+{
+    this->addChild(pLayer,0,nLayerTag);
 }
 
 NS_YH_END
