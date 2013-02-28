@@ -2,11 +2,10 @@
 #define SCENES_BASESCENE_H_
 
 #include "cocos2d.h"
-#include "CCUIMacros.h"
 
 USING_NS_CC;
 
-NS_YH_BEGIN
+namespace yhge {
 
 typedef struct {
     
@@ -70,6 +69,6 @@ protected:
     
 };
 
-NS_YH_END
+}
 
 #endif // SCENES_BASESCENE_H_

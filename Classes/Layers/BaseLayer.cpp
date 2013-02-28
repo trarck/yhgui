@@ -2,7 +2,7 @@
 
 USING_NS_CC;
 
-NS_YH_BEGIN
+namespace yhge {
 
 bool BaseLayer::init()
 {
@@ -15,4 +15,4 @@ bool BaseLayer::init()
     return true;
 }
 
-NS_YH_END
+}

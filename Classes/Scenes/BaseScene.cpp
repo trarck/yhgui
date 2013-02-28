@@ -2,7 +2,7 @@
 
 USING_NS_CC;
 
-NS_YH_BEGIN
+namespace yhge {
 
 BaseScene::BaseScene()
 :m_sDefineDataName("")
@@ -78,4 +78,4 @@ void BaseScene::addLayer(CCLayer* pLayer,int nLayerTag)
     this->addChild(pLayer,0,nLayerTag);
 }
 
-NS_YH_END
+}

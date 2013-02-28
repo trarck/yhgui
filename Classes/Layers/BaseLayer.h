@@ -2,11 +2,10 @@
 #define LAYERS_BASELAYER_H_
 
 #include "cocos2d.h"
-#include "CCUIMacros.h"
 
 USING_NS_CC;
 
-NS_YH_BEGIN
+namespace yhge {
 
 class BaseLayer : public CCLayer
 {
@@ -16,6 +15,6 @@ public:
     CREATE_FUNC(BaseLayer);
 };
 
-NS_YH_END
+}
 
 #endif // LAYERS_BASELAYER_H_
