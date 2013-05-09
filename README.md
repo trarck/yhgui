@@ -1,1 +1,1 @@
-http://growupsoft.blog.163.com/blog/static/960729201092611427366/
+http://growupsoft.blog.163.com/blog/static/960729201092611427366/UI元素的touch事件管理。当元素需要touch处理时，在元素被添加到document树后，把元素添加到scene的touch事件管理器中。
