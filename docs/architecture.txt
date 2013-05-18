@@ -9,3 +9,6 @@ CC的UI
    加入一个CCSceneController,另外由CCScene,CCLayer组成。
    事件主要由Controller处理。
    这个架构，Layer层显得有点多余。所为推荐第一种方式。
+
+  mobile系多使用View做为显示区的基础。比如苹果的uikit,与android的view包。ScrollView->View
+  pc系多则少一层view的概念。像Panel,ScrollPane直接继承Cantianer。如java,flash。
