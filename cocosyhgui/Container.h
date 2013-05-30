@@ -13,10 +13,10 @@ public:
     
     ~Container();
 
-protected:
-    
+	//Component* getChildByName();
+	//CCArray* getChildrenByName();
 
-private:
+protected:
     
     
 };

@@ -12,6 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BAE776C4-B581-410F-A846-7C7B9F08244F}</ProjectGuid>
+    <ProjectName>CCUI</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -46,7 +47,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..\Classes;$(SolutionDir)cocos2dx;$(SolutionDir)cocos2dx\include;$(SolutionDir)cocos2dx\kazmath\include;$(SolutionDir)cocos2dx\platform\win32;$(SolutionDir)cocos2dx\platform\third_party\win32;$(SolutionDir)cocos2dx\platform\third_party\win32\OGLES;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..\Classes;$(SolutionDir)CCLibs;$(SolutionDir)cocos2dx;$(SolutionDir)cocos2dx\include;$(SolutionDir)cocos2dx\kazmath\include;$(SolutionDir)cocos2dx\platform\win32;$(SolutionDir)cocos2dx\platform\third_party\win32;$(SolutionDir)cocos2dx\platform\third_party\win32\OGLES;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -63,7 +64,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcocos2d.lib;libExtensions.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcocos2d.lib;libExtensions.lib;CCLibs.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -124,6 +125,7 @@
   <ItemGroup>
     <None Include="..\Resources\CloseNormal.png" />
     <None Include="..\Resources\CloseSelected.png" />
+    <None Include="..\Resources\Default.png" />
     <None Include="..\Resources\HelloWorld.png" />
     <None Include="res\CCUI.ico" />
   </ItemGroup>
@@ -132,13 +134,36 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\CCUIMacros.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\cocosyhgui\Component.h" />
+    <ClInclude Include="..\cocosyhgui\Container.h" />
+    <ClInclude Include="..\cocosyhgui\event\UIEventListenerManager.h" />
+    <ClInclude Include="..\cocosyhgui\List.h" />
+    <ClInclude Include="..\cocosyhgui\mobie\Control.h" />
+    <ClInclude Include="..\cocosyhgui\mobie\ListView.h" />
+    <ClInclude Include="..\cocosyhgui\mobie\ScrollView.h" />
+    <ClInclude Include="..\cocosyhgui\mobie\View.h" />
+    <ClInclude Include="..\cocosyhgui\Panel.h" />
+    <ClInclude Include="..\cocosyhgui\ScrollPanel.h" />
+    <ClInclude Include="..\cocosyhgui\yhgui.h" />
+    <ClInclude Include="..\cocosyhgui\YHGUIMacros.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\cocosyhgui\Component.cpp" />
+    <ClCompile Include="..\cocosyhgui\Container.cpp" />
+    <ClCompile Include="..\cocosyhgui\event\UIEventListenerManager.cpp" />
+    <ClCompile Include="..\cocosyhgui\List.cpp" />
+    <ClCompile Include="..\cocosyhgui\mobie\Control.cpp" />
+    <ClCompile Include="..\cocosyhgui\mobie\ListView.cpp" />
+    <ClCompile Include="..\cocosyhgui\mobie\ScrollView.cpp" />
+    <ClCompile Include="..\cocosyhgui\mobie\View.cpp" />
+    <ClCompile Include="..\cocosyhgui\Panel.cpp" />
+    <ClCompile Include="..\cocosyhgui\ScrollPanel.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

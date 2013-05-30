@@ -1,17 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="source">
-      <UniqueIdentifier>{48fa8a15-9b53-4a46-8a12-5838d111e0c0}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
-    </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{607122ea-ef80-4b6d-a5d0-61be72809b53}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
-    </Filter>
     <Filter Include="resource">
       <UniqueIdentifier>{4f7e9d2f-9f48-4ff9-8b81-f8d2d33eb466}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+    <Filter Include="win32">
+      <UniqueIdentifier>{4770855f-7ad5-421f-bb02-171b4a8642d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{8e7b2b9b-21de-4ebc-af9a-0d798f3b5661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cocosyhgui">
+      <UniqueIdentifier>{4633cb31-9983-4ae8-a017-69f95133382b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cocosyhgui\mobie">
+      <UniqueIdentifier>{7dc7838f-6d8a-44d8-81ff-d37c1cb88e8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cocosyhgui\event">
+      <UniqueIdentifier>{94744ee7-20b5-473f-b643-f3427acb1cbe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,6 +34,9 @@
     <None Include="..\Resources\HelloWorld.png">
       <Filter>resource</Filter>
     </None>
+    <None Include="..\Resources\Default.png">
+      <Filter>resource</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CCUI.rc">
@@ -34,28 +44,97 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="main.h">
-      <Filter>include</Filter>
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>include</Filter>
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCUIMacros.h">
+      <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>include</Filter>
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\Component.h">
+      <Filter>cocosyhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\Container.h">
+      <Filter>cocosyhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\List.h">
+      <Filter>cocosyhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\Panel.h">
+      <Filter>cocosyhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\yhgui.h">
+      <Filter>cocosyhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\YHGUIMacros.h">
+      <Filter>cocosyhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\ScrollPanel.h">
+      <Filter>cocosyhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\mobie\Control.h">
+      <Filter>cocosyhgui\mobie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\mobie\ListView.h">
+      <Filter>cocosyhgui\mobie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\mobie\ScrollView.h">
+      <Filter>cocosyhgui\mobie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\mobie\View.h">
+      <Filter>cocosyhgui\mobie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocosyhgui\event\UIEventListenerManager.h">
+      <Filter>cocosyhgui\event</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>source</Filter>
+      <Filter>win32</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>source</Filter>
+      <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>source</Filter>
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\Component.cpp">
+      <Filter>cocosyhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\Container.cpp">
+      <Filter>cocosyhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\List.cpp">
+      <Filter>cocosyhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\Panel.cpp">
+      <Filter>cocosyhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\ScrollPanel.cpp">
+      <Filter>cocosyhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\mobie\Control.cpp">
+      <Filter>cocosyhgui\mobie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\mobie\ListView.cpp">
+      <Filter>cocosyhgui\mobie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\mobie\ScrollView.cpp">
+      <Filter>cocosyhgui\mobie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\mobie\View.cpp">
+      <Filter>cocosyhgui\mobie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocosyhgui\event\UIEventListenerManager.cpp">
+      <Filter>cocosyhgui\event</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

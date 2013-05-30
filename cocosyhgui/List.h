@@ -3,8 +3,6 @@
 
 #include "Container.h"
 
-USING_NS_CC;
-
 NS_CC_YHGUI_BEGIN
 	
 class List:public Container
