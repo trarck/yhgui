@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "YHGUIMacros.h"
+#include "./event/UIEventListenerManager.h"
 
 NS_CC_YHGUI_BEGIN
 	
@@ -19,24 +20,24 @@ public:
 
 	void hide();
 
-	inline addEventListener(const char* type,CCObject* handleObject,yhlib::SEL_EventHandle handle) {
-        return UIEventListenerManager::sharedUIEventListenerManager->addEventListener(this,type,handleObject,handle);
+	inline void addEventListener(const char* type,CCObject* handleObject,yhlib::SEL_EventHandle handle) {
+        UIEventListenerManager::sharedUIEventListenerManager()->addEventListener(this,type,handleObject,handle);
     }
 
     void removeEventListener(const char* type,CCObject* handleObject,yhlib::SEL_EventHandle handle) {
-        return UIEventListenerManager::sharedUIEventListenerManager->removeEventListener(this,type,handleObject,handle);
+        UIEventListenerManager::sharedUIEventListenerManager()->removeEventListener(this,type,handleObject,handle);
     }
 
-    void getEventListeners:function(type){
-        return UIEventListenerManager.getEventListeners(this,type);
+    CCArray* getEventListeners(const char* type){
+        return UIEventListenerManager::sharedUIEventListenerManager()->getEventListeners(this,type);
     }
 
-    void dispatchEvent: function(event) {
-        return UIEventListenerManager.dispatchEvent(this,event);
+    void dispatchEvent(yhlib::Event* evt) {
+        UIEventListenerManager::sharedUIEventListenerManager()->dispatchEvent(this,evt);
     }
 
-    void trigger:function(type,data,bubbles){
-        return UIEventListenerManager.trigger(this,type,data,bubbles);
+    void trigger(const char* type,CCObject* data,bool bubbles){
+        UIEventListenerManager::sharedUIEventListenerManager()->trigger(this,type,data,bubbles);
     }
 
 	/**
@@ -52,8 +53,7 @@ public:
         Custom = 0x00FF0000,
         Disabled = 0x40000000
     };
-protected:
-    
+
 // Ù–‘
 protected:
 	/**

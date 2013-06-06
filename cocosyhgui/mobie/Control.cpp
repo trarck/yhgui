@@ -1,13 +1,13 @@
-#include "List.h"
+#include "Control.h"
 
 NS_CC_YHGUI_BEGIN
 	
-List::List()
+Control::Control()
 {
 	
 }
 	
-List::~List()
+Control::~Control()
 {
 	
 }

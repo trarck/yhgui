@@ -2,12 +2,12 @@
 #define COCOS_YHGUI_UIEVENTLISTENERMANAGER_H_
 
 #include "cocos2d.h"
-#include "YHGUIMacros.h"
+#include "../YHGUIMacros.h"
 #include "Event/EventListenerManager.h"
 
 NS_CC_YHGUI_BEGIN
 	
-class UIEventListenerManager:public EventListenerManager
+class UIEventListenerManager:public yhlib::EventListenerManager
 {
 //·½·¨
 public:

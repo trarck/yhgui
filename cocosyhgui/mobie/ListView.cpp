@@ -1,13 +1,13 @@
-#include "View.h"
+#include "ListView.h"
 
 NS_CC_YHGUI_BEGIN
 	
-View::View()
+ListView::ListView()
 {
 	
 }
 	
-View::~View()
+ListView::~ListView()
 {
 	
 }

@@ -1,17 +1,17 @@
-#ifndef COCOS_YHGUI_VIEW_H_
-#define COCOS_YHGUI_VIEW_H_
+#ifndef COCOS_YHGUI_LISTVIEW_H_
+#define COCOS_YHGUI_LISTVIEW_H_
 
 #include "View.h"
 
 NS_CC_YHGUI_BEGIN
 	
-class View:public View
+class ListView:public View
 {
 public:
     
-    View();
+    ListView();
     
-    ~View();
+    ~ListView();
 
 protected:
     
@@ -24,4 +24,4 @@ private:
 
 NS_CC_YHGUI_END
 
-#endif // COCOS_YHGUI_VIEW_H_
+#endif // COCOS_YHGUI_LISTVIEW_H_
