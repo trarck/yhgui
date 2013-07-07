@@ -1,10 +1,10 @@
-#ifndef COCOS_YHGUI_MVC_YHSCENEDIRECTOR_H_
-#define COCOS_YHGUI_MVC_YHSCENEDIRECTOR_H_
+#ifndef COCOS_YHMVC_YHSCENEDIRECTOR_H_
+#define COCOS_YHMVC_YHSCENEDIRECTOR_H_
 
 #include "cocos2d.h"
-#include "../YHGUIMacros.h"
+#include "YHMVCMacros.h"
 
-NS_CC_YHGUI_BEGIN
+NS_CC_YHMVC_BEGIN
 
 class YHSceneDirector : public CCScene
 {
@@ -31,6 +31,6 @@ protected:
     CCArray* m_sceneStack;
 };
 
-NS_CC_YHGUI_END
+NS_CC_YHMVC_END
 
-#endif // COCOS_YHGUI_MVC_YHSCENEDIRECTOR_H_
+#endif // COCOS_YHMVC_YHSCENEDIRECTOR_H_

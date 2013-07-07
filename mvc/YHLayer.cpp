@@ -1,6 +1,6 @@
 #include "YHLayer.h"
 
-NS_CC_YHGUI_BEGIN
+NS_CC_YHMVC_BEGIN
 
 bool BaseLayer::init()
 {
@@ -13,4 +13,4 @@ bool BaseLayer::init()
     return true;
 }
 
-NS_CC_YHGUI_END
+NS_CC_YHMVC_END

@@ -1,6 +1,6 @@
 #include "YHSceneDirector.h"
 
-NS_CC_YHGUI_BEGIN
+NS_CC_YHMVC_BEGIN
 
 YHSceneDirector::YHSceneDirector()
 :m_sDefineDataName("")
@@ -76,4 +76,4 @@ void YHSceneDirector::addLayer(CCLayer* pLayer,int nLayerTag)
     this->addChild(pLayer,0,nLayerTag);
 }
 
-NS_CC_YHGUI_END
+NS_CC_YHMVC_END

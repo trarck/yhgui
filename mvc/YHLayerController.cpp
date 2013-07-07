@@ -1,6 +1,6 @@
 #include "YHLayerController.h"
 
-NS_CC_YHGUI_BEGIN
+NS_CC_YHMVC_BEGIN
 
 YHLayerController::YHLayerController()
 :m_sDefineDataName("")
@@ -82,4 +82,4 @@ void YHLayerController::setLayer(CCScene* layer)
     m_pLayer = layer;
 }
 
-NS_CC_YHGUI_END
+NS_CC_YHMVC_END

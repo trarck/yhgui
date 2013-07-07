@@ -1,10 +1,10 @@
-#ifndef COCOS_YHGUI_MVC_YHSCENE_H_
-#define COCOS_YHGUI_MVC_YHSCENE_H_
+#ifndef COCOS_YHMVC_YHSCENE_H_
+#define COCOS_YHMVC_YHSCENE_H_
 
 #include "cocos2d.h"
-#include "../YHGUIMacros.h"
+#include "YHMVCMacros.h"
 
-NS_CC_YHGUI_BEGIN
+NS_CC_YHMVC_BEGIN
 
 typedef struct {
     
@@ -68,6 +68,6 @@ protected:
     
 };
 
-NS_CC_YHGUI_END
+NS_CC_YHMVC_END
 
-#endif // COCOS_YHGUI_MVC_YHSCENE_H_
+#endif // COCOS_YHMVC_YHSCENE_H_
