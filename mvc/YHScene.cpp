@@ -3,7 +3,7 @@
 NS_CC_YHMVC_BEGIN
 
 YHScene::YHScene()
-:m_sDefineDataName("")
+:m_layerControllers(NULL)
 {
     
     
@@ -11,69 +11,48 @@ YHScene::YHScene()
 
 YHScene::~YHScene()
 {
-
+    CC_SAFE_RELEASE_NULL(m_layerControllers);
 }
 
-CCLayer* YHScene::getLayer(int nLayerTag)
+bool YHScene::init()
 {
-    return (CCLayer*) this->getChildByTag(nLayerTag);
-}
-
-
-//默认从描述文件中加载
-void YHScene::loadLayer()
-{
-    if(m_sDefineDataName==""){
-        //create a empty layer,named ui
-        CCLayer* defaultLayer=new CCLayer();
-        defaultLayer->setTag(kDefaultLayerTag);
-        this->addChild(defaultLayer, 0, kDefaultLayerTag);
-        
-    }else{
-        //TODO load from define file
-
+    if (!CCScene::init()){
+        return false;
     }
-}
-
-
-void YHScene::layerDidLoad()
-{
-    
-}
-
-void YHScene::layerWillUnload()
-{
-    
-}
-
-void YHScene::layerDidUnload()
-{
-    
-}
-
-bool YHScene::isLayerLoaded()
-{
-    return m_tState.isLoaded;
+    m_layerControllers=new CCArray();
+    m_layerControllers->init();
+    return true;
 }
 
 void YHScene::onEnter()
 {
-    this->loadLayer();
-    m_tState.isLoaded=true;
-    this->layerDidLoad();
+    loadContents();
 }
 
 void YHScene::onExit()
 {
-    this->layerWillUnload();
-    this->removeAllChildrenWithCleanup(true);
-    m_tState.isLoaded=false;
-    this->layerDidUnload();
+
 }
 
-void YHScene::addLayer(CCLayer* pLayer,int nLayerTag)
+ void YHScene::loadContents()
+ {
+
+ }
+
+void YHScene::addLayerController(YHLayerController* layerController)
 {
-    this->addChild(pLayer,0,nLayerTag);
+    layerController->layerWillAppear();
+    addChild(layerWillAppear->getLayer());
+    layerWillAppear->layerDidAppear();
+    m_layerControllers->addObject(layerController);
+}
+
+void YHScene::removeLayerController(YHLayerController* layerController)
+{
+    layerController->layerWillDisappear();
+    removeChild(layerWillAppear->getLayer());
+    layerWillAppear->layerDidDisappear();
+    m_layerControllers->removeObject(layerController);
 }
 
 NS_CC_YHMVC_END

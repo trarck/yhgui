@@ -51,9 +51,14 @@ public:
 
     //==================child layer controller=================//
     void addChildLayerController(YHLayerController* layerController);
+
     void removeChildLayerController(YHLayerController* layerController);
     
     void removeFromParentLayerController();
+
+    void willMoveToParentViewController(YHLayerController* parent);
+
+    void didMoveToParentViewController(YHLayerController* parent);
 
 protected:
     
