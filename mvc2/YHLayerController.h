@@ -28,58 +28,21 @@ public:
     
     virtual bool init();
      
-   	/**
-	 * 默认从描述文件中加载
-	 */
+    //默认从描述文件中加载
     virtual void loadLayer();
     
-    /**
-	 * layer.已经加载。如果是从配置文件中加载。此处提供而外操作
-     * 比如绑定事件，修改文体内容
-	 */
+    //layer.已经加载。如果是从配置文件中加载。此处提供而外操作
+    //比如绑定事件，修改文体内容
     virtual void layerDidLoad();    
     
-	/**
-	 * 当layer的onEnter事件执行时调用
-	 */
-	virtual void onLayerEnter();
-
-	/**
-	 * 当layer的onExit事件执行时调用
-	 */
-	virtual void onLayerExit();
-
-	/**
-	 * layer将要显示
-	 * 主要用于显示动画前的回调
-	 * 如果不是直接做为scene的子结点，不会调用这4种事件。
-	 * 这4种事件用法待定
-	 */
     virtual void layerWillAppear();
-	
-	/**
-	 * layer显示完成
-	 * 主要用于显示动画结束回调
-	 * 如果没有使用动画，则会和will appear一起调用
-	 */
+
     virtual void layerDidAppear();
 
-	/**
-	 * layer将要隐藏
-	 * 主要用于隐藏动画开始前回调
-	 */
     virtual void layerWillDisappear();
 
-	/**
-	 * layer已经被隐藏
-	 * 主要用于显示动画结束回调
-	 * 如果没有使用动画，则会和will disappear一起调用
-	 */
     virtual void layerDidDisappear();
     
-	/**
-	 * layer是否已经加载成功
-	 */
     bool isLayerLoaded();
        
     void setLayer(CCLayer* layer);

@@ -8,7 +8,7 @@ NS_CC_YHMVC_BEGIN
 
 class YHLayerController;
 
-class YHScene : public CCScene
+class YHScene : public CCLayer
 {
     
 public:

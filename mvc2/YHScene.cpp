@@ -16,7 +16,7 @@ YHScene::~YHScene()
 
 bool YHScene::init()
 {
-    if (!CCScene::init()){
+    if (!CCLayer::init()){
         return false;
     }
     m_layerControllers=new CCArray();
@@ -26,13 +26,13 @@ bool YHScene::init()
 
 void YHScene::onEnter()
 {
-	CCScene::onEnter();
+	CCLayer::onEnter();
     loadContents();
 }
 
 void YHScene::onExit()
 {
-	CCScene::onExit();
+	CCLayer::onExit();
 }
 
 void YHScene::loadContents()
@@ -42,15 +42,15 @@ void YHScene::loadContents()
 
 void YHScene::addLayerController(YHLayerController* layerController)
 {
+    layerController->layerWillAppear();
     addChild(layerController->getLayer());
     m_layerControllers->addObject(layerController);
-	layerController->layerWillAppear();
     layerController->layerDidAppear();
 }
 
 void YHScene::removeLayerController(YHLayerController* layerController)
 {
-	layerController->layerWillDisappear();
+    layerController->layerWillDisappear();
     removeChild(layerController->getLayer());
     m_layerControllers->removeObject(layerController);
     layerController->layerDidDisappear();

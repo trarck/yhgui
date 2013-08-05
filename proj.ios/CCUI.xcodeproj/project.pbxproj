@@ -46,6 +46,10 @@
 		57BE158716C20849004350CB /* BaseWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE158516C20849004350CB /* BaseWidget.cpp */; };
 		57BE158D16C208A7004350CB /* UIBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE158A16C208A7004350CB /* UIBuilder.cpp */; };
 		57BE159016C20BCC004350CB /* SceneFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BE158E16C20BCC004350CB /* SceneFactory.cpp */; };
+		57DEBFB417AA6315005C6A18 /* YHLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57DEBFAB17AA6315005C6A18 /* YHLayer.cpp */; };
+		57DEBFB517AA6315005C6A18 /* YHLayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57DEBFAD17AA6315005C6A18 /* YHLayerController.cpp */; };
+		57DEBFB617AA6315005C6A18 /* YHScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57DEBFB017AA6315005C6A18 /* YHScene.cpp */; };
+		57DEBFB717AA6315005C6A18 /* YHSceneDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57DEBFB217AA6315005C6A18 /* YHSceneDirector.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +125,15 @@
 		57BE158B16C208A7004350CB /* UIBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBuilder.h; sourceTree = "<group>"; };
 		57BE158E16C20BCC004350CB /* SceneFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneFactory.cpp; sourceTree = "<group>"; };
 		57BE158F16C20BCC004350CB /* SceneFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneFactory.h; sourceTree = "<group>"; };
+		57DEBFAB17AA6315005C6A18 /* YHLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YHLayer.cpp; sourceTree = "<group>"; };
+		57DEBFAC17AA6315005C6A18 /* YHLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHLayer.h; sourceTree = "<group>"; };
+		57DEBFAD17AA6315005C6A18 /* YHLayerController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YHLayerController.cpp; sourceTree = "<group>"; };
+		57DEBFAE17AA6315005C6A18 /* YHLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHLayerController.h; sourceTree = "<group>"; };
+		57DEBFAF17AA6315005C6A18 /* YHMVCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHMVCMacros.h; sourceTree = "<group>"; };
+		57DEBFB017AA6315005C6A18 /* YHScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YHScene.cpp; sourceTree = "<group>"; };
+		57DEBFB117AA6315005C6A18 /* YHScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHScene.h; sourceTree = "<group>"; };
+		57DEBFB217AA6315005C6A18 /* YHSceneDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YHSceneDirector.cpp; sourceTree = "<group>"; };
+		57DEBFB317AA6315005C6A18 /* YHSceneDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSceneDirector.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				579464E616BB701300418DD5 /* cocos2dx.xcodeproj */,
+				57DEBFAA17AA6315005C6A18 /* mvc */,
 				579464B116BB6ED400418DD5 /* Classes */,
 				5794622E16BB6ECD00418DD5 /* ios */,
 				5794621616BB6ECD00418DD5 /* Resources */,
@@ -359,6 +373,23 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		57DEBFAA17AA6315005C6A18 /* mvc */ = {
+			isa = PBXGroup;
+			children = (
+				57DEBFAB17AA6315005C6A18 /* YHLayer.cpp */,
+				57DEBFAC17AA6315005C6A18 /* YHLayer.h */,
+				57DEBFAD17AA6315005C6A18 /* YHLayerController.cpp */,
+				57DEBFAE17AA6315005C6A18 /* YHLayerController.h */,
+				57DEBFAF17AA6315005C6A18 /* YHMVCMacros.h */,
+				57DEBFB017AA6315005C6A18 /* YHScene.cpp */,
+				57DEBFB117AA6315005C6A18 /* YHScene.h */,
+				57DEBFB217AA6315005C6A18 /* YHSceneDirector.cpp */,
+				57DEBFB317AA6315005C6A18 /* YHSceneDirector.h */,
+			);
+			name = mvc;
+			path = ../mvc;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,6 +497,10 @@
 				57BE159016C20BCC004350CB /* SceneFactory.cpp in Sources */,
 				57B5E82416DF4092003FB6DB /* BaseLayer.cpp in Sources */,
 				57B5E82516DF4092003FB6DB /* BaseScene.cpp in Sources */,
+				57DEBFB417AA6315005C6A18 /* YHLayer.cpp in Sources */,
+				57DEBFB517AA6315005C6A18 /* YHLayerController.cpp in Sources */,
+				57DEBFB617AA6315005C6A18 /* YHScene.cpp in Sources */,
+				57DEBFB717AA6315005C6A18 /* YHSceneDirector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

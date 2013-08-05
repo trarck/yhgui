@@ -29,10 +29,9 @@ void YHLayerController::loadLayer()
 {
     if(m_sDefineDataName==""){
         //create a empty layer
-        CCLayer* layer=new CCLayer();
-        layer->init();
-        setLayer(layer);
-		layer->release();
+        m_pLayer=new CCLayer();
+        m_pLayer->init();
+        
     }else{
         //TODO load from define file
 
@@ -45,22 +44,6 @@ void YHLayerController::loadLayer()
 void YHLayerController::layerDidLoad()
 {
     
-}
-
-/**
- * 当layer的onEnter事件执行时调用
- */
-void YHLayerController::onLayerEnter()
-{
-
-}
-
-/**
- * 当layer的onExit事件执行时调用
- */
-void YHLayerController::onLayerExit()
-{
-
 }
 
 void YHLayerController::layerWillAppear()
@@ -91,10 +74,8 @@ bool YHLayerController::isLayerLoaded()
 void YHLayerController::setLayer(CCLayer* layer)
 {
     CC_SAFE_RETAIN(layer);
-	if(m_pLayer) m_pLayer->setLayerController(NULL);
     CC_SAFE_RELEASE(m_pLayer);
     m_pLayer = layer;
-	if(m_pLayer) m_pLayer->setLayerController(this);
 }
 
 
