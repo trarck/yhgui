@@ -97,6 +97,26 @@ public:
 
     void didMoveToParentViewController(YHLayerController* parent);
     
+	inline void setDefineDataName(const std::string& defineDataName)
+	{
+		m_sDefineDataName = defineDataName;
+	}
+
+	inline const std::string& getDefineDataName()
+	{
+		return m_sDefineDataName;
+	}
+
+	inline void setName(const std::string& name)
+	{
+		m_sName = name;
+	}
+
+	inline const std::string& getName()
+	{
+		return m_sName;
+	}
+
     inline void setParent(YHLayerController* parent)
     {
         m_parent = parent;
@@ -112,6 +132,8 @@ protected:
     LayerControllerFlag m_tState;
     
     std::string m_sDefineDataName;
+
+	std::string m_sName;
     
     CCLayer* m_pLayer;
 

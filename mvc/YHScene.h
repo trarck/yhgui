@@ -34,11 +34,15 @@ public:
 
     void addLayerController(YHLayerController* layerController);
     
+	void addLayerController(YHLayerController* layerController,const char* name);
+
     void removeLayerController(YHLayerController* layerController);
+
+	void removeLayerControllerByName(const char* name);
 
 private:
         
-    CCArray* m_layerControllers;
+    CCDictionary* m_layerControllers;
 };
 
 NS_CC_YHMVC_END
