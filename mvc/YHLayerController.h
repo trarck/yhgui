@@ -17,6 +17,8 @@ typedef struct {
     
 } LayerControllerFlag;
 
+class YHLayer;
+
 class YHLayerController : public CCObject
 {
 
@@ -82,20 +84,26 @@ public:
 	 */
     bool isLayerLoaded();
        
-    void setLayer(CCLayer* layer);
+    void setLayer(YHLayer* layer);
     
-    CCLayer* getLayer();
+    YHLayer* getLayer();
 
     //==================child layer controller=================//
-    void addChildLayerController(YHLayerController* layerController);
+    virtual void addChildLayerController(YHLayerController* layerController);
 
-    void removeChildLayerController(YHLayerController* layerController);
+    virtual void removeChildLayerController(YHLayerController* layerController);
     
-    void removeFromParentLayerController();
+    virtual void removeFromParentLayerController();
+    
+    virtual YHLayerController* getLayerControllerByName(const std::string& name);
 
-    void willMoveToParentViewController(YHLayerController* parent);
+    virtual void willAddToParentLayerController(YHLayerController* parent);
 
-    void didMoveToParentViewController(YHLayerController* parent);
+    virtual void didAddToParentLayerController(YHLayerController* parent);
+    
+    virtual void willRemoveFromParentLayerController();
+    
+    virtual void didRemoveFromParentLayerController();
     
 	inline void setDefineDataName(const std::string& defineDataName)
 	{
@@ -135,7 +143,7 @@ protected:
 
 	std::string m_sName;
     
-    CCLayer* m_pLayer;
+    YHLayer* m_pLayer;
 
     CCArray* m_childLayerControllers;
     

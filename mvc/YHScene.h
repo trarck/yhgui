@@ -34,11 +34,13 @@ public:
 
     void addLayerController(YHLayerController* layerController);
     
-	void addLayerController(YHLayerController* layerController,const char* name);
+	void addLayerController(YHLayerController* layerController,const std::string& name);
 
     void removeLayerController(YHLayerController* layerController);
 
-	void removeLayerControllerByName(const char* name);
+	void removeLayerControllerByName(const std::string& name);
+    
+    YHLayerController* getLayerControllerByName(const std::string& name);
 
 private:
         

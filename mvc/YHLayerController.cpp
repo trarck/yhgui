@@ -1,4 +1,5 @@
 #include "YHLayerController.h"
+#include "YHLayer.h"
 
 NS_CC_YHMVC_BEGIN
 
@@ -21,6 +22,8 @@ YHLayerController::~YHLayerController()
 // on "init" you need to initialize your instance
 bool YHLayerController::init()
 {
+    m_childLayerControllers=new CCArray();
+    m_childLayerControllers->init();
     return true;
 }
 
@@ -29,7 +32,7 @@ void YHLayerController::loadLayer()
 {
     if(m_sDefineDataName==""){
         //create a empty layer
-        CCLayer* layer=new CCLayer();
+        YHLayer* layer=new YHLayer();
         layer->init();
         setLayer(layer);
 		layer->release();
@@ -88,7 +91,7 @@ bool YHLayerController::isLayerLoaded()
     return m_tState.isLoaded;
 }
 
-void YHLayerController::setLayer(CCLayer* layer)
+void YHLayerController::setLayer(YHLayer* layer)
 {
     CC_SAFE_RETAIN(layer);
 	if(m_pLayer) m_pLayer->setLayerController(NULL);
@@ -98,7 +101,7 @@ void YHLayerController::setLayer(CCLayer* layer)
 }
 
 
-CCLayer* YHLayerController::getLayer()
+YHLayer* YHLayerController::getLayer()
 {
     if (!m_pLayer) {
         this->loadLayer();
@@ -112,20 +115,18 @@ CCLayer* YHLayerController::getLayer()
 
 void YHLayerController::addChildLayerController(YHLayerController* layerController)
 {
-    layerController->layerWillAppear();
-    m_pLayer->addChild(layerController->getLayer());
+    layerController->willAddToParentLayerController(this);
     m_childLayerControllers->addObject(layerController);
     layerController->setParent(this);
-    layerController->layerDidAppear();
+    layerController->didAddToParentLayerController(this);
 }
 
 void YHLayerController::removeChildLayerController(YHLayerController* layerController)
 {
-    layerController->layerWillDisappear();
-    layerController->setParent(NULL);
+    layerController->willRemoveFromParentLayerController();
     m_childLayerControllers->removeObject(layerController);
-    m_pLayer->removeChild(layerController->getLayer());
-    layerController->layerDidDisappear();
+    layerController->setParent(NULL);
+    layerController->didRemoveFromParentLayerController();
 }
 
 void YHLayerController::removeFromParentLayerController()
@@ -135,12 +136,35 @@ void YHLayerController::removeFromParentLayerController()
     }
 }
 
-void YHLayerController::willMoveToParentViewController(YHLayerController* parent)
+YHLayerController* YHLayerController::getLayerControllerByName(const std::string& name)
+{
+    CCObject* pObj=NULL;
+    YHLayerController* layerController=NULL;
+    CCARRAY_FOREACH(m_childLayerControllers, pObj){
+        layerController=static_cast<YHLayerController*>(pObj);
+        if (name.compare(layerController->getName())==0) {
+            return layerController;
+        }
+    }
+    return NULL;
+}
+
+void YHLayerController::willAddToParentLayerController(YHLayerController* parent)
 {
     
 }
 
-void YHLayerController::didMoveToParentViewController(YHLayerController* parent)
+void YHLayerController::didAddToParentLayerController(YHLayerController* parent)
+{
+    
+}
+
+void YHLayerController::willRemoveFromParentLayerController()
+{
+    
+}
+
+void YHLayerController::didRemoveFromParentLayerController()
 {
     
 }

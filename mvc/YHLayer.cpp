@@ -1,4 +1,5 @@
 #include "YHLayer.h"
+#include "YHLayerController.h"
 
 NS_CC_YHMVC_BEGIN
 

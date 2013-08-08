@@ -20,7 +20,6 @@ bool YHScene::init()
         return false;
     }
     m_layerControllers=new CCDictionary();
-    m_layerControllers->init();
     return true;
 }
 
@@ -43,14 +42,14 @@ void YHScene::loadContents()
 void YHScene::addLayerController(YHLayerController* layerController)
 {
 //	addLayerController(layerController,layerController->getName().c_str());
-	m_layerControllers->setObject(layerController,layerController->getName().c_str())
+	m_layerControllers->setObject(layerController,layerController->getName());
 //    addChild(layerController->getLayer());
 //    m_layerControllers->addObject(layerController);
 //	layerController->layerWillAppear();
 //    layerController->layerDidAppear();
 }
 
-void YHScene::addLayerController(YHLayerController* layerController,const char* name)
+void YHScene::addLayerController(YHLayerController* layerController,const std::string& name)
 {
 	layerController->setName(name);
 	addLayerController(layerController);
@@ -58,16 +57,21 @@ void YHScene::addLayerController(YHLayerController* layerController,const char* 
 
 void YHScene::removeLayerController(YHLayerController* layerController)
 {
-	removeLayerController(layerController->getName);
+	removeLayerControllerByName(layerController->getName());
 //	layerController->layerWillDisappear();
 //    removeChild(layerController->getLayer());
 //    m_layerControllers->removeObject(layerController);
 //    layerController->layerDidDisappear();
 }
 
-void YHScene::removeLayerControllerByName(const char* name)
+void YHScene::removeLayerControllerByName(const std::string& name)
 {
-	m_layerControllers->removeObject(name);
+	m_layerControllers->removeObjectForKey(name);
+}
+
+YHLayerController* YHScene::getLayerControllerByName(const std::string& name)
+{
+    return static_cast<YHLayerController*>(m_layerControllers->objectForKey(name));
 }
 
 NS_CC_YHMVC_END

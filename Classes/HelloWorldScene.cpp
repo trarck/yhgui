@@ -18,14 +18,9 @@ CCScene* HelloWorld::scene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+void HelloWorld::loadContents()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !CCLayer::init() )
-    {
-        return false;
-    }
+    BaseScene::loadContents();
     
     CCSize screenSize= CCDirector::sharedDirector()->getWinSize();
 
@@ -64,7 +59,6 @@ bool HelloWorld::init()
     /////////////////////////////
     // 3. add your codes below...
        
-    return true;
 }
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
