@@ -15,27 +15,39 @@ UIBuilder::UIBuilder()
     
 }
 
-void UIBuilder::buildWithJSONData(const char* jsonString)
+CCNode* UIBuilder::buildWithJSONFile(const char* jsonFile)
 {
-    unsigned int dataFormat=this->getDataFormat();
+    unsigned long size = 0;
+    unsigned char * pBytes=CCFileUtils::sharedFileUtils()->getFileData(jsonFile, "rb", &size);
     
-    switch (dataFormat) {
-        case kUIDataFormatSimple:
-            CCScene* scene=new scene();
-            
-            break;
-        case kUIDataFormatHaveScene:
-            CCScene* scene=new scene();
-            
-            break;
-        default:
-            break;
+    CCNode* root=buildWithJSONData((char*)pBytes);
+    
+    CC_SAFE_DELETE_ARRAY(pBytes);
+    
+    return  root;
+}
+
+CCNode* UIBuilder::buildWithJSONData(const char* jsonString)
+{
+    Json::Reader reader;
+    Json::Value root;
+    
+    bool parsingSuccessful=reader.parse(jsonString, root,false);
+    if (parsingSuccessful) {
+        return buildUI(root);
     }
+    
+    return NULL;
 }
 
 CCNode* UIBuilder::buildUI(Json::Value& json)
 {
-    return NULL;
+    unsigned int dataVersion=this->getDataVersion(json);
+    
+    CCNode* root=this->createElement(json);
+    
+    
+    return root;
 }
 
 CCNode* UIBuilder::createElement(Json::Value& defineData)
@@ -44,7 +56,7 @@ CCNode* UIBuilder::createElement(Json::Value& defineData)
     
     Json::Value type=defineData["type"];
     
-    unsigned int nType=type.isIntegral() ? type.asUInt():this->typeToInteger(type.asString().c_str());
+    unsigned int nType=type.isIntegral() ? type.asUInt():this->typeToInteger(type.asString());
     
     switch (nType) {
         case kElementTypeNode:
@@ -66,33 +78,30 @@ CCNode* UIBuilder::createElement(Json::Value& defineData)
             CCLOG("UIBuilder::createElemen unknow element type.");
             break;
     }
-    return element;
     
-//    Json::Value::Members members(json.getMemberNames());
-//    for(Json::Value::Members::iterator it=members.begin();it!=members.end();++it){
-//        const std::string &name=*it;
-//        Json::Value value=json[name];
-//    }
+    //create children
+    this->createChildren(defineData["children"], element);
+    
+    return element;
 }
 
 CCNode* UIBuilder::createElement(Json::Value& defineData,CCNode* parent)
 {
     CCNode* element=this->createElement(defineData);
     
-    Json::Value zOrderValue=defineData["zOrder"];
-    int zOrder=0;
-    if(!zOrderValue.isIntegral()){
-        zOrder=zOrderValue.asInt();
-    }
-    
-    Json::Value tagValue=defineData["tag"];
-    int tag=0;
-    if(tagValue.isIntegral()){
-        tag=tagValue.asInt();
-    }
-    
-    parent->addChild(element, zOrder, tag);
+    parent->addChild(element);
     return element;
+}
+
+void UIBuilder::createChildren(Json::Value& children,CCNode* parent)
+{
+    if (!children.isNull() && parent) {
+        CCNode* child=NULL;
+        for (int i=0; i<children.size(); ++i) {
+            child=this->createElement(children[i]);
+            parent->addChild(child);
+        }
+    }
 }
 
 CCNode* UIBuilder::createNode(Json::Value& defineData)
@@ -206,6 +215,16 @@ void UIBuilder::setNodeAttributes(CCNode* node,Json::Value& attributes)
         node->setVisible(visible);
     }
    
+    Json::Value zOrderValue=attributes["zOrder"];
+    if(!zOrderValue.isNull()){
+        node->setZOrder(zOrderValue.asInt());
+    }
+    
+    Json::Value tagValue=attributes["tag"];
+    if(!tagValue.isNull()){
+        node->setTag(tagValue.asInt());
+    }
+    
 }
 
 void UIBuilder::setSpriteAttributes(CCSprite* sprite,Json::Value& attributes)
@@ -256,20 +275,26 @@ void UIBuilder::setLabelAttributes(CCLabelTTF* label,Json::Value& attributes)
    
 }
 
-unsigned int UIBuilder::getDataFormat()
+unsigned int UIBuilder::getDataFormat(Json::Value root)
 {
     return kUIDataFormatSimple;
 }
 
-unsigned int UIBuilder::getDataVersion()
+unsigned int UIBuilder::getDataVersion(Json::Value root)
 {
-    
+    return root["version"].asUInt();
 }
 
 
-unsigned int UIBuilder::typeToInteger(const char* typeString)
+unsigned int UIBuilder::typeToInteger(const std::string& typeString)
 {
+    if (strcmp(typeString.c_str(), "Node")==0) {
+        return kElementTypeNode;
+    }else if (strcmp(typeString.c_str(), "Sprite")==0){
+        return kElementTypeSprite;
+    }
     
+    return 0;
 }
 
 NS_CC_YHGUI_END

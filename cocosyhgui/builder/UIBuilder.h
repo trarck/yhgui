@@ -35,19 +35,17 @@ public:
     
     UIBuilder();
     
-    void buildWithJSONFile(const char* jsonFile);
+    CCNode* buildWithJSONFile(const char* jsonFile);
     
-    void buildWithJSONData(const char* jsonString);
-    
-    unsigned int getDataFormat();
-    
-    unsigned int getDataVersion();
+    CCNode* buildWithJSONData(const char* jsonString);
     
     CCNode* buildUI(Json::Value& json);
     
     CCNode* createElement(Json::Value& defineData);
     
     CCNode* createElement(Json::Value& defineData,CCNode* parent);
+    
+    void createChildren(Json::Value& children,CCNode* parent);
     
     CCNode* createNode(Json::Value& defineData);
     
@@ -58,10 +56,14 @@ public:
     CCLabelAtlas* createLabelAtlas(Json::Value& defineData);
     
     CCLabelBMFont* createLabelBMFont(Json::Value& defineData);
+    
+    unsigned int getDataFormat(Json::Value root);
+    
+    unsigned int getDataVersion(Json::Value root);
 
 protected:
     
-    unsigned int typeToInteger(const char* typeString);
+    unsigned int typeToInteger(const std::string& typeString);
     
     void setNodeAttributes(CCNode* node,Json::Value& attributes);
     
