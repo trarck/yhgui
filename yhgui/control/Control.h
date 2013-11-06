@@ -1,5 +1,5 @@
-#ifndef COCOS_YHGUI_CONTROL_H_
-#define COCOS_YHGUI_CONTROL_H_
+#ifndef COCOS_YHGUI_CONTROL_CONTROL_H_
+#define COCOS_YHGUI_CONTROL_CONTROL_H_
 
 #include "../Component.h"
 
@@ -24,4 +24,4 @@ private:
 
 NS_CC_YHGUI_END
 
-#endif // COCOS_YHGUI_CONTROL_H_
+#endif // COCOS_YHGUI_CONTROL_CONTROL_H_

@@ -3,6 +3,7 @@
 NS_CC_YHGUI_BEGIN
 	
 Component::Component()
+:m_name("")
 {
 	
 }

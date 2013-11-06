@@ -1,6 +1,8 @@
 #include "HelloWorldScene.h"
+#include "yhgui/yhgui.h"
 
 USING_NS_CC;
+USING_NS_CC_YHGUI;
 
 CCScene* HelloWorld::scene()
 {
@@ -44,38 +46,63 @@ bool HelloWorld::init()
 	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
                                 origin.y + pCloseItem->getContentSize().height/2));
 
+    CCLabelTTF* pLabel = CCLabelTTF::create("test", "Arial", 24);
+    
+    CCMenuItemLabel* pTest=CCMenuItemLabel::create(pLabel, this,menu_selector(HelloWorld::testCallback));
+    pTest->setPosition(ccp(200,30));
+    
     // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
+    CCMenu* pMenu = CCMenu::create(pCloseItem,pTest, NULL);
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu, 1);
-
-    /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
-    
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
-    
-    // position the label on the center of the screen
-    pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - pLabel->getContentSize().height));
-
-    // add the label as a child to this layer
-    this->addChild(pLabel, 1);
-
-    // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
     
     return true;
 }
 
+void HelloWorld::testCallback(CCObject* pSender)
+{
+    Container* container=Container::create();
+    
+    Component* c1=Component::create();
+    c1->setName("c1");
+    container->addChild(c1);
+    
+    Component* c2=Component::create();
+    c2->setName("c2");
+    container->addChild(c2);
+    
+    Container* c5=Container::create();
+    c5->setName("c5");
+    container->addChild(c5);
+    
+    Component* c11=Component::create();
+    c11->setName("c11");
+    c5->addChild(c11);
+    
+    Component* c12=Component::create();
+    c12->setName("c2");
+    c5->addChild(c12);
+    
+    Component* c3=Component::create();
+    c3->setName("c3");
+    container->addChild(c3);
+    
+    Component* c4=Component::create();
+    c4->setName("c4");
+    container->addChild(c4);
+    
+    CCNode* cc1=container->getChildByName("c1");
+    
+    CCArray* cc2=container->getChildrenByName("c2");
+    
+    CCNode* cc11=container->getDescendantByName("c11");
+    
+    CCArray* cc12=container->getDescendantsByName("c2");
+    
+    addChild(container);
+    
+    printf("%d,%d,%d,%d",cc1,cc2->count(),cc11,cc12->count());
+}
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {

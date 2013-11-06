@@ -9,7 +9,7 @@ NS_CC_YHGUI_BEGIN
 	
 class Component:public CCNode
 {
-//·½·¨
+//æ–¹æ³•
 public:
     
     Component();
@@ -40,8 +40,10 @@ public:
         UIEventListenerManager::sharedUIEventListenerManager()->trigger(this,type,data,bubbles);
     }
 
+    CREATE_FUNC(Component);
+    
 	/**
-	 * ×é¼ş×´Ì¬
+	 * ç»„ä»¶çŠ¶æ€
 	 */
 	enum State{
         Normal = 0x00,
@@ -54,10 +56,20 @@ public:
         Disabled = 0x40000000
     };
 
-//ÊôĞÔ
+    inline void setName(const std::string name)
+    {
+        m_name = name;
+    }
+    
+    inline const std::string getName()
+    {
+        return m_name;
+    }
+
+//å±æ€§
 protected:
 	/**
-	 * Ãû³Æ
+	 * åç§°
 	 */
     std::string m_name;
     
