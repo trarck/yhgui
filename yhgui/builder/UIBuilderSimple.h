@@ -11,7 +11,7 @@
 
 #include "cocos2d.h"
 #include "json/json.h"
-#include "YHGUIMacros.h"
+#include "../YHGUIMacros.h"
 
 NS_CC_YHGUI_BEGIN
 
