@@ -12,13 +12,26 @@ public:
     Button();
     
     ~Button();
+    
+    bool init();
 
+    void setStateComponent(State state,CCNode* component);
+    
+    inline void setState(State state)
+    {
+        m_state = state;
+    }
+    
+    inline State getState()
+    {
+        return m_state;
+    }
+    
 protected:
-    
 
-private:
-    
-    
+    CCDictionary* m_states;
+  
+    State m_state;
 };
 
 

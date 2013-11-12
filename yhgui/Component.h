@@ -47,11 +47,11 @@ public:
 	 */
 	enum State{
         Normal = 0x00,
-        Focused = 0x01,
-        Selected = 0x02,
-        Pressed = 0x04,//active
+        Hover = 0x01,
+        Pressed = 0x02,//active
+        Selected = 0x04,
         Checked = 0x08,
-        Hover =0x10,
+        Focused =0x10,
         Custom = 0x00FF0000,
         Disabled = 0x40000000
     };
