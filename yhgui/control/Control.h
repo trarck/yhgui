@@ -13,11 +13,18 @@ public:
     
     ~Control();
 
-protected:
-    
+	void setState(State state)
+	{
+		m_state = state;
+	}
 
-private:
-    
+	int getState()
+	{
+		return m_state;
+	}
+
+protected:
+    State m_state;
     
 };
 

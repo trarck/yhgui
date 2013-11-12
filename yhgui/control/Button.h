@@ -5,6 +5,11 @@
 
 NS_CC_YHGUI_BEGIN
 	
+/**
+ * 普通的按钮
+ * 一个状态对应一个node，由node来决定显示的内容。
+ * 可以自己扩展
+ */
 class Button:public Control
 {
 public:

@@ -10,7 +10,7 @@
 #define COCOS_YHGUI_BUILDER_BUILDERHANDLE_H_
 
 #include "cocos2d.h"
-#include "YHGUIMacros.h"
+#include "../YHGUIMacros.h"
 #include <json/json.h>
 
 NS_CC_YHGUI_BEGIN
