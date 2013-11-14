@@ -330,6 +330,7 @@
 		571DB17D18334B8E006A5DFB /* TestButtonScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonScene.h; sourceTree = "<group>"; };
 		571DB180186AE55F006A5DFB /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		571DB181186AE55F006A5DFB /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		571DB186186AE55F006A5DFB /* UIEventNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEventNames.h; sourceTree = "<group>"; };
 		575DAE1A183211A20013BBF7 /* NormalButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NormalButton.cpp; sourceTree = "<group>"; };
 		575DAE1B183211A20013BBF7 /* NormalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalButton.h; sourceTree = "<group>"; };
 		576DEFF11827A6EE007DEB82 /* Export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Export.h; sourceTree = "<group>"; };
@@ -912,8 +913,6 @@
 		576DF1341828F9C1007DEB82 /* yhgui */ = {
 			isa = PBXGroup;
 			children = (
-				571DB180186AE55F006A5DFB /* Utils.cpp */,
-				571DB181186AE55F006A5DFB /* Utils.h */,
 				576DF1351828F9C1007DEB82 /* builder */,
 				576DF13C1828F9C1007DEB82 /* Component.cpp */,
 				576DF13D1828F9C1007DEB82 /* Component.h */,
@@ -928,6 +927,8 @@
 				576DF1521828F9C1007DEB82 /* Panel.h */,
 				576DF1531828F9C1007DEB82 /* ScrollPanel.cpp */,
 				576DF1541828F9C1007DEB82 /* ScrollPanel.h */,
+				571DB180186AE55F006A5DFB /* Utils.cpp */,
+				571DB181186AE55F006A5DFB /* Utils.h */,
 				576DF1551828F9C1007DEB82 /* yhgui.h */,
 				576DF1561828F9C1007DEB82 /* YHGUIMacros.h */,
 			);
@@ -966,6 +967,7 @@
 		576DF1451828F9C1007DEB82 /* event */ = {
 			isa = PBXGroup;
 			children = (
+				571DB186186AE55F006A5DFB /* UIEventNames.h */,
 				576DF1461828F9C1007DEB82 /* UIEventListenerManager.cpp */,
 				576DF1471828F9C1007DEB82 /* UIEventListenerManager.h */,
 			);

@@ -6,8 +6,13 @@
 #include "./event/UIEventListenerManager.h"
 
 NS_CC_YHGUI_BEGIN
-	
-class Component:public CCNode
+
+/**
+ * ui 基类
+ * 包含事件操作
+ * 用户交互(Interactive)。手机中是touch事件，使用cocos2d的touch机制。将来使用自己的方式来管理交互事件
+ */
+class Component:public CCNode,public CCTouchDelegate//, public CCAccelerometerDelegate, public CCKeypadDelegate
 {
 //方法
 public:
@@ -15,15 +20,43 @@ public:
     Component();
     
     ~Component();
+    
+    CREATE_FUNC(Component);
 
-	void show();
+	virtual void onEnter();
 
-	void hide();
+	virtual void onExit();
     
     /**
      * 消除注册的事件
      */
     virtual void cleanup();
+    
+    virtual void setEnabled(bool enabled);
+    
+    virtual void setTouchPriority(int touchPriority);
+    
+    /**
+     * 注册一个touch dispatcher。默认直接使用cocos2d的组织方式
+     */
+    virtual void registerWithTouchDispatcher(void);
+    
+    /**
+     * 取消注册一个touch dispatcher。
+     */
+    virtual void unregisterWithTouchDispatcher(void);
+    
+    /**
+     * 点击是否在物体内
+     */
+    bool isTouchInside(CCTouch* touch);
+    
+    /**
+     * 所有祖先结点是否能可见
+     */
+    bool hasVisibleParents();
+    
+    //==================事件处理=====================//
 
 	inline void addEventListener(const char* type,CCObject* handleObject,yhlib::SEL_EventHandle handle) {
         UIEventListenerManager::sharedUIEventListenerManager()->addEventListener(this,type,handleObject,handle);
@@ -52,8 +85,19 @@ public:
     inline void trigger(const char* type){
         UIEventListenerManager::sharedUIEventListenerManager()->trigger(this,type,NULL,true);
     }
-
-    CREATE_FUNC(Component);
+    
+    //==================交互事件=====================//
+    //
+    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent);
+    
+    //default do nothing
+//    virtual void ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent);
+//    virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
+//    virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);
+//    virtual void ccTouchesCancelled(CCSet *pTouches, CCEvent *pEvent);
     
 	/**
 	 * 组件状态
@@ -69,7 +113,9 @@ public:
         kCustom = 0x00FF0000,
         kDisabled = 0x40000000
     };
-
+    
+    //=============get set===============//
+    
     inline void setName(const std::string name)
     {
         m_name = name;
@@ -79,7 +125,28 @@ public:
     {
         return m_name;
     }
+    
+    
+    inline bool isEnabled()
+    {
+        return m_enabled;
+    }
 
+    inline int getTouchPriority()
+    {
+        return m_touchPriority;
+    }
+    
+    inline void setNeedBubbles(bool needBubbles)
+    {
+        m_needBubbles = needBubbles;
+    }
+    
+    inline bool isNeedBubbles()
+    {
+        return m_needBubbles;
+    }
+    
 //属性
 protected:
 	/**
@@ -87,6 +154,17 @@ protected:
 	 */
     std::string m_name;
     
+    //是否有效，主要用于是否接受用户交互。
+    bool m_enabled;
+    
+    //touch 是否在component内
+    bool m_touchInside;
+    
+    //touch 等级
+    int m_touchPriority;
+    
+    //设置touch事件是否需要冒泡
+    bool m_needBubbles;
 };
 
 

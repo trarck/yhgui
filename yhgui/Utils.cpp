@@ -2,6 +2,9 @@
 
 NS_CC_YHGUI_BEGIN
 
+/**
+ * 合并二个rect
+ */
 CCRect Utils::CCRectUnion(const CCRect& src1, const CCRect& src2)
 {
     CCRect result;
@@ -14,6 +17,17 @@ CCRect Utils::CCRectUnion(const CCRect& src1, const CCRect& src2)
     result.origin=ccp(x1,x2);
     result.size=CCSizeMake(x2-x1, y2-y1);
     return result;
+}
+
+/**
+ * touch是否在target内
+ */
+bool Utils::isTouchInside(CCTouch* touch,CCNode* target)
+{
+    CCPoint touchLocation = touch->getLocation(); // Get the touch position
+    touchLocation = target->getParent()->convertToNodeSpace(touchLocation);
+    CCRect bBox=target->boundingBox();
+    return bBox.containsPoint(touchLocation);
 }
 
 NS_CC_YHGUI_END

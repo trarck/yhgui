@@ -5,7 +5,7 @@
 
 NS_CC_YHGUI_BEGIN
 	
-class Control:public Component,public CCTargetedTouchDelegate
+class Control:public Component
 {
 public:
     
@@ -13,36 +13,7 @@ public:
     
     ~Control();
     
-    bool init();
-    
-    virtual void onEnter();
-    virtual void onExit();
-    
-    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent) { CC_UNUSED_PARAM(pTouch); CC_UNUSED_PARAM(pEvent);return false;};
-    virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent) {CC_UNUSED_PARAM(pTouch); CC_UNUSED_PARAM(pEvent);}
-    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent) {CC_UNUSED_PARAM(pTouch); CC_UNUSED_PARAM(pEvent);}
-    virtual void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent) {CC_UNUSED_PARAM(pTouch); CC_UNUSED_PARAM(pEvent);}
-    
-    
     virtual void changeState(State newState);
-    
-    virtual void registerWithTouchDispatcher(void);
-    
-    virtual void unregisterWithTouchDispatcher(void);
-    
-    /**
-     * 点击是否在物体内
-     */
-    bool isTouchInside(CCTouch* touch);
-    
-    /**
-     * 所有祖先结点是否能可见
-     */
-    bool hasVisibleParents();
-    
-    virtual void setEnabled(bool enabled);
-    
-    virtual void setTouchPriority(int touchPriority);
     
 	void setState(State state)
 	{
@@ -53,17 +24,7 @@ public:
 	{
 		return m_state;
 	}
-    
-    inline bool isEnabled()
-    {
-        return m_enabled;
-    }
-    
-    inline int getTouchPriority()
-    {
-        return m_touchPriority;
-    }
-    
+
 public:
     
     enum{
@@ -84,12 +45,6 @@ protected:
     
     //状态
     State m_state;
-    
-    //是否可用
-    bool m_enabled;
-    
-    //touch 等级
-    int m_touchPriority;
 };
 
 

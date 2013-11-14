@@ -11,8 +11,15 @@ class Utils
 {
 public:
 
+    /**
+     * 合并二个rect
+     */
     static CCRect CCRectUnion(const CCRect& src1, const CCRect& src2);
     
+    /**
+     * touch是否在target内
+     */
+    static bool isTouchInside(CCTouch* touch,CCNode* target);
 };
 
 
