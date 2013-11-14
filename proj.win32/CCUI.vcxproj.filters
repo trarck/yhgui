@@ -43,15 +43,15 @@
     <Filter Include="Libs\Jsoncpp\src\lib_json">
       <UniqueIdentifier>{69b41b74-910f-4ccf-8b98-fc6ff09875b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Tests">
+      <UniqueIdentifier>{4f7d0ae0-f202-44db-8a06-22a8748d31b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\yhgui\Component.cpp">
@@ -123,15 +123,27 @@
     <ClCompile Include="..\Libs\Jsoncpp\src\lib_json\json_writer.cpp">
       <Filter>Libs\Jsoncpp\src\lib_json</Filter>
     </ClCompile>
+    <ClCompile Include="..\yhgui\control\ComplexButton.cpp">
+      <Filter>yhgui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\control\NormalButton.cpp">
+      <Filter>yhgui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\Utils.cpp">
+      <Filter>yhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TestMainScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Tests\TestButtonScene.cpp">
+      <Filter>Classes\Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\yhgui\Component.h">
@@ -232,6 +244,24 @@
     </ClInclude>
     <ClInclude Include="..\Libs\Jsoncpp\src\lib_json\json_batchallocator.h">
       <Filter>Libs\Jsoncpp\src\lib_json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\control\ComplexButton.h">
+      <Filter>yhgui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\control\NormalButton.h">
+      <Filter>yhgui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\event\UIEventNames.h">
+      <Filter>yhgui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\Utils.h">
+      <Filter>yhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TestMainScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Tests\TestButtonScene.h">
+      <Filter>Classes\Tests</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

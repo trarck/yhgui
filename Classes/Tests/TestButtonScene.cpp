@@ -47,6 +47,9 @@ bool TestButton::init()
     CCLabelTTF* labelTTF=CCLabelTTF::create("click me", "Arial", 24);
     
     button->setLabel(labelTTF);
+
+	ccColor3B color=ccc3(255,0,0);
+	button->setStateLabelColor(NormalButton::kPressed,color);
     
     button->addEventListener("touchDown", this, YH_EVENT_SELECTOR(TestButton::onTouchDown));
     button->addEventListener("touchMove", this, YH_EVENT_SELECTOR(TestButton::onTouchMove));
