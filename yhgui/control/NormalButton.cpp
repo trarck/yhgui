@@ -1,5 +1,5 @@
 #include "NormalButton.h"
-#include "Utils.h"
+#include "../Utils.h"
 
 NS_CC_YHGUI_BEGIN
 
@@ -21,7 +21,8 @@ NormalButton::~NormalButton()
 bool NormalButton::init()
 {
     if (Button::init()) {
-        
+        //set normal state color
+		this->setStateLabelColor(kNormal,ccWHITE);
         return true;
     }
     return false;
@@ -146,7 +147,7 @@ void NormalButton::setLabelBMFont(const std::string& text,const std::string& fon
 /**
  * 设置label状态对应的颜色
  */
-void NormalButton::setStateLabelColor(State state,ccColor3B& color)
+void NormalButton::setStateLabelColor(State state,const ccColor3B& color)
 {
     m_stateColors[state]=color;
 }

@@ -52,7 +52,7 @@ public:
     /**
      * 设置label状态对应的颜色
      */
-    void setStateLabelColor(State state,ccColor3B& color);
+    void setStateLabelColor(State state,const ccColor3B& color);
     
     /**
      * 设置状态对应的background

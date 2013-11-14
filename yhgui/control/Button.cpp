@@ -32,10 +32,11 @@ bool Button::init()
 bool Button::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     bool result=Control::ccTouchBegan(pTouch, pEvent);
-    
-    //处理touch事件
-    changeState(kPressed);
-    
+	if (result)
+	{
+		 //处理touch事件
+		changeState(kPressed);
+	}
     return result;
 }
 
