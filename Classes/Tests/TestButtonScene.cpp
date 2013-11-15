@@ -48,6 +48,10 @@ bool TestButton::init()
     
     button->setLabel(labelTTF);
     
+    ccColor3B pressColor=ccc3(255, 0, 0);
+    
+    button->setStateLabelColor(NormalButton::kPressed, pressColor);
+    
     button->addEventListener("touchDown", this, YH_EVENT_SELECTOR(TestButton::onTouchDown));
     button->addEventListener("touchMove", this, YH_EVENT_SELECTOR(TestButton::onTouchMove));
     button->addEventListener("touchMoveEndter", this, YH_EVENT_SELECTOR(TestButton::onTouchMoveEnter));
@@ -73,7 +77,7 @@ bool TestButton::init()
     this->addChild(backBtn);
     backBtn->release();
     
-    CCLOG("button:%d",button->retainCount());
+//    CCLOG("button:%d",button->retainCount());
     
     return true;
 }

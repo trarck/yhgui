@@ -78,6 +78,7 @@ void Button::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
 void Button::changeState(State newState)
 {
     if (m_state!=newState) {
+        CCLOG("changeState:from %d to %d",m_state,newState);
         setState(newState);
         m_stateDirty=true;
         changeStateComponent(newState);

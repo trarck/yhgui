@@ -28,7 +28,7 @@ bool NormalButton::init()
 }
 
 void NormalButton::changeStateComponent(State newState)
-{
+{    
     if (!m_stateDirty) {
         return;
     }
@@ -148,6 +148,7 @@ void NormalButton::setLabelBMFont(const std::string& text,const std::string& fon
  */
 void NormalButton::setStateLabelColor(State state,ccColor3B& color)
 {
+    CCLOG("set state color:%d",state);
     m_stateColors[state]=color;
 }
 
