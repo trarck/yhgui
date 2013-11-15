@@ -91,6 +91,10 @@
 		571DB17918332528006A5DFB /* ComplexButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB17718332528006A5DFB /* ComplexButton.cpp */; };
 		571DB17E18334B8E006A5DFB /* TestButtonScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB17C18334B8E006A5DFB /* TestButtonScene.cpp */; };
 		571DB182186AE55F006A5DFB /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB180186AE55F006A5DFB /* Utils.cpp */; };
+		571DB18F186AE55F006A5DFB /* InteractiveDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB18D186AE55F006A5DFB /* InteractiveDispatcher.cpp */; };
+		571DB194186AE55F006A5DFB /* ListOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB190186AE55F006A5DFB /* ListOrganizer.cpp */; };
+		571DB195186AE55F006A5DFB /* Organizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB192186AE55F006A5DFB /* Organizer.cpp */; };
+		571DB198186AE55F006A5DFB /* Range.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB196186AE55F006A5DFB /* Range.cpp */; };
 		575DAE1C183211A20013BBF7 /* NormalButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575DAE1A183211A20013BBF7 /* NormalButton.cpp */; };
 		576DF0871827A6EF007DEB82 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 576DEFF51827A6EE007DEB82 /* CDAudioManager.m */; };
 		576DF0881827A6EF007DEB82 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 576DEFF81827A6EE007DEB82 /* CDOpenALSupport.m */; };
@@ -331,6 +335,14 @@
 		571DB180186AE55F006A5DFB /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		571DB181186AE55F006A5DFB /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		571DB186186AE55F006A5DFB /* UIEventNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEventNames.h; sourceTree = "<group>"; };
+		571DB18D186AE55F006A5DFB /* InteractiveDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InteractiveDispatcher.cpp; sourceTree = "<group>"; };
+		571DB18E186AE55F006A5DFB /* InteractiveDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveDispatcher.h; sourceTree = "<group>"; };
+		571DB190186AE55F006A5DFB /* ListOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListOrganizer.cpp; sourceTree = "<group>"; };
+		571DB191186AE55F006A5DFB /* ListOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOrganizer.h; sourceTree = "<group>"; };
+		571DB192186AE55F006A5DFB /* Organizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Organizer.cpp; sourceTree = "<group>"; };
+		571DB193186AE55F006A5DFB /* Organizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Organizer.h; sourceTree = "<group>"; };
+		571DB196186AE55F006A5DFB /* Range.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Range.cpp; sourceTree = "<group>"; };
+		571DB197186AE55F006A5DFB /* Range.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
 		575DAE1A183211A20013BBF7 /* NormalButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NormalButton.cpp; sourceTree = "<group>"; };
 		575DAE1B183211A20013BBF7 /* NormalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalButton.h; sourceTree = "<group>"; };
 		576DEFF11827A6EE007DEB82 /* Export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Export.h; sourceTree = "<group>"; };
@@ -786,6 +798,21 @@
 			path = ../Classes/Tests;
 			sourceTree = "<group>";
 		};
+		571DB18C186AE55F006A5DFB /* interactive */ = {
+			isa = PBXGroup;
+			children = (
+				571DB196186AE55F006A5DFB /* Range.cpp */,
+				571DB197186AE55F006A5DFB /* Range.h */,
+				571DB190186AE55F006A5DFB /* ListOrganizer.cpp */,
+				571DB191186AE55F006A5DFB /* ListOrganizer.h */,
+				571DB192186AE55F006A5DFB /* Organizer.cpp */,
+				571DB193186AE55F006A5DFB /* Organizer.h */,
+				571DB18D186AE55F006A5DFB /* InteractiveDispatcher.cpp */,
+				571DB18E186AE55F006A5DFB /* InteractiveDispatcher.h */,
+			);
+			path = interactive;
+			sourceTree = "<group>";
+		};
 		576DEFC41827A6C0007DEB82 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -913,6 +940,7 @@
 		576DF1341828F9C1007DEB82 /* yhgui */ = {
 			isa = PBXGroup;
 			children = (
+				571DB18C186AE55F006A5DFB /* interactive */,
 				576DF1351828F9C1007DEB82 /* builder */,
 				576DF13C1828F9C1007DEB82 /* Component.cpp */,
 				576DF13D1828F9C1007DEB82 /* Component.h */,
@@ -1121,7 +1149,9 @@
 				576DF08B1827A6EF007DEB82 /* SimpleAudioEngine_objc.m in Sources */,
 				576DF15A1828F9C1007DEB82 /* Component.cpp in Sources */,
 				15A3DA431682F826002FB0C5 /* CCNodeLoader.cpp in Sources */,
+				571DB194186AE55F006A5DFB /* ListOrganizer.cpp in Sources */,
 				15A3DA441682F826002FB0C5 /* CCNodeLoaderLibrary.cpp in Sources */,
+				571DB195186AE55F006A5DFB /* Organizer.cpp in Sources */,
 				15A3DA451682F826002FB0C5 /* CCParticleSystemQuadLoader.cpp in Sources */,
 				15A3DA461682F826002FB0C5 /* CCScale9SpriteLoader.cpp in Sources */,
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
@@ -1161,11 +1191,13 @@
 				576DF1621828F9C1007DEB82 /* View.cpp in Sources */,
 				1A27573F1697CF2B00504026 /* CCEditBoxImplAndroid.cpp in Sources */,
 				576DF15E1828F9C1007DEB82 /* UIEventListenerManager.cpp in Sources */,
+				571DB18F186AE55F006A5DFB /* InteractiveDispatcher.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* TestMainScene.cpp in Sources */,
 				1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */,
 				1AC3624B16D4A1E8000847F2 /* main.m in Sources */,
 				1AFCDA8216D4A25900906EA6 /* RootViewController.mm in Sources */,
+				571DB198186AE55F006A5DFB /* Range.cpp in Sources */,
 				576DF0891827A6EF007DEB82 /* CocosDenshion.m in Sources */,
 				1A8F3B6E175E05DA00049216 /* Animation.cpp in Sources */,
 				576DF0DF1827AB61007DEB82 /* json_reader.cpp in Sources */,
