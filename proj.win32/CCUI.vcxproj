@@ -128,7 +128,8 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\TestMainScene.cpp" />
+    <ClCompile Include="..\Classes\Tests\TestButtonScene.cpp" />
     <ClCompile Include="..\Libs\Event\Event.cpp" />
     <ClCompile Include="..\Libs\Event\EventHandle.cpp" />
     <ClCompile Include="..\Libs\Event\EventHandleD.cpp" />
@@ -144,7 +145,9 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\Component.cpp" />
     <ClCompile Include="..\yhgui\Container.cpp" />
     <ClCompile Include="..\yhgui\control\Button.cpp" />
+    <ClCompile Include="..\yhgui\control\ComplexButton.cpp" />
     <ClCompile Include="..\yhgui\control\Control.cpp" />
+    <ClCompile Include="..\yhgui\control\NormalButton.cpp" />
     <ClCompile Include="..\yhgui\event\UIEventListenerManager.cpp" />
     <ClCompile Include="..\yhgui\List.cpp" />
     <ClCompile Include="..\yhgui\mobie\ListView.cpp" />
@@ -152,11 +155,13 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\mobie\View.cpp" />
     <ClCompile Include="..\yhgui\Panel.cpp" />
     <ClCompile Include="..\yhgui\ScrollPanel.cpp" />
+    <ClCompile Include="..\yhgui\Utils.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\TestMainScene.h" />
+    <ClInclude Include="..\Classes\Tests\TestButtonScene.h" />
     <ClInclude Include="..\Libs\Event\Event.h" />
     <ClInclude Include="..\Libs\Event\EventHandle.h" />
     <ClInclude Include="..\Libs\Event\EventHandleD.h" />
@@ -180,14 +185,18 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\yhgui\Component.h" />
     <ClInclude Include="..\yhgui\Container.h" />
     <ClInclude Include="..\yhgui\control\Button.h" />
+    <ClInclude Include="..\yhgui\control\ComplexButton.h" />
     <ClInclude Include="..\yhgui\control\Control.h" />
+    <ClInclude Include="..\yhgui\control\NormalButton.h" />
     <ClInclude Include="..\yhgui\event\UIEventListenerManager.h" />
+    <ClInclude Include="..\yhgui\event\UIEventNames.h" />
     <ClInclude Include="..\yhgui\List.h" />
     <ClInclude Include="..\yhgui\mobie\ListView.h" />
     <ClInclude Include="..\yhgui\mobie\ScrollView.h" />
     <ClInclude Include="..\yhgui\mobie\View.h" />
     <ClInclude Include="..\yhgui\Panel.h" />
     <ClInclude Include="..\yhgui\ScrollPanel.h" />
+    <ClInclude Include="..\yhgui\Utils.h" />
     <ClInclude Include="..\yhgui\yhgui.h" />
     <ClInclude Include="..\yhgui\YHGUIMacros.h" />
     <ClInclude Include="main.h" />

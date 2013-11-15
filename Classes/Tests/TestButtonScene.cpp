@@ -47,6 +47,9 @@ bool TestButton::init()
     CCLabelTTF* labelTTF=CCLabelTTF::create("click me", "Arial", 24);
     
     button->setLabel(labelTTF);
+
+	ccColor3B color=ccc3(255,0,0);
+	button->setStateLabelColor(NormalButton::kPressed,color);
     
     ccColor3B pressColor=ccc3(255, 0, 0);
     
