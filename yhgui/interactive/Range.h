@@ -10,66 +10,55 @@ class Range
 {
 public:
     inline Range()
-    :minX(0.0f)
-    ,maxX(0.0f)
-    ,minY(0.0f)
-    ,maxY(0.0f)
+    :tl(CCPointZero)
+    ,tr(CCPointZero)
+    ,bl(CCPointZero)
+    ,br(CCPointZero)
     {
         
     };
     
-    inline Range(float _minX,float _minY,float _maxX,float _maxY)
-    :minX(_minX)
-    ,maxX(_maxX)
-    ,minY(_minY)
-    ,maxY(_maxY)
-    {
-        
-    }
-    
-    inline Range(const CCRect& rect)
-    :minX(rect.origin.x)
-    ,maxX(rect.origin.x+rect.size.width)
-    ,minY(rect.origin.y)
-    ,maxY(rect.origin.y+rect.size.height)
+    inline Range(const CCPoint& _tl,const CCPoint& _tr,const CCPoint& _bl,const CCPoint& _br)
+    :tl(_tl)
+    ,tr(_tr)
+    ,bl(_bl)
+    ,br(_br)
     {
         
     }
     
     inline Range(const Range& range)
-    :minX(range.minX)
-    ,maxX(range.maxX)
-    ,minY(range.minY)
-    ,maxY(range.maxY)
+    :tl(range.tl)
+    ,tr(range.tr)
+    ,bl(range.bl)
+    ,br(range.br)
     {
         
     }
     
-    inline void setRange(float _minX,float _minY,float _maxX,float _maxY)
+    inline void setRange(const CCPoint& _tl,const CCPoint& _tr,const CCPoint& _bl,const CCPoint& _br)
     {
-        minX=_minX;
-        maxX=_maxX;
-        minY=_minY;
-        maxY=_maxY;
-        
+        tl=_tl;
+        tr=_tr;
+        bl=_bl;
+        br=_br;
     }
     
     bool equals(const Range& range) const;
     bool containsPoint(const CCPoint& point) const;
-    bool intersectsRange(const Range& range) const;
+    bool collideRange(const Range& range) const;
     
 public:
+    
     /**
-     * 使用min max 比left,top,right,bottom更适应不同坐标系。
+     * 规定x正方向为右，负方向为左;y正方向为上，负方向为下.
      */
-    float minX;
-    float maxX;
-    float minY;
-    float maxY;
+    CCPoint tl;
+    CCPoint tr;
+    CCPoint bl;
+    CCPoint br;
     
 };
-
-const Range RangeZero=Range(0, 0, 0, 0);
 
 NS_CC_YHGUI_END
 
