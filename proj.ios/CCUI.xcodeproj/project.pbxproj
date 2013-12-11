@@ -88,6 +88,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		570B248F18570DD400335651 /* OrganizerItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570B248D18570DD400335651 /* OrganizerItem.cpp */; };
+		570B2492185712E600335651 /* TreeOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570B2490185712E600335651 /* TreeOrganizer.cpp */; };
+		570B24951858362E00335651 /* IndependentTreeOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570B24931858362E00335651 /* IndependentTreeOrganizer.cpp */; };
 		571DB17918332528006A5DFB /* ComplexButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB17718332528006A5DFB /* ComplexButton.cpp */; };
 		571DB17E18334B8E006A5DFB /* TestButtonScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB17C18334B8E006A5DFB /* TestButtonScene.cpp */; };
 		571DB182186AE55F006A5DFB /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB180186AE55F006A5DFB /* Utils.cpp */; };
@@ -328,6 +331,12 @@
 		1D6058910D05DD3D006BFB54 /* CCUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		570B248D18570DD400335651 /* OrganizerItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OrganizerItem.cpp; sourceTree = "<group>"; };
+		570B248E18570DD400335651 /* OrganizerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizerItem.h; sourceTree = "<group>"; };
+		570B2490185712E600335651 /* TreeOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeOrganizer.cpp; sourceTree = "<group>"; };
+		570B2491185712E600335651 /* TreeOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeOrganizer.h; sourceTree = "<group>"; };
+		570B24931858362E00335651 /* IndependentTreeOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndependentTreeOrganizer.cpp; sourceTree = "<group>"; };
+		570B24941858362E00335651 /* IndependentTreeOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndependentTreeOrganizer.h; sourceTree = "<group>"; };
 		571DB17718332528006A5DFB /* ComplexButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComplexButton.cpp; sourceTree = "<group>"; };
 		571DB17818332528006A5DFB /* ComplexButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexButton.h; sourceTree = "<group>"; };
 		571DB17C18334B8E006A5DFB /* TestButtonScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestButtonScene.cpp; sourceTree = "<group>"; };
@@ -801,14 +810,20 @@
 		571DB18C186AE55F006A5DFB /* interactive */ = {
 			isa = PBXGroup;
 			children = (
-				571DB196186AE55F006A5DFB /* Range.cpp */,
-				571DB197186AE55F006A5DFB /* Range.h */,
+				570B24931858362E00335651 /* IndependentTreeOrganizer.cpp */,
+				570B24941858362E00335651 /* IndependentTreeOrganizer.h */,
+				571DB18D186AE55F006A5DFB /* InteractiveDispatcher.cpp */,
+				571DB18E186AE55F006A5DFB /* InteractiveDispatcher.h */,
 				571DB190186AE55F006A5DFB /* ListOrganizer.cpp */,
 				571DB191186AE55F006A5DFB /* ListOrganizer.h */,
 				571DB192186AE55F006A5DFB /* Organizer.cpp */,
 				571DB193186AE55F006A5DFB /* Organizer.h */,
-				571DB18D186AE55F006A5DFB /* InteractiveDispatcher.cpp */,
-				571DB18E186AE55F006A5DFB /* InteractiveDispatcher.h */,
+				570B248D18570DD400335651 /* OrganizerItem.cpp */,
+				570B248E18570DD400335651 /* OrganizerItem.h */,
+				571DB196186AE55F006A5DFB /* Range.cpp */,
+				571DB197186AE55F006A5DFB /* Range.h */,
+				570B2490185712E600335651 /* TreeOrganizer.cpp */,
+				570B2491185712E600335651 /* TreeOrganizer.h */,
 			);
 			path = interactive;
 			sourceTree = "<group>";
@@ -1163,6 +1178,7 @@
 				15A3DA4B1682F826002FB0C5 /* CCControlColourPicker.cpp in Sources */,
 				15A3DA4C1682F826002FB0C5 /* CCControlHuePicker.cpp in Sources */,
 				15A3DA4D1682F826002FB0C5 /* CCControlPotentiometer.cpp in Sources */,
+				570B24951858362E00335651 /* IndependentTreeOrganizer.cpp in Sources */,
 				571DB182186AE55F006A5DFB /* Utils.cpp in Sources */,
 				15A3DA4E1682F826002FB0C5 /* CCControlSaturationBrightnessPicker.cpp in Sources */,
 				15A3DA4F1682F826002FB0C5 /* CCControlSlider.cpp in Sources */,
@@ -1199,6 +1215,7 @@
 				1AFCDA8216D4A25900906EA6 /* RootViewController.mm in Sources */,
 				571DB198186AE55F006A5DFB /* Range.cpp in Sources */,
 				576DF0891827A6EF007DEB82 /* CocosDenshion.m in Sources */,
+				570B248F18570DD400335651 /* OrganizerItem.cpp in Sources */,
 				1A8F3B6E175E05DA00049216 /* Animation.cpp in Sources */,
 				576DF0DF1827AB61007DEB82 /* json_reader.cpp in Sources */,
 				1A8F3B6F175E05DA00049216 /* AnimationState.cpp in Sources */,
@@ -1216,6 +1233,7 @@
 				1A8F3B76175E05DA00049216 /* BoneData.cpp in Sources */,
 				1A8F3B77175E05DA00049216 /* CCSkeleton.cpp in Sources */,
 				575DAE1C183211A20013BBF7 /* NormalButton.cpp in Sources */,
+				570B2492185712E600335651 /* TreeOrganizer.cpp in Sources */,
 				1A8F3B78175E05DA00049216 /* CCSkeletonAnimation.cpp in Sources */,
 				1A8F3B79175E05DA00049216 /* extension.cpp in Sources */,
 				1A8F3B7A175E05DA00049216 /* Json.cpp in Sources */,
