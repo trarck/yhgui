@@ -59,7 +59,7 @@ Component* Container::getDescendantByName(const std::string& name)
     for (; i<elements->count(); ++i) {
         child=static_cast<Component*>(elements->objectAtIndex(i));
         if (strcmp(child->getName().c_str(), name.c_str())==0){
-            break;
+            return child;
         }
         
         if (child->getChildren()) {
@@ -67,7 +67,7 @@ Component* Container::getDescendantByName(const std::string& name)
         }
     }
     
-    return i < elements->count() ? child:NULL;
+    return NULL;
 }
 
 /**
