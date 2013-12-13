@@ -18,21 +18,21 @@ Component::~Component()
 	
 }
 
-void Component::onEnter()
-{
-    if(m_enabled){
-        this->registerWithTouchDispatcher();
-    }
-    CCNode::onEnter();
-}
-
-void Component::onExit()
-{
-    if (m_enabled) {
-        this->unregisterWithTouchDispatcher();
-    }
-    CCNode::onExit();
-}
+//void Component::onEnter()
+//{
+//    if(m_enabled){
+//        this->registerWithTouchDispatcher();
+//    }
+//    CCNode::onEnter();
+//}
+//
+//void Component::onExit()
+//{
+//    if (m_enabled) {
+//        this->unregisterWithTouchDispatcher();
+//    }
+//    CCNode::onExit();
+//}
 
 /**
  * 消除注册的事件
@@ -47,13 +47,13 @@ void Component::setEnabled(bool enabled)
 {
     if (m_enabled!=enabled) {
         m_enabled = enabled;
-        if (m_bRunning) {
-            if (m_enabled) {
-                this->registerWithTouchDispatcher();
-            }else{
-                this->unregisterWithTouchDispatcher();
-            }
-        }
+//        if (m_bRunning) {
+//            if (m_enabled) {
+//                this->registerWithTouchDispatcher();
+//            }else{
+//                this->unregisterWithTouchDispatcher();
+//            }
+//        }
     }
 }
 
@@ -81,6 +81,17 @@ bool Component::isTouchInside(CCTouch* touch)
     return bBox.containsPoint(touchLocation);
 }
 
+/**
+ * 点是否在物体内
+ */
+bool Component::isPointInside(const CCPoint& point)
+{
+    CCPoint localPoint=this->convertToNodeSpace(point);
+    CCSize contentSize=this->getContentSize();
+    
+    return localPoint.x>=0 && localPoint.x<=contentSize.width && localPoint.y>=0 &&localPoint.y<=contentSize.height;
+}
+
 bool Component::hasVisibleParents()
 {
     CCNode* pParent = this->getParent();
@@ -96,10 +107,10 @@ bool Component::hasVisibleParents()
 
 bool Component::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
-    if (!isTouchInside(pTouch) || !isEnabled() || !isVisible() || !hasVisibleParents() )
-    {
-        return false;
-    }
+//    if (!isTouchInside(pTouch) || !isEnabled() || !isVisible() || !hasVisibleParents() )
+//    {
+//        return false;
+//    }
     
     m_touchInside=true;
     

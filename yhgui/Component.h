@@ -23,9 +23,9 @@ public:
     
     CREATE_FUNC(Component);
 
-	virtual void onEnter();
-
-	virtual void onExit();
+//	virtual void onEnter();
+//
+//	virtual void onExit();
     
     /**
      * 消除注册的事件
@@ -50,6 +50,11 @@ public:
      * 点击是否在物体内
      */
     bool isTouchInside(CCTouch* touch);
+    
+    /**
+     * 点是否在物体内
+     */
+    bool isPointInside(const CCPoint& point);
     
     /**
      * 所有祖先结点是否能可见

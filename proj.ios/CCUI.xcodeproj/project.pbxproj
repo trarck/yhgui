@@ -91,6 +91,7 @@
 		570B248F18570DD400335651 /* OrganizerItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570B248D18570DD400335651 /* OrganizerItem.cpp */; };
 		570B2492185712E600335651 /* TreeOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570B2490185712E600335651 /* TreeOrganizer.cpp */; };
 		570B24951858362E00335651 /* IndependentTreeOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570B24931858362E00335651 /* IndependentTreeOrganizer.cpp */; };
+		570B249818596A6000335651 /* TestOrganizerScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570B249618596A6000335651 /* TestOrganizerScene.cpp */; };
 		571DB17918332528006A5DFB /* ComplexButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB17718332528006A5DFB /* ComplexButton.cpp */; };
 		571DB17E18334B8E006A5DFB /* TestButtonScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB17C18334B8E006A5DFB /* TestButtonScene.cpp */; };
 		571DB182186AE55F006A5DFB /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB180186AE55F006A5DFB /* Utils.cpp */; };
@@ -337,6 +338,8 @@
 		570B2491185712E600335651 /* TreeOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeOrganizer.h; sourceTree = "<group>"; };
 		570B24931858362E00335651 /* IndependentTreeOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndependentTreeOrganizer.cpp; sourceTree = "<group>"; };
 		570B24941858362E00335651 /* IndependentTreeOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndependentTreeOrganizer.h; sourceTree = "<group>"; };
+		570B249618596A6000335651 /* TestOrganizerScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestOrganizerScene.cpp; sourceTree = "<group>"; };
+		570B249718596A6000335651 /* TestOrganizerScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOrganizerScene.h; sourceTree = "<group>"; };
 		571DB17718332528006A5DFB /* ComplexButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComplexButton.cpp; sourceTree = "<group>"; };
 		571DB17818332528006A5DFB /* ComplexButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexButton.h; sourceTree = "<group>"; };
 		571DB17C18334B8E006A5DFB /* TestButtonScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestButtonScene.cpp; sourceTree = "<group>"; };
@@ -800,6 +803,8 @@
 		571DB17B18334B8E006A5DFB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				570B249618596A6000335651 /* TestOrganizerScene.cpp */,
+				570B249718596A6000335651 /* TestOrganizerScene.h */,
 				571DB17C18334B8E006A5DFB /* TestButtonScene.cpp */,
 				571DB17D18334B8E006A5DFB /* TestButtonScene.h */,
 			);
@@ -1227,6 +1232,7 @@
 				576DF11B1827AC2D007DEB82 /* EventHandle.cpp in Sources */,
 				1A8F3B72175E05DA00049216 /* AtlasAttachmentLoader.cpp in Sources */,
 				1A8F3B73175E05DA00049216 /* Attachment.cpp in Sources */,
+				570B249818596A6000335651 /* TestOrganizerScene.cpp in Sources */,
 				576DF1571828F9C1007DEB82 /* BuilderHandle.cpp in Sources */,
 				1A8F3B74175E05DA00049216 /* AttachmentLoader.cpp in Sources */,
 				1A8F3B75175E05DA00049216 /* Bone.cpp in Sources */,

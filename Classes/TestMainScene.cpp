@@ -1,6 +1,7 @@
 #include "TestMainScene.h"
 #include "yhgui/yhgui.h"
 #include "Tests/TestButtonScene.h"
+#include "Tests/TestOrganizerScene.h"
 
 USING_NS_CC;
 USING_NS_CC_YHGUI;
@@ -56,9 +57,13 @@ bool TestMain::init()
     
     CCMenuItemLabel* pTestButtonItem=CCMenuItemLabel::create(pTestButtonLabel, this,menu_selector(TestMain::testButtonCallback));
     pTestButtonItem->setPosition(ccp(200,70));
+
+    
+    CCMenuItemLabel* pOrganizerButtonItem=CCMenuItemLabel::create(CCLabelTTF::create("test organizer", "Arial", 24), this,menu_selector(TestMain::testOrganizerCallback));
+    pOrganizerButtonItem->setPosition(ccp(200,110));
     
     // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pCloseItem,pTest,pTestButtonItem, NULL);
+    CCMenu* pMenu = CCMenu::create(pCloseItem,pTest,pTestButtonItem,pOrganizerButtonItem, NULL);
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu, 1);
     
@@ -68,6 +73,11 @@ bool TestMain::init()
 void TestMain::testButtonCallback(CCObject* pSender)
 {
     CCDirector::sharedDirector()->replaceScene(TestButton::scene());
+}
+
+void TestMain::testOrganizerCallback(CCObject* pSender)
+{
+    CCDirector::sharedDirector()->replaceScene(TestOrganizer::scene());
 }
 
 void TestMain::testCallback(CCObject* pSender)

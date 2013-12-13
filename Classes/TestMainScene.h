@@ -14,6 +14,8 @@ public:
     
     void testButtonCallback(CCObject* pSender);
     
+    void testOrganizerCallback(CCObject* pSender);
+    
     void testCallback(CCObject* pSender);
     
     // a selector callback

@@ -64,6 +64,11 @@ void TreeOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
  */
 Component* TreeOrganizer::getTargetContainPoint(const CCPoint& point)
 {
+//    struct timeval start;
+//    struct timeval end;
+//    
+//    gettimeofday(&start, NULL);
+    
     Component* elem=NULL;
     
     CCArray* elements=CCArray::create();
@@ -79,11 +84,11 @@ Component* TreeOrganizer::getTargetContainPoint(const CCPoint& point)
     CCArray* opens=CCArray::create();
     
     while ((pObj=elements->lastObject())) {
-        
-        elem=static_cast<Component*>(pObj);
+        //防止不是Component被加进去
+        elem=dynamic_cast<Component*>(pObj);
         
         //检查是否可见。不可见则不接收事件
-        if (elem->isVisible()) {
+        if (elem && elem->isVisible()) {
             
             //判断是否在开启列表中，如果是，则表示子类已经处理完成，现在比较自己
             if (opens->lastObject()==pObj) {
@@ -106,12 +111,21 @@ Component* TreeOrganizer::getTargetContainPoint(const CCPoint& point)
             
             if (modelPoint.x>=0 && modelPoint.x<=elemSize.width
                 && modelPoint.y>=0 &&modelPoint.y<=elemSize.height){
+//                gettimeofday(&end, NULL);
+//                CCLOG("getTargetContainPoint:%d",(end.tv_sec-start.tv_sec)*1000000+(end.tv_usec-start.tv_usec));
                 return elem;
             }
+            
+            //if (elem->isPointInside(point)){
+            //    return elem;
+            //}
         }
         
         elements->fastRemoveObjectAtIndex(elements->data->num-1);
     }
+    
+//    gettimeofday(&end, NULL);
+//    CCLOG("getTargetContainPoint:%d",(end.tv_sec-start.tv_sec)*1000000+(end.tv_usec-start.tv_usec));
     
     return NULL;
 }
