@@ -1,16 +1,15 @@
-#include "IndependentTreeOrganizer.h"
+#include "IndependentDocumentTreeOrganizer.h"
 
 NS_CC_YHGUI_BEGIN
 	
-IndependentTreeOrganizer::IndependentTreeOrganizer()
+IndependentDocumentTreeOrganizer::IndependentDocumentTreeOrganizer()
 {
 	
 }
 	
-IndependentTreeOrganizer::~IndependentTreeOrganizer()
+IndependentDocumentTreeOrganizer::~IndependentDocumentTreeOrganizer()
 {
-	CC_SAFE_RELEASE_NULL(m_root);
-    CC_SAFE_RELEASE_NULL(m_target);
+
 }
 
 //==================交互事件=====================//
@@ -18,7 +17,7 @@ IndependentTreeOrganizer::~IndependentTreeOrganizer()
 /**
  * 独占
  */
-bool IndependentTreeOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+bool IndependentDocumentTreeOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     CCPoint touchLocation = pTouch->getLocation();
     Component* target=getTargetContainPoint(touchLocation);
@@ -31,7 +30,7 @@ bool IndependentTreeOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
     return true;
 }
 
-void IndependentTreeOrganizer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+void IndependentDocumentTreeOrganizer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 {
     //只有有了target才会到此步，所以不需要判断target在不在
     if(m_target){
@@ -43,7 +42,7 @@ void IndependentTreeOrganizer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
     }
 }
 
-void IndependentTreeOrganizer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+void IndependentDocumentTreeOrganizer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
     if (m_target) {
         m_target->ccTouchEnded(pTouch, pEvent);
@@ -52,7 +51,7 @@ void IndependentTreeOrganizer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     }
 }
 
-void IndependentTreeOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
+void IndependentDocumentTreeOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
 {
     if (m_target) {
         m_target->ccTouchCancelled(pTouch, pEvent);

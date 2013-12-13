@@ -1,17 +1,17 @@
-#include "TreeOrganizer.h"
+#include "DocumentTreeOrganizer.h"
 
 NS_CC_YHGUI_BEGIN
 	
-TreeOrganizer::TreeOrganizer()
-:m_root(NULL)
+DocumentTreeOrganizer::DocumentTreeOrganizer()
+:m_document(NULL)
 ,m_target(NULL)
 {
 	
 }
 	
-TreeOrganizer::~TreeOrganizer()
+DocumentTreeOrganizer::~DocumentTreeOrganizer()
 {
-	CC_SAFE_RELEASE_NULL(m_root);
+	CC_SAFE_RELEASE_NULL(m_document);
     CC_SAFE_RELEASE_NULL(m_target);
 }
 
@@ -20,7 +20,7 @@ TreeOrganizer::~TreeOrganizer()
 /**
  * 分享
  */
-bool TreeOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+bool DocumentTreeOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     CCPoint touchLocation = pTouch->getLocation();
     Component* target=getTargetContainPoint(touchLocation);
@@ -34,20 +34,20 @@ bool TreeOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
     return false;
 }
 
-void TreeOrganizer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+void DocumentTreeOrganizer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 {
     //只有有了target才会到此步，所以不需要判断target在不在
     m_target->ccTouchMoved(pTouch, pEvent);
 }
 
-void TreeOrganizer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+void DocumentTreeOrganizer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
     m_target->ccTouchEnded(pTouch, pEvent);
     //处理完成，把目录设置为空
     setTarget(NULL);
 }
 
-void TreeOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
+void DocumentTreeOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
 {
     if (m_target) {
         m_target->ccTouchCancelled(pTouch, pEvent);
@@ -62,7 +62,7 @@ void TreeOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
  注：禁用轻量级组件不会阻止其接收 MouseEvents。
  注：禁用重量级容器可以阻止此容器中的所有组件接收任何输入事件。但是禁用轻量级容器只影响此容器。
  */
-Component* TreeOrganizer::getTargetContainPoint(const CCPoint& point)
+Component* DocumentTreeOrganizer::getTargetContainPoint(const CCPoint& point)
 {
 //    struct timeval start;
 //    struct timeval end;
@@ -72,7 +72,7 @@ Component* TreeOrganizer::getTargetContainPoint(const CCPoint& point)
     Component* elem=NULL;
     
     CCArray* elements=CCArray::create();
-    elements->addObject(m_root);
+    elements->addObject(m_document);
     
 //    elements->addObjectsFromArray(m_root->getChildren());
     

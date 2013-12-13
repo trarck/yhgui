@@ -1,7 +1,7 @@
 #include "TestOrganizerScene.h"
 #include "yhgui/yhgui.h"
 #include "Event/EventHandle.h"
-#include "yhgui/interactive/TreeOrganizer.h"
+#include "yhgui/interactive/DocumentTreeOrganizer.h"
 
 #include "../TestMainScene.h"
 
@@ -99,14 +99,14 @@ bool TestOrganizer::init()
 
 void TestOrganizer::testPerformanceCallback(CCObject* pSender)
 {
-    TreeOrganizer* treeOrganizer=new TreeOrganizer();
+    DocumentTreeOrganizer* treeOrganizer=new DocumentTreeOrganizer();
     treeOrganizer->init();
     treeOrganizer->registerWithTouchDispatcher();
     
     Component* root=Component::create();
     addChild(root);
     
-    treeOrganizer->setRoot(root);
+    treeOrganizer->setDocument(root);
     
     CCSize gridSize=CCSizeMake(100, 100);
     CCSize margin=CCSizeMake(20, 20);
@@ -146,14 +146,14 @@ void TestOrganizer::testPerformanceCallback(CCObject* pSender)
 
 void TestOrganizer::testZOrderCallback(CCObject* pSender)
 {
-    TreeOrganizer* treeOrganizer=new TreeOrganizer();
+    DocumentTreeOrganizer* treeOrganizer=new DocumentTreeOrganizer();
     treeOrganizer->init();
     treeOrganizer->registerWithTouchDispatcher();
     
     Component* root=Component::create();
     addChild(root);
     
-    treeOrganizer->setRoot(root);
+    treeOrganizer->setDocument(root);
     
     
     SolidBox* child1=SolidBox::create();

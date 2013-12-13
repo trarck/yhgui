@@ -1,5 +1,5 @@
-#ifndef COCOS_YHGUI_INTERACTIVE_TREEORGANIZER_H_
-#define COCOS_YHGUI_INTERACTIVE_TREEORGANIZER_H_
+#ifndef COCOS_YHGUI_INTERACTIVE_DOCUMENTTREEORGANIZER_H_
+#define COCOS_YHGUI_INTERACTIVE_DOCUMENTTREEORGANIZER_H_
 
 #include "Organizer.h"
 #include "../Component.h"
@@ -12,13 +12,13 @@ NS_CC_YHGUI_BEGIN
  * 只有有对标时才占用此次点击，没有目标则不占用.
  * 分享性能好，默认使用
  */
-class TreeOrganizer:public Organizer
+class DocumentTreeOrganizer:public Organizer
 {
 public:
     
-    TreeOrganizer();
+    DocumentTreeOrganizer();
     
-    ~TreeOrganizer();
+    ~DocumentTreeOrganizer();
     
     //==================交互事件=====================//
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
@@ -35,16 +35,16 @@ protected:
 
 public:
     
-    inline void setRoot(Component* root)
+    inline void setDocument(Component* document)
     {
-        CC_SAFE_RETAIN(root);
-        CC_SAFE_RELEASE(m_root);
-        m_root = root;
+        CC_SAFE_RETAIN(document);
+        CC_SAFE_RELEASE(m_document);
+        m_document = document;
     }
     
-    inline Component* getRoot()
+    inline Component* getDocument()
     {
-        return m_root;
+        return m_document;
     }
     
     inline void setTarget(Component* target)
@@ -61,7 +61,7 @@ public:
 
 protected:
     
-    Component* m_root;
+    Component* m_document;
     
     Component* m_target;
 };
@@ -69,4 +69,4 @@ protected:
 
 NS_CC_YHGUI_END
 
-#endif // COCOS_YHGUI_INTERACTIVE_TREEORGANIZER_H_
+#endif // COCOS_YHGUI_INTERACTIVE_DOCUMENTTREEORGANIZER_H_
