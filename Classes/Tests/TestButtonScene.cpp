@@ -1,5 +1,6 @@
 #include "TestButtonScene.h"
 #include "yhgui/yhgui.h"
+#include "yhgui/interactive/DocumentTreeOrganizer.h"
 #include "Event/EventHandle.h"
 #include "../TestMainScene.h"
 
@@ -40,6 +41,16 @@ bool TestButton::init()
 
     // add a "close" icon to exit the progress. it's an autorelease object
     
+    DocumentTreeOrganizer* treeOrganizer=new DocumentTreeOrganizer();
+    treeOrganizer->init();
+    treeOrganizer->registerWithTouchDispatcher();
+    
+    Component* document=Component::create();
+    addChild(document);
+    
+    treeOrganizer->setDocument(document);
+    
+    
     NormalButton* button=new NormalButton();
     button->init();
     button->setPosition(ccp(visibleSize.width/2,visibleSize.height/2));
@@ -60,7 +71,7 @@ bool TestButton::init()
     
     button->changeState(NormalButton::kNormal);
     
-    this->addChild(button);
+    document->addChild(button);
     button->release();
     
     NormalButton* backBtn=new NormalButton();
@@ -73,7 +84,7 @@ bool TestButton::init()
     
     backBtn->addEventListener("touchUpInside", this, YH_EVENT_SELECTOR(TestButton::onBack));
     backBtn->changeState(NormalButton::kNormal);
-    this->addChild(backBtn);
+    document->addChild(backBtn);
     backBtn->release();
     
 //    CCLOG("button:%d",button->retainCount());
