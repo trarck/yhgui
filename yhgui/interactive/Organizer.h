@@ -29,12 +29,12 @@ public:
     /**
      * 取得所有包含点的结点
      */
-    virtual CCArray* getNodesContainPoint(CCPoint point){};
+    virtual CCArray* getNodesContainPoint(CCPoint point){return NULL;};
    
     /**
      * 取得所有在某个范围的结点
      */
-    virtual CCArray* getNodesInRange(CCRect range){};
+	virtual CCArray* getNodesInRange(CCRect range){return NULL;};
 
     /**
      * 注册一个touch dispatcher。
