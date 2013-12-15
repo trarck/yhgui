@@ -130,6 +130,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\TestMainScene.cpp" />
     <ClCompile Include="..\Classes\Tests\TestButtonScene.cpp" />
+    <ClCompile Include="..\Classes\Tests\TestOrganizerScene.cpp" />
     <ClCompile Include="..\Libs\Event\Event.cpp" />
     <ClCompile Include="..\Libs\Event\EventHandle.cpp" />
     <ClCompile Include="..\Libs\Event\EventHandleD.cpp" />
@@ -149,6 +150,13 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\control\Control.cpp" />
     <ClCompile Include="..\yhgui\control\NormalButton.cpp" />
     <ClCompile Include="..\yhgui\event\UIEventListenerManager.cpp" />
+    <ClCompile Include="..\yhgui\interactive\DocumentTreeOrganizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\InteractiveDispatcher.cpp" />
+    <ClCompile Include="..\yhgui\interactive\ListOrganizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\Organizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\OrganizerItem.cpp" />
+    <ClCompile Include="..\yhgui\interactive\Range.cpp" />
     <ClCompile Include="..\yhgui\List.cpp" />
     <ClCompile Include="..\yhgui\mobie\ListView.cpp" />
     <ClCompile Include="..\yhgui\mobie\ScrollView.cpp" />
@@ -162,6 +170,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\TestMainScene.h" />
     <ClInclude Include="..\Classes\Tests\TestButtonScene.h" />
+    <ClInclude Include="..\Classes\Tests\TestOrganizerScene.h" />
     <ClInclude Include="..\Libs\Event\Event.h" />
     <ClInclude Include="..\Libs\Event\EventHandle.h" />
     <ClInclude Include="..\Libs\Event\EventHandleD.h" />
@@ -190,6 +199,13 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\yhgui\control\NormalButton.h" />
     <ClInclude Include="..\yhgui\event\UIEventListenerManager.h" />
     <ClInclude Include="..\yhgui\event\UIEventNames.h" />
+    <ClInclude Include="..\yhgui\interactive\DocumentTreeOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\InteractiveDispatcher.h" />
+    <ClInclude Include="..\yhgui\interactive\ListOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\Organizer.h" />
+    <ClInclude Include="..\yhgui\interactive\OrganizerItem.h" />
+    <ClInclude Include="..\yhgui\interactive\Range.h" />
     <ClInclude Include="..\yhgui\List.h" />
     <ClInclude Include="..\yhgui\mobie\ListView.h" />
     <ClInclude Include="..\yhgui\mobie\ScrollView.h" />

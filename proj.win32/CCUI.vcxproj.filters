@@ -46,6 +46,9 @@
     <Filter Include="Classes\Tests">
       <UniqueIdentifier>{4f7d0ae0-f202-44db-8a06-22a8748d31b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="yhgui\interactive">
+      <UniqueIdentifier>{916d1d80-09a3-43e0-adc4-dde144fca9f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -136,6 +139,30 @@
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Tests\TestButtonScene.cpp">
+      <Filter>Classes\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\DocumentTreeOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\InteractiveDispatcher.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\ListOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\Organizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\OrganizerItem.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\Range.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Tests\TestOrganizerScene.cpp">
       <Filter>Classes\Tests</Filter>
     </ClCompile>
   </ItemGroup>
@@ -261,6 +288,30 @@
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Tests\TestButtonScene.h">
+      <Filter>Classes\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\DocumentTreeOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\InteractiveDispatcher.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\ListOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\Organizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\OrganizerItem.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\Range.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Tests\TestOrganizerScene.h">
       <Filter>Classes\Tests</Filter>
     </ClInclude>
   </ItemGroup>
