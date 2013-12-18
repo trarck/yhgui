@@ -4,7 +4,6 @@ NS_CC_YHGUI_BEGIN
 	
 DocumentTreeOrganizer::DocumentTreeOrganizer()
 :m_document(NULL)
-,m_target(NULL)
 {
 	
 }
@@ -12,7 +11,6 @@ DocumentTreeOrganizer::DocumentTreeOrganizer()
 DocumentTreeOrganizer::~DocumentTreeOrganizer()
 {
 	CC_SAFE_RELEASE_NULL(m_document);
-    CC_SAFE_RELEASE_NULL(m_target);
 }
 
 //==================交互事件=====================//

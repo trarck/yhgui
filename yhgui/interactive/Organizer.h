@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "../YHGUIMacros.h"
 #include "Range.h"
+#include "../Component.h"
 
 NS_CC_YHGUI_BEGIN
 
@@ -63,6 +64,19 @@ public:
     {
         return m_registeredTouchDispatcher;
     }
+    
+    inline void setTarget(Component* target)
+    {
+        CC_SAFE_RETAIN(target);
+        CC_SAFE_RELEASE(m_target);
+        m_target = target;
+    }
+    
+    inline Component* getTarget()
+    {
+        return m_target;
+    }
+    
 protected:
     /**
      * 处理交互事件的优先级
@@ -73,6 +87,11 @@ protected:
      * 是否注册过交互事件处理
      */
     bool m_registeredTouchDispatcher;
+    
+    /**
+     * 正在处理的元素
+     */
+    Component* m_target;
     
 };
 

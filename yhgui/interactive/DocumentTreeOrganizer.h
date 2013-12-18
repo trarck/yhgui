@@ -2,14 +2,13 @@
 #define COCOS_YHGUI_INTERACTIVE_DOCUMENTTREEORGANIZER_H_
 
 #include "Organizer.h"
-#include "../Component.h"
 
 NS_CC_YHGUI_BEGIN
 
 /**
  * 处理交互事件
  * 分享处理touch事件
- * 只有有对标时才占用此次点击，没有目标则不占用.
+ * 只有有对标时才占用此次点击，没有目标则不占用.如果目标不处理，则不会继续触发touch move事件。
  * 分享性能好，默认使用
  */
 class DocumentTreeOrganizer:public Organizer
@@ -46,24 +45,11 @@ public:
     {
         return m_document;
     }
-    
-    inline void setTarget(Component* target)
-    {
-        CC_SAFE_RETAIN(target);
-        CC_SAFE_RELEASE(m_target);
-        m_target = target;
-    }
-    
-    inline Component* getTarget()
-    {
-        return m_target;
-    }
 
 protected:
     
     Component* m_document;
-    
-    Component* m_target;
+
 };
 
 

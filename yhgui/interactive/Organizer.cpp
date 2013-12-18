@@ -5,13 +5,14 @@ NS_CC_YHGUI_BEGIN
 Organizer::Organizer()
 :m_interactivePriority(0)
 ,m_registeredTouchDispatcher(false)
+,m_target(NULL)
 {
 	
 }
 
 Organizer::~Organizer()
 {
-	
+	CC_SAFE_RELEASE_NULL(m_target);
 }
 
 bool Organizer::init()

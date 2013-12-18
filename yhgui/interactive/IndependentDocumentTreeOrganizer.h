@@ -8,7 +8,7 @@ NS_CC_YHGUI_BEGIN
 /**
  * 处理交互事件
  * 独占处理touch事件
- * 无论有没有目标都占用
+ * 无论有没有目标都占用,这样可以继续处理touch move事件
  */
 class IndependentDocumentTreeOrganizer:public DocumentTreeOrganizer
 {
