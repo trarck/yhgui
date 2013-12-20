@@ -28,8 +28,6 @@ public:
      */
     void removeComponent(Component* component);
     
-protected:
-    
     /**
      * 取得最上层元素包含要触摸点
      */

@@ -48,6 +48,17 @@ public:
     virtual void unregisterWithTouchDispatcher(void);
     
     
+    //==================交互事件=====================//
+    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent);
+    
+    /**
+     * 取得最上层元素包含要触摸点
+     */
+    virtual Component* getTargetContainPoint(const CCPoint& point);
+    
     void setInteractivePriority(int interactivePriority);
     
     inline int getInteractivePriority()

@@ -1,10 +1,10 @@
-#ifndef __TestOrganizer_SCENE_H__
-#define __TestOrganizer_SCENE_H__
+#ifndef __TestListOrganizer_SCENE_H__
+#define __TestListOrganizer_SCENE_H__
 
 #include "cocos2d.h"
 #include "Event/Event.h"
 
-class TestOrganizer : public cocos2d::CCLayer
+class TestListOrganizer : public cocos2d::CCLayer
 {
 public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
@@ -17,7 +17,7 @@ public:
     void testZOrderCallback(CCObject* pSender);
     
     // implement the "static node()" method manually
-    CREATE_FUNC(TestOrganizer);
+    CREATE_FUNC(TestListOrganizer);
 };
 
-#endif // __TestOrganizer_SCENE_H__
+#endif // __TestListOrganizer_SCENE_H__

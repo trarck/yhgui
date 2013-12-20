@@ -40,50 +40,51 @@ void ListOrganizer::removeComponent(Component* component)
     m_elements->removeObject(component);
 }
 
-//==================交互事件=====================//
-bool ListOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
-{
-    CCPoint touchLocation = pTouch->getLocation();
-    struct timeval start;
-    struct timeval end;
-    
-    gettimeofday(&start, NULL);
-    Component* target=getTargetContainPoint(touchLocation);
-    
-    gettimeofday(&end, NULL);
-    
-    CCLOG("use:%ld",(end.tv_sec-start.tv_sec)*1000000+(end.tv_usec-start.tv_usec));
-
-    if (target && target->isEnabled()) {
-        //只有可用组件才可以处理事件
-        setTarget(target);
-        //trigger elem events
-        return target->ccTouchBegan(pTouch, pEvent);
-    }
-    
-    return false;
-}
-
-void ListOrganizer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
-{
-    //只有有了target才会到此步，所以不需要判断target在不在
-    m_target->ccTouchMoved(pTouch, pEvent);
-}
-
-void ListOrganizer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
-{
-    m_target->ccTouchEnded(pTouch, pEvent);
-    //处理完成，把目录设置为空
-    setTarget(NULL);
-}
-
-void ListOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
-{
-    if (m_target) {
-        m_target->ccTouchCancelled(pTouch, pEvent);
-        setTarget(NULL);
-    }
-}
+////==================交互事件=====================//
+//bool ListOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+//{
+//    CCPoint touchLocation = pTouch->getLocation();
+////    struct timeval start;
+////    struct timeval end;
+////    
+////    gettimeofday(&start, NULL);
+//    
+//    Component* target=getTargetContainPoint(touchLocation);
+//    
+////    gettimeofday(&end, NULL);
+////    
+////    CCLOG("use:%ld",(end.tv_sec-start.tv_sec)*1000000+(end.tv_usec-start.tv_usec));
+//
+//    if (target && target->isEnabled()) {
+//        //只有可用组件才可以处理事件
+//        setTarget(target);
+//        //trigger elem events
+//        return target->ccTouchBegan(pTouch, pEvent);
+//    }
+//    
+//    return false;
+//}
+//
+//void ListOrganizer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+//{
+//    //只有有了target才会到此步，所以不需要判断target在不在
+//    m_target->ccTouchMoved(pTouch, pEvent);
+//}
+//
+//void ListOrganizer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+//{
+//    m_target->ccTouchEnded(pTouch, pEvent);
+//    //处理完成，把目录设置为空
+//    setTarget(NULL);
+//}
+//
+//void ListOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
+//{
+//    if (m_target) {
+//        m_target->ccTouchCancelled(pTouch, pEvent);
+//        setTarget(NULL);
+//    }
+//}
 
 /**
  * 取得最上层元素包含要触摸点

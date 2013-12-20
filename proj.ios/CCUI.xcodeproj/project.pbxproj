@@ -135,6 +135,10 @@
 		576DF1621828F9C1007DEB82 /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576DF14F1828F9C1007DEB82 /* View.cpp */; };
 		576DF1631828F9C1007DEB82 /* Panel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576DF1511828F9C1007DEB82 /* Panel.cpp */; };
 		576DF1641828F9C1007DEB82 /* ScrollPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576DF1531828F9C1007DEB82 /* ScrollPanel.cpp */; };
+		579AA60B1864331B00D04F05 /* PriorityOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 579AA6091864331B00D04F05 /* PriorityOrganizer.cpp */; };
+		579AA618186450B900D04F05 /* IndependentListOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 579AA616186450B900D04F05 /* IndependentListOrganizer.cpp */; };
+		579AA619186450B900D04F05 /* IndependentOrderedListOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 579AA617186450B900D04F05 /* IndependentOrderedListOrganizer.cpp */; };
+		579AA61C1864514B00D04F05 /* IndependentPriorityOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 579AA61A1864514B00D04F05 /* IndependentPriorityOrganizer.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
@@ -438,6 +442,15 @@
 		576DF1541828F9C1007DEB82 /* ScrollPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPanel.h; sourceTree = "<group>"; };
 		576DF1551828F9C1007DEB82 /* yhgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yhgui.h; sourceTree = "<group>"; };
 		576DF1561828F9C1007DEB82 /* YHGUIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHGUIMacros.h; sourceTree = "<group>"; };
+		579AA6091864331B00D04F05 /* PriorityOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PriorityOrganizer.cpp; sourceTree = "<group>"; };
+		579AA60A1864331B00D04F05 /* PriorityOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityOrganizer.h; sourceTree = "<group>"; };
+		579AA60F18644AA700D04F05 /* IndependentTouchDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndependentTouchDefine.h; sourceTree = "<group>"; };
+		579AA61118644E2600D04F05 /* IndependentListOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndependentListOrganizer.h; sourceTree = "<group>"; };
+		579AA61318644E2600D04F05 /* IndependentOrderedListOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndependentOrderedListOrganizer.h; sourceTree = "<group>"; };
+		579AA616186450B900D04F05 /* IndependentListOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndependentListOrganizer.cpp; sourceTree = "<group>"; };
+		579AA617186450B900D04F05 /* IndependentOrderedListOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndependentOrderedListOrganizer.cpp; sourceTree = "<group>"; };
+		579AA61A1864514B00D04F05 /* IndependentPriorityOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndependentPriorityOrganizer.cpp; sourceTree = "<group>"; };
+		579AA61B1864514B00D04F05 /* IndependentPriorityOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndependentPriorityOrganizer.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -828,20 +841,29 @@
 		571DB18C186AE55F006A5DFB /* interactive */ = {
 			isa = PBXGroup;
 			children = (
+				579AA61A1864514B00D04F05 /* IndependentPriorityOrganizer.cpp */,
+				579AA61B1864514B00D04F05 /* IndependentPriorityOrganizer.h */,
 				570FBA0F185AD84A007DF17D /* DocumentTreeOrganizer.cpp */,
 				570FBA10185AD84A007DF17D /* DocumentTreeOrganizer.h */,
-				57511EB61861462C00791017 /* ListOrganizer.cpp */,
-				57511EB71861462D00791017 /* ListOrganizer.h */,
 				570FBA11185AD84A007DF17D /* IndependentDocumentTreeOrganizer.cpp */,
 				570FBA12185AD84A007DF17D /* IndependentDocumentTreeOrganizer.h */,
+				579AA616186450B900D04F05 /* IndependentListOrganizer.cpp */,
+				579AA61118644E2600D04F05 /* IndependentListOrganizer.h */,
+				579AA617186450B900D04F05 /* IndependentOrderedListOrganizer.cpp */,
+				579AA61318644E2600D04F05 /* IndependentOrderedListOrganizer.h */,
+				579AA60F18644AA700D04F05 /* IndependentTouchDefine.h */,
 				571DB18D186AE55F006A5DFB /* InteractiveDispatcher.cpp */,
 				571DB18E186AE55F006A5DFB /* InteractiveDispatcher.h */,
+				57511EB61861462C00791017 /* ListOrganizer.cpp */,
+				57511EB71861462D00791017 /* ListOrganizer.h */,
 				571DB190186AE55F006A5DFB /* OrderedListOrganizer.cpp */,
 				571DB191186AE55F006A5DFB /* OrderedListOrganizer.h */,
 				571DB192186AE55F006A5DFB /* Organizer.cpp */,
 				571DB193186AE55F006A5DFB /* Organizer.h */,
 				570B248D18570DD400335651 /* OrganizerItem.cpp */,
 				570B248E18570DD400335651 /* OrganizerItem.h */,
+				579AA6091864331B00D04F05 /* PriorityOrganizer.cpp */,
+				579AA60A1864331B00D04F05 /* PriorityOrganizer.h */,
 				571DB196186AE55F006A5DFB /* Range.cpp */,
 				571DB197186AE55F006A5DFB /* Range.h */,
 			);
@@ -1169,6 +1191,7 @@
 				15A3DA351682F826002FB0C5 /* CCBSequence.cpp in Sources */,
 				15A3DA361682F826002FB0C5 /* CCBSequenceProperty.cpp in Sources */,
 				15A3DA371682F826002FB0C5 /* CCBValue.cpp in Sources */,
+				579AA618186450B900D04F05 /* IndependentListOrganizer.cpp in Sources */,
 				15A3DA381682F826002FB0C5 /* CCControlButtonLoader.cpp in Sources */,
 				15A3DA391682F826002FB0C5 /* CCControlLoader.cpp in Sources */,
 				15A3DA3A1682F826002FB0C5 /* CCData.cpp in Sources */,
@@ -1248,8 +1271,10 @@
 				1A8F3B71175E05DA00049216 /* Atlas.cpp in Sources */,
 				576DF11B1827AC2D007DEB82 /* EventHandle.cpp in Sources */,
 				1A8F3B72175E05DA00049216 /* AtlasAttachmentLoader.cpp in Sources */,
+				579AA61C1864514B00D04F05 /* IndependentPriorityOrganizer.cpp in Sources */,
 				1A8F3B73175E05DA00049216 /* Attachment.cpp in Sources */,
 				570B249818596A6000335651 /* TestOrganizerScene.cpp in Sources */,
+				579AA619186450B900D04F05 /* IndependentOrderedListOrganizer.cpp in Sources */,
 				576DF1571828F9C1007DEB82 /* BuilderHandle.cpp in Sources */,
 				1A8F3B74175E05DA00049216 /* AttachmentLoader.cpp in Sources */,
 				1A8F3B75175E05DA00049216 /* Bone.cpp in Sources */,
@@ -1274,6 +1299,7 @@
 				1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */,
 				576DF08A1827A6EF007DEB82 /* SimpleAudioEngine.mm in Sources */,
 				576DF0871827A6EF007DEB82 /* CDAudioManager.m in Sources */,
+				579AA60B1864331B00D04F05 /* PriorityOrganizer.cpp in Sources */,
 				57511EBB18618EA000791017 /* TestListOrganizerScene.cpp in Sources */,
 				576DF0881827A6EF007DEB82 /* CDOpenALSupport.m in Sources */,
 			);

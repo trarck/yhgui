@@ -19,20 +19,17 @@ public:
     
     ~DocumentTreeOrganizer();
     
-    //==================交互事件=====================//
-    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
-    virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
-    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
-    virtual void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent);
+//    //==================交互事件=====================//
+//    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+//    virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
+//    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+//    virtual void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent);
 
-protected:
-    
     /**
      * 取得最上层元素包含要触摸点
      */
     Component* getTargetContainPoint(const CCPoint& point);
 
-public:
     
     inline void setDocument(Component* document)
     {

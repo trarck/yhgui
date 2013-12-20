@@ -2,6 +2,7 @@
 #include "yhgui/yhgui.h"
 #include "Event/EventHandle.h"
 #include "yhgui/interactive/DocumentTreeOrganizer.h"
+#include "yhgui/interactive/IndependentDocumentTreeOrganizer.h"
 
 #include "../TestMainScene.h"
 #include "Box.h"
@@ -45,16 +46,16 @@ bool TestOrganizer::init()
     CCMenu* pMenu = CCMenu::create(pTestPerformance,pTestZOrder,NULL);
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu, 1);
-    
 
-    
-    
     return true;
 }
 
 void TestOrganizer::testPerformanceCallback(CCObject* pSender)
 {
-    DocumentTreeOrganizer* treeOrganizer=new DocumentTreeOrganizer();
+//    DocumentTreeOrganizer* treeOrganizer=new DocumentTreeOrganizer();
+    
+    IndependentDocumentTreeOrganizer* treeOrganizer=new IndependentDocumentTreeOrganizer();
+    
     treeOrganizer->init();
     treeOrganizer->registerWithTouchDispatcher();
     

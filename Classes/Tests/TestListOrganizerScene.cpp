@@ -1,59 +1,14 @@
 #include "TestListOrganizerScene.h"
 #include "yhgui/yhgui.h"
 #include "Event/EventHandle.h"
-#include "yhgui/interactive/DocumentTreeOrganizer.h"
+#include "yhgui/interactive/ListOrganizer.h"
+#include "yhgui/interactive/OrderedListOrganizer.h"
 
 #include "../TestMainScene.h"
+#include "Box.h"
 
 USING_NS_CC;
 USING_NS_CC_YHGUI;
-
-class Box:public Component
-{
-public:
-    
-    void draw()
-    {
-        ccDrawColor4B(color.r, color.g, color.b, color.a);
-        ccDrawRect(ccp(0,0),ccp(m_obContentSize.width, m_obContentSize.height));
-    }
-    
-    bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
-    {
-        CCLOG("touch:%d,%d",x,y);
-        return Component::ccTouchBegan(pTouch, pEvent);
-    }
-
-    CREATE_FUNC(Box);
-    
-    ccColor4B color;
-    
-    int x;
-    int y;
-};
-
-class SolidBox:public Component
-{
-public:
-    
-    void draw()
-    {
-        ccDrawSolidRect(ccp(0,0),ccp(m_obContentSize.width, m_obContentSize.height),ccc4FFromccc4B(color));
-    }
-    
-    bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
-    {
-        CCLOG("touch:%d,%d",x,y);
-        return Component::ccTouchBegan(pTouch, pEvent);
-    }
-    
-    CREATE_FUNC(SolidBox);
-    
-    ccColor4B color;
-    
-    int x;
-    int y;
-};
 
 CCScene* TestListOrganizer::scene()
 {
@@ -99,14 +54,15 @@ bool TestListOrganizer::init()
 
 void TestListOrganizer::testPerformanceCallback(CCObject* pSender)
 {
-    DocumentTreeOrganizer* treeOrganizer=new DocumentTreeOrganizer();
-    treeOrganizer->init();
-    treeOrganizer->registerWithTouchDispatcher();
+//    ListOrganizer* organizer=new ListOrganizer();
+    OrderedListOrganizer* organizer=new OrderedListOrganizer();
+    organizer->init();
+    organizer->registerWithTouchDispatcher();
     
     Component* root=Component::create();
     addChild(root);
     
-    treeOrganizer->setDocument(root);
+
     
     CCSize gridSize=CCSizeMake(100, 100);
     CCSize margin=CCSizeMake(20, 20);
@@ -139,6 +95,10 @@ void TestListOrganizer::testPerformanceCallback(CCObject* pSender)
             child11->x=i+1;
             child11->y=j+1;
             
+            if (j<100) {
+                organizer->addComponent(child11);
+            }
+            
             child1->addChild(child11);
         }
     }
@@ -146,14 +106,13 @@ void TestListOrganizer::testPerformanceCallback(CCObject* pSender)
 
 void TestListOrganizer::testZOrderCallback(CCObject* pSender)
 {
-    DocumentTreeOrganizer* treeOrganizer=new DocumentTreeOrganizer();
-    treeOrganizer->init();
-    treeOrganizer->registerWithTouchDispatcher();
+//    ListOrganizer* organizer=new ListOrganizer();
+    OrderedListOrganizer* organizer=new OrderedListOrganizer();
+    organizer->init();
+    organizer->registerWithTouchDispatcher();
     
     Component* root=Component::create();
     addChild(root);
-    
-    treeOrganizer->setDocument(root);
     
     
     SolidBox* child1=SolidBox::create();
@@ -163,6 +122,7 @@ void TestListOrganizer::testZOrderCallback(CCObject* pSender)
     child1->color=ccc4(255, 0, 0, 150);
     child1->x=0;
     child1->y=0;
+    organizer->addComponent(child1);
     
     root->addChild(child1);
     
@@ -174,6 +134,7 @@ void TestListOrganizer::testZOrderCallback(CCObject* pSender)
     child2->color=ccc4(0, 0, 128, 150);
     child2->x=1;
     child2->y=0;
+    organizer->addComponent(child2);
     
     root->addChild(child2);
     
@@ -185,6 +146,7 @@ void TestListOrganizer::testZOrderCallback(CCObject* pSender)
     child3->color=ccc4(0, 128, 0, 150);
     child3->x=2;
     child3->y=0;
+    organizer->addComponent(child3);
     
     root->addChild(child3);
 }

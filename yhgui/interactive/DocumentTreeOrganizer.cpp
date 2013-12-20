@@ -13,45 +13,45 @@ DocumentTreeOrganizer::~DocumentTreeOrganizer()
 	CC_SAFE_RELEASE_NULL(m_document);
 }
 
-//==================交互事件=====================//
-
-/**
- * 分享
- */
-bool DocumentTreeOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
-{
-    CCPoint touchLocation = pTouch->getLocation();
-    Component* target=getTargetContainPoint(touchLocation);
-    if (target && target->isEnabled()) {
-        //只有可用组件才可以处理事件
-        setTarget(target);
-        //trigger elem events
-        return target->ccTouchBegan(pTouch, pEvent);
-    }
-    
-    return false;
-}
-
-void DocumentTreeOrganizer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
-{
-    //只有有了target才会到此步，所以不需要判断target在不在
-    m_target->ccTouchMoved(pTouch, pEvent);
-}
-
-void DocumentTreeOrganizer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
-{
-    m_target->ccTouchEnded(pTouch, pEvent);
-    //处理完成，把目录设置为空
-    setTarget(NULL);
-}
-
-void DocumentTreeOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
-{
-    if (m_target) {
-        m_target->ccTouchCancelled(pTouch, pEvent);
-        setTarget(NULL);
-    }
-}
+////==================交互事件=====================//
+//
+///**
+// * 分享
+// */
+//bool DocumentTreeOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+//{
+//    CCPoint touchLocation = pTouch->getLocation();
+//    Component* target=getTargetContainPoint(touchLocation);
+//    if (target && target->isEnabled()) {
+//        //只有可用组件才可以处理事件
+//        setTarget(target);
+//        //trigger elem events
+//        return target->ccTouchBegan(pTouch, pEvent);
+//    }
+//    
+//    return false;
+//}
+//
+//void DocumentTreeOrganizer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+//{
+//    //只有有了target才会到此步，所以不需要判断target在不在
+//    m_target->ccTouchMoved(pTouch, pEvent);
+//}
+//
+//void DocumentTreeOrganizer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+//{
+//    m_target->ccTouchEnded(pTouch, pEvent);
+//    //处理完成，把目录设置为空
+//    setTarget(NULL);
+//}
+//
+//void DocumentTreeOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
+//{
+//    if (m_target) {
+//        m_target->ccTouchCancelled(pTouch, pEvent);
+//        setTarget(NULL);
+//    }
+//}
 
 /**
  * 取得最上层元素包含要触摸点
