@@ -44,7 +44,16 @@ void ListOrganizer::removeComponent(Component* component)
 bool ListOrganizer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     CCPoint touchLocation = pTouch->getLocation();
+    struct timeval start;
+    struct timeval end;
+    
+    gettimeofday(&start, NULL);
     Component* target=getTargetContainPoint(touchLocation);
+    
+    gettimeofday(&end, NULL);
+    
+    CCLOG("use:%ld",(end.tv_sec-start.tv_sec)*1000000+(end.tv_usec-start.tv_usec));
+
     if (target && target->isEnabled()) {
         //只有可用组件才可以处理事件
         setTarget(target);
@@ -85,7 +94,6 @@ void ListOrganizer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
  */
 Component* ListOrganizer::getTargetContainPoint(const CCPoint& point)
 {
-    
     //先处理点击是否在元素范围内
     
     Component* elem=NULL;

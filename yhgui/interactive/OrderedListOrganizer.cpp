@@ -17,31 +17,39 @@ OrderedListOrganizer::~OrderedListOrganizer()
  */
 void OrderedListOrganizer::addComponent(Component* component)
 {
-    if (m_elementsAncestors.find(component->m_uID)!=m_elementsAncestors.end()){
-        m_elementsAncestors.erase(component->m_uID);
-        
-        std::vector<CCNode*> componentAncestor=this->createAncestorList(component);
-        
-        m_elementsAncestors[component->m_uID]=componentAncestor;
-        
-        CCObject* pObj=NULL;
-        Component* elem=NULL;
-        int pos=-1,i=0;
-        CCARRAY_FOREACH(m_elements, pObj){
-            elem=static_cast<Component*>(pObj);
-            if (this->compareElementZOrderWithAncestor(componentAncestor,m_elementsAncestors[elem->m_uID])>=0){
-                pos=i;
-                break;
-            }
-            ++i;
-        }
-        
-        if (pos==-1) {
-            m_elements->addObject(component);
-        }else{
-            m_elements->insertObject(component, pos);
-        }
+    //会自动替换，不用删除
+//    if (m_elementsAncestors.find(component->m_uID)!=m_elementsAncestors.end()){
+//        m_elementsAncestors.erase(component->m_uID);
+//    }
+    
+    //检查是不是已经添加过，如果已经添加过，则删除旧的重新添加一次
+    int index=m_elements->indexOfObject(component);
+    if (index!=CC_INVALID_INDEX) {
+        m_elements->removeObjectAtIndex(index);
     }
+    
+    std::vector<CCNode*> componentAncestor=this->createAncestorList(component);
+    
+    m_elementsAncestors[component->m_uID]=componentAncestor;
+    
+    CCObject* pObj=NULL;
+    Component* elem=NULL;
+    int pos=-1,i=0;
+    CCARRAY_FOREACH(m_elements, pObj){
+        elem=static_cast<Component*>(pObj);
+        if (this->compareElementZOrderWithAncestor(componentAncestor,m_elementsAncestors[elem->m_uID])>=0){
+            pos=i;
+            break;
+        }
+        ++i;
+    }
+    
+    if (pos==-1) {
+        m_elements->addObject(component);
+    }else{
+        m_elements->insertObject(component, pos);
+    }
+   
 }
 
 /**
@@ -62,8 +70,22 @@ void OrderedListOrganizer::removeComponent(Component* component)
  */
 Component* OrderedListOrganizer::getTargetContainPoint(const CCPoint& point)
 {
-    //由于已经排好序，直接取最上面的元素
-    return m_elements->count()>0?static_cast<Component*>(m_elements->objectAtIndex(0)):NULL;
+    //由于已经排好序，直接从上向下比较元素
+    
+    CCObject* pObj=NULL;
+    Component* elem=NULL;
+    CCARRAY_FOREACH(m_elements, pObj){
+        elem=static_cast<Component*>(pObj);
+        //检查是否可见。不可见则不接收事件
+        if (elem && elem->isVisible()) {
+            //如果组件不可用，则接收事件,但不处理。
+            if (elem->isPointInside(point)){
+                return elem;
+            }
+        }
+    }
+    
+    return NULL;
 }
 
 NS_CC_YHGUI_END

@@ -100,6 +100,8 @@
 		571DB195186AE55F006A5DFB /* Organizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB192186AE55F006A5DFB /* Organizer.cpp */; };
 		571DB198186AE55F006A5DFB /* Range.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571DB196186AE55F006A5DFB /* Range.cpp */; };
 		57511EB81861462D00791017 /* ListOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57511EB61861462C00791017 /* ListOrganizer.cpp */; };
+		57511EBB18618EA000791017 /* TestListOrganizerScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57511EB918618EA000791017 /* TestListOrganizerScene.cpp */; };
+		57511EBE18618ED000791017 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57511EBC18618ED000791017 /* Box.cpp */; };
 		575DAE1C183211A20013BBF7 /* NormalButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575DAE1A183211A20013BBF7 /* NormalButton.cpp */; };
 		576DF0871827A6EF007DEB82 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 576DEFF51827A6EE007DEB82 /* CDAudioManager.m */; };
 		576DF0881827A6EF007DEB82 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 576DEFF81827A6EE007DEB82 /* CDOpenALSupport.m */; };
@@ -358,6 +360,10 @@
 		571DB197186AE55F006A5DFB /* Range.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
 		57511EB61861462C00791017 /* ListOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListOrganizer.cpp; sourceTree = "<group>"; };
 		57511EB71861462D00791017 /* ListOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOrganizer.h; sourceTree = "<group>"; };
+		57511EB918618EA000791017 /* TestListOrganizerScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListOrganizerScene.cpp; sourceTree = "<group>"; };
+		57511EBA18618EA000791017 /* TestListOrganizerScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListOrganizerScene.h; sourceTree = "<group>"; };
+		57511EBC18618ED000791017 /* Box.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Box.cpp; sourceTree = "<group>"; };
+		57511EBD18618ED000791017 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		575DAE1A183211A20013BBF7 /* NormalButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NormalButton.cpp; sourceTree = "<group>"; };
 		575DAE1B183211A20013BBF7 /* NormalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalButton.h; sourceTree = "<group>"; };
 		576DEFF11827A6EE007DEB82 /* Export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Export.h; sourceTree = "<group>"; };
@@ -806,10 +812,14 @@
 		571DB17B18334B8E006A5DFB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				57511EB918618EA000791017 /* TestListOrganizerScene.cpp */,
+				57511EBA18618EA000791017 /* TestListOrganizerScene.h */,
 				570B249618596A6000335651 /* TestOrganizerScene.cpp */,
 				570B249718596A6000335651 /* TestOrganizerScene.h */,
 				571DB17C18334B8E006A5DFB /* TestButtonScene.cpp */,
 				571DB17D18334B8E006A5DFB /* TestButtonScene.h */,
+				57511EBC18618ED000791017 /* Box.cpp */,
+				57511EBD18618ED000791017 /* Box.h */,
 			);
 			name = Tests;
 			path = ../Classes/Tests;
@@ -1175,6 +1185,7 @@
 				576DF15A1828F9C1007DEB82 /* Component.cpp in Sources */,
 				15A3DA431682F826002FB0C5 /* CCNodeLoader.cpp in Sources */,
 				571DB194186AE55F006A5DFB /* OrderedListOrganizer.cpp in Sources */,
+				57511EBE18618ED000791017 /* Box.cpp in Sources */,
 				15A3DA441682F826002FB0C5 /* CCNodeLoaderLibrary.cpp in Sources */,
 				571DB195186AE55F006A5DFB /* Organizer.cpp in Sources */,
 				15A3DA451682F826002FB0C5 /* CCParticleSystemQuadLoader.cpp in Sources */,
@@ -1263,6 +1274,7 @@
 				1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */,
 				576DF08A1827A6EF007DEB82 /* SimpleAudioEngine.mm in Sources */,
 				576DF0871827A6EF007DEB82 /* CDAudioManager.m in Sources */,
+				57511EBB18618EA000791017 /* TestListOrganizerScene.cpp in Sources */,
 				576DF0881827A6EF007DEB82 /* CDOpenALSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

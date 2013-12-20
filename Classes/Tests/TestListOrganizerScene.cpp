@@ -1,22 +1,67 @@
-#include "TestOrganizerScene.h"
+#include "TestListOrganizerScene.h"
 #include "yhgui/yhgui.h"
 #include "Event/EventHandle.h"
 #include "yhgui/interactive/DocumentTreeOrganizer.h"
 
 #include "../TestMainScene.h"
-#include "Box.h"
 
 USING_NS_CC;
 USING_NS_CC_YHGUI;
 
+class Box:public Component
+{
+public:
+    
+    void draw()
+    {
+        ccDrawColor4B(color.r, color.g, color.b, color.a);
+        ccDrawRect(ccp(0,0),ccp(m_obContentSize.width, m_obContentSize.height));
+    }
+    
+    bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+    {
+        CCLOG("touch:%d,%d",x,y);
+        return Component::ccTouchBegan(pTouch, pEvent);
+    }
 
-CCScene* TestOrganizer::scene()
+    CREATE_FUNC(Box);
+    
+    ccColor4B color;
+    
+    int x;
+    int y;
+};
+
+class SolidBox:public Component
+{
+public:
+    
+    void draw()
+    {
+        ccDrawSolidRect(ccp(0,0),ccp(m_obContentSize.width, m_obContentSize.height),ccc4FFromccc4B(color));
+    }
+    
+    bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+    {
+        CCLOG("touch:%d,%d",x,y);
+        return Component::ccTouchBegan(pTouch, pEvent);
+    }
+    
+    CREATE_FUNC(SolidBox);
+    
+    ccColor4B color;
+    
+    int x;
+    int y;
+};
+
+CCScene* TestListOrganizer::scene()
 {
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
     
     // 'layer' is an autorelease object
-    TestOrganizer *layer = TestOrganizer::create();
+    TestListOrganizer *layer = TestListOrganizer::create();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -26,7 +71,7 @@ CCScene* TestOrganizer::scene()
 }
 
 // on "init" you need to initialize your instance
-bool TestOrganizer::init()
+bool TestListOrganizer::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -35,10 +80,10 @@ bool TestOrganizer::init()
         return false;
     }
     
-    CCMenuItemLabel* pTestPerformance=CCMenuItemLabel::create(CCLabelTTF::create("test performens", "Arial", 24), this,menu_selector(TestOrganizer::testPerformanceCallback));
+    CCMenuItemLabel* pTestPerformance=CCMenuItemLabel::create(CCLabelTTF::create("test performens", "Arial", 24), this,menu_selector(TestListOrganizer::testPerformanceCallback));
     pTestPerformance->setPosition(ccp(110,20));
     
-    CCMenuItemLabel* pTestZOrder=CCMenuItemLabel::create(CCLabelTTF::create("test zorder", "Arial", 24), this,menu_selector(TestOrganizer::testZOrderCallback));
+    CCMenuItemLabel* pTestZOrder=CCMenuItemLabel::create(CCLabelTTF::create("test zorder", "Arial", 24), this,menu_selector(TestListOrganizer::testZOrderCallback));
     pTestZOrder->setPosition(ccp(300,20));
     
     // create menu, it's an autorelease object
@@ -52,7 +97,7 @@ bool TestOrganizer::init()
     return true;
 }
 
-void TestOrganizer::testPerformanceCallback(CCObject* pSender)
+void TestListOrganizer::testPerformanceCallback(CCObject* pSender)
 {
     DocumentTreeOrganizer* treeOrganizer=new DocumentTreeOrganizer();
     treeOrganizer->init();
@@ -99,7 +144,7 @@ void TestOrganizer::testPerformanceCallback(CCObject* pSender)
     }
 }
 
-void TestOrganizer::testZOrderCallback(CCObject* pSender)
+void TestListOrganizer::testZOrderCallback(CCObject* pSender)
 {
     DocumentTreeOrganizer* treeOrganizer=new DocumentTreeOrganizer();
     treeOrganizer->init();
