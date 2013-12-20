@@ -1,4 +1,4 @@
-#include "IndependentListOrganizer.h"
+#include "IndependentPriorityOrganizer.h"
 
 NS_CC_YHGUI_BEGIN
 
@@ -9,6 +9,6 @@ NS_CC_YHGUI_BEGIN
 /**
  * 独占
  */
-CREATE_INDEPENDENT_TOUCH_DEFINE_WITH_CLASS(IndependentListOrganizer)
+CREATE_INDEPENDENT_TOUCH_DEFINE_WITH_CLASS(IndependentPriorityOrganizer)
 
 NS_CC_YHGUI_END

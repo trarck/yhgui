@@ -1,7 +1,7 @@
-#ifndef COCOS_YHGUI_INTERACTIVE_IndependentListOrganizer_H_
-#define COCOS_YHGUI_INTERACTIVE_IndependentListOrganizer_H_
+#ifndef COCOS_YHGUI_INTERACTIVE_INDEPENDENTPRIORITYORGANIZER_H_
+#define COCOS_YHGUI_INTERACTIVE_INDEPENDENTPRIORITYORGANIZER_H_
 
-#include "ListOrganizer.h"
+#include "PriorityOrganizer.h"
 #include "IndependentTouchDefine.h"
 
 NS_CC_YHGUI_BEGIN
@@ -11,7 +11,7 @@ NS_CC_YHGUI_BEGIN
  * 独占处理touch事件
  * 无论有没有目标都占用,这样可以继续处理touch move事件
  */
-class IndependentListOrganizer:public ListOrganizer
+class IndependentPriorityOrganizer:public PriorityOrganizer
 {
 public:
     
@@ -26,4 +26,4 @@ public:
 
 NS_CC_YHGUI_END
 
-#endif // COCOS_YHGUI_INTERACTIVE_IndependentListOrganizer_H_
+#endif // COCOS_YHGUI_INTERACTIVE_INDEPENDENTPRIORITYORGANIZER_H_
