@@ -5,27 +5,27 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>BFDFAF9D-42AB-413D-B6AD-1F80B0F95315</string>
+	<string>E18E4E28-9CC4-4C41-ACA1-F7EA8CC82F93</string>
 	<key>IDESourceControlProjectName</key>
 	<string>CCUI</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2AC6A6C3-B9D4-464A-8A35-20C9A0CB2719</key>
-		<string>ssh://github.com/trarck/CCUI.git</string>
+		<key>14CF34A3-C20A-4C2A-A846-3F6766A7A180</key>
+		<string>ssh://github.com/trarck/yhgui.git</string>
 		<key>876663AD-42E8-4D8E-92FC-8D374226B7E6</key>
 		<string>https://github.com/cocos2d/cocos2d-x.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>projects/CCUI/proj.ios/CCUI.xcodeproj/project.xcworkspace</string>
+	<string>projects/yhgui/proj.ios/CCUI.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2AC6A6C3-B9D4-464A-8A35-20C9A0CB2719</key>
+		<key>14CF34A3-C20A-4C2A-A846-3F6766A7A180</key>
 		<string>../../..</string>
 		<key>876663AD-42E8-4D8E-92FC-8D374226B7E6</key>
 		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/trarck/CCUI.git</string>
+	<string>ssh://github.com/trarck/yhgui.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -36,17 +36,17 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2AC6A6C3-B9D4-464A-8A35-20C9A0CB2719</string>
+			<string>876663AD-42E8-4D8E-92FC-8D374226B7E6</string>
 			<key>IDESourceControlWCCName</key>
-			<string>CCUI</string>
+			<string>cocos2d-x</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>876663AD-42E8-4D8E-92FC-8D374226B7E6</string>
+			<string>14CF34A3-C20A-4C2A-A846-3F6766A7A180</string>
 			<key>IDESourceControlWCCName</key>
-			<string>cocos2d-x</string>
+			<string>yhgui</string>
 		</dict>
 	</array>
 </dict>
