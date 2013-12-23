@@ -1,0 +1,34 @@
+﻿CC的UI
+
+一、UI的分层
+
+1、简单架构。用于小型项目
+	由CCScene,CCLayer组成。
+    一个scene的子结点可以由一个或多个layer组成。
+	CCScene和CCLayer都可以响应操作事件。
+	一般手动创建的Layer,事件在Layer中处理。使用定义文件的事件一般在Scene中处理。
+	根据实际情况来选择。
+2、mvc架构
+   由CCScene,CCLayer组成,另外加入一个CCLayerController。
+   事件主要由Controller处理。
+   一个scene的子结点可以由一个或多个layer组成。
+   scene不直接管理layer,而是直接管理controller。controller负责创建和处理layer的事件。controller管理的layer并加入scene中。
+   通常一个controller直接管理一个layer。即一个layer属性。
+   在这个架构中。一个scene有一个或多个子layer，即没有root layer。即有多个controller（间接引用的不算。被controller引用的）
+   同时有多个controller，适合中大型项目。由于比较灵活，自然就比较复杂。
+   实际使用的时候，通常有一个被缩放的layer,来适应不同的屏幕大小。一个简单的UI layer用来放置按钮，如果UI layer复杂则最好等比缩放。
+	
+
+3、类ios mvc的架构
+   其中scene对应ios对应UIWindow,layer对应UIView.LayerController对应ViewController。所以
+   一个scene由一个rootLayer，rootLayer包含其它layer。
+   同样scene负责管理controller，controller负责创建layer和处理layer事件。controller管理的layer并加入scene中。
+  这个架构中，scene只有一个root controller，责任比较明确。适合中小型的项目。
+
+关于场景管理:
+    SceneDirector负着管理场景和场景切换。对于架构2，SceneDirector直接管理CCScene，对于架构3。SceneDirector直接管理RootLayer。
+     架构2可以使用cocos2dx自带的场景管理器，SceneDirector实现比较简单。架构3，实现类似cocos2dx，CCDirector的关于场景管理的功能。
+     同时架构2可以使用cocos2dx的场景切换动画,架构3场景切换动画要自己实现。
+
+  mobile系多使用View做为显示区的基础。比如苹果的uikit,与android的view包。ScrollView->View
+  pc系多则少一层view的概念。像Panel,ScrollPane直接继承Cantianer。如java,flash。
