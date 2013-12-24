@@ -1,5 +1,5 @@
 #include "NormalButton.h"
-#include "../../utils/Utils.h"
+#include "../utils/Utils.h"
 
 NS_CC_YHGUI_BEGIN
 

@@ -4,7 +4,7 @@
 #include "cocos2d.h"
 #include "../YHGUIMacros.h"
 #include "Range.h"
-#include "../base/Component.h"
+#include "../Component.h"
 
 NS_CC_YHGUI_BEGIN
 

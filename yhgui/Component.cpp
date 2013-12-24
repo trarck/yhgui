@@ -1,5 +1,5 @@
 #include "Component.h"
-#include "../event/UIEventNames.h"
+#include "event/UIEventNames.h"
 
 NS_CC_YHGUI_BEGIN
 	
