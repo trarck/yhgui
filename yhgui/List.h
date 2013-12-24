@@ -1,7 +1,7 @@
 #ifndef COCOS_YHGUI_LIST_H_
 #define COCOS_YHGUI_LIST_H_
 
-#include "../base/Container.h"
+#include "Container.h"
 
 NS_CC_YHGUI_BEGIN
 	

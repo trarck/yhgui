@@ -1,7 +1,7 @@
 #ifndef COCOS_YHGUI_CONTROL_CONTROL_H_
 #define COCOS_YHGUI_CONTROL_CONTROL_H_
 
-#include "../../base/Component.h"
+#include "../Component.h"
 
 NS_CC_YHGUI_BEGIN
 	

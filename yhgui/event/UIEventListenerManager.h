@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "../YHGUIMacros.h"
-#include <Event/EventListenerManager.h>
+#include <yhge/Event/EventListenerManager.h>
 
 NS_CC_YHGUI_BEGIN
 	
