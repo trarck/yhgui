@@ -2,8 +2,8 @@
 #define COCOS_YHGUI_COMPONENT_H_
 
 #include "cocos2d.h"
-#include "../YHGUIMacros.h"
-#include "../event/UIEventListenerManager.h"
+#include "YHGUIMacros.h"
+#include "event/UIEventListenerManager.h"
 
 NS_CC_YHGUI_BEGIN
 

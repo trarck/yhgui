@@ -14,6 +14,7 @@
     <ProjectGuid>{76A39BB2-9B84-4C65-98A5-654D86B86F2A}</ProjectGuid>
     <RootNamespace>test_win32</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>libYhgui</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -25,7 +26,7 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '10.0'">v100</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0'">v110</PlatformToolset>
@@ -65,7 +66,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;$(ProjectDir)..\..\CCLibs\include;$(ProjectDir)..\Libs\Jsoncpp\include;$(ProjectDir)..\Libs;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;$(ProjectDir)..\..\yhge\;$(ProjectDir)..\Libs\Jsoncpp\include;$(ProjectDir)..\yhge;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -127,19 +128,6 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\TestMainScene.cpp" />
-    <ClCompile Include="..\Classes\Tests\TestButtonScene.cpp" />
-    <ClCompile Include="..\Classes\Tests\TestOrganizerScene.cpp" />
-    <ClCompile Include="..\Libs\Event\Event.cpp" />
-    <ClCompile Include="..\Libs\Event\EventHandle.cpp" />
-    <ClCompile Include="..\Libs\Event\EventHandleD.cpp" />
-    <ClCompile Include="..\Libs\Event\EventHandleWrap.cpp" />
-    <ClCompile Include="..\Libs\Event\EventListenerManager.cpp" />
-    <ClCompile Include="..\Libs\Event\UIEvent.cpp" />
-    <ClCompile Include="..\Libs\Jsoncpp\src\lib_json\json_reader.cpp" />
-    <ClCompile Include="..\Libs\Jsoncpp\src\lib_json\json_value.cpp" />
-    <ClCompile Include="..\Libs\Jsoncpp\src\lib_json\json_writer.cpp" />
     <ClCompile Include="..\yhgui\builder\BuilderHandle.cpp" />
     <ClCompile Include="..\yhgui\builder\UIBuilder.cpp" />
     <ClCompile Include="..\yhgui\builder\UIBuilderSimple.cpp" />
@@ -163,22 +151,9 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\mobie\View.cpp" />
     <ClCompile Include="..\yhgui\Panel.cpp" />
     <ClCompile Include="..\yhgui\ScrollPanel.cpp" />
-    <ClCompile Include="..\yhgui\Utils.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\yhgui\utils\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="..\Classes\TestMainScene.h" />
-    <ClInclude Include="..\Classes\Tests\TestButtonScene.h" />
-    <ClInclude Include="..\Classes\Tests\TestOrganizerScene.h" />
-    <ClInclude Include="..\Libs\Event\Event.h" />
-    <ClInclude Include="..\Libs\Event\EventHandle.h" />
-    <ClInclude Include="..\Libs\Event\EventHandleD.h" />
-    <ClInclude Include="..\Libs\Event\EventHandleWrap.h" />
-    <ClInclude Include="..\Libs\Event\EventListenerManager.h" />
-    <ClInclude Include="..\Libs\Event\EventTarget.h" />
-    <ClInclude Include="..\Libs\Event\IEventTarget.h" />
-    <ClInclude Include="..\Libs\Event\UIEvent.h" />
     <ClInclude Include="..\Libs\Jsoncpp\include\json\autolink.h" />
     <ClInclude Include="..\Libs\Jsoncpp\include\json\config.h" />
     <ClInclude Include="..\Libs\Jsoncpp\include\json\features.h" />
@@ -187,7 +162,6 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Libs\Jsoncpp\include\json\reader.h" />
     <ClInclude Include="..\Libs\Jsoncpp\include\json\value.h" />
     <ClInclude Include="..\Libs\Jsoncpp\include\json\writer.h" />
-    <ClInclude Include="..\Libs\Jsoncpp\src\lib_json\json_batchallocator.h" />
     <ClInclude Include="..\yhgui\builder\BuilderHandle.h" />
     <ClInclude Include="..\yhgui\builder\UIBuilder.h" />
     <ClInclude Include="..\yhgui\builder\UIBuilderSimple.h" />
@@ -212,10 +186,9 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\yhgui\mobie\View.h" />
     <ClInclude Include="..\yhgui\Panel.h" />
     <ClInclude Include="..\yhgui\ScrollPanel.h" />
-    <ClInclude Include="..\yhgui\Utils.h" />
+    <ClInclude Include="..\yhgui\utils\Utils.h" />
     <ClInclude Include="..\yhgui\yhgui.h" />
     <ClInclude Include="..\yhgui\YHGUIMacros.h" />
-    <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\cocos2dx\proj.win32\cocos2d.vcxproj">
@@ -238,11 +211,6 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
       <Project>{207bc7a9-ccf1-4f2f-a04d-45f72242ae25}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Libs\Jsoncpp\src\lib_json\json_internalarray.inl" />
-    <None Include="..\Libs\Jsoncpp\src\lib_json\json_internalmap.inl" />
-    <None Include="..\Libs\Jsoncpp\src\lib_json\json_valueiterator.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
