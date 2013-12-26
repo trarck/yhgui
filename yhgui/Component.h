@@ -19,25 +19,38 @@ public:
 	void show();
 
 	void hide();
+    
+    /**
+     * 消除注册的事件
+     */
+    virtual void cleanup();
 
 	inline void addEventListener(const char* type,CCObject* handleObject,yhlib::SEL_EventHandle handle) {
         UIEventListenerManager::sharedUIEventListenerManager()->addEventListener(this,type,handleObject,handle);
     }
 
-    void removeEventListener(const char* type,CCObject* handleObject,yhlib::SEL_EventHandle handle) {
+    inline void removeEventListener(const char* type,CCObject* handleObject,yhlib::SEL_EventHandle handle) {
         UIEventListenerManager::sharedUIEventListenerManager()->removeEventListener(this,type,handleObject,handle);
     }
 
-    CCArray* getEventListeners(const char* type){
+    inline CCArray* getEventListeners(const char* type){
         return UIEventListenerManager::sharedUIEventListenerManager()->getEventListeners(this,type);
     }
 
-    void dispatchEvent(yhlib::Event* evt) {
+    inline void dispatchEvent(yhlib::Event* evt) {
         UIEventListenerManager::sharedUIEventListenerManager()->dispatchEvent(this,evt);
     }
 
-    void trigger(const char* type,CCObject* data,bool bubbles){
+    inline void trigger(const char* type,CCObject* data,bool bubbles){
         UIEventListenerManager::sharedUIEventListenerManager()->trigger(this,type,data,bubbles);
+    }
+    
+    inline void trigger(const char* type,CCObject* data){
+        UIEventListenerManager::sharedUIEventListenerManager()->trigger(this,type,data,true);
+    }
+    
+    inline void trigger(const char* type){
+        UIEventListenerManager::sharedUIEventListenerManager()->trigger(this,type,NULL,true);
     }
 
     CREATE_FUNC(Component);
@@ -46,14 +59,15 @@ public:
 	 * 组件状态
 	 */
 	enum State{
-        Normal = 0x00,
-        Hover = 0x01,
-        Pressed = 0x02,//active
-        Selected = 0x04,
-        Checked = 0x08,
-        Focused =0x10,
-        Custom = 0x00FF0000,
-        Disabled = 0x40000000
+        kIdle = 0x00,
+        kNormal = 0x01,
+        kHover = 0x02,
+        kPressed = 0x04,//active
+        kSelected = 0x08,
+        kChecked = 0x10,
+        kFocused =0x20,
+        kCustom = 0x00FF0000,
+        kDisabled = 0x40000000
     };
 
     inline void setName(const std::string name)

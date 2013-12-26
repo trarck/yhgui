@@ -6,9 +6,9 @@
 NS_CC_YHGUI_BEGIN
 	
 /**
- * ÆÕÍ¨µÄ°´Å¥
- * Ò»¸ö×´Ì¬¶ÔÓ¦Ò»¸önode£¬ÓÉnodeÀ´¾ö¶¨ÏÔÊ¾µÄÄÚÈİ¡£
- * ¿ÉÒÔ×Ô¼ºÀ©Õ¹
+ * æ™®é€šçš„æŒ‰é’®
+ * ä¸€ä¸ªçŠ¶æ€å¯¹åº”ä¸€ä¸ªnodeï¼Œç”±nodeæ¥å†³å®šæ˜¾ç¤ºçš„å†…å®¹ã€‚
+ * å¯ä»¥è‡ªå·±æ‰©å±•
  */
 class Button:public Control
 {
@@ -20,23 +20,27 @@ public:
     
     bool init();
 
+    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent);
+    
+    virtual void changeState(State newState);
+    
     void setStateComponent(State state,CCNode* component);
+
+protected:
     
-    inline void setState(State state)
-    {
-        m_state = state;
-    }
-    
-    inline State getState()
-    {
-        return m_state;
-    }
+    virtual void changeStateComponent(State newState);
     
 protected:
 
     CCDictionary* m_states;
-  
-    State m_state;
+    
+    bool m_stateDirty;
+    
+    //é¦–æ¬¡ç§»åŠ¨è¿›å…¥
+    bool m_firstMoveEnter;
 };
 
 

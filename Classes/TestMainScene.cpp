@@ -1,16 +1,17 @@
-#include "HelloWorldScene.h"
+#include "TestMainScene.h"
 #include "yhgui/yhgui.h"
+#include "Tests/TestButtonScene.h"
 
 USING_NS_CC;
 USING_NS_CC_YHGUI;
 
-CCScene* HelloWorld::scene()
+CCScene* TestMain::scene()
 {
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
     
     // 'layer' is an autorelease object
-    HelloWorld *layer = HelloWorld::create();
+    TestMain *layer = TestMain::create();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -20,7 +21,7 @@ CCScene* HelloWorld::scene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+bool TestMain::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -41,25 +42,35 @@ bool HelloWorld::init()
                                         "CloseNormal.png",
                                         "CloseSelected.png",
                                         this,
-                                        menu_selector(HelloWorld::menuCloseCallback));
+                                        menu_selector(TestMain::menuCloseCallback));
     
 	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
                                 origin.y + pCloseItem->getContentSize().height/2));
 
     CCLabelTTF* pLabel = CCLabelTTF::create("test", "Arial", 24);
     
-    CCMenuItemLabel* pTest=CCMenuItemLabel::create(pLabel, this,menu_selector(HelloWorld::testCallback));
+    CCMenuItemLabel* pTest=CCMenuItemLabel::create(pLabel, this,menu_selector(TestMain::testCallback));
     pTest->setPosition(ccp(200,30));
     
+    CCLabelTTF* pTestButtonLabel = CCLabelTTF::create("test button", "Arial", 24);
+    
+    CCMenuItemLabel* pTestButtonItem=CCMenuItemLabel::create(pTestButtonLabel, this,menu_selector(TestMain::testButtonCallback));
+    pTestButtonItem->setPosition(ccp(200,70));
+    
     // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pCloseItem,pTest, NULL);
+    CCMenu* pMenu = CCMenu::create(pCloseItem,pTest,pTestButtonItem, NULL);
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu, 1);
     
     return true;
 }
 
-void HelloWorld::testCallback(CCObject* pSender)
+void TestMain::testButtonCallback(CCObject* pSender)
+{
+    CCDirector::sharedDirector()->replaceScene(TestButton::scene());
+}
+
+void TestMain::testCallback(CCObject* pSender)
 {
     Container* container=Container::create();
     
@@ -104,7 +115,7 @@ void HelloWorld::testCallback(CCObject* pSender)
     printf("%d,%d,%d,%d",cc1,cc2->count(),cc11,cc12->count());
 }
 
-void HelloWorld::menuCloseCallback(CCObject* pSender)
+void TestMain::menuCloseCallback(CCObject* pSender)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT) || (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
 	CCMessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");

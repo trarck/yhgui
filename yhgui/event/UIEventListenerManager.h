@@ -9,12 +9,12 @@ NS_CC_YHGUI_BEGIN
 	
 class UIEventListenerManager:public yhlib::EventListenerManager
 {
-//·½·¨
+//æ–¹æ³•
 public:
     
 	static UIEventListenerManager* sharedUIEventListenerManager();
     
-//ÊôĞÔ
+//å±æ€§
 protected:
     
 };
