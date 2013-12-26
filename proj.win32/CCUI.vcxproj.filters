@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="yhgui">
+      <UniqueIdentifier>{02e99278-14f2-4095-b767-a49acbc67248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="yhgui\builder">
+      <UniqueIdentifier>{73e2713f-d8b8-4e70-8eb3-3b852201563a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="yhgui\control">
+      <UniqueIdentifier>{100f48bb-e18a-4bfa-b785-65828cfdc038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="yhgui\event">
+      <UniqueIdentifier>{5502913b-b0d0-4b03-98de-54667ee88cd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="yhgui\mobie">
+      <UniqueIdentifier>{1f0734e8-60ec-421e-964a-357c27699a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{905bf6b0-00bc-4bff-847c-944a38985d90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\Jsoncpp">
+      <UniqueIdentifier>{e5cee504-c523-4f6d-9016-4ea4205f7bff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\Jsoncpp\include">
+      <UniqueIdentifier>{15f86f65-b604-410a-83bc-43fa8bc3a4b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\Jsoncpp\src">
+      <UniqueIdentifier>{a78d8d34-8d47-4de1-bb5e-b109bf8feb0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\Jsoncpp\include\json">
+      <UniqueIdentifier>{63cecf8f-c497-4176-8700-08b52baa591c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\Jsoncpp\src\lib_json">
+      <UniqueIdentifier>{69b41b74-910f-4ccf-8b98-fc6ff09875b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="yhgui\interactive">
+      <UniqueIdentifier>{916d1d80-09a3-43e0-adc4-dde144fca9f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="yhgui\utils">
+      <UniqueIdentifier>{cc94b391-11d1-482b-9770-f02c7f2fa243}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\yhgui\Component.cpp">
+      <Filter>yhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\Container.cpp">
+      <Filter>yhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\List.cpp">
+      <Filter>yhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\Panel.cpp">
+      <Filter>yhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\ScrollPanel.cpp">
+      <Filter>yhgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\BuilderHandle.cpp">
+      <Filter>yhgui\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\UIBuilder.cpp">
+      <Filter>yhgui\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\UIBuilderSimple.cpp">
+      <Filter>yhgui\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\control\Button.cpp">
+      <Filter>yhgui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\control\Control.cpp">
+      <Filter>yhgui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\event\UIEventListenerManager.cpp">
+      <Filter>yhgui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\mobie\ListView.cpp">
+      <Filter>yhgui\mobie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\mobie\ScrollView.cpp">
+      <Filter>yhgui\mobie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\mobie\View.cpp">
+      <Filter>yhgui\mobie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\control\ComplexButton.cpp">
+      <Filter>yhgui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\control\NormalButton.cpp">
+      <Filter>yhgui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\DocumentTreeOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\InteractiveDispatcher.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\ListOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\Organizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\OrganizerItem.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\Range.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\utils\Utils.cpp">
+      <Filter>yhgui\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\yhgui\Component.h">
+      <Filter>yhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\Container.h">
+      <Filter>yhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\List.h">
+      <Filter>yhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\Panel.h">
+      <Filter>yhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\ScrollPanel.h">
+      <Filter>yhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\yhgui.h">
+      <Filter>yhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\YHGUIMacros.h">
+      <Filter>yhgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\BuilderHandle.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\UIBuilder.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\UIBuilderSimple.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\control\Button.h">
+      <Filter>yhgui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\control\Control.h">
+      <Filter>yhgui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\event\UIEventListenerManager.h">
+      <Filter>yhgui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\mobie\ListView.h">
+      <Filter>yhgui\mobie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\mobie\ScrollView.h">
+      <Filter>yhgui\mobie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\mobie\View.h">
+      <Filter>yhgui\mobie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\Jsoncpp\include\json\autolink.h">
+      <Filter>Libs\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\Jsoncpp\include\json\config.h">
+      <Filter>Libs\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\Jsoncpp\include\json\features.h">
+      <Filter>Libs\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\Jsoncpp\include\json\forwards.h">
+      <Filter>Libs\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\Jsoncpp\include\json\json.h">
+      <Filter>Libs\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\Jsoncpp\include\json\reader.h">
+      <Filter>Libs\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\Jsoncpp\include\json\value.h">
+      <Filter>Libs\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\Jsoncpp\include\json\writer.h">
+      <Filter>Libs\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\control\ComplexButton.h">
+      <Filter>yhgui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\control\NormalButton.h">
+      <Filter>yhgui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\event\UIEventNames.h">
+      <Filter>yhgui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\DocumentTreeOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\InteractiveDispatcher.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\ListOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\Organizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\OrganizerItem.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\Range.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\utils\Utils.h">
+      <Filter>yhgui\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
