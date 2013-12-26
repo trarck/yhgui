@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{76A39BB2-9B84-4C65-98A5-654D86B86F2A}</ProjectGuid>
+    <ProjectGuid>{BCC411E3-8C8B-4B7C-8B41-019C585BB625}</ProjectGuid>
     <RootNamespace>test_win32</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <ProjectName>libYhgui</ProjectName>
@@ -140,10 +140,15 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\event\UIEventListenerManager.cpp" />
     <ClCompile Include="..\yhgui\interactive\DocumentTreeOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\IndependentListOrganizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\IndependentOrderedListOrganizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\IndependentPriorityOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\InteractiveDispatcher.cpp" />
     <ClCompile Include="..\yhgui\interactive\ListOrganizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\OrderedListOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\Organizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\OrganizerItem.cpp" />
+    <ClCompile Include="..\yhgui\interactive\PriorityOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\Range.cpp" />
     <ClCompile Include="..\yhgui\List.cpp" />
     <ClCompile Include="..\yhgui\mobie\ListView.cpp" />
@@ -175,10 +180,16 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\yhgui\event\UIEventNames.h" />
     <ClInclude Include="..\yhgui\interactive\DocumentTreeOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\IndependentListOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\IndependentOrderedListOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\IndependentPriorityOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\IndependentTouchDefine.h" />
     <ClInclude Include="..\yhgui\interactive\InteractiveDispatcher.h" />
     <ClInclude Include="..\yhgui\interactive\ListOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\OrderedListOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\Organizer.h" />
     <ClInclude Include="..\yhgui\interactive\OrganizerItem.h" />
+    <ClInclude Include="..\yhgui\interactive\PriorityOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\Range.h" />
     <ClInclude Include="..\yhgui\List.h" />
     <ClInclude Include="..\yhgui\mobie\ListView.h" />

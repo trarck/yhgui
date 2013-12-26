@@ -90,10 +90,22 @@
     <ClCompile Include="..\yhgui\control\NormalButton.cpp">
       <Filter>yhgui\control</Filter>
     </ClCompile>
+    <ClCompile Include="..\yhgui\utils\Utils.cpp">
+      <Filter>yhgui\utils</Filter>
+    </ClCompile>
     <ClCompile Include="..\yhgui\interactive\DocumentTreeOrganizer.cpp">
       <Filter>yhgui\interactive</Filter>
     </ClCompile>
     <ClCompile Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\IndependentListOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\IndependentOrderedListOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\IndependentPriorityOrganizer.cpp">
       <Filter>yhgui\interactive</Filter>
     </ClCompile>
     <ClCompile Include="..\yhgui\interactive\InteractiveDispatcher.cpp">
@@ -102,17 +114,20 @@
     <ClCompile Include="..\yhgui\interactive\ListOrganizer.cpp">
       <Filter>yhgui\interactive</Filter>
     </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\OrderedListOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
     <ClCompile Include="..\yhgui\interactive\Organizer.cpp">
       <Filter>yhgui\interactive</Filter>
     </ClCompile>
     <ClCompile Include="..\yhgui\interactive\OrganizerItem.cpp">
       <Filter>yhgui\interactive</Filter>
     </ClCompile>
-    <ClCompile Include="..\yhgui\interactive\Range.cpp">
+    <ClCompile Include="..\yhgui\interactive\PriorityOrganizer.cpp">
       <Filter>yhgui\interactive</Filter>
     </ClCompile>
-    <ClCompile Include="..\yhgui\utils\Utils.cpp">
-      <Filter>yhgui\utils</Filter>
+    <ClCompile Include="..\yhgui\interactive\Range.cpp">
+      <Filter>yhgui\interactive</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -197,10 +212,25 @@
     <ClInclude Include="..\yhgui\event\UIEventNames.h">
       <Filter>yhgui\event</Filter>
     </ClInclude>
+    <ClInclude Include="..\yhgui\utils\Utils.h">
+      <Filter>yhgui\utils</Filter>
+    </ClInclude>
     <ClInclude Include="..\yhgui\interactive\DocumentTreeOrganizer.h">
       <Filter>yhgui\interactive</Filter>
     </ClInclude>
     <ClInclude Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\IndependentListOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\IndependentOrderedListOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\IndependentPriorityOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\IndependentTouchDefine.h">
       <Filter>yhgui\interactive</Filter>
     </ClInclude>
     <ClInclude Include="..\yhgui\interactive\InteractiveDispatcher.h">
@@ -209,17 +239,20 @@
     <ClInclude Include="..\yhgui\interactive\ListOrganizer.h">
       <Filter>yhgui\interactive</Filter>
     </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\OrderedListOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
     <ClInclude Include="..\yhgui\interactive\Organizer.h">
       <Filter>yhgui\interactive</Filter>
     </ClInclude>
     <ClInclude Include="..\yhgui\interactive\OrganizerItem.h">
       <Filter>yhgui\interactive</Filter>
     </ClInclude>
-    <ClInclude Include="..\yhgui\interactive\Range.h">
+    <ClInclude Include="..\yhgui\interactive\PriorityOrganizer.h">
       <Filter>yhgui\interactive</Filter>
     </ClInclude>
-    <ClInclude Include="..\yhgui\utils\Utils.h">
-      <Filter>yhgui\utils</Filter>
+    <ClInclude Include="..\yhgui\interactive\Range.h">
+      <Filter>yhgui\interactive</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
