@@ -44,6 +44,15 @@ public:
 protected:
     
     /**
+     * 检查其祖先元素是否可以接收事件。
+     * 每个先祖先素都可见。
+     * 最上层祖先要在渲染树上。即m_bRunning为true。不用判断所有祖先，判断最上层就行
+     */
+    bool checkAncestorTouchable(CCNode* elem);
+    
+protected:
+    
+    /**
      * 需要进行交互处理的元素
      */
     CCArray* m_elements;

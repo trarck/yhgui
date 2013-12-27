@@ -68,7 +68,7 @@ Component* PriorityOrganizer::getTargetContainPoint(const CCPoint& point)
     CCARRAY_FOREACH_REVERSE(m_elements, pObj){
         elem=static_cast<Component*>(pObj);
         //检查是否可见。不可见则不接收事件
-        if (elem && elem->isVisible()) {
+        if (elem && elem->isVisible() && this->checkAncestorTouchable(elem)) {
             //如果组件不可用，则接收事件,但不处理。
             if (elem->isPointInside(point)){
                 return elem;
@@ -77,6 +77,34 @@ Component* PriorityOrganizer::getTargetContainPoint(const CCPoint& point)
     }
     
     return NULL;
+}
+
+/**
+ * 检查其祖先元素是否可以接收事件。
+ * 每个先祖先素都可见。
+ * 最上层祖先要在渲染树上。即m_bRunning为true。不用判断所有祖先，判断最上层就行
+ */
+bool PriorityOrganizer::checkAncestorTouchable(CCNode* elem)
+{
+    CCNode* pParent = elem->getParent();
+    
+    if (!pParent) {
+        //如果没有父元素(最上层元素或没有加入渲染对)。
+        return elem->isRunning();
+    }
+    
+    for( CCNode *c = pParent; c != NULL; c = c->getParent() )
+    {
+        if( !c->isVisible())// ||!c->isRunning()
+        {
+            return false;
+        }
+        pParent=c;
+    }
+    
+    //检查最上层元素是否在渲染树。
+    
+    return pParent->isRunning();
 }
 
 NS_CC_YHGUI_END
