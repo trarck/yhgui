@@ -77,7 +77,7 @@ Component* OrderedListOrganizer::getTargetContainPoint(const CCPoint& point)
     CCARRAY_FOREACH(m_elements, pObj){
         elem=static_cast<Component*>(pObj);
         //检查是否可见。不可见则不接收事件
-        if (elem && elem->isVisible()) {
+        if (elem && elem->isVisible() && this->checkAncestorTouchable(elem)) {
             //如果组件不可用，则接收事件,但不处理。
             if (elem->isPointInside(point)){
                 return elem;

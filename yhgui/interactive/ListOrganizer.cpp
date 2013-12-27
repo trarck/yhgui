@@ -110,7 +110,7 @@ Component* ListOrganizer::getTargetContainPoint(const CCPoint& point)
         
         elem=dynamic_cast<Component*>(pObj);
         //检查是否可见。不可见则不接收事件
-        if (elem && elem->isVisible()) {
+        if (elem && elem->isVisible() && this->checkAncestorTouchable(elem)) {
             //如果组件不可用，则接收事件,但不处理。
             if (elem->isPointInside(point)){
                 contains->addObject(elem);
@@ -222,6 +222,34 @@ int ListOrganizer::compareElementZOrder(CCNode* src,CCNode* dest)
     CCAssert(srcList[0]==destList[0],"ListOrganizer::compareElementZOrder:the two objs nust in the same scene");
     
     return this->compareElementZOrderWithAncestor(srcList, destList);
+}
+
+/**
+ * 检查其祖先元素是否可以接收事件。
+ * 每个先祖先素都可见。
+ * 最上层祖先要在渲染树上。即m_bRunning为true。不用判断所有祖先，判断最上层就行
+ */
+bool ListOrganizer::checkAncestorTouchable(CCNode* elem)
+{
+    CCNode* pParent = elem->getParent();
+    
+    if (!pParent) {
+        //如果没有父元素(最上层元素或没有加入渲染对)。
+        return elem->isRunning();
+    }
+    
+    for( CCNode *c = pParent; c != NULL; c = c->getParent() )
+    {
+        if( !c->isVisible())// ||!c->isRunning()
+        {
+            return false;
+        }
+        pParent=c;
+    }
+    
+    //检查最上层元素是否在渲染树。
+    
+    return pParent->isRunning();
 }
 
 
