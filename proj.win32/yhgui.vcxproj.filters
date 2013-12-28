@@ -16,24 +16,6 @@
     <Filter Include="yhgui\mobie">
       <UniqueIdentifier>{1f0734e8-60ec-421e-964a-357c27699a39}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Libs">
-      <UniqueIdentifier>{905bf6b0-00bc-4bff-847c-944a38985d90}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Libs\Jsoncpp">
-      <UniqueIdentifier>{e5cee504-c523-4f6d-9016-4ea4205f7bff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Libs\Jsoncpp\include">
-      <UniqueIdentifier>{15f86f65-b604-410a-83bc-43fa8bc3a4b7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Libs\Jsoncpp\src">
-      <UniqueIdentifier>{a78d8d34-8d47-4de1-bb5e-b109bf8feb0a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Libs\Jsoncpp\include\json">
-      <UniqueIdentifier>{63cecf8f-c497-4176-8700-08b52baa591c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Libs\Jsoncpp\src\lib_json">
-      <UniqueIdentifier>{69b41b74-910f-4ccf-8b98-fc6ff09875b6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="yhgui\interactive">
       <UniqueIdentifier>{916d1d80-09a3-43e0-adc4-dde144fca9f4}</UniqueIdentifier>
     </Filter>
@@ -178,30 +160,6 @@
     </ClInclude>
     <ClInclude Include="..\yhgui\mobie\View.h">
       <Filter>yhgui\mobie</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\Jsoncpp\include\json\autolink.h">
-      <Filter>Libs\Jsoncpp\include\json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\Jsoncpp\include\json\config.h">
-      <Filter>Libs\Jsoncpp\include\json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\Jsoncpp\include\json\features.h">
-      <Filter>Libs\Jsoncpp\include\json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\Jsoncpp\include\json\forwards.h">
-      <Filter>Libs\Jsoncpp\include\json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\Jsoncpp\include\json\json.h">
-      <Filter>Libs\Jsoncpp\include\json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\Jsoncpp\include\json\reader.h">
-      <Filter>Libs\Jsoncpp\include\json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\Jsoncpp\include\json\value.h">
-      <Filter>Libs\Jsoncpp\include\json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\Jsoncpp\include\json\writer.h">
-      <Filter>Libs\Jsoncpp\include\json</Filter>
     </ClInclude>
     <ClInclude Include="..\yhgui\control\ComplexButton.h">
       <Filter>yhgui\control</Filter>
