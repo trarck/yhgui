@@ -150,13 +150,13 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\interactive\OrganizerItem.cpp" />
     <ClCompile Include="..\yhgui\interactive\PriorityOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\Range.cpp" />
-    <ClCompile Include="..\yhgui\List.cpp" />
     <ClCompile Include="..\yhgui\mobie\ListView.cpp" />
     <ClCompile Include="..\yhgui\mobie\ScrollView.cpp" />
     <ClCompile Include="..\yhgui\mobie\View.cpp" />
-    <ClCompile Include="..\yhgui\Panel.cpp" />
-    <ClCompile Include="..\yhgui\ScrollPanel.cpp" />
     <ClCompile Include="..\yhgui\utils\Utils.cpp" />
+    <ClCompile Include="..\yhgui\widgets\List.cpp" />
+    <ClCompile Include="..\yhgui\widgets\Panel.cpp" />
+    <ClCompile Include="..\yhgui\widgets\ScrollPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\yhgui\builder\BuilderHandle.h" />
@@ -183,13 +183,13 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\yhgui\interactive\OrganizerItem.h" />
     <ClInclude Include="..\yhgui\interactive\PriorityOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\Range.h" />
-    <ClInclude Include="..\yhgui\List.h" />
     <ClInclude Include="..\yhgui\mobie\ListView.h" />
     <ClInclude Include="..\yhgui\mobie\ScrollView.h" />
     <ClInclude Include="..\yhgui\mobie\View.h" />
-    <ClInclude Include="..\yhgui\Panel.h" />
-    <ClInclude Include="..\yhgui\ScrollPanel.h" />
     <ClInclude Include="..\yhgui\utils\Utils.h" />
+    <ClInclude Include="..\yhgui\widgets\List.h" />
+    <ClInclude Include="..\yhgui\widgets\Panel.h" />
+    <ClInclude Include="..\yhgui\widgets\ScrollPanel.h" />
     <ClInclude Include="..\yhgui\yhgui.h" />
     <ClInclude Include="..\yhgui\YHGUIMacros.h" />
   </ItemGroup>

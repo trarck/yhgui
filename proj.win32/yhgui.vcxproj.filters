@@ -22,21 +22,15 @@
     <Filter Include="yhgui\utils">
       <UniqueIdentifier>{cc94b391-11d1-482b-9770-f02c7f2fa243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="yhgui\widgets">
+      <UniqueIdentifier>{67422212-f386-4500-838d-5fe0ff819d3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\yhgui\Component.cpp">
       <Filter>yhgui</Filter>
     </ClCompile>
     <ClCompile Include="..\yhgui\Container.cpp">
-      <Filter>yhgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\yhgui\List.cpp">
-      <Filter>yhgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\yhgui\Panel.cpp">
-      <Filter>yhgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\yhgui\ScrollPanel.cpp">
       <Filter>yhgui</Filter>
     </ClCompile>
     <ClCompile Include="..\yhgui\builder\BuilderHandle.cpp">
@@ -111,21 +105,21 @@
     <ClCompile Include="..\yhgui\interactive\Range.cpp">
       <Filter>yhgui\interactive</Filter>
     </ClCompile>
+    <ClCompile Include="..\yhgui\widgets\List.cpp">
+      <Filter>yhgui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\widgets\Panel.cpp">
+      <Filter>yhgui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\widgets\ScrollPanel.cpp">
+      <Filter>yhgui\widgets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\yhgui\Component.h">
       <Filter>yhgui</Filter>
     </ClInclude>
     <ClInclude Include="..\yhgui\Container.h">
-      <Filter>yhgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\yhgui\List.h">
-      <Filter>yhgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\yhgui\Panel.h">
-      <Filter>yhgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\yhgui\ScrollPanel.h">
       <Filter>yhgui</Filter>
     </ClInclude>
     <ClInclude Include="..\yhgui\yhgui.h">
@@ -211,6 +205,15 @@
     </ClInclude>
     <ClInclude Include="..\yhgui\interactive\Range.h">
       <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\widgets\List.h">
+      <Filter>yhgui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\widgets\Panel.h">
+      <Filter>yhgui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\widgets\ScrollPanel.h">
+      <Filter>yhgui\widgets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
