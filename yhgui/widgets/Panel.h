@@ -1,7 +1,7 @@
 #ifndef COCOS_YHGUI_PANEL_H_
 #define COCOS_YHGUI_PANEL_H_
 
-#include "Container.h"
+#include "../Container.h"
 
 NS_CC_YHGUI_BEGIN
 	
