@@ -29,13 +29,13 @@
 		577A799B186C032C00F1B5D5 /* OrganizerItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A796E186C032C00F1B5D5 /* OrganizerItem.cpp */; };
 		577A799C186C032C00F1B5D5 /* PriorityOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7970186C032C00F1B5D5 /* PriorityOrganizer.cpp */; };
 		577A799D186C032C00F1B5D5 /* Range.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7972186C032C00F1B5D5 /* Range.cpp */; };
-		577A799E186C032C00F1B5D5 /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7974186C032C00F1B5D5 /* List.cpp */; };
 		577A799F186C032C00F1B5D5 /* ListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7977186C032C00F1B5D5 /* ListView.cpp */; };
 		577A79A0186C032C00F1B5D5 /* ScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7979186C032C00F1B5D5 /* ScrollView.cpp */; };
 		577A79A1186C032C00F1B5D5 /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A797B186C032C00F1B5D5 /* View.cpp */; };
-		577A79A2186C032C00F1B5D5 /* Panel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A797D186C032C00F1B5D5 /* Panel.cpp */; };
-		577A79A3186C032C00F1B5D5 /* ScrollPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A797F186C032C00F1B5D5 /* ScrollPanel.cpp */; };
 		577A79A4186C032C00F1B5D5 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7982186C032C00F1B5D5 /* Utils.cpp */; };
+		577A7A261871130600F1B5D5 /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7A201871130600F1B5D5 /* List.cpp */; };
+		577A7A271871130600F1B5D5 /* Panel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7A221871130600F1B5D5 /* Panel.cpp */; };
+		577A7A281871130600F1B5D5 /* ScrollPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7A241871130600F1B5D5 /* ScrollPanel.cpp */; };
 		57B26177186818A200EFF1FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,23 +102,22 @@
 		577A7971186C032C00F1B5D5 /* PriorityOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityOrganizer.h; sourceTree = "<group>"; };
 		577A7972186C032C00F1B5D5 /* Range.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Range.cpp; sourceTree = "<group>"; };
 		577A7973186C032C00F1B5D5 /* Range.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
-		577A7974186C032C00F1B5D5 /* List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = List.cpp; sourceTree = "<group>"; };
-		577A7975186C032C00F1B5D5 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		577A7977186C032C00F1B5D5 /* ListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListView.cpp; sourceTree = "<group>"; };
 		577A7978186C032C00F1B5D5 /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
 		577A7979186C032C00F1B5D5 /* ScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrollView.cpp; sourceTree = "<group>"; };
 		577A797A186C032C00F1B5D5 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
 		577A797B186C032C00F1B5D5 /* View.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View.cpp; sourceTree = "<group>"; };
 		577A797C186C032C00F1B5D5 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
-		577A797D186C032C00F1B5D5 /* Panel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Panel.cpp; sourceTree = "<group>"; };
-		577A797E186C032C00F1B5D5 /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panel.h; sourceTree = "<group>"; };
-		577A797F186C032C00F1B5D5 /* ScrollPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrollPanel.cpp; sourceTree = "<group>"; };
-		577A7980186C032C00F1B5D5 /* ScrollPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPanel.h; sourceTree = "<group>"; };
 		577A7982186C032C00F1B5D5 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		577A7983186C032C00F1B5D5 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
-		577A7985186C032C00F1B5D5 /* empty.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = empty.txt; sourceTree = "<group>"; };
 		577A7986186C032C00F1B5D5 /* yhgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yhgui.h; sourceTree = "<group>"; };
 		577A7987186C032C00F1B5D5 /* YHGUIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHGUIMacros.h; sourceTree = "<group>"; };
+		577A7A201871130600F1B5D5 /* List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = List.cpp; sourceTree = "<group>"; };
+		577A7A211871130600F1B5D5 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		577A7A221871130600F1B5D5 /* Panel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Panel.cpp; sourceTree = "<group>"; };
+		577A7A231871130600F1B5D5 /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panel.h; sourceTree = "<group>"; };
+		577A7A241871130600F1B5D5 /* ScrollPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrollPanel.cpp; sourceTree = "<group>"; };
+		577A7A251871130600F1B5D5 /* ScrollPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPanel.h; sourceTree = "<group>"; };
 		57B26176186818A200EFF1FD /* libyhgui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libyhgui.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B26184186818A200EFF1FD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -191,12 +190,6 @@
 				577A794A186C032C00F1B5D5 /* Component.h */,
 				577A794B186C032C00F1B5D5 /* Container.cpp */,
 				577A794C186C032C00F1B5D5 /* Container.h */,
-				577A7974186C032C00F1B5D5 /* List.cpp */,
-				577A7975186C032C00F1B5D5 /* List.h */,
-				577A797D186C032C00F1B5D5 /* Panel.cpp */,
-				577A797E186C032C00F1B5D5 /* Panel.h */,
-				577A797F186C032C00F1B5D5 /* ScrollPanel.cpp */,
-				577A7980186C032C00F1B5D5 /* ScrollPanel.h */,
 				577A7986186C032C00F1B5D5 /* yhgui.h */,
 				577A7987186C032C00F1B5D5 /* YHGUIMacros.h */,
 			);
@@ -299,7 +292,12 @@
 		577A7984186C032C00F1B5D5 /* widgets */ = {
 			isa = PBXGroup;
 			children = (
-				577A7985186C032C00F1B5D5 /* empty.txt */,
+				577A7A201871130600F1B5D5 /* List.cpp */,
+				577A7A211871130600F1B5D5 /* List.h */,
+				577A7A221871130600F1B5D5 /* Panel.cpp */,
+				577A7A231871130600F1B5D5 /* Panel.h */,
+				577A7A241871130600F1B5D5 /* ScrollPanel.cpp */,
+				577A7A251871130600F1B5D5 /* ScrollPanel.h */,
 			);
 			path = widgets;
 			sourceTree = "<group>";
@@ -357,20 +355,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577A7A261871130600F1B5D5 /* List.cpp in Sources */,
 				577A7995186C032C00F1B5D5 /* IndependentOrderedListOrganizer.cpp in Sources */,
 				577A7992186C032C00F1B5D5 /* DocumentTreeOrganizer.cpp in Sources */,
 				577A7996186C032C00F1B5D5 /* IndependentPriorityOrganizer.cpp in Sources */,
+				577A7A281871130600F1B5D5 /* ScrollPanel.cpp in Sources */,
 				577A7990186C032C00F1B5D5 /* NormalButton.cpp in Sources */,
 				577A799F186C032C00F1B5D5 /* ListView.cpp in Sources */,
 				577A798E186C032C00F1B5D5 /* ComplexButton.cpp in Sources */,
 				577A7999186C032C00F1B5D5 /* OrderedListOrganizer.cpp in Sources */,
-				577A79A3186C032C00F1B5D5 /* ScrollPanel.cpp in Sources */,
 				577A798C186C032C00F1B5D5 /* Container.cpp in Sources */,
 				577A79A1186C032C00F1B5D5 /* View.cpp in Sources */,
+				577A7A271871130600F1B5D5 /* Panel.cpp in Sources */,
 				577A7988186C032C00F1B5D5 /* BuilderHandle.cpp in Sources */,
 				577A798B186C032C00F1B5D5 /* Component.cpp in Sources */,
 				577A7989186C032C00F1B5D5 /* UIBuilder.cpp in Sources */,
-				577A79A2186C032C00F1B5D5 /* Panel.cpp in Sources */,
 				577A799B186C032C00F1B5D5 /* OrganizerItem.cpp in Sources */,
 				577A7993186C032C00F1B5D5 /* IndependentDocumentTreeOrganizer.cpp in Sources */,
 				577A79A4186C032C00F1B5D5 /* Utils.cpp in Sources */,
@@ -385,7 +384,6 @@
 				577A799D186C032C00F1B5D5 /* Range.cpp in Sources */,
 				577A798D186C032C00F1B5D5 /* Button.cpp in Sources */,
 				577A7997186C032C00F1B5D5 /* InteractiveDispatcher.cpp in Sources */,
-				577A799E186C032C00F1B5D5 /* List.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
