@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BCC411E3-8C8B-4B7C-8B41-019C585BB625}</ProjectGuid>
+    <ProjectGuid>{76A39BB2-9B84-4C65-98A5-654D86B86F2A}</ProjectGuid>
     <RootNamespace>test_win32</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <ProjectName>libyhgui</ProjectName>
@@ -150,6 +150,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\interactive\OrganizerItem.cpp" />
     <ClCompile Include="..\yhgui\interactive\PriorityOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\Range.cpp" />
+    <ClCompile Include="..\yhgui\labels\Label.cpp" />
     <ClCompile Include="..\yhgui\mobie\ListView.cpp" />
     <ClCompile Include="..\yhgui\mobie\ScrollView.cpp" />
     <ClCompile Include="..\yhgui\mobie\View.cpp" />
@@ -183,6 +184,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\yhgui\interactive\OrganizerItem.h" />
     <ClInclude Include="..\yhgui\interactive\PriorityOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\Range.h" />
+    <ClInclude Include="..\yhgui\labels\Label.h" />
     <ClInclude Include="..\yhgui\mobie\ListView.h" />
     <ClInclude Include="..\yhgui\mobie\ScrollView.h" />
     <ClInclude Include="..\yhgui\mobie\View.h" />

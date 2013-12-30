@@ -25,6 +25,9 @@
     <Filter Include="yhgui\widgets">
       <UniqueIdentifier>{67422212-f386-4500-838d-5fe0ff819d3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="yhgui\labels">
+      <UniqueIdentifier>{47d3d38c-8f36-413b-9460-411bff293251}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\yhgui\Component.cpp">
@@ -113,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="..\yhgui\widgets\ScrollPanel.cpp">
       <Filter>yhgui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\labels\Label.cpp">
+      <Filter>yhgui\labels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +220,9 @@
     </ClInclude>
     <ClInclude Include="..\yhgui\widgets\ScrollPanel.h">
       <Filter>yhgui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\labels\Label.h">
+      <Filter>yhgui\labels</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
