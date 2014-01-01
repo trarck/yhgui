@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57549A921872578700D88296 /* LabelTTF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A901872578700D88296 /* LabelTTF.cpp */; };
+		57549A9618726A5300D88296 /* LabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A9418726A5300D88296 /* LabelBMFont.cpp */; };
+		57549A9F1872773100D88296 /* LabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A9D1872773100D88296 /* LabelAtlas.cpp */; };
 		577A7988186C032C00F1B5D5 /* BuilderHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7943186C032C00F1B5D5 /* BuilderHandle.cpp */; };
 		577A7989186C032C00F1B5D5 /* UIBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7945186C032C00F1B5D5 /* UIBuilder.cpp */; };
 		577A798A186C032C00F1B5D5 /* UIBuilderSimple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7947186C032C00F1B5D5 /* UIBuilderSimple.cpp */; };
@@ -56,6 +59,12 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		57549A901872578700D88296 /* LabelTTF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelTTF.cpp; sourceTree = "<group>"; };
+		57549A911872578700D88296 /* LabelTTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTTF.h; sourceTree = "<group>"; };
+		57549A9418726A5300D88296 /* LabelBMFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelBMFont.cpp; sourceTree = "<group>"; };
+		57549A9518726A5300D88296 /* LabelBMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelBMFont.h; sourceTree = "<group>"; };
+		57549A9D1872773100D88296 /* LabelAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelAtlas.cpp; sourceTree = "<group>"; };
+		57549A9E1872773100D88296 /* LabelAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelAtlas.h; sourceTree = "<group>"; };
 		577A7943186C032C00F1B5D5 /* BuilderHandle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuilderHandle.cpp; sourceTree = "<group>"; };
 		577A7944186C032C00F1B5D5 /* BuilderHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuilderHandle.h; sourceTree = "<group>"; };
 		577A7945186C032C00F1B5D5 /* UIBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIBuilder.cpp; sourceTree = "<group>"; };
@@ -176,6 +185,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		57549A8F1872578700D88296 /* labels */ = {
+			isa = PBXGroup;
+			children = (
+				57549A9D1872773100D88296 /* LabelAtlas.cpp */,
+				57549A9E1872773100D88296 /* LabelAtlas.h */,
+				57549A9418726A5300D88296 /* LabelBMFont.cpp */,
+				57549A9518726A5300D88296 /* LabelBMFont.h */,
+				57549A901872578700D88296 /* LabelTTF.cpp */,
+				57549A911872578700D88296 /* LabelTTF.h */,
+			);
+			path = labels;
+			sourceTree = "<group>";
+		};
 		577A7941186C032C00F1B5D5 /* yhgui */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +205,7 @@
 				577A794D186C032C00F1B5D5 /* control */,
 				577A7956186C032C00F1B5D5 /* event */,
 				577A795A186C032C00F1B5D5 /* interactive */,
+				57549A8F1872578700D88296 /* labels */,
 				577A7976186C032C00F1B5D5 /* mobie */,
 				577A7981186C032C00F1B5D5 /* utils */,
 				577A7984186C032C00F1B5D5 /* widgets */,
@@ -361,6 +384,7 @@
 				577A7996186C032C00F1B5D5 /* IndependentPriorityOrganizer.cpp in Sources */,
 				577A7A281871130600F1B5D5 /* ScrollPanel.cpp in Sources */,
 				577A7990186C032C00F1B5D5 /* NormalButton.cpp in Sources */,
+				57549A921872578700D88296 /* LabelTTF.cpp in Sources */,
 				577A799F186C032C00F1B5D5 /* ListView.cpp in Sources */,
 				577A798E186C032C00F1B5D5 /* ComplexButton.cpp in Sources */,
 				577A7999186C032C00F1B5D5 /* OrderedListOrganizer.cpp in Sources */,
@@ -374,6 +398,8 @@
 				577A7993186C032C00F1B5D5 /* IndependentDocumentTreeOrganizer.cpp in Sources */,
 				577A79A4186C032C00F1B5D5 /* Utils.cpp in Sources */,
 				577A7998186C032C00F1B5D5 /* ListOrganizer.cpp in Sources */,
+				57549A9F1872773100D88296 /* LabelAtlas.cpp in Sources */,
+				57549A9618726A5300D88296 /* LabelBMFont.cpp in Sources */,
 				577A7994186C032C00F1B5D5 /* IndependentListOrganizer.cpp in Sources */,
 				577A7991186C032C00F1B5D5 /* UIEventListenerManager.cpp in Sources */,
 				577A799A186C032C00F1B5D5 /* Organizer.cpp in Sources */,
