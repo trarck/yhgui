@@ -142,6 +142,16 @@ public:
         return m_touchPriority;
     }
     
+	void setNeedDispatchToChildrenWhenCapthure(bool needDispatchToChildrenWhenCapthure)
+	{
+		m_needDispatchToChildrenWhenCapthure = needDispatchToChildrenWhenCapthure;
+	}
+
+	bool getNeedDispatchToChildrenWhenCapthure()
+	{
+		return m_needDispatchToChildrenWhenCapthure;
+	}
+
     inline void setNeedBubbles(bool needBubbles)
     {
         m_needBubbles = needBubbles;
@@ -168,6 +178,15 @@ protected:
     //touch 等级
     int m_touchPriority;
     
+	/**
+	 * 在事件的捕捉介段，交互事件是否向子元素传递
+	 * 默认子元素会接爱事件的投递。
+	 * 对于有些组件，其不希望子元素接收事件的投递(出于性能或特殊需要)，可以把该事件设置为false。
+	 * 对于混合组件(其子元素不是继承Component)，由于用到原始渲染元素，不希望渲染元素接受事件，可以设置为false
+	 *
+	 */
+	bool m_needDispatchToChildrenWhenCapthure;
+
     //设置touch事件是否需要冒泡
     bool m_needBubbles;
 };
