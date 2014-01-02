@@ -92,7 +92,7 @@ Component* DocumentTreeOrganizer::getTargetContainPoint(const CCPoint& point)
             if (opens->lastObject()==pObj) {
                 //从开启列表中删除
                 opens->fastRemoveObjectAtIndex(opens->data->num-1);
-            }else{
+            }else if(elem->isNeedDispatchToChildrenWhenCapthure()){
                 //处理子元素
                 children=elem->getChildren();
                 if (children && children->count()) {
