@@ -8,6 +8,7 @@ Component::Component()
 ,m_enabled(true)
 ,m_touchInside(false)
 ,m_touchPriority(0)
+,m_needDispatchToChildrenWhenCapthure(true)
 ,m_needBubbles(true)
 {
 	
@@ -104,6 +105,19 @@ bool Component::hasVisibleParents()
     }
     return true;
 }
+
+/**
+ * ui 对象里用到的可渲染内容
+ * 可以是原始的cocos2d里的可显示对象，也可以是其它ui对象
+ * 对于简单的组件,在init里直接创建,忽略这个方法。
+ * 于与复杂的组件，可以在init里调用这个方法，也可以不在init里调用这个方法。
+ */
+void Component::createRenderers()
+{
+    
+}
+
+//==================事件处理=====================//
 
 bool Component::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {

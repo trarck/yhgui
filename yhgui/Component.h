@@ -61,6 +61,14 @@ public:
      */
     bool hasVisibleParents();
     
+    /**
+     * ui 对象里用到的可渲染内容
+     * 可以是原始的cocos2d里的可显示对象，也可以是其它ui对象
+     * 对于简单的组件,在init里直接创建,忽略这个方法。
+     * 于与复杂的组件，可以在init里调用这个方法，也可以不在init里调用这个方法。
+     */
+    virtual void createRenderers();
+    
     //==================事件处理=====================//
 
 	inline void addEventListener(const char* type,CCObject* handleObject,yhge::SEL_EventHandle handle) {
@@ -147,7 +155,7 @@ public:
 		m_needDispatchToChildrenWhenCapthure = needDispatchToChildrenWhenCapthure;
 	}
 
-	bool getNeedDispatchToChildrenWhenCapthure()
+	bool isNeedDispatchToChildrenWhenCapthure()
 	{
 		return m_needDispatchToChildrenWhenCapthure;
 	}
@@ -183,7 +191,7 @@ protected:
 	 * 默认子元素会接爱事件的投递。
 	 * 对于有些组件，其不希望子元素接收事件的投递(出于性能或特殊需要)，可以把该事件设置为false。
 	 * 对于混合组件(其子元素不是继承Component)，由于用到原始渲染元素，不希望渲染元素接受事件，可以设置为false
-	 *
+	 * 只对DocumentOrganizer有效果
 	 */
 	bool m_needDispatchToChildrenWhenCapthure;
 
