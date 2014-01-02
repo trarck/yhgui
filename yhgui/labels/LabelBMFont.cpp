@@ -10,7 +10,7 @@ LabelBMFont::LabelBMFont()
 	
 LabelBMFont::~LabelBMFont()
 {
-	CC_SAFE_RELEASE_NULL(m_originalRenderer);
+
 }
 
 bool LabelBMFont::init()
@@ -21,9 +21,12 @@ bool LabelBMFont::init()
 bool LabelBMFont::init(const std::string& text, const std::string& fntFile, float width, CCTextAlignment alignment, CCPoint imageOffset)
 {
     if (Component::init()) {
+        m_needDispatchToChildrenWhenCapthure=false;
         
         m_originalRenderer=new CCLabelBMFont();
         m_originalRenderer->initWithString(text.c_str(), fntFile.c_str(),width,alignment,imageOffset);
+        addChild(m_originalRenderer);
+        m_originalRenderer->release();
         
         return true;
     }

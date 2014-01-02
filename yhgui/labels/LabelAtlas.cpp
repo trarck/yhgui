@@ -10,7 +10,7 @@ LabelAtlas::LabelAtlas()
 	
 LabelAtlas::~LabelAtlas()
 {
-	CC_SAFE_RELEASE_NULL(m_originalRenderer);
+
 }
 
 bool LabelAtlas::init(const std::string& text, const std::string& fontFile)
@@ -42,9 +42,11 @@ bool LabelAtlas::init(const std::string& text, const std::string& charMapFile, u
 bool LabelAtlas::init(const std::string& text, CCTexture2D* texture, unsigned int itemWidth, unsigned int itemHeight, unsigned int startCharMap)
 {
     if (Component::init()) {
-        
+        m_needDispatchToChildrenWhenCapthure=false;
         m_originalRenderer=new CCLabelAtlas();
         m_originalRenderer->initWithString(text.c_str(), texture, itemWidth, itemHeight, startCharMap);
+        addChild(m_originalRenderer);
+        m_originalRenderer->release();
         
         return true;
     }

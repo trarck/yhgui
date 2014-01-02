@@ -5,12 +5,12 @@ NS_CC_YHGUI_BEGIN
 LabelTTF::LabelTTF()
 :m_originalRenderer(NULL)
 {
-	
+
 }
 	
 LabelTTF::~LabelTTF()
 {
-	CC_SAFE_RELEASE_NULL(m_originalRenderer);
+
 }
 
 bool LabelTTF::init()
@@ -33,9 +33,12 @@ bool LabelTTF::init(const std::string& text, const std::string& fontName, float 
           const CCSize& dimensions, CCTextAlignment alignment,CCVerticalTextAlignment vAlignment)
 {
     if (Component::init()) {
+        m_needDispatchToChildrenWhenCapthure=false;
         
         m_originalRenderer=new CCLabelTTF();
         m_originalRenderer->initWithString(text.c_str(), fontName.c_str(), fontSize, dimensions, alignment, vAlignment);
+        addChild(m_originalRenderer);
+        m_originalRenderer->release();
         
         return true;
     }
