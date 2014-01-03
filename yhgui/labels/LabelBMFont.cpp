@@ -27,7 +27,7 @@ bool LabelBMFont::init(const std::string& text, const std::string& fntFile, floa
         m_originalRenderer->initWithString(text.c_str(), fntFile.c_str(),width,alignment,imageOffset);
         addChild(m_originalRenderer);
         m_originalRenderer->release();
-        
+        this->setContentSize(m_originalRenderer->getContentSize());
         return true;
     }
     
@@ -68,6 +68,7 @@ LabelBMFont* LabelBMFont::create(const std::string& text, const std::string& fnt
 void LabelBMFont::setText(const std::string& text)
 {
     m_originalRenderer->setString(text.c_str());
+    this->setContentSize(m_originalRenderer->getContentSize());
 }
 
 std::string LabelBMFont::getText()
@@ -79,6 +80,7 @@ void LabelBMFont::setHorizontalAlignment(CCTextAlignment horizontalAlignment)
 {
     m_horizontalAlignment=horizontalAlignment;
     m_originalRenderer->setAlignment(horizontalAlignment);
+    this->setContentSize(m_originalRenderer->getContentSize());
 }
 
 void LabelBMFont::setFontName(const std::string& fontName)

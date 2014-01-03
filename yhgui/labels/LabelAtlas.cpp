@@ -47,7 +47,7 @@ bool LabelAtlas::init(const std::string& text, CCTexture2D* texture, unsigned in
         m_originalRenderer->initWithString(text.c_str(), texture, itemWidth, itemHeight, startCharMap);
         addChild(m_originalRenderer);
         m_originalRenderer->release();
-        
+        this->setContentSize(m_originalRenderer->getContentSize());
         return true;
     }
     
@@ -83,6 +83,7 @@ LabelAtlas* LabelAtlas::create(const std::string& text, const std::string& charM
 void LabelAtlas::setText(const std::string& text)
 {
     m_originalRenderer->setString(text.c_str());
+    this->setContentSize(m_originalRenderer->getContentSize());
 }
 
 std::string LabelAtlas::getText()

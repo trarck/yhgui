@@ -40,6 +40,8 @@ bool LabelTTF::init(const std::string& text, const std::string& fontName, float 
         addChild(m_originalRenderer);
         m_originalRenderer->release();
         
+        this->setContentSize(m_originalRenderer->getContentSize());
+        
         return true;
     }
     
@@ -76,6 +78,7 @@ LabelTTF* LabelTTF::create(const std::string& text, const std::string& fontName,
 void LabelTTF::setText(const std::string& text)
 {
     m_originalRenderer->setString(text.c_str());
+    setContentSize(m_originalRenderer->getContentSize());
 }
 
 std::string LabelTTF::getText()
@@ -86,6 +89,7 @@ std::string LabelTTF::getText()
 void LabelTTF::setDimensions(const CCSize& dimensions)
 {
     m_originalRenderer->setDimensions(dimensions);
+    setContentSize(m_originalRenderer->getContentSize());
 }
 
 CCSize LabelTTF::getDimensions()
@@ -96,6 +100,7 @@ CCSize LabelTTF::getDimensions()
 void LabelTTF::setHorizontalAlignment(CCTextAlignment horizontalAlignment)
 {
     m_originalRenderer->setHorizontalAlignment(horizontalAlignment);
+    setContentSize(m_originalRenderer->getContentSize());
 }
 
 CCTextAlignment LabelTTF::getHorizontalAlignment()
@@ -106,6 +111,7 @@ CCTextAlignment LabelTTF::getHorizontalAlignment()
 void LabelTTF::setVerticalAlignment(CCVerticalTextAlignment verticalAlignment)
 {
 	m_originalRenderer->setVerticalAlignment(verticalAlignment);
+    setContentSize(m_originalRenderer->getContentSize());
 }
 
 CCVerticalTextAlignment LabelTTF::getVerticalAlignment()
@@ -116,6 +122,7 @@ CCVerticalTextAlignment LabelTTF::getVerticalAlignment()
 void LabelTTF::setFontName(const std::string& fontName)
 {
 	m_originalRenderer->setFontName(fontName.c_str());
+    setContentSize(m_originalRenderer->getContentSize());
 }
 
 std::string LabelTTF::getFontName()
@@ -126,6 +133,7 @@ std::string LabelTTF::getFontName()
 void LabelTTF::setFontSize(float fontSize)
 {
 	m_originalRenderer->setFontSize(fontSize);
+    setContentSize(m_originalRenderer->getContentSize());
 }
 
 float LabelTTF::getFontSize()
@@ -138,30 +146,45 @@ float LabelTTF::getFontSize()
 void LabelTTF::enableShadow(const CCSize &shadowOffset, float shadowOpacity, float shadowBlur, bool mustUpdateTexture)
 {
     m_originalRenderer->enableShadow(shadowOffset, shadowOpacity, shadowBlur,mustUpdateTexture);
+    if (mustUpdateTexture){
+        setContentSize(m_originalRenderer->getContentSize());
+    }
 }
 
 /** disable shadow rendering */
 void LabelTTF::disableShadow(bool mustUpdateTexture)
 {
     m_originalRenderer->disableShadow(mustUpdateTexture);
+    if (mustUpdateTexture){
+        setContentSize(m_originalRenderer->getContentSize());
+    }
 }
 
 /** enable or disable stroke */
 void LabelTTF::enableStroke(const ccColor3B &strokeColor, float strokeSize, bool mustUpdateTexture)
 {
     m_originalRenderer->enableStroke(strokeColor, strokeSize,mustUpdateTexture);
+    if (mustUpdateTexture){
+        setContentSize(m_originalRenderer->getContentSize());
+    }
 }
 
 /** disable stroke */
 void LabelTTF::disableStroke(bool mustUpdateTexture)
 {
     m_originalRenderer->disableStroke(mustUpdateTexture);
+    if (mustUpdateTexture){
+        setContentSize(m_originalRenderer->getContentSize());
+    }
 }
 
 /** set text tinting */
 void LabelTTF::setFontFillColor(const ccColor3B &tintColor, bool mustUpdateTexture)
 {
     m_originalRenderer->setFontFillColor(tintColor,mustUpdateTexture);
+    if (mustUpdateTexture){
+        setContentSize(m_originalRenderer->getContentSize());
+    }
 }
 
 NS_CC_YHGUI_END
