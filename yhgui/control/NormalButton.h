@@ -64,6 +64,8 @@ public:
      */
     void setStateBackground(State state,const std::string& imageFile);
     
+    CREATE_FUNC(NormalButton);
+    
     enum LabelType
     {
         kLabelTypeTTF=1,

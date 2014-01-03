@@ -29,6 +29,8 @@ public:
     
     void setStateComponent(State state,CCNode* component);
 
+    CREATE_FUNC(Button);
+    
 protected:
     
     virtual void changeStateComponent(State newState);

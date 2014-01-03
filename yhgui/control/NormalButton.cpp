@@ -35,7 +35,7 @@ void NormalButton::changeStateComponent(State newState)
     }
     m_stateDirty=false;
     
-    CCRect labelRect;
+    CCRect labelRect=CCRectZero;
     
     if (m_label) {
         //set label color
@@ -62,7 +62,7 @@ void NormalButton::changeStateComponent(State newState)
         labelRect=m_label->boundingBox();
     }
     
-    CCRect backgroundRect;
+    CCRect backgroundRect=CCRectZero;
     
     //set background
     
@@ -70,10 +70,13 @@ void NormalButton::changeStateComponent(State newState)
     
     //no new component do nothing
     if (newBackground) {
+        
         CCNode* currentBackground=static_cast<CCNode*>(m_states->objectForKey(m_state));
         
-        //remove current state component
-        currentBackground->removeFromParentAndCleanup(false);
+        if (currentBackground){
+            //remove current state component
+            currentBackground->removeFromParentAndCleanup(false);
+        }
         
         //add new state component
         this->addChild(newBackground,kBackgroundZOrder);
@@ -83,18 +86,18 @@ void NormalButton::changeStateComponent(State newState)
 
     //set content size
     CCRect maxRect = Utils::CCRectUnion(labelRect, backgroundRect);
-    
     setContentSize(CCSizeMake(maxRect.size.width, maxRect.size.height));
     
-    //fix label and background position to center
-    
-    if (m_label) {
-        m_label->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
-    }
-    
-    if (newBackground) {
-        newBackground->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
-    }
+    CCLOG("macRect:p:%f,%f s:%f,%f",maxRect.origin.x,maxRect.origin.y,maxRect.size.width,maxRect.size.height);
+//    //fix label and background position to center
+//    if (m_label) {
+//        m_label->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
+//    }
+//    
+//    if (newBackground) {
+//        newBackground->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
+//    }
+
 }
 
 /**

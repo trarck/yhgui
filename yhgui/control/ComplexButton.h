@@ -75,6 +75,8 @@ public:
      */
     void setStateBackground(State state,const std::string& imageFile);
     
+    CREATE_FUNC(ComplexButton);
+    
 protected:
     
     virtual void changeStateComponent(State newState);
