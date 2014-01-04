@@ -99,7 +99,6 @@ void NormalButton::changeStateComponent(State newState)
     CCRect maxRect = Utils::CCRectUnion(labelRect, backgroundRect);
     setContentSize(CCSizeMake(maxRect.size.width, maxRect.size.height));
     setBoundsOrigin(maxRect.origin);
-    CCLOG("macRect:p:%f,%f s:%f,%f",maxRect.origin.x,maxRect.origin.y,maxRect.size.width,maxRect.size.height);
     ////fix label and background position to center
     //if (m_label) {
     //    m_label->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));

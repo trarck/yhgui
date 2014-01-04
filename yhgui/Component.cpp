@@ -78,10 +78,8 @@ void Component::unregisterWithTouchDispatcher(void)
 
 bool Component::isTouchInside(CCTouch* touch)
 {
-    CCPoint touchLocation = touch->getLocation(); // Get the touch position
-    touchLocation = this->getParent()->convertToNodeSpace(touchLocation);
-    CCRect bBox=boundingBox();
-    return bBox.containsPoint(touchLocation);
+    CCPoint touchLocation = touch->getLocation();
+    return isPointInside(touchLocation);
 }
 
 /**
