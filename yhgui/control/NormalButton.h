@@ -20,6 +20,10 @@ public:
     ~NormalButton();
     
     bool init();
+
+	#if COCOS2D_DEBUG>1
+	void draw();
+	#endif
     
     /**
      * 设置通用的label

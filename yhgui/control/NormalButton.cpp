@@ -28,6 +28,17 @@ bool NormalButton::init()
     return false;
 }
 
+#if COCOS2D_DEBUG>1
+void NormalButton::draw()
+{
+	ccDrawColor4B(255,0,0,255);
+	CCSize contentSize=getContentSize();
+	ccDrawRect(m_boundsOrigin,ccp(m_boundsOrigin.x+contentSize.width,m_boundsOrigin.y+contentSize.height));
+	ccDrawColor4B(255,250,0,255);
+	ccDrawRect(CCPointZero,contentSize);
+}
+#endif
+
 void NormalButton::changeStateComponent(State newState)
 {    
     if (!m_stateDirty) {
@@ -87,16 +98,16 @@ void NormalButton::changeStateComponent(State newState)
     //set content size
     CCRect maxRect = Utils::CCRectUnion(labelRect, backgroundRect);
     setContentSize(CCSizeMake(maxRect.size.width, maxRect.size.height));
-    
+    setBoundsOrigin(maxRect.origin);
     CCLOG("macRect:p:%f,%f s:%f,%f",maxRect.origin.x,maxRect.origin.y,maxRect.size.width,maxRect.size.height);
-//    //fix label and background position to center
-//    if (m_label) {
-//        m_label->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
-//    }
-//    
-//    if (newBackground) {
-//        newBackground->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
-//    }
+    ////fix label and background position to center
+    //if (m_label) {
+    //    m_label->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
+    //}
+    //
+    //if (newBackground) {
+    //    newBackground->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
+    //}
 
 }
 
