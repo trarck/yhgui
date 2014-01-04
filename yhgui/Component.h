@@ -138,9 +138,8 @@ public:
     {
         return m_name;
     }
-    
-    
-    inline bool isEnabled()
+
+	inline bool isEnabled()
     {
         return m_enabled;
     }
@@ -149,6 +148,25 @@ public:
     {
         return m_touchPriority;
     }
+	void setBoundsOrigin(const CCPoint& boundsOrigin)
+	{
+		m_boundsOrigin = boundsOrigin;
+	}
+
+	const CCPoint& getBoundsOrigin()
+	{
+		return m_boundsOrigin;
+	}
+
+	void setBoundsSize(const CCSize& boundsSize)
+	{
+		m_boundsSize = boundsSize;
+	}
+
+	const CCSize& getBoundsSize()
+	{
+		return m_boundsSize;
+	}
     
 	void setNeedDispatchToChildrenWhenCapthure(bool needDispatchToChildrenWhenCapthure)
 	{
@@ -185,7 +203,18 @@ protected:
     
     //touch 等级
     int m_touchPriority;
-    
+
+	/**
+	 * 可交互区域坐标点
+	 */
+	CCPoint m_boundsOrigin;
+
+	/**
+	 * 可交互区域大小
+	 * 如果大小为0，则使用contentSize
+	 */
+	CCSize m_boundsSize;
+
 	/**
 	 * 在事件的捕捉介段，交互事件是否向子元素传递
 	 * 默认子元素会接爱事件的投递。

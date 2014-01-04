@@ -103,12 +103,8 @@ Component* DocumentTreeOrganizer::getTargetContainPoint(const CCPoint& point)
                 }
             }
 
-            //如果组件不可用，则接收事件,但不处理。
-            modelPoint=elem->convertToNodeSpace(point);
-            elemSize=elem->getContentSize();
-            
-            if (modelPoint.x>=0 && modelPoint.x<=elemSize.width
-                && modelPoint.y>=0 &&modelPoint.y<=elemSize.height){
+            //如果组件不可用，则接收事件,但不处理。        
+            if (elem->isPointInside(point)){
 //                gettimeofday(&end, NULL);
 //                CCLOG("getTargetContainPoint:%d",(end.tv_sec-start.tv_sec)*1000000+(end.tv_usec-start.tv_usec));
                 return elem;

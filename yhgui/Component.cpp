@@ -8,6 +8,8 @@ Component::Component()
 ,m_enabled(true)
 ,m_touchInside(false)
 ,m_touchPriority(0)
+,m_boundsOrigin(CCPointZero)
+,m_boundsSize(CCSizeZero)
 ,m_needDispatchToChildrenWhenCapthure(true)
 ,m_needBubbles(true)
 {
@@ -88,9 +90,11 @@ bool Component::isTouchInside(CCTouch* touch)
 bool Component::isPointInside(const CCPoint& point)
 {
     CCPoint localPoint=this->convertToNodeSpace(point);
-    CCSize contentSize=this->getContentSize();
-    
-    return localPoint.x>=0 && localPoint.x<=contentSize.width && localPoint.y>=0 &&localPoint.y<=contentSize.height;
+	CCSize contentSize= m_boundsSize.width==0 || m_boundsSize.height==0?this->getContentSize():m_boundsSize;
+    float maxX=m_boundsOrigin.x+contentSize.width;
+	float maxY=m_boundsOrigin.y+contentSize.height;
+
+    return localPoint.x>=m_boundsOrigin.x && localPoint.x<=maxX && localPoint.y>=m_boundsOrigin.y &&localPoint.y<=maxY;
 }
 
 bool Component::hasVisibleParents()
