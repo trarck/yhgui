@@ -117,7 +117,13 @@
     <ClCompile Include="..\yhgui\widgets\ScrollPanel.cpp">
       <Filter>yhgui\widgets</Filter>
     </ClCompile>
-    <ClCompile Include="..\yhgui\labels\Label.cpp">
+    <ClCompile Include="..\yhgui\labels\LabelAtlas.cpp">
+      <Filter>yhgui\labels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\labels\LabelBMFont.cpp">
+      <Filter>yhgui\labels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\labels\LabelTTF.cpp">
       <Filter>yhgui\labels</Filter>
     </ClCompile>
   </ItemGroup>
@@ -221,7 +227,13 @@
     <ClInclude Include="..\yhgui\widgets\ScrollPanel.h">
       <Filter>yhgui\widgets</Filter>
     </ClInclude>
-    <ClInclude Include="..\yhgui\labels\Label.h">
+    <ClInclude Include="..\yhgui\labels\LabelAtlas.h">
+      <Filter>yhgui\labels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\labels\LabelBMFont.h">
+      <Filter>yhgui\labels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\labels\LabelTTF.h">
       <Filter>yhgui\labels</Filter>
     </ClInclude>
   </ItemGroup>
