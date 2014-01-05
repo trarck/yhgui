@@ -98,15 +98,16 @@ void NormalButton::changeStateComponent(State newState)
     //set content size
     CCRect maxRect = Utils::CCRectUnion(labelRect, backgroundRect);
     setContentSize(CCSizeMake(maxRect.size.width, maxRect.size.height));
-    setBoundsOrigin(maxRect.origin);
-    ////fix label and background position to center
-    //if (m_label) {
-    //    m_label->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
-    //}
-    //
-    //if (newBackground) {
-    //    newBackground->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
-    //}
+    //setBoundsOrigin(maxRect.origin);
+    //fix label and background position to center
+    if (m_label) {
+		//修正之前的位置
+        m_label->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
+    }
+    
+    if (newBackground) {
+        newBackground->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
+    }
 
 }
 
@@ -127,6 +128,7 @@ void NormalButton::setLabelTTF(const std::string& text,const std::string& fontNa
     CCLabelTTF* labelTTF=new CCLabelTTF();
     labelTTF->initWithString(text.c_str(), fontName.c_str(), fontSize);
     setLabel(labelTTF);
+	setLabelType(kLabelTypeTTF);
     
     labelTTF->release();
 }
@@ -140,6 +142,7 @@ void NormalButton::setLabelTTF(const std::string& text, ccFontDefinition &textDe
     labelTTF->initWithStringAndTextDefinition(text.c_str(), textDefinition);
     
     setLabel(labelTTF);
+	setLabelType(kLabelTypeTTF);
     
     labelTTF->release();
 }
@@ -153,7 +156,7 @@ void NormalButton::setLabelBMFont(const std::string& text,const std::string& fon
     labelBMFont->initWithString(text.c_str(), fontFile.c_str());
     
     setLabel(labelBMFont);
-    
+    setLabelType(kLabelTypeBMFont);
     labelBMFont->release();
 }
 
