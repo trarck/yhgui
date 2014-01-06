@@ -8,6 +8,8 @@ Button::Button()
 :m_states(NULL)
 ,m_stateDirty(false)
 ,m_firstMoveEnter(false)
+,m_touchDownZoomable(false)
+,m_touchDownZoomSize(1.05f)
 {
     //不需要冒泡事件
     m_needBubbles=false;
@@ -83,6 +85,10 @@ void Button::changeState(State newState)
         m_stateDirty=true;
         changeStateComponent(newState);
         setState(newState);
+        
+        if (m_touchDownZoomable) {
+            this->setScale(newState==kPressed?m_touchDownZoomSize:1.0f);
+        }
     }
 }
 

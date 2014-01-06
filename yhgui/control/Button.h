@@ -31,6 +31,26 @@ public:
 
     CREATE_FUNC(Button);
     
+    inline void setTouchDownZoomable(bool touchDownZoomable)
+    {
+        m_touchDownZoomable = touchDownZoomable;
+    }
+    
+    inline bool isTouchDownZoomable()
+    {
+        return m_touchDownZoomable;
+    }
+    
+    inline void setTouchDownZoomSize(float touchDownZoomSize)
+    {
+        m_touchDownZoomSize = touchDownZoomSize;
+    }
+    
+    inline float getTouchDownZoomSize()
+    {
+        return m_touchDownZoomSize;
+    }
+    
 protected:
     
     virtual void changeStateComponent(State newState);
@@ -43,6 +63,12 @@ protected:
     
     //首次移动进入
     bool m_firstMoveEnter;
+    
+    //点击变大
+    bool m_touchDownZoomable;
+    
+    //点击变大的大小
+    float m_touchDownZoomSize;
 };
 
 
