@@ -9,6 +9,7 @@ static const int kBackgroundZOrder=1;
 NormalButton::NormalButton()
 :m_label(NULL)
 ,m_labelType(kLabelTypeTTF)
+,m_labelOffset(CCPointZero)
 {
 	
 }
@@ -28,25 +29,42 @@ bool NormalButton::init()
     return false;
 }
 
-#if COCOS2D_DEBUG>1
+#if COCOS2D_DEBUG>0
 void NormalButton::draw()
 {
-	ccDrawColor4B(255,0,0,255);
-	CCSize contentSize=getContentSize();
-	ccDrawRect(m_boundsOrigin,ccp(m_boundsOrigin.x+contentSize.width,m_boundsOrigin.y+contentSize.height));
+    CCSize contentSize=getContentSize();
+//	ccDrawColor4B(255,0,0,255);
+//	ccDrawRect(m_boundsOrigin,ccp(m_boundsOrigin.x+contentSize.width,m_boundsOrigin.y+contentSize.height));
 	ccDrawColor4B(255,250,0,255);
 	ccDrawRect(CCPointZero,contentSize);
+    
+    if (m_label) {
+        ccDrawColor4B(0,0,255,255);
+        CCRect labelRect=m_label->boundingBox();
+        ccDrawRect(labelRect.origin,ccp(labelRect.getMaxX(),labelRect.getMaxY()));
+    }
+    
+    CCNode* currentBackground=static_cast<CCNode*>(m_states->objectForKey(m_state));
+
+    if (currentBackground) {
+        ccDrawColor4B(0,255,0,255);
+        CCRect bgRect=currentBackground->boundingBox();
+        ccDrawRect(bgRect.origin,ccp(bgRect.getMaxX(),bgRect.getMaxY()));
+    }
 }
 #endif
 
+/**
+ * 文字不会超过背景,所以button的大小是背景的大小
+ */
 void NormalButton::changeStateComponent(State newState)
 {    
     if (!m_stateDirty) {
         return;
     }
     m_stateDirty=false;
-    
-    CCRect labelRect=CCRectZero;
+
+    CCRect maxRect=CCRectZero;
     
     if (m_label) {
         //set label color
@@ -70,10 +88,8 @@ void NormalButton::changeStateComponent(State newState)
             }
         }
         
-        labelRect=m_label->boundingBox();
+        maxRect=m_label->boundingBox();
     }
-    
-    CCRect backgroundRect=CCRectZero;
     
     //set background
     
@@ -92,23 +108,22 @@ void NormalButton::changeStateComponent(State newState)
         //add new state component
         this->addChild(newBackground,kBackgroundZOrder);
         
-        backgroundRect=newBackground->boundingBox();
+        maxRect=newBackground->boundingBox();
     }
 
     //set content size
-    CCRect maxRect = Utils::CCRectUnion(labelRect, backgroundRect);
-    setContentSize(CCSizeMake(maxRect.size.width, maxRect.size.height));
+    setContentSize(maxRect.size);
+
     //setBoundsOrigin(maxRect.origin);
     //fix label and background position to center
     if (m_label) {
 		//修正之前的位置
-        m_label->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
+        m_label->setPosition(ccp(maxRect.size.width/2+m_labelOffset.x, maxRect.size.height/2+m_labelOffset.y));
     }
     
     if (newBackground) {
         newBackground->setPosition(ccp(maxRect.size.width/2, maxRect.size.height/2));
     }
-
 }
 
 /**

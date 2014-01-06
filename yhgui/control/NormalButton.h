@@ -10,6 +10,8 @@ NS_CC_YHGUI_BEGIN
  * 尽量减少资源占用
  * 只有一个label,根据不同的状态来改变label属性。
  * 背景会有多个,根据不同状态来切换。
+ *
+ * label和背景的锚点都是(0.5,0.5)
  */
 class NormalButton:public Button
 {
@@ -21,7 +23,7 @@ public:
     
     bool init();
 
-	#if COCOS2D_DEBUG>1
+	#if COCOS2D_DEBUG>0
 	void draw();
 	#endif
     
@@ -88,6 +90,19 @@ public:
         return m_labelType;
     }
     
+    inline void setLabelOffset(const CCPoint& labelOffset)
+    {
+        m_labelOffset = labelOffset;
+        if (m_label) {
+            m_label->setPosition(labelOffset);
+        }
+    }
+    
+    inline const CCPoint& getLabelOffset()
+    {
+        return m_labelOffset;
+    }
+    
 protected:
     
     virtual void changeStateComponent(State newState);
@@ -99,6 +114,11 @@ protected:
     std::map<State, ccColor3B> m_stateColors;
     
     LabelType m_labelType;
+    
+    /**
+     * label的偏移量
+     */
+    CCPoint m_labelOffset;
 };
 
 
