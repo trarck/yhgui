@@ -54,7 +54,7 @@ public:
     /**
      * 点是否在物体内
      */
-    bool isPointInside(const CCPoint& point);
+    virtual bool isPointInside(const CCPoint& point);
     
     /**
      * 所有祖先结点是否能可见

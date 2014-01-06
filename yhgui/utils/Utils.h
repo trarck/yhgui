@@ -19,6 +19,11 @@ public:
      * touch是否在target内
      */
     static bool isTouchInside(CCTouch* touch,CCNode* target);
+    
+    /**
+     * 点是否在target内
+     */
+    static bool isPointInside(const CCPoint& point,CCNode* target);
 };
 
 

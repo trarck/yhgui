@@ -21,6 +21,11 @@ public:
     bool init();
     
     /**
+     * 点是否在物体内
+     */
+    bool isPointInside(const CCPoint& point);
+    
+    /**
      * 设置状态对应的label
      */
     void setStateLabel(State state,CCNode* label);
@@ -75,6 +80,16 @@ public:
      */
     void setStateBackground(State state,const std::string& imageFile);
     
+    /**
+     * 设置状态对应的background
+     */
+    void setStateBackground(State state,const std::string& imageFile,const CCRect& rect);
+    
+    /**
+     * 设置状态对应的9宫格background
+     */
+    void setStateBackground9Scale(State state,const std::string& imageFile);
+    
     CREATE_FUNC(ComplexButton);
     
 protected:
@@ -83,6 +98,7 @@ protected:
     
 protected:
     
+    CCNode* m_currentStateComponet;
 };
 
 

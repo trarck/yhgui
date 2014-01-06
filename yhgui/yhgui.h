@@ -12,6 +12,7 @@
 
 #include "control/Button.h"
 #include "control/NormalButton.h"
+#include "control/ComplexButton.h"
 
 //交互项
 #include "interactive/Organizer.h"

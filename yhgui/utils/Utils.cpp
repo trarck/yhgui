@@ -30,4 +30,18 @@ bool Utils::isTouchInside(CCTouch* touch,CCNode* target)
     return bBox.containsPoint(touchLocation);
 }
 
+/**
+ * 点是否在target内
+ */
+bool Utils::isPointInside(const CCPoint& point,CCNode* target)
+{
+    CCPoint parentPoint=target->getParent()->convertToNodeSpace(point);
+    
+    CCPoint localPoint=target->convertToNodeSpace(point);
+    CCSize contentSize=target->getContentSize();
+    
+    return localPoint.x>=0 && localPoint.x<=contentSize.width
+            && localPoint.y>=0 && localPoint.y<=contentSize.height;
+}
+
 NS_CC_YHGUI_END
