@@ -51,6 +51,17 @@ public:
         return m_touchDownZoomSize;
     }
     
+    inline void setPreferredSize(const CCSize& preferredSize)
+    {
+        setContentSize(preferredSize);
+        m_preferredSize = preferredSize;
+    }
+    
+    inline const CCSize& getPreferredSize()
+    {
+        return m_preferredSize;
+    }
+    
 protected:
     
     virtual void changeStateComponent(State newState);
@@ -69,6 +80,9 @@ protected:
     
     //点击变大的大小
     float m_touchDownZoomSize;
+    
+    //希望的大小
+    CCSize m_preferredSize;
 };
 
 
