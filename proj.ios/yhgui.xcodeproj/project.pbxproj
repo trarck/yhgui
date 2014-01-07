@@ -10,6 +10,7 @@
 		57549A921872578700D88296 /* LabelTTF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A901872578700D88296 /* LabelTTF.cpp */; };
 		57549A9618726A5300D88296 /* LabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A9418726A5300D88296 /* LabelBMFont.cpp */; };
 		57549A9F1872773100D88296 /* LabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A9D1872773100D88296 /* LabelAtlas.cpp */; };
+		575AD85D187B97D900AA0477 /* ScaleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575AD85B187B97D900AA0477 /* ScaleButton.cpp */; };
 		577A7988186C032C00F1B5D5 /* BuilderHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7943186C032C00F1B5D5 /* BuilderHandle.cpp */; };
 		577A7989186C032C00F1B5D5 /* UIBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7945186C032C00F1B5D5 /* UIBuilder.cpp */; };
 		577A798A186C032C00F1B5D5 /* UIBuilderSimple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7947186C032C00F1B5D5 /* UIBuilderSimple.cpp */; };
@@ -65,6 +66,8 @@
 		57549A9518726A5300D88296 /* LabelBMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelBMFont.h; sourceTree = "<group>"; };
 		57549A9D1872773100D88296 /* LabelAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelAtlas.cpp; sourceTree = "<group>"; };
 		57549A9E1872773100D88296 /* LabelAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelAtlas.h; sourceTree = "<group>"; };
+		575AD85B187B97D900AA0477 /* ScaleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScaleButton.cpp; sourceTree = "<group>"; };
+		575AD85C187B97D900AA0477 /* ScaleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleButton.h; sourceTree = "<group>"; };
 		577A7943186C032C00F1B5D5 /* BuilderHandle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuilderHandle.cpp; sourceTree = "<group>"; };
 		577A7944186C032C00F1B5D5 /* BuilderHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuilderHandle.h; sourceTree = "<group>"; };
 		577A7945186C032C00F1B5D5 /* UIBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIBuilder.cpp; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 		577A794D186C032C00F1B5D5 /* control */ = {
 			isa = PBXGroup;
 			children = (
+				575AD85B187B97D900AA0477 /* ScaleButton.cpp */,
+				575AD85C187B97D900AA0477 /* ScaleButton.h */,
 				577A794E186C032C00F1B5D5 /* Button.cpp */,
 				577A794F186C032C00F1B5D5 /* Button.h */,
 				577A7950186C032C00F1B5D5 /* ComplexButton.cpp */,
@@ -392,6 +397,7 @@
 				577A79A1186C032C00F1B5D5 /* View.cpp in Sources */,
 				577A7A271871130600F1B5D5 /* Panel.cpp in Sources */,
 				577A7988186C032C00F1B5D5 /* BuilderHandle.cpp in Sources */,
+				575AD85D187B97D900AA0477 /* ScaleButton.cpp in Sources */,
 				577A798B186C032C00F1B5D5 /* Component.cpp in Sources */,
 				577A7989186C032C00F1B5D5 /* UIBuilder.cpp in Sources */,
 				577A799B186C032C00F1B5D5 /* OrganizerItem.cpp in Sources */,
