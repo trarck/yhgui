@@ -10,7 +10,7 @@ NS_CC_YHGUI_BEGIN
  * 尽量减少资源占用
  * 只有一个label,根据不同的状态来改变label属性。
  * 背景会有多个,根据不同状态来切换。
- *
+ * 背景技能9宫格
  * label和背景的锚点都是(0.5,0.5)
  */
 class NormalButton:public Button
