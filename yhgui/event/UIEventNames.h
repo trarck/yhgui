@@ -8,14 +8,14 @@ NS_CC_YHGUI_BEGIN
 /**
  * touch 事件
  */
-static const char* kEventNameTouchDown="touchDown";
-static const char* kEventNameTouchMove="touchMove";
-static const char* kEventNameTouchUp="touchUp";
+static const char* kEventTouchDown="touchDown";
+static const char* kEventTouchMove="touchMove";
+static const char* kEventTouchUp="touchUp";
 
-static const char* kEventNameTouchMoveEnter="touchMoveEnter";
-static const char* kEventNameTouchMoveExit="touchMoveExit";
-static const char* kEventNameTouchUpInside="touchUpInside";
-static const char* kEventNameTouchUpOutside="touchUpOutside";
+static const char* kEventTouchMoveEnter="touchMoveEnter";
+static const char* kEventTouchMoveExit="touchMoveExit";
+static const char* kEventTouchUpInside="touchUpInside";
+static const char* kEventTouchUpOutside="touchUpOutside";
 
 NS_CC_YHGUI_END
 

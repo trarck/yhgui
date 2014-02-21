@@ -131,10 +131,10 @@ bool Component::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
     m_touchInside=true;
     
     //touch enter
-    this->trigger(kEventNameTouchMoveEnter,NULL,m_needBubbles);
+    this->trigger(kEventTouchMoveEnter,NULL,m_needBubbles);
     
     //touch down
-    this->trigger(kEventNameTouchDown,NULL,m_needBubbles);
+    this->trigger(kEventTouchDown,NULL,m_needBubbles);
     
     return true;
 }
@@ -151,27 +151,27 @@ void Component::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
             m_touchInside=true;
             
             //按钮事件，不需要冒泡
-            this->trigger(kEventNameTouchMoveEnter,NULL,m_needBubbles);
+            this->trigger(kEventTouchMoveEnter,NULL,m_needBubbles);
         }
         
     }else if(m_touchInside){
         m_touchInside=false;
         //touch exit
-        this->trigger(kEventNameTouchMoveExit,NULL,m_needBubbles);
+        this->trigger(kEventTouchMoveExit,NULL,m_needBubbles);
     }
     
     //touch move
-    this->trigger(kEventNameTouchMove, CCBool::create(isTouchMoveInside),m_needBubbles);
+    this->trigger(kEventTouchMove, CCBool::create(isTouchMoveInside),m_needBubbles);
 }
 
 void Component::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
     if (isTouchInside(pTouch)) {
         //touch up inside
-        this->trigger(kEventNameTouchUpInside,NULL,m_needBubbles);
+        this->trigger(kEventTouchUpInside,NULL,m_needBubbles);
     }else{
         //touch up outside
-        this->trigger(kEventNameTouchUpOutside,NULL,m_needBubbles);
+        this->trigger(kEventTouchUpOutside,NULL,m_needBubbles);
     }
 }
 
