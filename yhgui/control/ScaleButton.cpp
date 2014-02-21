@@ -9,6 +9,7 @@ static const int kLabelZOrder=10;
 static const int kBackgroundZOrder=1;
 	
 ScaleButton::ScaleButton()
+:m_currentBackground(NULL)
 {
 	
 }
@@ -21,7 +22,7 @@ ScaleButton::~ScaleButton()
 /**
  * 文字不会超过背景,所以button的大小是背景的大小
  */
-void ScaleButton::changeStateComponent(State newState)
+void ScaleButton::updateStateComponent(State newState)
 {    
     if (!m_stateDirty) {
         return;
@@ -56,17 +57,18 @@ void ScaleButton::changeStateComponent(State newState)
     CCScale9Sprite* newBackground=static_cast<CCScale9Sprite*>(m_states->objectForKey(newState));
     
     //no new component do nothing
-    if (newBackground) {
+    if (newBackground && newBackground!=m_currentBackground) {
         
-        CCScale9Sprite* currentBackground=static_cast<CCScale9Sprite*>(m_states->objectForKey(m_state));
         
-        if (currentBackground){
+        if (m_currentBackground){
             //remove current state component
-            currentBackground->removeFromParentAndCleanup(false);
+            m_currentBackground->removeFromParentAndCleanup(false);
         }
         
         //add new state component
         this->addChild(newBackground,kBackgroundZOrder);
+        
+        m_currentBackground=newBackground;
     }
     
     CCSize contentSize;
@@ -103,6 +105,7 @@ void ScaleButton::changeStateComponent(State newState)
 void ScaleButton::setStateBackgroundScale9(State state,extension::CCScale9Sprite* background)
 {
     m_states->setObject(background, state);
+    updateCurrentStateComponent(state);
 }
 
 /**

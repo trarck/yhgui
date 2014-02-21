@@ -46,7 +46,7 @@ bool ComplexButton::isPointInside(const CCPoint& point)
     return false;
 }
 
-void ComplexButton::changeStateComponent(State newState)
+void ComplexButton::updateStateComponent(State newState)
 {
     if (!m_stateDirty) {
         return;
@@ -86,6 +86,8 @@ void ComplexButton::setStateLabel(State state,CCNode* label)
     label->removeFromParentAndCleanup(false);
     
     stateComponent->addChild(label,kLabelZOrder);
+    
+    updateCurrentStateComponent(state);
 }
 
 /**
@@ -203,6 +205,8 @@ void ComplexButton::setStateBackground(State state,CCNode* background)
     }
     
     stateComponent->addChild(background,kBackgroundZOrder);
+    
+    updateCurrentStateComponent(state);
 }
 
 /**

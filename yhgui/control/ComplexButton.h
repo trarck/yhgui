@@ -94,7 +94,7 @@ public:
     
 protected:
     
-    virtual void changeStateComponent(State newState);
+    virtual void updateStateComponent(State newState);
     
 protected:
     

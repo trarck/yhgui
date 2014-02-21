@@ -10,6 +10,7 @@ Button::Button()
 ,m_firstMoveEnter(false)
 ,m_touchDownZoomable(false)
 ,m_touchDownZoomSize(1.05f)
+,m_currentComponent(NULL)
 {
     //不需要冒泡事件
     m_needBubbles=false;
@@ -30,6 +31,20 @@ bool Button::init()
     }
     return false;
 }
+
+void Button::onEnter()
+{
+    Control::onEnter();
+    //如果是空状态则变成当前状态
+    if (m_state==kIdle) {
+        changeState(kNormal);
+    }
+}
+//
+//void Button::onExit()
+//{
+//    Control::onExit();
+//}
 
 bool Button::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
@@ -83,7 +98,7 @@ void Button::changeState(State newState)
     if (m_state!=newState) {
         CCLOG("changeState:from %d to %d",m_state,newState);
         m_stateDirty=true;
-        changeStateComponent(newState);
+        updateStateComponent(newState);
         setState(newState);
         
         if (m_touchDownZoomable) {
@@ -95,9 +110,10 @@ void Button::changeState(State newState)
 void Button::setStateComponent(State state,CCNode* component)
 {
     m_states->setObject(component, state);
+    updateCurrentStateComponent(state);
 }
 
-void Button::changeStateComponent(State newState)
+void Button::updateStateComponent(State newState)
 {
     if (!m_stateDirty) {
         return;
@@ -113,14 +129,26 @@ void Button::changeStateComponent(State newState)
     }
     
     
-    CCNode* currentComponent=static_cast<CCNode*>(m_states->objectForKey(m_state));
+//    CCNode* currentComponent=static_cast<CCNode*>(m_states->objectForKey(m_state));
 
     //remove current state component
-    currentComponent->removeFromParentAndCleanup(false);
+    if (m_currentComponent) {
+        m_currentComponent->removeFromParentAndCleanup(false);
+    }
     
     //add new state component
     this->addChild(newComponent);
     
+    m_currentComponent=newComponent;
+    
+}
+
+void Button::updateCurrentStateComponent(State state)
+{
+    if (m_state==state) {
+        m_stateDirty=true;
+        updateStateComponent(state);
+    }
 }
 
 NS_CC_YHGUI_END

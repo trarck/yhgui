@@ -31,12 +31,18 @@ public:
     
     CREATE_FUNC(ScaleButton);
     
+    inline extension::CCScale9Sprite* getCurrentBackground()
+    {
+        return m_currentBackground;
+    }
+    
 protected:
     
-    virtual void changeStateComponent(State newState);
+    virtual void updateStateComponent(State newState);
     
 protected:
     
+    extension::CCScale9Sprite* m_currentBackground;
 
 };
 

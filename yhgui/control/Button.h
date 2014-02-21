@@ -19,6 +19,10 @@ public:
     ~Button();
     
     bool init();
+    
+    virtual void onEnter();
+    
+//    virtual void onExit();
 
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
     virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
@@ -62,9 +66,16 @@ public:
         return m_preferredSize;
     }
     
+    inline CCNode* getCurrentComponent()
+    {
+        return m_currentComponent;
+    }
+    
 protected:
     
-    virtual void changeStateComponent(State newState);
+    virtual void updateStateComponent(State newState);
+    
+    virtual void updateCurrentStateComponent(State state);
     
 protected:
 
@@ -83,6 +94,8 @@ protected:
     
     //希望的大小
     CCSize m_preferredSize;
+    
+    CCNode* m_currentComponent;
 };
 
 

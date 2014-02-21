@@ -57,7 +57,7 @@ void NormalButton::draw()
 /**
  * 文字不会超过背景,所以button的大小是背景的大小
  */
-void NormalButton::changeStateComponent(State newState)
+void NormalButton::updateStateComponent(State newState)
 {    
     if (!m_stateDirty) {
         return;
@@ -98,16 +98,21 @@ void NormalButton::changeStateComponent(State newState)
     //no new component do nothing
     if (newBackground) {
         
-        CCNode* currentBackground=static_cast<CCNode*>(m_states->objectForKey(m_state));
+//        CCNode* currentBackground=static_cast<CCNode*>(m_states->objectForKey(m_state));
         
-        if (currentBackground){
-            //remove current state component
-            currentBackground->removeFromParentAndCleanup(false);
+        if (m_currentComponent!=newBackground) {
+            
+            if (m_currentComponent){
+                //remove current state component
+                m_currentComponent->removeFromParentAndCleanup(false);
+            }
+            
+            //add new state component
+            this->addChild(newBackground,kBackgroundZOrder);
+            
+            m_currentComponent=newBackground;
         }
-        
-        //add new state component
-        this->addChild(newBackground,kBackgroundZOrder);
-        
+
         maxRect=newBackground->boundingBox();
     }
 
@@ -182,6 +187,8 @@ void NormalButton::setStateLabelColor(State state,const ccColor3B& color)
 {
     CCLOG("set state color:%d",state);
     m_stateColors[state]=color;
+    
+    updateCurrentStateComponent(state);
 }
 
 /**
@@ -191,6 +198,8 @@ void NormalButton::setStateBackground(State state,CCNode* background)
 {
     //get default state component
     m_states->setObject(background, state);
+    
+    updateCurrentStateComponent(state);
 }
 
 /**
