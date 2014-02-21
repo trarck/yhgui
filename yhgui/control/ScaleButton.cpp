@@ -115,7 +115,7 @@ void ScaleButton::setStateBackgroundScale9(State state,const std::string& imageF
 {
     CCScale9Sprite* background=CCScale9Sprite::create(imageFile.c_str());
     
-    setStateBackground(state, background);
+    setStateBackgroundScale9(state, background);
 }
 
 NS_CC_YHGUI_END
