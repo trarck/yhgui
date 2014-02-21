@@ -70,6 +70,21 @@ public:
      */
     void setStateBackground(State state,const std::string& imageFile);
     
+    /**
+     * 创建一个使用ttf label的button
+     */
+    static NormalButton* create(const std::string& text,const std::string& fontName,float fontSize);
+    
+    /**
+     * 创建一个使用ttf label的button
+     */
+    static NormalButton* create(const std::string& text, ccFontDefinition &textDefinition);
+    
+    /**
+     * 创建一个使用bmfont label的button
+     */
+    static NormalButton* create(const std::string& text,const std::string& fontFile);
+    
     CREATE_FUNC(NormalButton);
     
     enum LabelType

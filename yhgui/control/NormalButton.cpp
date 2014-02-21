@@ -215,4 +215,52 @@ void NormalButton::setStateBackground(State state,const std::string& imageFile)
     background->release();
 }
 
+/**
+ * 创建一个使用ttf label的button
+ */
+NormalButton* NormalButton::create(const std::string& text,const std::string& fontName,float fontSize)
+{
+    NormalButton* button=new NormalButton();
+    if(button->init()){
+        button->setLabelTTF(text, fontName,fontSize);
+        
+        button->autorelease();
+        return button;
+    }
+    delete button;
+    return NULL;
+}
+
+/**
+ * 创建一个使用ttf label的button
+ */
+NormalButton* NormalButton::create(const std::string& text, ccFontDefinition &textDefinition)
+{
+    NormalButton* button=new NormalButton();
+    if(button->init()){
+        button->setLabelTTF(text, textDefinition);
+        
+        button->autorelease();
+        return button;
+    }
+    delete button;
+    return NULL;
+}
+
+/**
+ * 创建一个使用bmfont label的button
+ */
+NormalButton* NormalButton::create(const std::string& text,const std::string& fontFile)
+{
+    NormalButton* button=new NormalButton();
+    if(button->init()){
+        button->setLabelBMFont(text, fontFile);
+        
+        button->autorelease();
+        return button;
+    }
+    delete button;
+    return NULL;
+}
+
 NS_CC_YHGUI_END
