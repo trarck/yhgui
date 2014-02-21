@@ -67,6 +67,8 @@ Component* DocumentTreeOrganizer::getTargetContainPoint(const CCPoint& point)
 //    
 //    gettimeofday(&start, NULL);
     
+    if (!m_document) return NULL;
+    
     Component* elem=NULL;
     
     CCArray* elements=CCArray::create();
