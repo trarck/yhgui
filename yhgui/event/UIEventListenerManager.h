@@ -3,11 +3,11 @@
 
 #include "cocos2d.h"
 #include "../YHGUIMacros.h"
-#include <yhge/Event/EventListenerManager.h>
+#include <yhge/Event/StringifyEventListenerManager.h>
 
 NS_CC_YHGUI_BEGIN
 	
-class UIEventListenerManager:public yhge::EventListenerManager
+class UIEventListenerManager:public yhge::StringifyEventListenerManager
 {
 //方法
 public:
