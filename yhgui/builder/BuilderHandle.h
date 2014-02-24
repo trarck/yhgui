@@ -11,12 +11,12 @@
 
 #include "cocos2d.h"
 #include "../YHGUIMacros.h"
-#include <json/json.h>
+#include <yhge/Jsoncpp/json.h>
 
 NS_CC_YHGUI_BEGIN
 
 typedef CCNode* (*SEL_ElementCreateHandle)();
-typedef void (*SEL_PropertySetHandle)(CCNode* element,Json::Value& value);
+typedef void (*SEL_PropertySetHandle)(CCNode* element,yhge::Json::Value& value);
 
 #define BUILDER_ELEMENT_CREATE_SELECTOR(_SELECTOR) (SEL_ElementCreateHandle)(&_SELECTOR)
 #define BUILDER_PROPERTY_SET_SELECTOR(_SELECTOR) (SEL_PropertySetHandle)(&_SELECTOR)

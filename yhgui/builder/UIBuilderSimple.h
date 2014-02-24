@@ -1,6 +1,6 @@
 //
 //  UIBuilderSimple.h
-//  
+//
 //
 //  Created by duanhouhai on 13-2-1.
 //
@@ -10,7 +10,7 @@
 #define COCOS_YHGUI_BUILDER_UIBUILDERSIMPLE_H_
 
 #include "cocos2d.h"
-#include <json/json.h>
+#include <yhge/Jsoncpp/json.h>
 #include "../YHGUIMacros.h"
 
 NS_CC_YHGUI_BEGIN
@@ -39,38 +39,38 @@ public:
     
     CCNode* buildWithJSONData(const char* jsonString);
     
-    CCNode* buildUI(Json::Value& json);
+    CCNode* buildUI(const yhge::Json::Value& json);
     
-    CCNode* createElement(Json::Value& defineData);
+    CCNode* createElement(const yhge::Json::Value& defineData);
     
-    CCNode* createElement(Json::Value& defineData,CCNode* parent);
+    CCNode* createElement(const yhge::Json::Value& defineData,CCNode* parent);
     
-    void createChildren(Json::Value& children,CCNode* parent);
+    void createChildren(const yhge::Json::Value& children,CCNode* parent);
     
-    CCNode* createNode(Json::Value& defineData);
+    CCNode* createNode(const yhge::Json::Value& defineData);
     
-    CCSprite* createSprite(Json::Value& defineData);
+    CCSprite* createSprite(const yhge::Json::Value& defineData);
     
-    CCLabelTTF* createLabel(Json::Value& defineData);
+    CCLabelTTF* createLabel(const yhge::Json::Value& defineData);
     
-    CCLabelAtlas* createLabelAtlas(Json::Value& defineData);
+    CCLabelAtlas* createLabelAtlas(const yhge::Json::Value& defineData);
     
-    CCLabelBMFont* createLabelBMFont(Json::Value& defineData);
+    CCLabelBMFont* createLabelBMFont(const yhge::Json::Value& defineData);
     
-    unsigned int getDataFormat(Json::Value root);
+    unsigned int getDataFormat(yhge::Json::Value root);
     
-    unsigned int getDataVersion(Json::Value root);
-
+    unsigned int getDataVersion(yhge::Json::Value root);
+    
 protected:
     
     unsigned int typeToInteger(const std::string& typeString);
     
-    void setNodeAttributes(CCNode* node,Json::Value& attributes);
+    void setNodeAttributes(CCNode* node,const yhge::Json::Value& attributes);
     
-    void setSpriteAttributes(CCSprite* sprite,Json::Value& attributes);
+    void setSpriteAttributes(CCSprite* sprite,const yhge::Json::Value& attributes);
     
-    void setLabelAttributes(CCLabelTTF* label,Json::Value& attributes);
-
+    void setLabelAttributes(CCLabelTTF* label,const yhge::Json::Value& attributes);
+    
 private:
     
     
