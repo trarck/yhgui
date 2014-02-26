@@ -11,8 +11,8 @@
 
 #include "cocos2d.h"
 #include <yhge/Jsoncpp/json.h>
-#include "../ElementPropertyParser.h"
-#include "../ElementProperty.h"
+#include "../ElementParser.h"
+#include "../PropertyParser.h"
 
 NS_CC_YHGUI_BEGIN
 
@@ -20,18 +20,22 @@ NS_CC_YHGUI_BEGIN
  * @brief 分散式元素属性处理
  * 每个元素的属性单独成一相处理单元，把他们组合在一起就是一个对象的属性。
  */
-class ComponentialElementPropertyParser:public ElementPropertyParser
+class ComponentialElementParser:public ElementParser
 {
 public:
     
-    ComponentialElementPropertyParser();
-    ~ComponentialElementPropertyParser();
+    ComponentialElementParser();
+    ~ComponentialElementParser();
+    
+    virtual bool init();
     
     virtual void parse(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent);
     
-    void registerElementPropertyParser(const std::string& property,ElementProperty* elementProperty);
+    void registerPropertyParser(const std::string& property,PropertyParser* propertyParser);
     
-    void removeElementPropertyParser(const std::string& property);
+    void removePropertyParser(const std::string& property);
+    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(ComponentialElementParser,create);
     
 public:
     

@@ -33,7 +33,7 @@ class NodeCreator:public ElementCreator
 public:
     
     YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(CCNode);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(NodeCreator,creator);
 };
 
 class SpriteCreator:public ElementCreator
@@ -41,7 +41,7 @@ class SpriteCreator:public ElementCreator
 public:
     
     YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(CCSprite);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(SpriteCreator,creator);
 };
 
 class ComponentCreator:public ElementCreator
@@ -49,6 +49,7 @@ class ComponentCreator:public ElementCreator
 public:
     
     YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(yhgui::Component);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(ComponentCreator,creator);
 };
 
 NS_CC_YHGUI_END

@@ -12,23 +12,10 @@
 #include "cocos2d.h"
 #include <yhge/Jsoncpp/json.h>
 #include "../YHGUIMacros.h"
-#include "ElementCreator.h"
+#include "ElementCreatorFactory.h"
+#include "ElementParserFactory.h"
 
 NS_CC_YHGUI_BEGIN
-
-enum{
-    kUIDataFormatSimple=1,
-    kUIDataFormatHaveScene
-};
-
-enum{
-    kElementTypeNode=1,
-    kElementTypeSprite,
-    kElementTypeLabel,//CCLableTTF
-    kElementTypeLabelAtlas,
-    kElementTypeLabelBMFont,
-    kElementTypeButton
-};
 
 class UIBuilder:public CCObject
 {
@@ -46,21 +33,13 @@ public:
     
     CCNode* buildUI(const yhge::Json::Value& json);
     
+    CCNode* buildUI(const yhge::Json::Value& json,CCNode* parent);
+    
     CCNode* createElement(const yhge::Json::Value& defineData);
     
     CCNode* createElement(const yhge::Json::Value& defineData,CCNode* parent);
     
     void createChildren(const yhge::Json::Value& children,CCNode* parent);
-    
-    CCNode* createNode(const yhge::Json::Value& defineData);
-    
-    CCSprite* createSprite(const yhge::Json::Value& defineData);
-    
-    CCLabelTTF* createLabel(const yhge::Json::Value& defineData);
-    
-    CCLabelAtlas* createLabelAtlas(const yhge::Json::Value& defineData);
-    
-    CCLabelBMFont* createLabelBMFont(const yhge::Json::Value& defineData);
     
     unsigned int getDataFormat(yhge::Json::Value root);
     
@@ -68,22 +47,73 @@ public:
 
 protected:
     
+    /**
+     * @brief 设置元素的属性
+     *
+     * @param node 需要设置属性的元素
+     * @param properties 元素的属性集。一个json对象
+     * @param parent 父结点
+     */
+    void setElementPropertiesWithDefine(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent);
     
-    ElementCreator* getElementCreator(const yhge::Json::Value& elementType);
-    ElementCreator* getElementCreator(int elementType);
-    ElementCreator* getElementCreator(const std::string& elementType);
+    /**
+     * @brief 设置元素的属性
+     *
+     * @param node 需要设置属性的元素
+     * @param type 元素类型
+     * @param properties 元素的属性集。一个json对象
+     */
+    void setElementProperties(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& properties);
     
-    unsigned int typeToInteger(const std::string& typeString);
-    
-    void setNodeAttributes(CCNode* node,const yhge::Json::Value& attributes);
-    
-    void setSpriteAttributes(CCSprite* sprite,const yhge::Json::Value& attributes);
-    
-    void setLabelAttributes(CCLabelTTF* label,const yhge::Json::Value& attributes);
+    /**
+     * @brief 设置元素的属性
+     *
+     * @param node 需要设置属性的元素
+     * @param properties 元素的属性集。一个json对象
+     * @param parent 父结点
+     */
+    void setElementProperties(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& properties,CCNode* parent);
+        
+    unsigned int tanslateElementTypeFromStringToInteger(const std::string& typeString);
 
+public:
+    
+    enum DataFormate{
+        kUIDataFormatSimple=1,
+        kUIDataFormatHaveScene
+    };
+    
+    inline void setElementCreatorFactory(ElementCreatorFactory* elementCreatorFactory)
+    {
+        CC_SAFE_RETAIN(elementCreatorFactory);
+        CC_SAFE_RELEASE(m_elementCreatorFactory);
+        m_elementCreatorFactory = elementCreatorFactory;
+    }
+    
+    inline ElementCreatorFactory* getElementCreatorFactory()
+    {
+        return m_elementCreatorFactory;
+    }
+    
+    inline void setElementParserFactory(ElementParserFactory* elementParserFactory)
+    {
+        CC_SAFE_RETAIN(elementParserFactory);
+        CC_SAFE_RELEASE(m_elementParserFactory);
+        m_elementParserFactory = elementParserFactory;
+    }
+    
+    inline ElementParserFactory* getElementParserFactory()
+    {
+        return m_elementParserFactory;
+    }
+    
 protected:
     
-    CCDictionary* m_elementCreaters;
+    //元素创建器
+    ElementCreatorFactory* m_elementCreatorFactory;
+    
+    //元素属性处理器
+    ElementParserFactory* m_elementParserFactory;
 };
 
 NS_CC_YHGUI_END

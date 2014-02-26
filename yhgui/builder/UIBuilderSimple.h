@@ -15,19 +15,6 @@
 
 NS_CC_YHGUI_BEGIN
 
-enum{
-    kUIDataFormatSimple=1,
-    kUIDataFormatHaveScene
-};
-
-enum{
-    kElementTypeNode=1,
-    kElementTypeSprite,
-    kElementTypeLabel,//CCLableTTF
-    kElementTypeLabelAtlas,
-    kElementTypeLabelBMFont,
-    kElementTypeButton
-};
 
 class UIBuilderSimple:public CCObject
 {
@@ -70,6 +57,22 @@ protected:
     void setSpriteAttributes(CCSprite* sprite,const yhge::Json::Value& attributes);
     
     void setLabelAttributes(CCLabelTTF* label,const yhge::Json::Value& attributes);
+    
+public:
+    
+    enum DataFormate{
+        kUIDataFormatSimple=1,
+        kUIDataFormatHaveScene
+    };
+    
+    enum ElementType{
+        kElementTypeNode=1,
+        kElementTypeSprite,
+        kElementTypeLabel,//CCLableTTF
+        kElementTypeLabelAtlas,
+        kElementTypeLabelBMFont,
+        kElementTypeButton
+    };
     
 private:
     

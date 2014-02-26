@@ -1,11 +1,3 @@
-//
-//  ElementProperty.h
-//  
-//
-//  Created by duanhouhai on 13-2-1.
-//
-//
-
 #ifndef COCOS_YHGUI_BUILDER_PROPERTIES_LABELPROPERTYPARSER_H_
 #define COCOS_YHGUI_BUILDER_PROPERTIES_LABELPROPERTYPARSER_H_
 
@@ -14,7 +6,7 @@
 #include <yhgui/YHGUIMacros.h>
 #include <yhgui/Component.h>
 #include "../UIBuilderMacros.h"
-#include "../ElementProperty.h"
+#include "../PropertyParser.h"
 
 NS_CC_YHGUI_BEGIN
 
@@ -23,80 +15,80 @@ NS_CC_YHGUI_BEGIN
 /**
  * @brief 文本属性处理
  */
-class TextProperty:public ElementProperty
+class TextPropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(TextPropertyParser,create);
 };
 
 /**
  * @brief LabelColor文本属性处理
  * 适应CCLabelTTF和CCLabelAltas
  */
-class LabelColorProperty:public ElementProperty
+class LabelColorPropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(LabelColorPropertyParser,create);
 };
 
 //===========CCLabelTTF 相关===========//
 /**
  * @brief TTF文本属性处理
  */
-class TTFTextProperty:public ElementProperty
+class TTFTextPropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(TTFTextPropertyParser,create);
 };
 
 /**
  * @brief 字体属性处理
  */
-class FontFamilyProperty:public ElementProperty
+class FontFamilyPropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(FontFamilyPropertyParser,create);
 };
 
 /**
  * @brief 字体大小属性处理
  */
-class FontSizeProperty:public ElementProperty
+class FontSizePropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(FontSizePropertyParser,create);
 };
 
 /**
  * @brief 横向对齐属性处理
  */
-class HorizontalAlignmentProperty:public ElementProperty
+class HorizontalAlignmentPropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(HorizontalAlignmentPropertyParser,create);
 };
 
 /**
  * @brief 纵向对齐属性处理
  */
-class VerticalAlignmentProperty:public ElementProperty
+class VerticalAlignmentPropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(VerticalAlignmentPropertyParser,create);
 };
 
 //===========CCLabelBMFont 相关===========//
@@ -104,51 +96,51 @@ public:
 /**
  * @brief BMFont文本属性处理
  */
-class BMFontTextProperty:public ElementProperty
+class BMFontTextPropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(BMFontTextPropertyParser,create);
 };
 
 /**
  * @brief BMFont字体文件属性处理
  */
-class FntFileProperty:public ElementProperty
+class FntFilePropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(FntFilePropertyParser,create);
 };
 
 /**
  * @brief BMFont自动宽度属性处理
  */
-class AutomaticWidthProperty:public ElementProperty
+class AutomaticWidthPropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(AutomaticWidthPropertyParser,create);
 };
 
 /**
  * @brief BMFont对齐属性处理
  */
-class BMFontAlignmentProperty:public ElementProperty
+class BMFontAlignmentPropertyParser:public PropertyParser
 {
 public:
     
     void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
-    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(BMFontAlignmentPropertyParser,create);
 };
 
 ///**
 // * @brief BMFont图片偏移属性处理
 // */
-//class ImageOffsetProperty:public ElementProperty
+//class ImageOffsetPropertyParser:public PropertyParser
 //{
 //public:
 //    

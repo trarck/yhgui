@@ -1,8 +1,9 @@
-#include "NodePropertyParser.h"
+#include "IntegrativeNodeParser.h"
+#include "../UIBuilderConsts.h"
 
 NS_CC_YHGUI_BEGIN
 
-void NodePropertyParser::parse(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent)
+void IntegrativeNodeParser::parse(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent)
 {
     //parse position
     
@@ -31,16 +32,16 @@ void NodePropertyParser::parse(CCNode* node,const yhge::Json::Value& defineData,
     node->setTag(getTag(defineData, parent));
 }
 
-CCPoint NodePropertyParser::getPosition(const yhge::Json::Value& defineData,CCNode* parent)
+CCPoint IntegrativeNodeParser::getPosition(const yhge::Json::Value& defineData,CCNode* parent)
 {
     float x=0.0f,y=0.0f;
     
-    yhge::Json::Value xValue=defineData["x"];
+    yhge::Json::Value xValue=defineData[kPropertyNameX];
     if(!xValue.isNull()){
         x=xValue.asDouble();
     }
     
-    yhge::Json::Value yValue=defineData["y"];
+    yhge::Json::Value yValue=defineData[kPropertyNameY];
     if(!yValue.isNull()){
         y=yValue.asDouble();
     }
@@ -48,16 +49,16 @@ CCPoint NodePropertyParser::getPosition(const yhge::Json::Value& defineData,CCNo
     return ccp(x,y);
 }
 
-CCSize NodePropertyParser::getSize(const yhge::Json::Value& defineData,CCNode* parent)
+CCSize IntegrativeNodeParser::getSize(const yhge::Json::Value& defineData,CCNode* parent)
 {
     float width=0.0f,height=0.0f;
     
-    yhge::Json::Value widthValue=defineData["width"];
+    yhge::Json::Value widthValue=defineData[kPropertyNameWidth];
     if(!widthValue.isNull()){
         width=widthValue.asDouble();
     }
     
-    yhge::Json::Value heightValue=defineData["width"];
+    yhge::Json::Value heightValue=defineData[kPropertyNameHeight];
     if(!heightValue.isNull()){
         height=heightValue.asDouble();
     }
@@ -65,16 +66,16 @@ CCSize NodePropertyParser::getSize(const yhge::Json::Value& defineData,CCNode* p
     return CCSizeMake(width, height);
 }
 
-CCPoint NodePropertyParser::getAnchor(const yhge::Json::Value& defineData,CCNode* parent)
+CCPoint IntegrativeNodeParser::getAnchor(const yhge::Json::Value& defineData,CCNode* parent)
 {
     float anchorX=0.0f,anchorY=0.0f;
     
-    yhge::Json::Value anchorXValue=defineData["anchorX"];
+    yhge::Json::Value anchorXValue=defineData[kPropertyNameAnchorX];
     if(!anchorXValue.isNull()){
         anchorX=anchorXValue.asDouble();
     }
     
-    yhge::Json::Value anchorYValue=defineData["anchorY"];
+    yhge::Json::Value anchorYValue=defineData[kPropertyNameAnchorY];
     if(!anchorYValue.isNull()){
         anchorY=anchorYValue.asDouble();
     }
@@ -82,11 +83,11 @@ CCPoint NodePropertyParser::getAnchor(const yhge::Json::Value& defineData,CCNode
     return ccp(anchorX, anchorY);
 }
 
-float NodePropertyParser::getScaleX(const yhge::Json::Value& defineData,CCNode* parent)
+float IntegrativeNodeParser::getScaleX(const yhge::Json::Value& defineData,CCNode* parent)
 {
     float scaleX=1.0f;
     
-    yhge::Json::Value scaleXValue=defineData["scaleX"];
+    yhge::Json::Value scaleXValue=defineData[kPropertyNameScaleX];
     if(!scaleXValue.isNull()){
         scaleX=scaleXValue.asDouble();
     }
@@ -94,10 +95,10 @@ float NodePropertyParser::getScaleX(const yhge::Json::Value& defineData,CCNode* 
     return scaleX;
 }
 
-float NodePropertyParser::getScaleY(const yhge::Json::Value& defineData,CCNode* parent)
+float IntegrativeNodeParser::getScaleY(const yhge::Json::Value& defineData,CCNode* parent)
 {
     float scaleY=1.0f;
-    yhge::Json::Value scaleYValue=defineData["scaleY"];
+    yhge::Json::Value scaleYValue=defineData[kPropertyNameScaleY];
     if(!scaleYValue.isNull()){
         scaleY=scaleYValue.asDouble();
     }
@@ -105,39 +106,39 @@ float NodePropertyParser::getScaleY(const yhge::Json::Value& defineData,CCNode* 
     return scaleY;
 }
 
-float NodePropertyParser::getRotation(const yhge::Json::Value& defineData,CCNode* parent)
+float IntegrativeNodeParser::getRotation(const yhge::Json::Value& defineData,CCNode* parent)
 {
     float rotation=0.0f;
     
-    yhge::Json::Value rotationValue=defineData["rotation"];
+    yhge::Json::Value rotationValue=defineData[kPropertyNameRotation];
     if(!rotationValue.isNull()){
         rotation=rotationValue.asDouble();
     }
     return rotation;
 }
 
-bool NodePropertyParser::getVisible(const yhge::Json::Value& defineData,CCNode* parent)
+bool IntegrativeNodeParser::getVisible(const yhge::Json::Value& defineData,CCNode* parent)
 {
-    yhge::Json::Value zOrderValue=defineData["zOrder"];
-    if(!zOrderValue.isNull()){
-        return zOrderValue.asInt();
+    yhge::Json::Value visibleValue=defineData[kPropertyNameVisible];
+    if(!visibleValue.isNull()){
+        return visibleValue.asInt();
     }
     
     return true;
 }
 
-int NodePropertyParser::getZOrder(const yhge::Json::Value& defineData,CCNode* parent)
+int IntegrativeNodeParser::getZOrder(const yhge::Json::Value& defineData,CCNode* parent)
 {
-    yhge::Json::Value zOrderValue=defineData["zOrder"];
+    yhge::Json::Value zOrderValue=defineData[kPropertyNameZOrder];
     if(!zOrderValue.isNull()){
         return zOrderValue.asInt();
     }
     return 0;
 }
 
-int NodePropertyParser::getTag(const yhge::Json::Value& defineData,CCNode* parent)
+int IntegrativeNodeParser::getTag(const yhge::Json::Value& defineData,CCNode* parent)
 {
-    yhge::Json::Value tagValue=defineData["tag"];
+    yhge::Json::Value tagValue=defineData[kPropertyNameTag];
     if(!tagValue.isNull()){
         return tagValue.asInt();
     }

@@ -1,29 +1,29 @@
-//
-//  UIBuilder.cpp
-//  
-//
-//  Created by duanhouhai on 13-2-1.
-//
-//
-
 #include "UIBuilder.h"
+#include "UIBuilderConsts.h"
 
 NS_CC_YHGUI_BEGIN
 
 UIBuilder::UIBuilder()
-:m_elementCreaters(NULL)
+:m_elementCreatorFactory(NULL)
+,m_elementParserFactory(NULL)
 {
     
 }
 
 UIBuilder::~UIBuilder()
 {
-    CC_SAFE_RELEASE_NULL(m_elementCreaters);
+    CC_SAFE_RELEASE_NULL(m_elementCreatorFactory);
+    CC_SAFE_RELEASE_NULL(m_elementParserFactory);
 }
 
 bool UIBuilder::init()
 {
-    m_elementCreaters=new CCDictionary();
+    m_elementCreatorFactory=new ElementCreatorFactory();
+    m_elementParserFactory->init();
+    
+    m_elementParserFactory=new ElementParserFactory();
+    m_elementParserFactory->init();
+    
     return true;
 }
 
@@ -54,40 +54,42 @@ CCNode* UIBuilder::buildWithJSONData(const char* jsonString)
 
 CCNode* UIBuilder::buildUI(const yhge::Json::Value& json)
 {
+    return buildUI(json,NULL);
+}
+
+CCNode* UIBuilder::buildUI(const yhge::Json::Value& json,CCNode* parent)
+{
     unsigned int dataVersion=this->getDataVersion(json);
     
-    CCNode* root=this->createElement(json);
-    
+    CCNode* root=this->createElement(json,parent);
     
     return root;
 }
 
 CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData)
 {
-    CCNode* element=NULL;
-    
-    yhge::Json::Value type=defineData["type"];
-    
-    //create element
-    ElementCreator* elementCreator=getElementCreator(type);
-    
-    CCNode* elem=elementCreator->create(defineData);
-    
-    //set property
-    
-    
-    
-    //create children
-    this->createChildren(defineData["children"], element);
-    
-    return element;
+    return createElement(defineData,NULL);
 }
 
 CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData,CCNode* parent)
 {
-    CCNode* element=this->createElement(defineData);
+    yhge::Json::Value type=defineData[kPropertyNameType];
     
-    parent->addChild(element);
+    //get element creator
+    ElementCreator* elementCreator=m_elementCreatorFactory->getElementCreator(type);
+    
+    //create element
+    CCNode* element=elementCreator->createElement(defineData);
+    
+    //set element property
+    setElementPropertiesWithDefine(element, defineData,parent);
+    
+    //create element children
+    this->createChildren(defineData[kPropertyNameChildren], element);
+    
+    if(parent)
+        parent->addChild(element);
+    
     return element;
 }
 
@@ -102,177 +104,6 @@ void UIBuilder::createChildren(const yhge::Json::Value& children,CCNode* parent)
     }
 }
 
-CCNode* UIBuilder::createNode(const yhge::Json::Value& defineData)
-{
-    CCNode* node=CCNode::create();
-
-    this->setNodeAttributes(node, defineData["attributes"]);
-    
-    return node;
-}
-
-CCSprite* UIBuilder::createSprite(const yhge::Json::Value& defineData)
-{
-    std::string asset=defineData["attributes"]["asset"].asString();
-    
-    CCSprite* sprite=CCSprite::create(asset.c_str());
-    this->setSpriteAttributes(sprite, defineData["attributes"]);
-    return sprite;
-}
-
-CCLabelTTF* UIBuilder::createLabel(const yhge::Json::Value& defineData)
-{
-    CCLabelTTF* label=CCLabelTTF::create();
-    this->setLabelAttributes(label, defineData["attributes"]);
-    return label;
-}
-
-CCLabelAtlas* UIBuilder::createLabelAtlas(const yhge::Json::Value& defineData)
-{
-    return NULL;
-}
-
-CCLabelBMFont* UIBuilder::createLabelBMFont(const yhge::Json::Value& defineData)
-{
-    return NULL;
-}
-
-void UIBuilder::setNodeAttributes(CCNode* node,const yhge::Json::Value& attributes)
-{
- 
-    //parse position
-    float x=0.0f,y=0.0f;
-    
-    yhge::Json::Value xValue=attributes["x"];
-    if(!xValue.isNull()){
-        x=xValue.asDouble();
-    }
-    
-    yhge::Json::Value yValue=attributes["y"];
-    if(!yValue.isNull()){
-        y=yValue.asDouble();
-    }
-    
-    node->setPosition(ccp(x,y));
-
-    //parse size
-    float width=0.0f,height=0.0f;
-    
-    yhge::Json::Value widthValue=attributes["width"];
-    if(!widthValue.isNull()){
-        width=widthValue.asDouble();
-    }
-    
-    yhge::Json::Value heightValue=attributes["width"];
-    if(!heightValue.isNull()){
-        height=heightValue.asDouble();
-    }
-
-    node->setContentSize(CCSizeMake(width, height));
-    
-    //parse anchor
-    float anchorX=0.0f,anchorY=0.0f;
-    
-    yhge::Json::Value anchorXValue=attributes["anchorX"];
-    if(!anchorXValue.isNull()){
-        anchorX=anchorXValue.asDouble();
-    }
-    
-    yhge::Json::Value anchorYValue=attributes["anchorY"];
-    if(!anchorYValue.isNull()){
-        anchorY=anchorYValue.asDouble();
-    }
-    
-    node->setAnchorPoint(ccp(anchorX, anchorY));
-    
-    //parse scale
-    
-    yhge::Json::Value scaleXValue=attributes["scaleX"];
-    if(!scaleXValue.isNull()){
-        float scaleX=scaleXValue.asDouble();
-        node->setScaleX(scaleX);
-    }
-    
-    yhge::Json::Value scaleYValue=attributes["scaleY"];
-    if(!scaleYValue.isNull()){
-        float scaleY=scaleYValue.asDouble();
-        node->setScaleY(scaleY);
-    }
-    
-    //parse rotation
-    yhge::Json::Value rotationValue=attributes["rotation"];
-    if(!rotationValue.isNull()){
-        float rotation=rotationValue.asDouble();
-        node->setRotation(rotation);
-    }
-    
-    //parse visible
-    yhge::Json::Value visibleValue=attributes["visible"];
-    if(!visibleValue.isNull()){
-        bool visible=visibleValue.asBool();
-        node->setVisible(visible);
-    }
-   
-    yhge::Json::Value zOrderValue=attributes["zOrder"];
-    if(!zOrderValue.isNull()){
-        node->setZOrder(zOrderValue.asInt());
-    }
-    
-    yhge::Json::Value tagValue=attributes["tag"];
-    if(!tagValue.isNull()){
-        node->setTag(tagValue.asInt());
-    }
-    
-}
-
-void UIBuilder::setSpriteAttributes(CCSprite* sprite,const yhge::Json::Value& attributes)
-{
-    this->setNodeAttributes(sprite,attributes);
-    
-    //parse flip
-    yhge::Json::Value flipXValue=attributes["flipX"];
-    if(!flipXValue.isNull()){
-        float flipX=flipXValue.asDouble();
-        sprite->setFlipX(flipX);
-    }
-    
-    yhge::Json::Value flipYValue=attributes["flipY"];
-    if(!flipYValue.isNull()){
-        float flipY=flipYValue.asDouble();
-        sprite->setFlipY(flipY);
-    }
-    
-    //parse color
-    yhge::Json::Value colorValue=attributes["color"];
-    if(!colorValue.isNull()){
-        ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
-        sprite->setColor(color);
-    }
-}
-
-void UIBuilder::setLabelAttributes(CCLabelTTF* label,const yhge::Json::Value& attributes)
-{
-    this->setSpriteAttributes(label,attributes);
-    //parse string
-    std::string text=attributes["text"].asString();
-    label->setString(text.c_str());
-    
-    //parse font
-    yhge::Json::Value fontFamilyValue=attributes["fontFamily"];
-    if(!fontFamilyValue.isNull()){
-        std::string fontFamily=fontFamilyValue.asString();
-        label->setFontName(fontFamily.c_str());
-    }
-    
-    //parse font size
-    yhge::Json::Value fontSizeValue=attributes["fontSize"];
-    if(!fontSizeValue.isNull()){
-        float fontSize=fontSizeValue.asDouble();
-        label->setFontSize(fontSize);
-    }  
-   
-}
-
 unsigned int UIBuilder::getDataFormat(yhge::Json::Value root)
 {
     return kUIDataFormatSimple;
@@ -280,39 +111,28 @@ unsigned int UIBuilder::getDataFormat(yhge::Json::Value root)
 
 unsigned int UIBuilder::getDataVersion(yhge::Json::Value root)
 {
-    return root["version"].asUInt();
+    return root[kPropertyNameVersion].asUInt();
 }
 
-
-ElementCreator* UIBuilder::getElementCreator(const yhge::Json::Value& elementType)
+void UIBuilder::setElementPropertiesWithDefine(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent)
 {
-    if (elementType.isIntegral()) {
-        return static_cast<ElementCreator*>(m_elementCreaters->objectForKey(elementType.asInt()));
-    }else if(elementType.isString()){
-        return static_cast<ElementCreator*>(m_elementCreaters->objectForKey(elementType.asString()));
-    }else{
-        CCAssert(false, "UIBuilder::getElementCreator unkonw elementType");
-    }
+    setElementProperties(node,defineData[kPropertyNameType],defineData[kPropertyNameProperties], parent);
 }
 
-ElementCreator* UIBuilder::getElementCreator(int elementType)
+void UIBuilder::setElementProperties(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& properties)
 {
-    return static_cast<ElementCreator*>(m_elementCreaters->objectForKey(elementType));
+    setElementProperties(node, type,properties,NULL);
 }
 
-ElementCreator* UIBuilder::getElementCreator(const std::string& elementType)
+void UIBuilder::setElementProperties(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& properties,CCNode* parent)
 {
-    return static_cast<ElementCreator*>(m_elementCreaters->objectForKey(elementType));
-}
-
-unsigned int UIBuilder::typeToInteger(const std::string& typeString)
-{
-    if (strcmp(typeString.c_str(), "Node")==0) {
-        return kElementTypeNode;
-    }else if (strcmp(typeString.c_str(), "Sprite")==0){
-        return kElementTypeSprite;
-    }
+    ElementParser* elementParser=m_elementParserFactory->getElementParser(type);
     
+    elementParser->parse(node, properties, parent);
+}
+
+unsigned int UIBuilder::tanslateElementTypeFromStringToInteger(const std::string& typeString)
+{
     return 0;
 }
 

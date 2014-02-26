@@ -1,23 +1,16 @@
-//
-//  PropertyParser.h
-//  
-//
-//  Created by duanhouhai on 13-2-1.
-//
-//
 
-#ifndef COCOS_YHGUI_BUILDER_PARSERS_NODEPROPERTYPARSER_H_
-#define COCOS_YHGUI_BUILDER_PARSERS_NODEPROPERTYPARSER_H_
+#ifndef COCOS_YHGUI_BUILDER_PARSERS_INTEGRATIVENODEPARSER_H_
+#define COCOS_YHGUI_BUILDER_PARSERS_INTEGRATIVENODEPARSER_H_
 
 #include "cocos2d.h"
 #include <yhge/Jsoncpp/json.h>
 #include <yhgui/Component.h>
-#include "../ElementPropertyParser.h"
+#include "../ElementParser.h"
 
 NS_CC_YHGUI_BEGIN
 
 
-class NodePropertyParser:public ElementPropertyParser
+class IntegrativeNodeParser:public ElementParser
 {
 public:
     
@@ -45,7 +38,7 @@ protected:
     
 };
 
-class SpritePropertyParser:public NodePropertyParser
+class IntegrativeSpritePropertyParser:public IntegrativeNodeParser
 {
 public:
     
@@ -53,7 +46,7 @@ public:
     
 };
 
-class ComponentPropertyParser:public NodePropertyParser
+class IntegrativeComponentPropertyParser:public IntegrativeNodeParser
 {
 public:
     

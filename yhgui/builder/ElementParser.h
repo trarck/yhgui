@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef COCOS_YHGUI_BUILDER_ELEMENTPROPERTYPARSER_H_
-#define COCOS_YHGUI_BUILDER_ELEMENTPROPERTYPARSER_H_
+#ifndef COCOS_YHGUI_BUILDER_ELEMENTPARSER_H_
+#define COCOS_YHGUI_BUILDER_ELEMENTPARSER_H_
 
 #include "cocos2d.h"
 #include <yhge/Jsoncpp/json.h>
@@ -18,9 +18,10 @@
 NS_CC_YHGUI_BEGIN
 
 /**
- * @brief 元素属性处理
+ * @brief 元素处理
+ * 主要处理属性
  */
-class ElementPropertyParser:public CCObject
+class ElementParser:public CCObject
 {
 public:
     
@@ -35,4 +36,4 @@ public:
 
 NS_CC_YHGUI_END
 
-#endif // COCOS_YHGUI_BUILDER_ELEMENTPROPERTYPARSER_H_
+#endif // COCOS_YHGUI_BUILDER_ELEMENTPARSER_H_
