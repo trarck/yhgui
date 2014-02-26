@@ -14,10 +14,15 @@
 		57549A9F1872773100D88296 /* LabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A9D1872773100D88296 /* LabelAtlas.cpp */; };
 		575AD85D187B97D900AA0477 /* ScaleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575AD85B187B97D900AA0477 /* ScaleButton.cpp */; };
 		576B0DE918BAF3EF00A6F3C4 /* ElementCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0DE718BAF3EF00A6F3C4 /* ElementCreator.cpp */; };
-		576B0DF618BB368000A6F3C4 /* LabelPropertyParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0DF218BB368000A6F3C4 /* LabelPropertyParser.cpp */; };
-		576B0DF718BB368000A6F3C4 /* NodePropertyParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0DF418BB368000A6F3C4 /* NodePropertyParser.cpp */; };
-		576B0DFE18BB522F00A6F3C4 /* ComponentialElementPropertyParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0DFC18BB522F00A6F3C4 /* ComponentialElementPropertyParser.cpp */; };
-		576B0E0118BB52C300A6F3C4 /* NodePropertyParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0DFF18BB52C300A6F3C4 /* NodePropertyParser.cpp */; };
+		576B0E1B18BC39C100A6F3C4 /* ComponentialElementParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E1218BC39C100A6F3C4 /* ComponentialElementParser.cpp */; };
+		576B0E1C18BC39C100A6F3C4 /* NodeParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E1418BC39C100A6F3C4 /* NodeParser.cpp */; };
+		576B0E1D18BC39C100A6F3C4 /* LabelPropertyParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E1718BC39C100A6F3C4 /* LabelPropertyParser.cpp */; };
+		576B0E1E18BC39C100A6F3C4 /* NodePropertyParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E1918BC39C100A6F3C4 /* NodePropertyParser.cpp */; };
+		576B0E2D18BD8B3600A6F3C4 /* UIBuilderConsts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E2C18BD8B3600A6F3C4 /* UIBuilderConsts.cpp */; };
+		576B0E3118BD9FC300A6F3C4 /* IntegrativeNodeParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E2F18BD9FC300A6F3C4 /* IntegrativeNodeParser.cpp */; };
+		576B0E3718BDBC7A00A6F3C4 /* ElementParserFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E3518BDBC7A00A6F3C4 /* ElementParserFactory.cpp */; };
+		576B0E3A18BDBD0D00A6F3C4 /* ElementCreatorFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E3818BDBD0D00A6F3C4 /* ElementCreatorFactory.cpp */; };
+		576B0E3D18BDC97000A6F3C4 /* PropertyParserCompiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E3B18BDC97000A6F3C4 /* PropertyParserCompiler.cpp */; };
 		577A7988186C032C00F1B5D5 /* BuilderHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7943186C032C00F1B5D5 /* BuilderHandle.cpp */; };
 		577A7989186C032C00F1B5D5 /* UIBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7945186C032C00F1B5D5 /* UIBuilder.cpp */; };
 		577A798A186C032C00F1B5D5 /* UIBuilderSimple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7947186C032C00F1B5D5 /* UIBuilderSimple.cpp */; };
@@ -82,16 +87,26 @@
 		576B0DE718BAF3EF00A6F3C4 /* ElementCreator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementCreator.cpp; sourceTree = "<group>"; };
 		576B0DE818BAF3EF00A6F3C4 /* ElementCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementCreator.h; sourceTree = "<group>"; };
 		576B0DEA18BAFAA300A6F3C4 /* UIBuilderMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBuilderMacros.h; sourceTree = "<group>"; };
-		576B0DEC18BB18C500A6F3C4 /* ElementProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementProperty.h; sourceTree = "<group>"; };
-		576B0DF218BB368000A6F3C4 /* LabelPropertyParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelPropertyParser.cpp; sourceTree = "<group>"; };
-		576B0DF318BB368000A6F3C4 /* LabelPropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelPropertyParser.h; sourceTree = "<group>"; };
-		576B0DF418BB368000A6F3C4 /* NodePropertyParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodePropertyParser.cpp; sourceTree = "<group>"; };
-		576B0DF518BB368000A6F3C4 /* NodePropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePropertyParser.h; sourceTree = "<group>"; };
-		576B0DF918BB4FCB00A6F3C4 /* ElementPropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementPropertyParser.h; sourceTree = "<group>"; };
-		576B0DFC18BB522F00A6F3C4 /* ComponentialElementPropertyParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentialElementPropertyParser.cpp; sourceTree = "<group>"; };
-		576B0DFD18BB522F00A6F3C4 /* ComponentialElementPropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentialElementPropertyParser.h; sourceTree = "<group>"; };
-		576B0DFF18BB52C300A6F3C4 /* NodePropertyParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodePropertyParser.cpp; sourceTree = "<group>"; };
-		576B0E0018BB52C300A6F3C4 /* NodePropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePropertyParser.h; sourceTree = "<group>"; };
+		576B0DEC18BB18C500A6F3C4 /* PropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyParser.h; sourceTree = "<group>"; };
+		576B0DF918BB4FCB00A6F3C4 /* ElementParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementParser.h; sourceTree = "<group>"; };
+		576B0E1218BC39C100A6F3C4 /* ComponentialElementParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentialElementParser.cpp; sourceTree = "<group>"; };
+		576B0E1318BC39C100A6F3C4 /* ComponentialElementParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentialElementParser.h; sourceTree = "<group>"; };
+		576B0E1418BC39C100A6F3C4 /* NodeParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeParser.cpp; sourceTree = "<group>"; };
+		576B0E1518BC39C100A6F3C4 /* NodeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeParser.h; sourceTree = "<group>"; };
+		576B0E1718BC39C100A6F3C4 /* LabelPropertyParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelPropertyParser.cpp; sourceTree = "<group>"; };
+		576B0E1818BC39C100A6F3C4 /* LabelPropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelPropertyParser.h; sourceTree = "<group>"; };
+		576B0E1918BC39C100A6F3C4 /* NodePropertyParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodePropertyParser.cpp; sourceTree = "<group>"; };
+		576B0E1A18BC39C100A6F3C4 /* NodePropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePropertyParser.h; sourceTree = "<group>"; };
+		576B0E2B18BD8A9D00A6F3C4 /* UIBuilderConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBuilderConsts.h; sourceTree = "<group>"; };
+		576B0E2C18BD8B3600A6F3C4 /* UIBuilderConsts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIBuilderConsts.cpp; sourceTree = "<group>"; };
+		576B0E2F18BD9FC300A6F3C4 /* IntegrativeNodeParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntegrativeNodeParser.cpp; sourceTree = "<group>"; };
+		576B0E3018BD9FC300A6F3C4 /* IntegrativeNodeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrativeNodeParser.h; sourceTree = "<group>"; };
+		576B0E3518BDBC7A00A6F3C4 /* ElementParserFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementParserFactory.cpp; sourceTree = "<group>"; };
+		576B0E3618BDBC7A00A6F3C4 /* ElementParserFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementParserFactory.h; sourceTree = "<group>"; };
+		576B0E3818BDBD0D00A6F3C4 /* ElementCreatorFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementCreatorFactory.cpp; sourceTree = "<group>"; };
+		576B0E3918BDBD0D00A6F3C4 /* ElementCreatorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementCreatorFactory.h; sourceTree = "<group>"; };
+		576B0E3B18BDC97000A6F3C4 /* PropertyParserCompiler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PropertyParserCompiler.cpp; sourceTree = "<group>"; };
+		576B0E3C18BDC97000A6F3C4 /* PropertyParserCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyParserCompiler.h; sourceTree = "<group>"; };
 		577A7943186C032C00F1B5D5 /* BuilderHandle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuilderHandle.cpp; sourceTree = "<group>"; };
 		577A7944186C032C00F1B5D5 /* BuilderHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuilderHandle.h; sourceTree = "<group>"; };
 		577A7945186C032C00F1B5D5 /* UIBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIBuilder.cpp; sourceTree = "<group>"; };
@@ -225,26 +240,28 @@
 			path = labels;
 			sourceTree = "<group>";
 		};
-		576B0DF118BB368000A6F3C4 /* properties */ = {
+		576B0E1118BC39C100A6F3C4 /* element_parsers */ = {
 			isa = PBXGroup;
 			children = (
-				576B0DF218BB368000A6F3C4 /* LabelPropertyParser.cpp */,
-				576B0DF318BB368000A6F3C4 /* LabelPropertyParser.h */,
-				576B0DF418BB368000A6F3C4 /* NodePropertyParser.cpp */,
-				576B0DF518BB368000A6F3C4 /* NodePropertyParser.h */,
+				576B0E1218BC39C100A6F3C4 /* ComponentialElementParser.cpp */,
+				576B0E1318BC39C100A6F3C4 /* ComponentialElementParser.h */,
+				576B0E2F18BD9FC300A6F3C4 /* IntegrativeNodeParser.cpp */,
+				576B0E3018BD9FC300A6F3C4 /* IntegrativeNodeParser.h */,
+				576B0E1418BC39C100A6F3C4 /* NodeParser.cpp */,
+				576B0E1518BC39C100A6F3C4 /* NodeParser.h */,
 			);
-			path = properties;
+			path = element_parsers;
 			sourceTree = "<group>";
 		};
-		576B0DFB18BB522F00A6F3C4 /* parsers */ = {
+		576B0E1618BC39C100A6F3C4 /* property_parsers */ = {
 			isa = PBXGroup;
 			children = (
-				576B0DFC18BB522F00A6F3C4 /* ComponentialElementPropertyParser.cpp */,
-				576B0DFD18BB522F00A6F3C4 /* ComponentialElementPropertyParser.h */,
-				576B0DFF18BB52C300A6F3C4 /* NodePropertyParser.cpp */,
-				576B0E0018BB52C300A6F3C4 /* NodePropertyParser.h */,
+				576B0E1718BC39C100A6F3C4 /* LabelPropertyParser.cpp */,
+				576B0E1818BC39C100A6F3C4 /* LabelPropertyParser.h */,
+				576B0E1918BC39C100A6F3C4 /* NodePropertyParser.cpp */,
+				576B0E1A18BC39C100A6F3C4 /* NodePropertyParser.h */,
 			);
-			path = parsers;
+			path = property_parsers;
 			sourceTree = "<group>";
 		};
 		577A7941186C032C00F1B5D5 /* yhgui */ = {
@@ -272,16 +289,24 @@
 		577A7942186C032C00F1B5D5 /* builder */ = {
 			isa = PBXGroup;
 			children = (
-				576B0DFB18BB522F00A6F3C4 /* parsers */,
-				576B0DF118BB368000A6F3C4 /* properties */,
+				576B0E1118BC39C100A6F3C4 /* element_parsers */,
+				576B0E1618BC39C100A6F3C4 /* property_parsers */,
 				577A7943186C032C00F1B5D5 /* BuilderHandle.cpp */,
 				577A7944186C032C00F1B5D5 /* BuilderHandle.h */,
 				576B0DE718BAF3EF00A6F3C4 /* ElementCreator.cpp */,
 				576B0DE818BAF3EF00A6F3C4 /* ElementCreator.h */,
-				576B0DF918BB4FCB00A6F3C4 /* ElementPropertyParser.h */,
-				576B0DEC18BB18C500A6F3C4 /* ElementProperty.h */,
+				576B0E3818BDBD0D00A6F3C4 /* ElementCreatorFactory.cpp */,
+				576B0E3918BDBD0D00A6F3C4 /* ElementCreatorFactory.h */,
+				576B0DF918BB4FCB00A6F3C4 /* ElementParser.h */,
+				576B0E3518BDBC7A00A6F3C4 /* ElementParserFactory.cpp */,
+				576B0E3618BDBC7A00A6F3C4 /* ElementParserFactory.h */,
+				576B0DEC18BB18C500A6F3C4 /* PropertyParser.h */,
+				576B0E3B18BDC97000A6F3C4 /* PropertyParserCompiler.cpp */,
+				576B0E3C18BDC97000A6F3C4 /* PropertyParserCompiler.h */,
 				577A7945186C032C00F1B5D5 /* UIBuilder.cpp */,
 				577A7946186C032C00F1B5D5 /* UIBuilder.h */,
+				576B0E2C18BD8B3600A6F3C4 /* UIBuilderConsts.cpp */,
+				576B0E2B18BD8A9D00A6F3C4 /* UIBuilderConsts.h */,
 				576B0DEA18BAFAA300A6F3C4 /* UIBuilderMacros.h */,
 				577A7947186C032C00F1B5D5 /* UIBuilderSimple.cpp */,
 				577A7948186C032C00F1B5D5 /* UIBuilderSimple.h */,
@@ -440,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576B0E3D18BDC97000A6F3C4 /* PropertyParserCompiler.cpp in Sources */,
 				577A7A261871130600F1B5D5 /* List.cpp in Sources */,
 				57243EE918B6EEFE0070163A /* NormalDocumentTreeOrganizer.cpp in Sources */,
 				577A7995186C032C00F1B5D5 /* IndependentOrderedListOrganizer.cpp in Sources */,
@@ -447,14 +473,18 @@
 				577A7996186C032C00F1B5D5 /* IndependentPriorityOrganizer.cpp in Sources */,
 				576B0DE918BAF3EF00A6F3C4 /* ElementCreator.cpp in Sources */,
 				577A7A281871130600F1B5D5 /* ScrollPanel.cpp in Sources */,
+				576B0E1D18BC39C100A6F3C4 /* LabelPropertyParser.cpp in Sources */,
 				577A7990186C032C00F1B5D5 /* NormalButton.cpp in Sources */,
+				576B0E1C18BC39C100A6F3C4 /* NodeParser.cpp in Sources */,
 				57549A921872578700D88296 /* LabelTTF.cpp in Sources */,
+				576B0E3A18BDBD0D00A6F3C4 /* ElementCreatorFactory.cpp in Sources */,
 				577A799F186C032C00F1B5D5 /* ListView.cpp in Sources */,
-				576B0E0118BB52C300A6F3C4 /* NodePropertyParser.cpp in Sources */,
 				577A798E186C032C00F1B5D5 /* ComplexButton.cpp in Sources */,
 				577A7999186C032C00F1B5D5 /* OrderedListOrganizer.cpp in Sources */,
 				577A798C186C032C00F1B5D5 /* Container.cpp in Sources */,
 				577A79A1186C032C00F1B5D5 /* View.cpp in Sources */,
+				576B0E1B18BC39C100A6F3C4 /* ComponentialElementParser.cpp in Sources */,
+				576B0E2D18BD8B3600A6F3C4 /* UIBuilderConsts.cpp in Sources */,
 				577A7A271871130600F1B5D5 /* Panel.cpp in Sources */,
 				577A7988186C032C00F1B5D5 /* BuilderHandle.cpp in Sources */,
 				575AD85D187B97D900AA0477 /* ScaleButton.cpp in Sources */,
@@ -462,10 +492,9 @@
 				577A7989186C032C00F1B5D5 /* UIBuilder.cpp in Sources */,
 				577A799B186C032C00F1B5D5 /* OrganizerItem.cpp in Sources */,
 				577A7993186C032C00F1B5D5 /* IndependentDocumentTreeOrganizer.cpp in Sources */,
+				576B0E3718BDBC7A00A6F3C4 /* ElementParserFactory.cpp in Sources */,
 				577A79A4186C032C00F1B5D5 /* Utils.cpp in Sources */,
 				57243EEC18B6F05F0070163A /* IndependentNormalDocumentTreeOrganizer.cpp in Sources */,
-				576B0DFE18BB522F00A6F3C4 /* ComponentialElementPropertyParser.cpp in Sources */,
-				576B0DF618BB368000A6F3C4 /* LabelPropertyParser.cpp in Sources */,
 				577A7998186C032C00F1B5D5 /* ListOrganizer.cpp in Sources */,
 				57549A9F1872773100D88296 /* LabelAtlas.cpp in Sources */,
 				57549A9618726A5300D88296 /* LabelBMFont.cpp in Sources */,
@@ -476,10 +505,11 @@
 				577A799C186C032C00F1B5D5 /* PriorityOrganizer.cpp in Sources */,
 				577A798F186C032C00F1B5D5 /* Control.cpp in Sources */,
 				577A798A186C032C00F1B5D5 /* UIBuilderSimple.cpp in Sources */,
+				576B0E3118BD9FC300A6F3C4 /* IntegrativeNodeParser.cpp in Sources */,
 				577A799D186C032C00F1B5D5 /* Range.cpp in Sources */,
 				577A798D186C032C00F1B5D5 /* Button.cpp in Sources */,
 				577A7997186C032C00F1B5D5 /* InteractiveDispatcher.cpp in Sources */,
-				576B0DF718BB368000A6F3C4 /* NodePropertyParser.cpp in Sources */,
+				576B0E1E18BC39C100A6F3C4 /* NodePropertyParser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
