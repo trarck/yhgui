@@ -25,7 +25,7 @@ public:
     
     virtual void setupPropertyParser();
     
-    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(NodeParser,create);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(NodeParser,create);
     
 };
 
@@ -35,7 +35,7 @@ public:
     
     virtual void setupPropertyParser();
     
-    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(SpriteParser,create);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(SpriteParser,create);
 };
 
 class ComponentParser:public NodeParser
@@ -43,7 +43,7 @@ class ComponentParser:public NodeParser
 public:
         
     virtual void setupPropertyParser();
-    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(ComponentParser,create);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(ComponentParser,create);
 };
 
 NS_CC_YHGUI_END

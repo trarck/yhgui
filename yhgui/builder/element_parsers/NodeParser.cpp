@@ -32,6 +32,14 @@ void SpriteParser::setupPropertyParser()
     registerPropertyParser(kPropertyNameColor,ColorPropertyParser::create());
     registerPropertyParser(kPropertyNameFlip,SpriteColorPropertyParser::create());
     registerPropertyParser(kPropertyNameAsset,TexutrePropertyParser::create());
+    
+//    CCArray* keys=m_propertyParserMap->allKeys();
+//    CCObject* pObj=NULL;
+//    CCLOG("----------key{----------");
+//    CCARRAY_FOREACH(keys, pObj){
+//        CCLOG("%s",static_cast<CCString*>(pObj)->getCString());
+//    }
+//    CCLOG("----------}----------");
 }
 
 void ComponentParser::setupPropertyParser()

@@ -25,4 +25,17 @@
 #include "interactive/IndependentOrderedListOrganizer.h"
 #include "interactive/IndependentPriorityOrganizer.h"
 
+//builder
+#include "builder/UIBuilderMacros.h"
+#include "builder/UIBuilderConsts.h"
+#include "builder/ElementCreator.h"
+#include "builder/ElementParser.h"
+#include "builder/element_parsers/ComponentialElementParser.h"
+#include "builder/element_parsers/NodeParser.h"
+#include "builder/property_parsers/NodePropertyParser.h"
+#include "builder/property_parsers/LabelPropertyParser.h"
+#include "builder/ElementCreatorFactory.h"
+#include "builder/ElementParserFactory.h"
+#include "builder/UIBuilder.h"
+
 #endif //COCOS_YHGUI_YHGUI_H_

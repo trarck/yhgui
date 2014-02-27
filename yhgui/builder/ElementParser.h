@@ -25,11 +25,11 @@ class ElementParser:public CCObject
 {
 public:
     
-    virtual void parse(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent)=0;
+    virtual void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)=0;
     
-    virtual void parse(CCNode* node,const yhge::Json::Value& defineData)
+    virtual void parse(CCNode* node,const yhge::Json::Value& properties)
     {
-        parse(node, defineData, NULL);
+        parse(node, properties, NULL);
     }
     
 };

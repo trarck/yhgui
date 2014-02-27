@@ -19,7 +19,7 @@ UIBuilder::~UIBuilder()
 bool UIBuilder::init()
 {
     m_elementCreatorFactory=new ElementCreatorFactory();
-    m_elementParserFactory->init();
+    m_elementCreatorFactory->init();
     
     m_elementParserFactory=new ElementParserFactory();
     m_elementParserFactory->init();
@@ -61,7 +61,7 @@ CCNode* UIBuilder::buildUI(const yhge::Json::Value& json,CCNode* parent)
 {
     unsigned int dataVersion=this->getDataVersion(json);
     
-    CCNode* root=this->createElement(json,parent);
+    CCNode* root=this->createElement(json[kPropertyNameGraphData],parent);
     
     return root;
 }
@@ -75,20 +75,26 @@ CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData,CCNode* par
 {
     yhge::Json::Value type=defineData[kPropertyNameType];
     
+    CCNode* element=NULL;
+    
     //get element creator
     ElementCreator* elementCreator=m_elementCreatorFactory->getElementCreator(type);
-    
-    //create element
-    CCNode* element=elementCreator->createElement(defineData);
-    
-    //set element property
-    setElementPropertiesWithDefine(element, defineData,parent);
-    
-    //create element children
-    this->createChildren(defineData[kPropertyNameChildren], element);
-    
-    if(parent)
-        parent->addChild(element);
+    if(elementCreator){
+        //create element
+        element=elementCreator->createElement(defineData);
+        
+        //set element property
+        setElementPropertiesWithDefine(element, defineData,parent);
+        
+        //create element children
+        this->createChildren(defineData[kPropertyNameChildren], element);
+        
+        if(parent)
+            parent->addChild(element);
+        
+    }else{
+        CCLOG("UIBuilder::createElement unknown element type:%s",type.asString().c_str());
+    }
     
     return element;
 }
@@ -126,9 +132,17 @@ void UIBuilder::setElementProperties(CCNode* node,const yhge::Json::Value& type,
 
 void UIBuilder::setElementProperties(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& properties,CCNode* parent)
 {
-    ElementParser* elementParser=m_elementParserFactory->getElementParser(type);
+//    yhge::Json::Value::Members members=properties.getMemberNames();
+//    for (yhge::Json::Value::Members::iterator iter=members.begin(); iter!=members.end(); ++iter) {
+//        CCLOG("%s",(*iter).c_str());
+//    }
     
-    elementParser->parse(node, properties, parent);
+    ElementParser* elementParser=m_elementParserFactory->getElementParser(type);
+    if (elementParser) {
+        elementParser->parse(node, properties, parent);
+    }else{
+        CCLOG("UIBuilder::setElementProperties unkwon type %s",type.asString().c_str());
+    }
 }
 
 unsigned int UIBuilder::tanslateElementTypeFromStringToInteger(const std::string& typeString)

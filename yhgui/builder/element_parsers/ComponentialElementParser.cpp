@@ -21,16 +21,21 @@ bool ComponentialElementParser::init()
     return true;
 }
 
-void ComponentialElementParser::parse(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent)
+void ComponentialElementParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
-    yhge::Json::Value::Members members=defineData.getMemberNames();
-    for (yhge::Json::Value::Members::iterator iter=members.begin(); iter!=members.end(); ++iter) {
-        PropertyParser* propertyParse=static_cast<PropertyParser* >(m_propertyParserMap->objectForKey((*iter)));
-        
-        if (propertyParse) {
-            propertyParse->parse(node, defineData[*iter], parent);
-        }
+    CCDictElement* elem=NULL;
+    CCDICT_FOREACH(m_propertyParserMap, elem){
+        PropertyParser* propertyParse=static_cast<PropertyParser* >(elem->getObject());
+        propertyParse->parse(node, properties, parent);
     }
+//    yhge::Json::Value::Members members=properties.getMemberNames();
+//    for (yhge::Json::Value::Members::iterator iter=members.begin(); iter!=members.end(); ++iter) {
+//        PropertyParser* propertyParse=static_cast<PropertyParser* >(m_propertyParserMap->objectForKey((*iter)));
+//        
+//        if (propertyParse) {
+//            propertyParse->parse(node, properties[*iter], parent);
+//        }
+//    }
 }
 
 void ComponentialElementParser::registerPropertyParser(const std::string& property,PropertyParser* elementProperty)

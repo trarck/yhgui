@@ -19,7 +19,7 @@ NS_CC_YHGUI_BEGIN
 class PositionPropertyParser:public PropertyParser
 {
 public:
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(PositionPropertyParser,create);
 };
 
@@ -30,7 +30,7 @@ class SizePropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(SizePropertyParser,create);
 };
 
@@ -41,7 +41,7 @@ class AnchorPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(AnchorPropertyParser,create);
 };
 
@@ -52,7 +52,7 @@ class ScalePropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(ScalePropertyParser,create);
 };
 
@@ -63,7 +63,7 @@ class RotationPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(RotationPropertyParser,create);
 };
 
@@ -74,7 +74,7 @@ class VisiblePropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(VisiblePropertyParser,create);
 };
 
@@ -85,7 +85,7 @@ class ZOrderPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(ZOrderPropertyParser,create);
 };
 
@@ -96,7 +96,7 @@ class TagPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(TagPropertyParser,create);
 };
 
@@ -108,7 +108,7 @@ class ColorPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(ColorPropertyParser,create);
 };
 
@@ -120,7 +120,7 @@ class FlipPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(FlipPropertyParser,create);
 };
 
@@ -131,7 +131,7 @@ class SpriteColorPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(SpriteColorPropertyParser,create);
 };
 
@@ -142,7 +142,7 @@ class TexutrePropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(TexutrePropertyParser,create);
 };
 

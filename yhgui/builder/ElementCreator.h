@@ -11,6 +11,7 @@
 
 #include "cocos2d.h"
 #include <yhge/Jsoncpp/json.h>
+#include <yhge/CocosExt/CCDefaultTexture.h>
 #include <yhgui/Component.h>
 #include "../YHGUIMacros.h"
 #include "UIBuilderMacros.h"
@@ -40,7 +41,11 @@ class SpriteCreator:public ElementCreator
 {
 public:
     
-    YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(CCSprite);
+//    YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(CCSprite);
+    virtual CCSprite * createElement(const yhge::Json::Value& defineData) {
+        return CCSprite::createWithTexture(yhge::CCDefaultTexture::getInstance()->getTexture());
+    }
+    
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(SpriteCreator,creator);
 };
 

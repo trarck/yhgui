@@ -36,10 +36,10 @@ void ElementParserFactory::setupDefaultParser()
 {
     switch (m_keyType) {
         case kIntKey:
-            setupStringKeyDefaultParser();
+            setupIntKeyDefaultParser();
             break;
         case kStringKey:
-            setupIntKeyDefaultParser();
+            setupStringKeyDefaultParser();
             break;
         default:
             break;

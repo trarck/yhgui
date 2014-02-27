@@ -29,7 +29,7 @@ public:
     
     virtual bool init();
     
-    virtual void parse(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent);
+    virtual void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     
     void registerPropertyParser(const std::string& property,PropertyParser* propertyParser);
     

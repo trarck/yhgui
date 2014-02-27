@@ -5,10 +5,10 @@ NS_CC_YHGUI_BEGIN
 
 //=======================label 相关=======================//
 
-void TextPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void TextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
     
-    yhge::Json::Value textValue=propertyValue[kPropertyNameText];
+    yhge::Json::Value textValue=properties[kPropertyNameText];
     if(!textValue.isNull()){
         CCLabelProtocol* label=dynamic_cast<CCLabelProtocol*>(node);
         if (label) {
@@ -17,9 +17,9 @@ void TextPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyVal
     }
 }
 
-void LabelColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void LabelColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
-    yhge::Json::Value colorValue=propertyValue[kPropertyNameColor];
+    yhge::Json::Value colorValue=properties[kPropertyNameColor];
     if(!colorValue.isNull()){
         
         CCNodeRGBA* nodeRgba=static_cast<CCNodeRGBA*>(node);
@@ -31,39 +31,39 @@ void LabelColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& prope
 
 //===========CCLabelTTF 相关===========//
 
-void TTFTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void TTFTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
     
-    yhge::Json::Value textValue=propertyValue[kPropertyNameText];
+    yhge::Json::Value textValue=properties[kPropertyNameText];
     if(!textValue.isNull()){
         CCLabelTTF* label=static_cast<CCLabelTTF*>(node);
         label->setString(textValue.asCString());
     }
 }
 
-void FontFamilyPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void FontFamilyPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
-    yhge::Json::Value fontFamilyValue=propertyValue[kPropertyNameFontFamily];
+    yhge::Json::Value fontFamilyValue=properties[kPropertyNameFontFamily];
     if(!fontFamilyValue.isNull()){
         CCLabelTTF* label=static_cast<CCLabelTTF*>(node);
         label->setFontName(fontFamilyValue.asCString());
     }
 }
 
-void FontSizePropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void FontSizePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
-    yhge::Json::Value fontSizeValue=propertyValue[kPropertyNameFontSize];
+    yhge::Json::Value fontSizeValue=properties[kPropertyNameFontSize];
     if(!fontSizeValue.isNull()){
         CCLabelTTF* label=static_cast<CCLabelTTF*>(node);
         label->setFontSize(fontSizeValue.asDouble());
     }
 }
 
-void HorizontalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void HorizontalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
     CCLabelTTF* label=static_cast<CCLabelTTF*>(node);
     
-    yhge::Json::Value alignmentValue=propertyValue[kPropertyNameHorizontalAlignment];
+    yhge::Json::Value alignmentValue=properties[kPropertyNameHorizontalAlignment];
     if(!alignmentValue.isNull()){
         
         switch (alignmentValue.asInt()) {
@@ -82,11 +82,11 @@ void HorizontalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Val
     }
 }
 
-void VerticalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void VerticalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
     CCLabelTTF* label=static_cast<CCLabelTTF*>(node);
     
-    yhge::Json::Value alignmentValue=propertyValue[kPropertyNameVerticalAlignment];
+    yhge::Json::Value alignmentValue=properties[kPropertyNameVerticalAlignment];
     if(!alignmentValue.isNull()){
         
         switch (alignmentValue.asInt()) {
@@ -107,38 +107,38 @@ void VerticalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value
 
 //===========CCLabelBMFont 相关===========//
 
-void BMFontTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void BMFontTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
-    yhge::Json::Value textValue=propertyValue[kPropertyNameText];
+    yhge::Json::Value textValue=properties[kPropertyNameText];
     if(!textValue.isNull()){
         CCLabelBMFont* label=static_cast<CCLabelBMFont*>(node);
         label->setString(textValue.asCString());
     }
 }
 
-void FntFilePropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void FntFilePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
-    yhge::Json::Value fntFileValue=propertyValue[kPropertyNameFntFile];
+    yhge::Json::Value fntFileValue=properties[kPropertyNameFntFile];
     if(!fntFileValue.isNull()){
         CCLabelBMFont* label=static_cast<CCLabelBMFont*>(node);
         label->setFntFile(fntFileValue.asCString());
     }
 }
 
-void AutomaticWidthPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void AutomaticWidthPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
-    yhge::Json::Value automaticWidthValue=propertyValue[kPropertyNameAutomaticWidth];
+    yhge::Json::Value automaticWidthValue=properties[kPropertyNameAutomaticWidth];
     if(!automaticWidthValue.isNull()){
         CCLabelBMFont* label=static_cast<CCLabelBMFont*>(node);
         label->setWidth(automaticWidthValue.asDouble());
     }
 }
 
-void BMFontAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent)
+void BMFontAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
     CCLabelBMFont* label=static_cast<CCLabelBMFont*>(node);
     
-    yhge::Json::Value alignmentValue=propertyValue[kPropertyNameAlignment];
+    yhge::Json::Value alignmentValue=properties[kPropertyNameAlignment];
     if(!alignmentValue.isNull()){
 
         switch (alignmentValue.asInt()) {

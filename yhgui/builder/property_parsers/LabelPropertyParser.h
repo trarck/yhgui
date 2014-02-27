@@ -19,7 +19,7 @@ class TextPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(TextPropertyParser,create);
 };
 
@@ -31,7 +31,7 @@ class LabelColorPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(LabelColorPropertyParser,create);
 };
 
@@ -43,7 +43,7 @@ class TTFTextPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(TTFTextPropertyParser,create);
 };
 
@@ -54,7 +54,7 @@ class FontFamilyPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(FontFamilyPropertyParser,create);
 };
 
@@ -65,7 +65,7 @@ class FontSizePropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(FontSizePropertyParser,create);
 };
 
@@ -76,7 +76,7 @@ class HorizontalAlignmentPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(HorizontalAlignmentPropertyParser,create);
 };
 
@@ -87,7 +87,7 @@ class VerticalAlignmentPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(VerticalAlignmentPropertyParser,create);
 };
 
@@ -100,7 +100,7 @@ class BMFontTextPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(BMFontTextPropertyParser,create);
 };
 
@@ -111,7 +111,7 @@ class FntFilePropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(FntFilePropertyParser,create);
 };
 
@@ -122,7 +122,7 @@ class AutomaticWidthPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(AutomaticWidthPropertyParser,create);
 };
 
@@ -133,7 +133,7 @@ class BMFontAlignmentPropertyParser:public PropertyParser
 {
 public:
     
-    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(BMFontAlignmentPropertyParser,create);
 };
 
@@ -144,7 +144,7 @@ public:
 //{
 //public:
 //    
-//    void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent);
+//    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
 //    
 //};
 
