@@ -48,6 +48,17 @@ public:
 };
 
 /**
+ * @brief LabelTTF color文本属性处理
+ */
+class TTFColorPropertyParser:public PropertyParser
+{
+public:
+    
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(TTFColorPropertyParser,create);
+};
+
+/**
  * @brief 字体属性处理
  */
 class FontFamilyPropertyParser:public PropertyParser
@@ -116,6 +127,17 @@ public:
 };
 
 /**
+ * @brief LabelBMFont color文本属性处理
+ */
+class BMFontColorPropertyParser:public PropertyParser
+{
+public:
+    
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(BMFontColorPropertyParser,create);
+};
+
+/**
  * @brief BMFont自动宽度属性处理
  */
 class AutomaticWidthPropertyParser:public PropertyParser
@@ -147,6 +169,28 @@ public:
 //    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
 //    
 //};
+
+//===========CCLabelAtlas 相关===========//
+//由于atlas要在创建的时候读取属性，不做属性处理
+
+class LabelAtlasTextPropertyParser:public PropertyParser
+{
+public:
+    
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(LabelAtlasTextPropertyParser,create);
+};
+
+/**
+ * @brief LabelBMFont color文本属性处理
+ */
+class LabelAtlasColorPropertyParser:public PropertyParser
+{
+public:
+    
+    void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(LabelAtlasColorPropertyParser,create);
+};
 
 NS_CC_YHGUI_END
 

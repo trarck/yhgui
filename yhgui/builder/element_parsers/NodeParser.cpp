@@ -1,6 +1,6 @@
 #include "NodeParser.h"
 #include "../UIBuilderConsts.h"
-#include "../property_parsers/NodePropertyParser.h"
+#include "../PropertyParserCompiler.h"
 
 NS_CC_YHGUI_BEGIN
 
@@ -15,23 +15,14 @@ bool NodeParser::init()
 
 void NodeParser::setupPropertyParser()
 {
-    registerPropertyParser(kPropertyNamePosition,PositionPropertyParser::create());
-    registerPropertyParser(kPropertyNameSize,SizePropertyParser::create());
-    registerPropertyParser(kPropertyNameAnchor,AnchorPropertyParser::create());
-    registerPropertyParser(kPropertyNameScale,ScalePropertyParser::create());
-    registerPropertyParser(kPropertyNameRotation,RotationPropertyParser::create());
-    registerPropertyParser(kPropertyNameVisible,VisiblePropertyParser::create());
-    registerPropertyParser(kPropertyNameZOrder,ZOrderPropertyParser::create());
-    registerPropertyParser(kPropertyNameTag,TagPropertyParser::create());
+    PropertyParserCompiler::compileNodeParser(this);
 }
 
 void SpriteParser::setupPropertyParser()
 {
     NodeParser::setupPropertyParser();
     
-    registerPropertyParser(kPropertyNameColor,ColorPropertyParser::create());
-    registerPropertyParser(kPropertyNameFlip,SpriteColorPropertyParser::create());
-    registerPropertyParser(kPropertyNameAsset,TexutrePropertyParser::create());
+    PropertyParserCompiler::compileSpriteParser(this);
     
 //    CCArray* keys=m_propertyParserMap->allKeys();
 //    CCObject* pObj=NULL;
@@ -42,9 +33,29 @@ void SpriteParser::setupPropertyParser()
 //    CCLOG("----------}----------");
 }
 
+void LabelTTFParser::setupPropertyParser()
+{
+    NodeParser::setupPropertyParser();
+
+    PropertyParserCompiler::compileLabelTTFParser(this);
+}
+
+void LabelBMFontParser::setupPropertyParser()
+{
+    NodeParser::setupPropertyParser();
+    PropertyParserCompiler::compileLabelBMFontParser(this);
+}
+
+void LabelAtlasParser::setupPropertyParser()
+{
+    NodeParser::setupPropertyParser();
+    PropertyParserCompiler::compileLabelAtlasParser(this);
+}
+
 void ComponentParser::setupPropertyParser()
 {
     NodeParser::setupPropertyParser();
+    PropertyParserCompiler::compileComponentParser(this);
 }
 
 NS_CC_YHGUI_END

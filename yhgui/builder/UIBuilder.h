@@ -73,7 +73,28 @@ protected:
      * @param parent 父结点
      */
     void setElementProperties(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& properties,CCNode* parent);
-        
+    
+    /**
+     * @brief set元素的事件
+     * 只有可触发事件的元素，才可以进行事件触发。
+     *
+     * @param node 需要设置属性的元素
+     * @param type 元素类型
+     * @param events 要处理的的事件。一个json对象
+     */
+    void registerElementEvents(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& events);
+    
+    /**
+     * @brief set元素的事件
+     * 只有可触发事件的元素，才可以进行事件触发。
+     *
+     * @param node 需要设置属性的元素
+     * @param type 元素类型
+     * @param events 要处理的的事件。一个json对象
+     * @param parent 父结点
+     */
+    void registerElementEvents(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& events,CCNode* parent);
+    
     unsigned int tanslateElementTypeFromStringToInteger(const std::string& typeString);
 
 public:
@@ -114,6 +135,11 @@ protected:
     
     //元素属性处理器
     ElementParserFactory* m_elementParserFactory;
+    
+    //事件处理
+    
+    //controllers
+    CCDictionary* m_controllers;
 };
 
 NS_CC_YHGUI_END

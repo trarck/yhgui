@@ -53,6 +53,7 @@
 		577A7A271871130600F1B5D5 /* Panel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7A221871130600F1B5D5 /* Panel.cpp */; };
 		577A7A281871130600F1B5D5 /* ScrollPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577A7A241871130600F1B5D5 /* ScrollPanel.cpp */; };
 		57B26177186818A200EFF1FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		57BEBA0518C0992000AA720B /* ElementEventParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BEBA0318C0992000AA720B /* ElementEventParser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -171,6 +172,8 @@
 		577A7A251871130600F1B5D5 /* ScrollPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPanel.h; sourceTree = "<group>"; };
 		57B26176186818A200EFF1FD /* libyhgui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libyhgui.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B26184186818A200EFF1FD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		57BEBA0318C0992000AA720B /* ElementEventParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementEventParser.cpp; sourceTree = "<group>"; };
+		57BEBA0418C0992000AA720B /* ElementEventParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementEventParser.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -297,6 +300,8 @@
 				576B0DE818BAF3EF00A6F3C4 /* ElementCreator.h */,
 				576B0E3818BDBD0D00A6F3C4 /* ElementCreatorFactory.cpp */,
 				576B0E3918BDBD0D00A6F3C4 /* ElementCreatorFactory.h */,
+				57BEBA0318C0992000AA720B /* ElementEventParser.cpp */,
+				57BEBA0418C0992000AA720B /* ElementEventParser.h */,
 				576B0DF918BB4FCB00A6F3C4 /* ElementParser.h */,
 				576B0E3518BDBC7A00A6F3C4 /* ElementParserFactory.cpp */,
 				576B0E3618BDBC7A00A6F3C4 /* ElementParserFactory.h */,
@@ -479,6 +484,7 @@
 				57549A921872578700D88296 /* LabelTTF.cpp in Sources */,
 				576B0E3A18BDBD0D00A6F3C4 /* ElementCreatorFactory.cpp in Sources */,
 				577A799F186C032C00F1B5D5 /* ListView.cpp in Sources */,
+				57BEBA0518C0992000AA720B /* ElementEventParser.cpp in Sources */,
 				577A798E186C032C00F1B5D5 /* ComplexButton.cpp in Sources */,
 				577A7999186C032C00F1B5D5 /* OrderedListOrganizer.cpp in Sources */,
 				577A798C186C032C00F1B5D5 /* Container.cpp in Sources */,

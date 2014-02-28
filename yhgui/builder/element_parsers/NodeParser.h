@@ -38,6 +38,33 @@ public:
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(SpriteParser,create);
 };
 
+class LabelTTFParser:public NodeParser
+{
+public:
+    
+    virtual void setupPropertyParser();
+    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(LabelTTFParser,create);
+};
+
+class LabelBMFontParser:public NodeParser
+{
+public:
+    
+    virtual void setupPropertyParser();
+    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(LabelBMFontParser,create);
+};
+
+class LabelAtlasParser:public NodeParser
+{
+public:
+    
+    virtual void setupPropertyParser();
+    
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(LabelAtlasParser,create);
+};
+
 class ComponentParser:public NodeParser
 {
 public:

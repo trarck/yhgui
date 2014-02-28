@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include <yhge/Jsoncpp/json.h>
 #include <yhge/CocosExt/CCDefaultTexture.h>
+#include <yhge/CocosExt/CCAdaptSprite.h>
 #include <yhgui/Component.h>
 #include "../YHGUIMacros.h"
 #include "UIBuilderMacros.h"
@@ -27,7 +28,7 @@ public:
 };
 
 /**
- * Node 结点创建
+ * @brief node 结点创建
  */
 class NodeCreator:public ElementCreator
 {
@@ -37,16 +38,52 @@ public:
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(NodeCreator,creator);
 };
 
+/**
+ * @brief sprite 结点创建
+ */
 class SpriteCreator:public ElementCreator
 {
 public:
     
 //    YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(CCSprite);
     virtual CCSprite * createElement(const yhge::Json::Value& defineData) {
-        return CCSprite::createWithTexture(yhge::CCDefaultTexture::getInstance()->getTexture());
+        return yhge::CCAdaptSprite::createWithTexture(yhge::CCDefaultTexture::getInstance()->getTexture());
     }
     
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(SpriteCreator,creator);
+};
+
+/**
+ * @brief labelTTF 结点创建
+ */
+class LabelTTFCreator:public ElementCreator
+{
+public:
+    
+    YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(CCLabelTTF);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(LabelTTFCreator,creator);
+};
+
+/**
+ * @brief labelBMFont 结点创建
+ */
+class LabelBMFontCreator:public ElementCreator
+{
+public:
+    
+    YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(CCLabelBMFont);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(LabelBMFontCreator,creator);
+};
+
+/**
+ * @brief labelAtlas 结点创建
+ */
+class LabelAtlasCreator:public ElementCreator
+{
+public:
+    
+    virtual CCLabelAtlas * createElement(const yhge::Json::Value& defineData);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(LabelAtlasCreator,creator);
 };
 
 class ComponentCreator:public ElementCreator

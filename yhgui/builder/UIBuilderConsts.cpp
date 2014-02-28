@@ -2,6 +2,28 @@
 
 NS_CC_YHGUI_BEGIN
 
+//==================element type==================//
+const char* kElementTypeNode ="Node";
+const char* kElementTypeSprite ="Sprite";
+const char* kElementTypeCCLabelTTF ="CCLabelTTF";
+const char* kElementTypeCCLabelBMFont ="CCLabelBMFont";
+const char* kElementTypeCCLableAtlas ="CCLableAtlas";
+const char* kElementTypeComponent ="Component";
+const char* kElementTypeContainer ="Container";
+const char* kElementTypeButton ="Button";
+const char* kElementTypeNormalButton ="NormalButton";
+const char* kElementTypeScaleButton ="ScaleButton";
+const char* kElementTypeComplexButton ="ComplexButton";
+const char* kElementTypeLabelAtlas ="LabelAtlas";
+const char* kElementTypeLabelBMFont ="LabelBMFont";
+const char* kElementTypeLabelTTF ="LabelTTF";
+const char* kElementTypePanel ="Panel";
+const char* kElementTypeList ="List";
+const char* kElementTypeScrollPanel ="ScrollPanel";
+
+
+//==================element property==================//
+//common
 const char* kPropertyNameType="type";
 const char* kPropertyNameProperties="properties";
 const char* kPropertyNameChildren="children";

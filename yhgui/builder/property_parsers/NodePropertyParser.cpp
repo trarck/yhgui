@@ -41,7 +41,7 @@ void SizePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,
     if(!heightValue.isNull()){
         height=heightValue.asDouble();
     }
-    CCLOG("Size:%f,%f",width,height);
+//    CCLOG("Size:%f,%f",width,height);
     node->setContentSize(CCSizeMake(width, height));
 }
 
@@ -174,14 +174,13 @@ void TexutrePropertyParser::parse(CCNode* node,const yhge::Json::Value& properti
             CCRect rect = CCRectZero;
             rect.size = texture->getContentSize();
             sprite->setTexture(texture);
-            sprite->setTextureRect(rect);
             
             //fix size scale
-            if(properties[kPropertyNameScale].isNull() && properties[kPropertyNameScaleX].isNull() && properties[kPropertyNameScaleY].isNull()){
-                CCSize defineSize=sprite->getContentSize();
-                float scaleX=defineSize.width/rect.size.width;
-                float scaleY=defineSize.height/rect.size.height;
-                sprite->CCNode::setScale(scaleX, scaleY);
+            CCSize defineSize=sprite->getContentSize();
+            if (!defineSize.equals(CCSizeZero)) {
+                sprite->setTextureRect(rect,sprite->isTextureRectRotated(),defineSize);
+            }else{
+                sprite->setTextureRect(rect);
             }
         }
     }

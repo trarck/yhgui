@@ -41,6 +41,18 @@ void TTFTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properti
     }
 }
 
+void TTFColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+{
+    yhge::Json::Value colorValue=properties[kPropertyNameColor];
+    if(!colorValue.isNull()){
+        
+        CCLabelTTF* label=static_cast<CCLabelTTF*>(node);
+        
+        ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
+        label->setColor(color);
+    }
+}
+
 void FontFamilyPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
     yhge::Json::Value fontFamilyValue=properties[kPropertyNameFontFamily];
@@ -125,6 +137,18 @@ void FntFilePropertyParser::parse(CCNode* node,const yhge::Json::Value& properti
     }
 }
 
+void BMFontColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+{
+    yhge::Json::Value colorValue=properties[kPropertyNameColor];
+    if(!colorValue.isNull()){
+        
+        CCLabelBMFont* label=static_cast<CCLabelBMFont*>(node);
+        
+        ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
+        label->setColor(color);
+    }
+}
+
 void AutomaticWidthPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
 {
     yhge::Json::Value automaticWidthValue=properties[kPropertyNameAutomaticWidth];
@@ -154,6 +178,28 @@ void BMFontAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& 
             default:
                 break;
         }
+    }
+}
+
+//===========CCLabelAtlas 相关===========//
+void LabelAtlasTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+{
+    yhge::Json::Value textValue=properties[kPropertyNameText];
+    if(!textValue.isNull()){
+        CCLabelAtlas* label=static_cast<CCLabelAtlas*>(node);
+        label->setString(textValue.asCString());
+    }
+}
+
+void LabelAtlasColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+{
+    yhge::Json::Value colorValue=properties[kPropertyNameColor];
+    if(!colorValue.isNull()){
+        
+        CCLabelAtlas* label=static_cast<CCLabelAtlas*>(node);
+        
+        ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
+        label->setColor(color);
     }
 }
 

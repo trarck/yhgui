@@ -4,7 +4,29 @@
 #include "../YHGUIMacros.h"
 
 NS_CC_YHGUI_BEGIN
+//==================element type==================//
+extern const char* kElementTypeNode;
+extern const char* kElementTypeSprite;
+extern const char* kElementTypeCCLabelTTF;
+extern const char* kElementTypeCCLabelBMFont;
+extern const char* kElementTypeCCLableAtlas;
+extern const char* kElementTypeComponent;
+extern const char* kElementTypeContainer;
+extern const char* kElementTypeButton;
+extern const char* kElementTypeNormalButton;
+extern const char* kElementTypeScaleButton;
+extern const char* kElementTypeComplexButton;
+extern const char* kElementTypeLabelAtlas;
+extern const char* kElementTypeLabelBMFont;
+extern const char* kElementTypeLabelTTF;
+extern const char* kElementTypePanel;
+extern const char* kElementTypeList;
+extern const char* kElementTypeScrollPanel;
 
+
+
+//==================element property==================//
+//common
 extern const char* kPropertyNameType;
 extern const char* kPropertyNameProperties;
 extern const char* kPropertyNameChildren;

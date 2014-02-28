@@ -1,4 +1,5 @@
 #include "ElementCreatorFactory.h"
+#include "UIBuilderConsts.h"
 
 NS_CC_YHGUI_BEGIN
 
@@ -54,9 +55,12 @@ void ElementCreatorFactory::setupDefaultCreator()
  */
 void ElementCreatorFactory::setupStringKeyDefaultCreator()
 {
-    registerElementCreator("Node", NodeCreator::creator());
-    registerElementCreator("Sprite", SpriteCreator::creator());
-    registerElementCreator("Component", ComponentCreator::creator());
+    registerElementCreator(kElementTypeNode, NodeCreator::creator());
+    registerElementCreator(kElementTypeSprite, SpriteCreator::creator());
+    registerElementCreator(kElementTypeCCLabelTTF, LabelTTFCreator::creator());
+    registerElementCreator(kElementTypeCCLabelBMFont, LabelBMFontCreator::creator());
+    registerElementCreator(kElementTypeCCLableAtlas, LabelAtlasCreator::creator());
+    registerElementCreator(kElementTypeComponent, ComponentCreator::creator());
 }
 
 /**

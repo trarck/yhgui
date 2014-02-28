@@ -18,6 +18,12 @@ public:
     
     static void compileSpriteParser(ComponentialElementParser* elementParser);
     
+    static void compileLabelTTFParser(ComponentialElementParser* elementParser);
+    
+    static void compileLabelBMFontParser(ComponentialElementParser* elementParser);
+    
+    static void compileLabelAtlasParser(ComponentialElementParser* elementParser);
+    
     static void compileComponentParser(ComponentialElementParser* elementParser);
     
     
