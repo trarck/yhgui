@@ -126,6 +126,12 @@
     <ClCompile Include="..\yhgui\labels\LabelTTF.cpp">
       <Filter>yhgui\labels</Filter>
     </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\IndependentNormalDocumentTreeOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\interactive\NormalDocumentTreeOrganizer.cpp">
+      <Filter>yhgui\interactive</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\yhgui\Component.h">
@@ -235,6 +241,12 @@
     </ClInclude>
     <ClInclude Include="..\yhgui\labels\LabelTTF.h">
       <Filter>yhgui\labels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\IndependentNormalDocumentTreeOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\interactive\NormalDocumentTreeOrganizer.h">
+      <Filter>yhgui\interactive</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

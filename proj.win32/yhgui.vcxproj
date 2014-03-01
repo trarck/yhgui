@@ -141,10 +141,12 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\interactive\DocumentTreeOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\IndependentListOrganizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\IndependentNormalDocumentTreeOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\IndependentOrderedListOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\IndependentPriorityOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\InteractiveDispatcher.cpp" />
     <ClCompile Include="..\yhgui\interactive\ListOrganizer.cpp" />
+    <ClCompile Include="..\yhgui\interactive\NormalDocumentTreeOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\OrderedListOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\Organizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\OrganizerItem.cpp" />
@@ -176,11 +178,13 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\yhgui\interactive\DocumentTreeOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\IndependentListOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\IndependentNormalDocumentTreeOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\IndependentOrderedListOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\IndependentPriorityOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\IndependentTouchDefine.h" />
     <ClInclude Include="..\yhgui\interactive\InteractiveDispatcher.h" />
     <ClInclude Include="..\yhgui\interactive\ListOrganizer.h" />
+    <ClInclude Include="..\yhgui\interactive\NormalDocumentTreeOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\OrderedListOrganizer.h" />
     <ClInclude Include="..\yhgui\interactive\Organizer.h" />
     <ClInclude Include="..\yhgui\interactive\OrganizerItem.h" />
