@@ -129,7 +129,17 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\yhgui\builder\BuilderHandle.cpp" />
+    <ClCompile Include="..\yhgui\builder\ElementCreator.cpp" />
+    <ClCompile Include="..\yhgui\builder\ElementCreatorFactory.cpp" />
+    <ClCompile Include="..\yhgui\builder\ElementEventParser.cpp" />
+    <ClCompile Include="..\yhgui\builder\ElementParserFactory.cpp" />
+    <ClCompile Include="..\yhgui\builder\element_parsers\ComponentialElementParser.cpp" />
+    <ClCompile Include="..\yhgui\builder\element_parsers\NodeParser.cpp" />
+    <ClCompile Include="..\yhgui\builder\PropertyParserCompiler.cpp" />
+    <ClCompile Include="..\yhgui\builder\property_parsers\LabelPropertyParser.cpp" />
+    <ClCompile Include="..\yhgui\builder\property_parsers\NodePropertyParser.cpp" />
     <ClCompile Include="..\yhgui\builder\UIBuilder.cpp" />
+    <ClCompile Include="..\yhgui\builder\UIBuilderConsts.cpp" />
     <ClCompile Include="..\yhgui\builder\UIBuilderSimple.cpp" />
     <ClCompile Include="..\yhgui\Component.cpp" />
     <ClCompile Include="..\yhgui\Container.cpp" />
@@ -165,7 +175,20 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\yhgui\builder\BuilderHandle.h" />
+    <ClInclude Include="..\yhgui\builder\ElementCreator.h" />
+    <ClInclude Include="..\yhgui\builder\ElementCreatorFactory.h" />
+    <ClInclude Include="..\yhgui\builder\ElementEventParser.h" />
+    <ClInclude Include="..\yhgui\builder\ElementParser.h" />
+    <ClInclude Include="..\yhgui\builder\ElementParserFactory.h" />
+    <ClInclude Include="..\yhgui\builder\element_parsers\ComponentialElementParser.h" />
+    <ClInclude Include="..\yhgui\builder\element_parsers\NodeParser.h" />
+    <ClInclude Include="..\yhgui\builder\PropertyParser.h" />
+    <ClInclude Include="..\yhgui\builder\PropertyParserCompiler.h" />
+    <ClInclude Include="..\yhgui\builder\property_parsers\LabelPropertyParser.h" />
+    <ClInclude Include="..\yhgui\builder\property_parsers\NodePropertyParser.h" />
     <ClInclude Include="..\yhgui\builder\UIBuilder.h" />
+    <ClInclude Include="..\yhgui\builder\UIBuilderConsts.h" />
+    <ClInclude Include="..\yhgui\builder\UIBuilderMacros.h" />
     <ClInclude Include="..\yhgui\builder\UIBuilderSimple.h" />
     <ClInclude Include="..\yhgui\Component.h" />
     <ClInclude Include="..\yhgui\Container.h" />

@@ -28,6 +28,12 @@
     <Filter Include="yhgui\labels">
       <UniqueIdentifier>{47d3d38c-8f36-413b-9460-411bff293251}</UniqueIdentifier>
     </Filter>
+    <Filter Include="yhgui\builder\element_parsers">
+      <UniqueIdentifier>{a030ee53-8de9-43f8-a2ac-7c466f9069d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="yhgui\builder\property_parsers">
+      <UniqueIdentifier>{14f2b51c-6dfc-4193-8b13-8cfde0e394fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\yhgui\Component.cpp">
@@ -131,6 +137,36 @@
     </ClCompile>
     <ClCompile Include="..\yhgui\interactive\NormalDocumentTreeOrganizer.cpp">
       <Filter>yhgui\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\element_parsers\ComponentialElementParser.cpp">
+      <Filter>yhgui\builder\element_parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\element_parsers\NodeParser.cpp">
+      <Filter>yhgui\builder\element_parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\property_parsers\LabelPropertyParser.cpp">
+      <Filter>yhgui\builder\property_parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\property_parsers\NodePropertyParser.cpp">
+      <Filter>yhgui\builder\property_parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\ElementCreator.cpp">
+      <Filter>yhgui\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\ElementCreatorFactory.cpp">
+      <Filter>yhgui\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\ElementEventParser.cpp">
+      <Filter>yhgui\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\ElementParserFactory.cpp">
+      <Filter>yhgui\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\PropertyParserCompiler.cpp">
+      <Filter>yhgui\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\UIBuilderConsts.cpp">
+      <Filter>yhgui\builder</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +283,45 @@
     </ClInclude>
     <ClInclude Include="..\yhgui\interactive\NormalDocumentTreeOrganizer.h">
       <Filter>yhgui\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\element_parsers\ComponentialElementParser.h">
+      <Filter>yhgui\builder\element_parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\element_parsers\NodeParser.h">
+      <Filter>yhgui\builder\element_parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\property_parsers\LabelPropertyParser.h">
+      <Filter>yhgui\builder\property_parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\property_parsers\NodePropertyParser.h">
+      <Filter>yhgui\builder\property_parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\ElementCreator.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\ElementCreatorFactory.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\ElementEventParser.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\ElementParser.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\ElementParserFactory.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\PropertyParser.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\PropertyParserCompiler.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\UIBuilderConsts.h">
+      <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\UIBuilderMacros.h">
+      <Filter>yhgui\builder</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
