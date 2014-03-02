@@ -68,4 +68,11 @@ const char* kPropertyNameFntFile ="fntFile";
 const char* kPropertyNameAutomaticWidth ="automaticWidth";
 const char* kPropertyNameAlignment ="alignment";
 
+//==================element events==================//
+const char* kPropertyNameEvents="events";
+const char* kPropertyNameSegment="segment";
+const char* kPropertyNameHandle="handle";
+const char* kPropertyNameEventName="eventName";
+//==================others==================//
+const char* kDefaultSegmentName="default";
 NS_CC_YHGUI_END

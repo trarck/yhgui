@@ -6,7 +6,7 @@ NS_CC_YHGUI_BEGIN
 UIBuilder::UIBuilder()
 :m_elementCreatorFactory(NULL)
 ,m_elementParserFactory(NULL)
-,m_controllers(NULL)
+,m_elementEventParser(NULL)
 {
     
 }
@@ -15,7 +15,7 @@ UIBuilder::~UIBuilder()
 {
     CC_SAFE_RELEASE_NULL(m_elementCreatorFactory);
     CC_SAFE_RELEASE_NULL(m_elementParserFactory);
-    CC_SAFE_RELEASE_NULL(m_controllers);
+    CC_SAFE_RELEASE_NULL(m_elementEventParser);
 }
 
 bool UIBuilder::init()
@@ -26,7 +26,8 @@ bool UIBuilder::init()
     m_elementParserFactory=new ElementParserFactory();
     m_elementParserFactory->init();
     
-    m_controllers=new CCDictionary();
+    m_elementEventParser=new ElementEventParser();
+    m_elementEventParser->init();
     
     return true;
 }
@@ -90,6 +91,9 @@ CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData,CCNode* par
         //set element property
         setElementPropertiesWithDefine(element, defineData,parent);
         
+        //register event
+        registerElementEvents(element,type,defineData[kPropertyNameEvents],parent);
+
         //create element children
         this->createChildren(defineData[kPropertyNameChildren], element);
         
@@ -156,7 +160,9 @@ void UIBuilder::registerElementEvents(CCNode* node,const yhge::Json::Value& type
 
 void UIBuilder::registerElementEvents(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& events,CCNode* parent)
 {
-    
+    if (!events.isNull()){
+        m_elementEventParser->parse(node,events,type);
+    }
 }
 
 unsigned int UIBuilder::tanslateElementTypeFromStringToInteger(const std::string& typeString)

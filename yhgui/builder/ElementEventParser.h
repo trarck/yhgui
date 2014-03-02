@@ -4,12 +4,16 @@
 
 #include "cocos2d.h"
 #include <yhge/Jsoncpp/json.h>
+#include "../event/UIEventListenerManager.h"
 #include "ElementParser.h"
 
 NS_CC_YHGUI_BEGIN
 
 /**
- * @brief 对象属性处理工场
+ * @brief 对象事件处理
+ * 按照分成的部分来组成事件处理
+ * 默认都在defualt段里
+ * map<segment><handleName>=eventHandler
  */
 class ElementEventParser:public CCObject
 {
@@ -23,114 +27,43 @@ public:
      * @brief 初始化
      */
     virtual bool init();
-    
-    /**
-     * @brief 初始化
-     *
-     * @param keyType 键的类型
-     */
-    bool init(int keyType);
-    
-    /**
-     * @brief 设置默认处理器
-     */
-    void setupDefaultParser();
-    
-    /**
-     * @brief 设置默认处理器,使用字符串key
-     */
-    void setupStringKeyDefaultParser();
-    
-    /**
-     * @brief 设置默认处理器,使用数字key
-     */
-    void setupIntKeyDefaultParser();
-    
-    /**
-     * @brief 注册一个属性处理器
-     * 
-     * @param elementType 元素类型
-     * @param elementParser 元素属性处理器
-     */
-    void registerElementParser(const std::string& elementType,ElementParser* elementParser);
-    
-    /**
-     * @brief 注册一个属性处理器
-     *
-     * @param elementType 元素类型
-     * @param elementParser 元素属性处理器
-     */
-    void registerElementParser(int elementType,ElementParser* elementParser);
-    
-    /**
-     * @brief 移除一个属性处理器
-     *
-     * @param elementType 元素类型
-     */
-    void removeElementParser(const std::string& elementType);
-    
-    /**
-     * @brief 移除一个属性处理器
-     *
-     * @param elementType 元素类型
-     */
-    void removeElementParser(int elementType);
-    
-    /**
-     * @brief 取得属性处理器
-     *
-     * @param elementType 元素类型
-     */
-    ElementParser* getElementParser(const std::string& elementType);
-    
-    /**
-     * @brief 取得属性处理器
-     *
-     * @param elementType 元素类型
-     */
-    ElementParser* getElementParser(int elementType);
-    
-    /**
-     * @brief 取得属性处理器
-     *
-     * @param elementType 元素类型
-     */
-    ElementParser* getElementParser(const yhge::Json::Value& elementType);
-    
+
+    virtual void parse(CCNode* node,const yhge::Json::Value& events,const yhge::Json::Value& type);
+
+    void addEventHandle(const std::string& name,yhge::EventHandle* handler,const std::string& segment);
+
+    void addEventHandle(const std::string& name,yhge::EventHandle* handler);
+
 public:
     
-    enum{
-        kStringKey=1,
-        kIntKey=2,
-    };
-    
-    inline void setElementParserMap(CCDictionary* elementParserMap)
+    void setEventHandleMaps(CCDictionary* eventHandleMaps)
     {
-        CC_SAFE_RETAIN(elementParserMap);
-        CC_SAFE_RELEASE(m_elementParserMap);
-        m_elementParserMap = elementParserMap;
+        CC_SAFE_RETAIN(eventHandleMaps);
+        CC_SAFE_RELEASE(m_eventHandleMaps);
+        m_eventHandleMaps = eventHandleMaps;
     }
-    
-    inline CCDictionary* getElementParserMap()
+
+    CCDictionary* getEventHandleMaps()
     {
-        return m_elementParserMap;
+        return m_eventHandleMaps;
     }
-    
-    inline void setKeyType(int keyType)
+
+    void setDefaultEventHandleMap(CCDictionary* defaultEventHandleMap)
     {
-        m_keyType = keyType;
+        //CC_SAFE_RETAIN(defaultEventHandleMap);
+        //CC_SAFE_RELEASE(m_defaultEventHandleMap);
+        m_defaultEventHandleMap = defaultEventHandleMap;
     }
-    
-    inline int getKeyType()
+
+    CCDictionary* getDefaultEventHandleMap()
     {
-        return m_keyType;
+        return m_defaultEventHandleMap;
     }
+
 protected:
     
-    CCDictionary* m_elementParserMap;
-    
-    //键的类型
-    int m_keyType;
+    CCDictionary* m_eventHandleMaps;
+    CCDictionary* m_defaultEventHandleMap;
 };
 
 NS_CC_YHGUI_END

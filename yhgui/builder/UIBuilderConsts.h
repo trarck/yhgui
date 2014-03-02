@@ -32,7 +32,6 @@ extern const char* kPropertyNameProperties;
 extern const char* kPropertyNameChildren;
 extern const char* kPropertyNameVersion;
 extern const char* kPropertyNameGraphData;
-
 //unknow
 extern const char* kPropertyNamePosition;
 extern const char* kPropertyNameSize;
@@ -67,6 +66,15 @@ extern const char* kPropertyNameVerticalAlignment;
 extern const char* kPropertyNameFntFile;
 extern const char* kPropertyNameAutomaticWidth;
 extern const char* kPropertyNameAlignment;
+
+//==================element events==================//
+extern const char* kPropertyNameEvents;
+extern const char* kPropertyNameSegment;
+extern const char* kPropertyNameHandle;
+extern const char* kPropertyNameEventName;
+
+//==================others==================//
+extern const char* kDefaultSegmentName;
 
 NS_CC_YHGUI_END
 

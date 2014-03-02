@@ -14,6 +14,7 @@
 #include "../YHGUIMacros.h"
 #include "ElementCreatorFactory.h"
 #include "ElementParserFactory.h"
+#include "ElementEventParser.h"
 
 NS_CC_YHGUI_BEGIN
 
@@ -76,7 +77,7 @@ protected:
     
     /**
      * @brief set元素的事件
-     * 只有可触发事件的元素，才可以进行事件触发。
+     * 只有可触发事件的元素，才有事件触发。
      *
      * @param node 需要设置属性的元素
      * @param type 元素类型
@@ -128,6 +129,18 @@ public:
         return m_elementParserFactory;
     }
     
+    void setElementEventParser(ElementEventParser* elementEventParser)
+    {
+        CC_SAFE_RETAIN(elementEventParser);
+        CC_SAFE_RELEASE(m_elementEventParser);
+        m_elementEventParser = elementEventParser;
+    }
+
+    ElementEventParser* getElementEventParser()
+    {
+        return m_elementEventParser;
+    }
+
 protected:
     
     //元素创建器
@@ -137,9 +150,7 @@ protected:
     ElementParserFactory* m_elementParserFactory;
     
     //事件处理
-    
-    //controllers
-    CCDictionary* m_controllers;
+    ElementEventParser* m_elementEventParser;
 };
 
 NS_CC_YHGUI_END
