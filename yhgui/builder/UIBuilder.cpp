@@ -113,7 +113,9 @@ void UIBuilder::createChildren(const yhge::Json::Value& children,CCNode* parent)
         CCNode* child=NULL;
         for (int i=0; i<children.size(); ++i) {
             child=this->createElement(children[i]);
-            parent->addChild(child);
+            if (child) {
+                parent->addChild(child);
+            }
         }
     }
 }
@@ -147,7 +149,7 @@ void UIBuilder::setElementProperties(CCNode* node,const yhge::Json::Value& type,
     
     ElementParser* elementParser=m_elementParserFactory->getElementParser(type);
     if (elementParser) {
-        elementParser->parse(node, properties, parent);
+        elementParser->parse(node, properties, parent,this);
     }else{
         CCLOG("UIBuilder::setElementProperties unkwon type %s",type.asString().c_str());
     }

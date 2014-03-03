@@ -30,17 +30,32 @@ const char* kPropertyNameChildren="children";
 const char* kPropertyNameVersion="version";
 const char* kPropertyNameGraphData ="graphData";
 
+//struct point
+const char* kPropertyNameX ="x";
+const char* kPropertyNameY ="y";
+
+//struct size
+const char* kPropertyNameWidth ="width";
+const char* kPropertyNameHeight ="height";
+
+//struct color
+const char* kPropertyNameR ="r";
+const char* kPropertyNameG ="g";
+const char* kPropertyNameB ="b";
+
+//unknow
 const char* kPropertyNamePosition ="position";
 const char* kPropertyNameSize ="size";
 const char* kPropertyNameAnchor ="anchor";
 const char* kPropertyNameScale ="scale";
 const char* kPropertyNameFlip ="flip";
 
+const char* kPropertyNameBackground ="background";
+
+//color
+const char* kPropertyNameColor ="color";
+
 //node
-const char* kPropertyNameX ="x";
-const char* kPropertyNameY ="y";
-const char* kPropertyNameWidth ="width";
-const char* kPropertyNameHeight ="height";
 const char* kPropertyNameAnchorX ="anchorX";
 const char* kPropertyNameAnchorY ="anchorY";
 const char* kPropertyNameScaleX ="scaleX";
@@ -50,8 +65,6 @@ const char* kPropertyNameVisible ="visible";
 const char* kPropertyNameZOrder ="zOrder";
 const char* kPropertyNameTag ="tag";
 
-//color
-const char* kPropertyNameColor ="color";
 
 //sprite
 const char* kPropertyNameFlipX ="flipX";
@@ -67,6 +80,26 @@ const char* kPropertyNameVerticalAlignment ="verticalAlignment";
 const char* kPropertyNameFntFile ="fntFile";
 const char* kPropertyNameAutomaticWidth ="automaticWidth";
 const char* kPropertyNameAlignment ="alignment";
+
+//component
+const char* kPropertyNameName ="name";
+const char* kPropertyNameEnable ="enable";
+const char* kPropertyNameBounds ="bounds";
+
+//button
+const char* kPropertyNamePreferredSize ="preferredSize";
+const char* kPropertyNamePreferredWidth ="preferredWidth";
+const char* kPropertyNamePreferredHeight ="preferredHeight";
+
+const char* kPropertyNameStates ="states";
+const char* kPropertyNameNormal ="normal";
+const char* kPropertyNamePressed ="pressed";
+const char* kPropertyNameSelected ="selected";
+const char* kPropertyNameDisabled ="disabled";
+
+//normal button
+const char* kPropertyNameLabelOffset ="labelOffset";
+const char* kPropertyNameLabel="label";
 
 //==================element events==================//
 const char* kPropertyNameEvents="events";

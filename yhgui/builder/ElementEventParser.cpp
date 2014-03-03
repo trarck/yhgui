@@ -97,12 +97,12 @@ void ElementEventParser::parse(CCNode* node,const yhge::Json::Value& events,cons
                 break;
         }
 
-        //Èç¹ûÒª´¦ÀíµÄº¯Êıkey²»´æÔÚ£¬Ôò¼ÌĞøÏÂÒ»Ìõ
+        //å¦‚æœè¦å¤„ç†çš„å‡½æ•°keyä¸å­˜åœ¨ï¼Œåˆ™ç»§ç»­ä¸‹ä¸€æ¡
         if (handleKey.empty())
             continue;
 
          //add listener
-        //Ê¹ÓÃdefault¼õÉÙÒ»´Îhash²éÕÒ£¬¼Ó¿ìËÙ¶È¡£Í¨³£Çé¿ö¶¼ÊÇdefault
+        //ä½¿ç”¨defaultå‡å°‘ä¸€æ¬¡hashæŸ¥æ‰¾ï¼ŒåŠ å¿«é€Ÿåº¦ã€‚é€šå¸¸æƒ…å†µéƒ½æ˜¯default
         if (isDefaultSegment){
             if (m_defaultEventHandleMap){
                 eventHandler=static_cast<EventHandle*>(m_defaultEventHandleMap->objectForKey(handleKey));
@@ -122,7 +122,7 @@ void ElementEventParser::parse(CCNode* node,const yhge::Json::Value& events,cons
     }
 }
 
-void ElementEventParser::addEventHandle(const std::string& name,yhge::EventHandle* handler,const std::string& segment)
+void ElementEventParser::addEventHandler(const std::string& name,yhge::EventHandle* handler,const std::string& segment)
 {
     CCDictionary* handleMap=static_cast<CCDictionary*>(m_eventHandleMaps->objectForKey(segment));
     if (!handleMap)
@@ -135,9 +135,30 @@ void ElementEventParser::addEventHandle(const std::string& name,yhge::EventHandl
     handleMap->setObject(handler,name);
 }
 
-void ElementEventParser::addEventHandle(const std::string& name,yhge::EventHandle* handler)
+void ElementEventParser::addEventHandler(const std::string& name,yhge::EventHandle* handler)
 {
-    addEventHandle(name,handler,kDefaultSegmentName);
+    addEventHandler(name,handler,kDefaultSegmentName);
+}
+
+void ElementEventParser::addEventHandle(const std::string& name,CCObject* target,yhge::SEL_EventHandle handle,const std::string& segment)
+{
+    CCDictionary* handleMap=static_cast<CCDictionary*>(m_eventHandleMaps->objectForKey(segment));
+    if (!handleMap)
+    {
+        handleMap=new CCDictionary();
+        m_eventHandleMaps->setObject(handleMap,segment);
+        handleMap->release();
+    }
+    
+    yhge::EventHandle* handler=new yhge::EventHandle();
+    handler->initWithTarget(target, handle);
+    handleMap->setObject(handler,name);
+    handler->release();
+}
+
+void ElementEventParser::addEventHandle(const std::string& name,CCObject* target,yhge::SEL_EventHandle handle)
+{
+    addEventHandle(name,target,handle,kDefaultSegmentName);
 }
 
 NS_CC_YHGUI_END

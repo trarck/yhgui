@@ -26,6 +26,8 @@ public:
     
     static void compileComponentParser(ComponentialElementParser* elementParser);
     
+    static void compileNormalButtonParser(ComponentialElementParser* elementParser);
+    
     
     static ElementParser* getNodeParser();
     

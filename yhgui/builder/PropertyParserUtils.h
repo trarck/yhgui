@@ -1,40 +1,19 @@
-//
-//  PropertyParser.h
-//  
-//
-//  Created by duanhouhai on 13-2-1.
-//
-//
 
-#ifndef COCOS_YHGUI_BUILDER_PROPERTYPARSER_H_
-#define COCOS_YHGUI_BUILDER_PROPERTYPARSER_H_
+#ifndef COCOS_YHGUI_BUILDER_PropertyParserUtils_H_
+#define COCOS_YHGUI_BUILDER_PropertyParserUtils_H_
 
 #include "cocos2d.h"
 #include <yhge/Jsoncpp/json.h>
-#include <yhgui/Component.h>
 #include "../YHGUIMacros.h"
-#include "UIBuilderMacros.h"
 #include "UIBuilderConsts.h"
 
 NS_CC_YHGUI_BEGIN
 
-class UIBuilder;
-
 /**
- * @brief 属性处理
+ * @brief 对象属性处理工具
  */
-class PropertyParser:public CCObject
+class PropertyParserUtils:public CCObject
 {
-public:
-    
-    virtual void parse(CCNode* node,const yhge::Json::Value& propertyValue,CCNode* parent,UIBuilder* builder)=0;
-    
-    virtual void parse(CCNode* node,const yhge::Json::Value& propertyValue)
-    {
-        parse(node, propertyValue, NULL,NULL);
-    }
-    
-    //===============utils===============//
 public:
     
     /**
@@ -88,8 +67,6 @@ public:
     }
 };
 
-
-
 NS_CC_YHGUI_END
 
-#endif // COCOS_YHGUI_BUILDER_PROPERTYPARSER_H_
+#endif // COCOS_YHGUI_BUILDER_PropertyParserUtils_H_

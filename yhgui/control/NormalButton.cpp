@@ -23,6 +23,8 @@ bool NormalButton::init()
 {
     if (Button::init()) {
         //set normal state color
+        //为了性能初始化的时候不创建默认label
+//        setLabel(CCLabelTTF::create());
 		this->setStateLabelColor(kNormal,ccWHITE);
         return true;
     }
@@ -39,7 +41,7 @@ void NormalButton::draw()
 	ccDrawRect(CCPointZero,contentSize);
     
     if (m_label) {
-        ccDrawColor4B(0,0,255,255);
+        ccDrawColor4B(255,0,0,255);
         CCRect labelRect=m_label->boundingBox();
         ccDrawRect(labelRect.origin,ccp(labelRect.getMaxX(),labelRect.getMaxY()));
     }
@@ -136,8 +138,18 @@ void NormalButton::updateStateComponent(State newState)
  */
 void NormalButton::setLabel(CCNode* label)
 {
-    this->addChild(label,kLabelZOrder);
-    m_label=label;
+    if (m_label!=label) {
+        
+        //去除原来的label
+        if (m_label) {
+            m_label->removeFromParent();
+        }
+        //label从父类中移除
+        label->removeFromParent();
+        //加入结构树
+        this->addChild(label,kLabelZOrder);
+        m_label=label;
+    }
 }
 
 /**

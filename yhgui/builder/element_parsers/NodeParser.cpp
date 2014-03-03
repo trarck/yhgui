@@ -58,4 +58,10 @@ void ComponentParser::setupPropertyParser()
     PropertyParserCompiler::compileComponentParser(this);
 }
 
+void NormalButtonParser::setupPropertyParser()
+{
+    ComponentParser::setupPropertyParser();
+    PropertyParserCompiler::compileNormalButtonParser(this);
+}
+
 NS_CC_YHGUI_END

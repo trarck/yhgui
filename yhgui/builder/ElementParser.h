@@ -17,6 +17,8 @@
 
 NS_CC_YHGUI_BEGIN
 
+class UIBuilder;
+
 /**
  * @brief 元素处理
  * 主要处理属性
@@ -25,11 +27,11 @@ class ElementParser:public CCObject
 {
 public:
     
-    virtual void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)=0;
+    virtual void parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)=0;
     
     virtual void parse(CCNode* node,const yhge::Json::Value& properties)
     {
-        parse(node, properties, NULL);
+        parse(node, properties, NULL,NULL);
     }
     
 };

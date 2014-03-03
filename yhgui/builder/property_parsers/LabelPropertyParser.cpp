@@ -5,7 +5,7 @@ NS_CC_YHGUI_BEGIN
 
 //=======================label 相关=======================//
 
-void TextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void TextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     
     yhge::Json::Value textValue=properties[kPropertyNameText];
@@ -17,21 +17,21 @@ void TextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,
     }
 }
 
-void LabelColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void LabelColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value colorValue=properties[kPropertyNameColor];
     if(!colorValue.isNull()){
         
         CCNodeRGBA* nodeRgba=static_cast<CCNodeRGBA*>(node);
         
-        ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
+        ccColor3B color=getColor(colorValue);
         nodeRgba->setColor(color);
     }
 }
 
 //===========CCLabelTTF 相关===========//
 
-void TTFTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void TTFTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     
     yhge::Json::Value textValue=properties[kPropertyNameText];
@@ -41,19 +41,19 @@ void TTFTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properti
     }
 }
 
-void TTFColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void TTFColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value colorValue=properties[kPropertyNameColor];
     if(!colorValue.isNull()){
         
         CCLabelTTF* label=static_cast<CCLabelTTF*>(node);
         
-        ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
+        ccColor3B color=getColor(colorValue);
         label->setColor(color);
     }
 }
 
-void FontFamilyPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void FontFamilyPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value fontFamilyValue=properties[kPropertyNameFontFamily];
     if(!fontFamilyValue.isNull()){
@@ -62,7 +62,7 @@ void FontFamilyPropertyParser::parse(CCNode* node,const yhge::Json::Value& prope
     }
 }
 
-void FontSizePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void FontSizePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value fontSizeValue=properties[kPropertyNameFontSize];
     if(!fontSizeValue.isNull()){
@@ -71,7 +71,7 @@ void FontSizePropertyParser::parse(CCNode* node,const yhge::Json::Value& propert
     }
 }
 
-void HorizontalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void HorizontalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     CCLabelTTF* label=static_cast<CCLabelTTF*>(node);
     
@@ -94,7 +94,7 @@ void HorizontalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Val
     }
 }
 
-void VerticalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void VerticalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     CCLabelTTF* label=static_cast<CCLabelTTF*>(node);
     
@@ -119,7 +119,7 @@ void VerticalAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value
 
 //===========CCLabelBMFont 相关===========//
 
-void BMFontTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void BMFontTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value textValue=properties[kPropertyNameText];
     if(!textValue.isNull()){
@@ -128,7 +128,7 @@ void BMFontTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& prope
     }
 }
 
-void FntFilePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void FntFilePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value fntFileValue=properties[kPropertyNameFntFile];
     if(!fntFileValue.isNull()){
@@ -137,19 +137,19 @@ void FntFilePropertyParser::parse(CCNode* node,const yhge::Json::Value& properti
     }
 }
 
-void BMFontColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void BMFontColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value colorValue=properties[kPropertyNameColor];
     if(!colorValue.isNull()){
         
         CCLabelBMFont* label=static_cast<CCLabelBMFont*>(node);
         
-        ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
+        ccColor3B color=getColor(colorValue);
         label->setColor(color);
     }
 }
 
-void AutomaticWidthPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void AutomaticWidthPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value automaticWidthValue=properties[kPropertyNameAutomaticWidth];
     if(!automaticWidthValue.isNull()){
@@ -158,7 +158,7 @@ void AutomaticWidthPropertyParser::parse(CCNode* node,const yhge::Json::Value& p
     }
 }
 
-void BMFontAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void BMFontAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     CCLabelBMFont* label=static_cast<CCLabelBMFont*>(node);
     
@@ -182,7 +182,7 @@ void BMFontAlignmentPropertyParser::parse(CCNode* node,const yhge::Json::Value& 
 }
 
 //===========CCLabelAtlas 相关===========//
-void LabelAtlasTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void LabelAtlasTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value textValue=properties[kPropertyNameText];
     if(!textValue.isNull()){
@@ -191,14 +191,14 @@ void LabelAtlasTextPropertyParser::parse(CCNode* node,const yhge::Json::Value& p
     }
 }
 
-void LabelAtlasColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void LabelAtlasColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value colorValue=properties[kPropertyNameColor];
     if(!colorValue.isNull()){
         
         CCLabelAtlas* label=static_cast<CCLabelAtlas*>(node);
         
-        ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
+        ccColor3B color=getColor(colorValue);
         label->setColor(color);
     }
 }

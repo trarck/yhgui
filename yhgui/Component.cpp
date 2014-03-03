@@ -8,8 +8,9 @@ Component::Component()
 ,m_enabled(true)
 ,m_touchInside(false)
 ,m_touchPriority(0)
-,m_boundsOrigin(CCPointZero)
-,m_boundsSize(CCSizeZero)
+,m_interactiveBounds(CCRectZero)
+//,m_interactiveBoundsOrigin(CCPointZero)
+//,m_interactiveBoundsSize(CCSizeZero)
 ,m_needDispatchToChildrenWhenCapthure(true)
 ,m_needBubbles(true)
 {
@@ -88,11 +89,17 @@ bool Component::isTouchInside(CCTouch* touch)
 bool Component::isPointInside(const CCPoint& point)
 {
     CCPoint localPoint=this->convertToNodeSpace(point);
-	CCSize contentSize= m_boundsSize.width==0 || m_boundsSize.height==0?this->getContentSize():m_boundsSize;
-    float maxX=m_boundsOrigin.x+contentSize.width;
-	float maxY=m_boundsOrigin.y+contentSize.height;
+    
+    CCSize interactiveSize=m_interactiveBounds.size;
+    
+    if (interactiveSize.width==0 || interactiveSize.height==0) {
+        interactiveSize=this->getContentSize();
+    }
 
-    return localPoint.x>=m_boundsOrigin.x && localPoint.x<=maxX && localPoint.y>=m_boundsOrigin.y &&localPoint.y<=maxY;
+    float maxX=m_interactiveBounds.origin.x+interactiveSize.width;
+	float maxY=m_interactiveBounds.origin.y+interactiveSize.height;
+
+    return localPoint.x>=m_interactiveBounds.origin.x && localPoint.x<=maxX && localPoint.y>=m_interactiveBounds.origin.y &&localPoint.y<=maxY;
 }
 
 bool Component::hasVisibleParents()

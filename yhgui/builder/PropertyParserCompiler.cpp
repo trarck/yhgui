@@ -3,6 +3,7 @@
 #include "UIBuilderConsts.h"
 #include "property_parsers/NodePropertyParser.h"
 #include "property_parsers/LabelPropertyParser.h"
+#include "property_parsers/ComponentPropertyParser.h"
 
 NS_CC_YHGUI_BEGIN
 
@@ -51,7 +52,15 @@ void PropertyParserCompiler::compileLabelAtlasParser(ComponentialElementParser* 
 
 void PropertyParserCompiler::compileComponentParser(ComponentialElementParser* elementParser)
 {
-    
+    elementParser->registerPropertyParser(kPropertyNameName,ComponentNamePropertyParser::create());
+    elementParser->registerPropertyParser(kPropertyNameEnable,ComponentEnablePropertyParser::create());
+    elementParser->registerPropertyParser(kPropertyNameBounds,ComponentInteractiveBoundsPropertyParser::create());
+}
+
+void PropertyParserCompiler::compileNormalButtonParser(ComponentialElementParser* elementParser)
+{
+    elementParser->registerPropertyParser(kPropertyNameLabel,NormalButtonLabelPropertyParser::create());
+    elementParser->registerPropertyParser(kPropertyNameStates,NormalButtonStatesPropertyParser::create());
 }
 
 ElementParser* PropertyParserCompiler::getNodeParser()

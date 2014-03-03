@@ -21,19 +21,19 @@ bool ComponentialElementParser::init()
     return true;
 }
 
-void ComponentialElementParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void ComponentialElementParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     CCDictElement* elem=NULL;
     CCDICT_FOREACH(m_propertyParserMap, elem){
         PropertyParser* propertyParse=static_cast<PropertyParser* >(elem->getObject());
-        propertyParse->parse(node, properties, parent);
+        propertyParse->parse(node, properties, parent,builder);
     }
 //    yhge::Json::Value::Members members=properties.getMemberNames();
 //    for (yhge::Json::Value::Members::iterator iter=members.begin(); iter!=members.end(); ++iter) {
 //        PropertyParser* propertyParse=static_cast<PropertyParser* >(m_propertyParserMap->objectForKey((*iter)));
 //        
 //        if (propertyParse) {
-//            propertyParse->parse(node, properties[*iter], parent);
+//            propertyParse->parse(node, properties[*iter], parent,builder);
 //        }
 //    }
 }

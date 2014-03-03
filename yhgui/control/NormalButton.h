@@ -94,7 +94,6 @@ public:
         kLabelTypeAtlas
     };
     
-    
     inline void setLabelType(LabelType labelType)
     {
         m_labelType = labelType;

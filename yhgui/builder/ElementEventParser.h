@@ -30,9 +30,13 @@ public:
 
     virtual void parse(CCNode* node,const yhge::Json::Value& events,const yhge::Json::Value& type);
 
-    void addEventHandle(const std::string& name,yhge::EventHandle* handler,const std::string& segment);
+    void addEventHandler(const std::string& name,yhge::EventHandle* handler,const std::string& segment);
 
-    void addEventHandle(const std::string& name,yhge::EventHandle* handler);
+    void addEventHandler(const std::string& name,yhge::EventHandle* handler);
+    
+    void addEventHandle(const std::string& name,CCObject* target,yhge::SEL_EventHandle handle,const std::string& segment);
+    
+    void addEventHandle(const std::string& name,CCObject* target,yhge::SEL_EventHandle handle);
 
 public:
     

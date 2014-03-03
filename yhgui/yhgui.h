@@ -17,10 +17,12 @@
 //交互项
 #include "interactive/Organizer.h"
 #include "interactive/DocumentTreeOrganizer.h"
+#include "interactive/NormalDocumentTreeOrganizer.h"
 #include "interactive/ListOrganizer.h"
 #include "interactive/OrderedListOrganizer.h"
 #include "interactive/PriorityOrganizer.h"
 #include "interactive/IndependentDocumentTreeOrganizer.h"
+#include "interactive/IndependentNormalDocumentTreeOrganizer.h"
 #include "interactive/IndependentListOrganizer.h"
 #include "interactive/IndependentOrderedListOrganizer.h"
 #include "interactive/IndependentPriorityOrganizer.h"
@@ -36,6 +38,7 @@
 #include "builder/property_parsers/LabelPropertyParser.h"
 #include "builder/ElementCreatorFactory.h"
 #include "builder/ElementParserFactory.h"
+#include "builder/ElementEventParser.h"
 #include "builder/UIBuilder.h"
 
 #endif //COCOS_YHGUI_YHGUI_H_

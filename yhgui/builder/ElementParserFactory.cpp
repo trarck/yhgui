@@ -54,6 +54,7 @@ void ElementParserFactory::setupStringKeyDefaultParser()
     registerElementParser(kElementTypeCCLabelBMFont, LabelBMFontParser::create());
     registerElementParser(kElementTypeCCLableAtlas, LabelAtlasParser::create());
     registerElementParser(kElementTypeComponent, ComponentParser::create());
+    registerElementParser(kElementTypeNormalButton, NormalButtonParser::create());
 }
 
 void ElementParserFactory::setupIntKeyDefaultParser()

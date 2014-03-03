@@ -3,36 +3,36 @@
 
 NS_CC_YHGUI_BEGIN
 
-void IntegrativeNodeParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void IntegrativeNodeParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     //parse position
     
-    node->setPosition(getPosition(properties, parent));
+    node->setPosition(getPosition(properties, parent, builder));
 
     //parse size
-    node->setContentSize(getSize(properties, parent));
+    node->setContentSize(getSize(properties, parent, builder));
     
     //parse anchor
-    node->setAnchorPoint(getAnchor(properties, parent));
+    node->setAnchorPoint(getAnchor(properties, parent, builder));
     
     //parse scale
-    node->setScaleX(getScaleX(properties, parent));
-    node->setScaleY(getScaleY(properties, parent));
+    node->setScaleX(getScaleX(properties, parent, builder));
+    node->setScaleY(getScaleY(properties, parent, builder));
     
     //parse rotation
-    node->setRotation(getRotation(properties, parent));
+    node->setRotation(getRotation(properties, parent, builder));
     
     //parse visible
-    node->setVisible(getVisible(properties, parent));
+    node->setVisible(getVisible(properties, parent, builder));
     
     //parse zorder
-    node->setZOrder(getZOrder(properties, parent));
+    node->setZOrder(getZOrder(properties, parent, builder));
     
     //parse tag
-    node->setTag(getTag(properties, parent));
+    node->setTag(getTag(properties, parent, builder));
 }
 
-CCPoint IntegrativeNodeParser::getPosition(const yhge::Json::Value& properties,CCNode* parent)
+CCPoint IntegrativeNodeParser::getPosition(const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     float x=0.0f,y=0.0f;
     
@@ -49,7 +49,7 @@ CCPoint IntegrativeNodeParser::getPosition(const yhge::Json::Value& properties,C
     return ccp(x,y);
 }
 
-CCSize IntegrativeNodeParser::getSize(const yhge::Json::Value& properties,CCNode* parent)
+CCSize IntegrativeNodeParser::getSize(const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     float width=0.0f,height=0.0f;
     
@@ -66,7 +66,7 @@ CCSize IntegrativeNodeParser::getSize(const yhge::Json::Value& properties,CCNode
     return CCSizeMake(width, height);
 }
 
-CCPoint IntegrativeNodeParser::getAnchor(const yhge::Json::Value& properties,CCNode* parent)
+CCPoint IntegrativeNodeParser::getAnchor(const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     float anchorX=0.0f,anchorY=0.0f;
     
@@ -83,7 +83,7 @@ CCPoint IntegrativeNodeParser::getAnchor(const yhge::Json::Value& properties,CCN
     return ccp(anchorX, anchorY);
 }
 
-float IntegrativeNodeParser::getScaleX(const yhge::Json::Value& properties,CCNode* parent)
+float IntegrativeNodeParser::getScaleX(const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     float scaleX=1.0f;
     
@@ -95,7 +95,7 @@ float IntegrativeNodeParser::getScaleX(const yhge::Json::Value& properties,CCNod
     return scaleX;
 }
 
-float IntegrativeNodeParser::getScaleY(const yhge::Json::Value& properties,CCNode* parent)
+float IntegrativeNodeParser::getScaleY(const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     float scaleY=1.0f;
     yhge::Json::Value scaleYValue=properties[kPropertyNameScale][kPropertyNameY];
@@ -106,7 +106,7 @@ float IntegrativeNodeParser::getScaleY(const yhge::Json::Value& properties,CCNod
     return scaleY;
 }
 
-float IntegrativeNodeParser::getRotation(const yhge::Json::Value& properties,CCNode* parent)
+float IntegrativeNodeParser::getRotation(const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     float rotation=0.0f;
     
@@ -117,7 +117,7 @@ float IntegrativeNodeParser::getRotation(const yhge::Json::Value& properties,CCN
     return rotation;
 }
 
-bool IntegrativeNodeParser::getVisible(const yhge::Json::Value& properties,CCNode* parent)
+bool IntegrativeNodeParser::getVisible(const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value visibleValue=properties[kPropertyNameVisible];
     if(!visibleValue.isNull()){
@@ -127,7 +127,7 @@ bool IntegrativeNodeParser::getVisible(const yhge::Json::Value& properties,CCNod
     return true;
 }
 
-int IntegrativeNodeParser::getZOrder(const yhge::Json::Value& properties,CCNode* parent)
+int IntegrativeNodeParser::getZOrder(const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value zOrderValue=properties[kPropertyNameZOrder];
     if(!zOrderValue.isNull()){
@@ -136,7 +136,7 @@ int IntegrativeNodeParser::getZOrder(const yhge::Json::Value& properties,CCNode*
     return 0;
 }
 
-int IntegrativeNodeParser::getTag(const yhge::Json::Value& properties,CCNode* parent)
+int IntegrativeNodeParser::getTag(const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value tagValue=properties[kPropertyNameTag];
     if(!tagValue.isNull()){

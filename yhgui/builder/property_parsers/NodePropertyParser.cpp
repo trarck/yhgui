@@ -5,7 +5,7 @@ NS_CC_YHGUI_BEGIN
 
 //=======================node 相关=======================//
 
-void PositionPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void PositionPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     float x=0.0f,y=0.0f;
     
@@ -22,7 +22,7 @@ void PositionPropertyParser::parse(CCNode* node,const yhge::Json::Value& propert
     node->setPosition(ccp(x,y));
 }
 
-void SizePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void SizePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
 //    yhge::Json::Value::Members members=properties.getMemberNames();
 //    for (yhge::Json::Value::Members::iterator iter=members.begin(); iter!=members.end(); ++iter) {
@@ -45,7 +45,7 @@ void SizePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,
     node->setContentSize(CCSizeMake(width, height));
 }
 
-void AnchorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void AnchorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     float anchorX=0.0f,anchorY=0.0f;
     
@@ -62,7 +62,7 @@ void AnchorPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertie
     node->setAnchorPoint(ccp(anchorX, anchorY));
 }
 
-void ScalePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void ScalePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value scaleXValue=properties[kPropertyNameScaleX];
     if(!scaleXValue.isNull()){
@@ -77,7 +77,7 @@ void ScalePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties
     }
 }
 
-void RotationPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void RotationPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     //parse rotation
     yhge::Json::Value rotationValue=properties[kPropertyNameRotation];
@@ -87,7 +87,7 @@ void RotationPropertyParser::parse(CCNode* node,const yhge::Json::Value& propert
     }
 }
 
-void VisiblePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void VisiblePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     //parse visible
     yhge::Json::Value visibleValue=properties[kPropertyNameVisible];
@@ -97,7 +97,7 @@ void VisiblePropertyParser::parse(CCNode* node,const yhge::Json::Value& properti
     }
 }
 
-void ZOrderPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void ZOrderPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value zOrderValue=properties[kPropertyNameZOrder];
     if(!zOrderValue.isNull()){
@@ -105,7 +105,7 @@ void ZOrderPropertyParser::parse(CCNode* node,const yhge::Json::Value& propertie
     }
 }
 
-void TagPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void TagPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value tagValue=properties[kPropertyNameTag];
     if(!tagValue.isNull()){
@@ -114,14 +114,14 @@ void TagPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,C
 }
 
 //=======================color 相关=======================//
-void ColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void ColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value colorValue=properties[kPropertyNameColor];
     if(!colorValue.isNull()){
         
         CCRGBAProtocol* rgbaNode=dynamic_cast<CCRGBAProtocol*>(node);
         if (rgbaNode) {
-            ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
+            ccColor3B color=getColor(colorValue);
             rgbaNode->setColor(color);
         }
     }
@@ -131,7 +131,7 @@ void ColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties
 //=======================sprite 相关=======================//
 
     
-void FlipPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void FlipPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     CCSprite* sprite=static_cast<CCSprite*>(node);
     
@@ -149,19 +149,19 @@ void FlipPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,
     
 }
 
-void SpriteColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void SpriteColorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value colorValue=properties[kPropertyNameColor];
     if(!colorValue.isNull()){
         
         CCSprite* sprite=static_cast<CCSprite*>(node);
         
-        ccColor3B color=ccc3(colorValue[0u].asUInt(), colorValue[1u].asUInt(), colorValue[2u].asUInt());
+        ccColor3B color=getColor(colorValue);
         sprite->setColor(color);
     }
 }
 
-void TexutrePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent)
+void TexutrePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
     yhge::Json::Value textureValue=properties[kPropertyNameAsset];
     if(!textureValue.isNull()){

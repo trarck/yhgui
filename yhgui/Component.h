@@ -129,12 +129,12 @@ public:
     
     //=============get set===============//
     
-    inline void setName(const std::string name)
+    inline void setName(const std::string& name)
     {
         m_name = name;
     }
     
-    inline const std::string getName()
+    inline const std::string& getName()
     {
         return m_name;
     }
@@ -148,24 +148,36 @@ public:
     {
         return m_touchPriority;
     }
-	void setBoundsOrigin(const CCPoint& boundsOrigin)
+    
+    inline void setInteractiveBounds(const CCRect& interactiveBounds)
+    {
+        m_interactiveBounds = interactiveBounds;
+    }
+    
+    inline const CCRect& getInteractiveBounds()
+    {
+        return m_interactiveBounds;
+    }
+    
+	void setInteractiveBoundsOrigin(const CCPoint& boundsOrigin)
 	{
-		m_boundsOrigin = boundsOrigin;
+//		m_interactiveBoundsOrigin = boundsOrigin;
+        m_interactiveBounds.origin=boundsOrigin;
 	}
 
-	const CCPoint& getBoundsOrigin()
+	const CCPoint& getInteractiveBoundsOrigin()
 	{
-		return m_boundsOrigin;
+		return m_interactiveBounds.origin;
 	}
 
-	void setBoundsSize(const CCSize& boundsSize)
+	void setInteractiveBoundsSize(const CCSize& boundsSize)
 	{
-		m_boundsSize = boundsSize;
+		m_interactiveBounds.size = boundsSize;
 	}
 
-	const CCSize& getBoundsSize()
+	const CCSize& getInteractiveBoundsSize()
 	{
-		return m_boundsSize;
+		return m_interactiveBounds.size;
 	}
     
 	void setNeedDispatchToChildrenWhenCapthure(bool needDispatchToChildrenWhenCapthure)
@@ -203,17 +215,22 @@ protected:
     
     //touch 等级
     int m_touchPriority;
-
-	/**
-	 * 可交互区域坐标点
+    
+    /**
+	 * 可交互区
 	 */
-	CCPoint m_boundsOrigin;
-
-	/**
-	 * 可交互区域大小
-	 * 如果大小为0，则使用contentSize
-	 */
-	CCSize m_boundsSize;
+    CCRect m_interactiveBounds;
+    
+//	/**
+//	 * 可交互区域坐标点
+//	 */
+//	CCPoint m_interactiveBoundsOrigin;
+//
+//	/**
+//	 * 可交互区域大小
+//	 * 如果大小为0，则使用contentSize
+//	 */
+//	CCSize m_interactiveBoundsSize;
 
 	/**
 	 * 在事件的捕捉介段，交互事件是否向子元素传递

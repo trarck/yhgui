@@ -14,6 +14,7 @@
 #include <yhge/CocosExt/CCDefaultTexture.h>
 #include <yhge/CocosExt/CCAdaptSprite.h>
 #include <yhgui/Component.h>
+#include <yhgui/control/NormalButton.h>
 #include "../YHGUIMacros.h"
 #include "UIBuilderMacros.h"
 
@@ -92,6 +93,14 @@ public:
     
     YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(yhgui::Component);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(ComponentCreator,creator);
+};
+
+class NormalButtonCreator:public ElementCreator
+{
+public:
+    
+    YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(yhgui::NormalButton);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(NormalButtonCreator,creator);
 };
 
 NS_CC_YHGUI_END

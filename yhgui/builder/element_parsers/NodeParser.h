@@ -73,6 +73,14 @@ public:
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(ComponentParser,create);
 };
 
+class NormalButtonParser:public ComponentParser
+{
+public:
+    
+    virtual void setupPropertyParser();
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(NormalButtonParser,create);
+};
+
 NS_CC_YHGUI_END
 
 #endif // COCOS_YHGUI_BUILDER_PARSERS_NODEPROPERTYPARSER_H_
