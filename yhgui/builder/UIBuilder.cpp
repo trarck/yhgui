@@ -66,53 +66,46 @@ CCNode* UIBuilder::buildUI(const yhge::Json::Value& json,CCNode* parent)
 {
     unsigned int dataVersion=this->getDataVersion(json);
     
-    CCNode* root=this->createElement(json[kPropertyNameGraphData],parent);
+    CCNode* root=this->buildElement(json[kPropertyNameGraphData],parent);
     
     return root;
 }
 
-CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData)
+CCNode* UIBuilder::buildElement(const yhge::Json::Value& defineData)
 {
-    return createElement(defineData,NULL);
+    return buildElement(defineData,NULL);
 }
 
-CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData,CCNode* parent)
+CCNode* UIBuilder::buildElement(const yhge::Json::Value& defineData,CCNode* parent)
 {
     yhge::Json::Value type=defineData[kPropertyNameType];
     
-    CCNode* element=NULL;
+    CCNode* element=createElement(defineData);
     
-    //get element creator
-    ElementCreator* elementCreator=m_elementCreatorFactory->getElementCreator(type);
-    if(elementCreator){
-        //create element
-        element=elementCreator->createElement(defineData);
+    if(element){
         
-        //set element property
-        setElementPropertiesWithDefine(element, defineData,parent);
-        
-        //register event
-        registerElementEvents(element,type,defineData[kPropertyNameEvents],parent);
+        //parse element
+        parseElement(element, defineData,parent);
 
         //create element children
-        this->createChildren(defineData[kPropertyNameChildren], element);
+        buildChildren(defineData[kPropertyNameChildren], element);
         
         if(parent)
             parent->addChild(element);
         
     }else{
-        CCLOG("UIBuilder::createElement unknown element type:%s",type.asString().c_str());
+        CCLOG("UIBuilder::buildElement unknown element type:%s",type.asString().c_str());
     }
     
     return element;
 }
 
-void UIBuilder::createChildren(const yhge::Json::Value& children,CCNode* parent)
+void UIBuilder::buildChildren(const yhge::Json::Value& children,CCNode* parent)
 {
     if (!children.isNull() && parent) {
         CCNode* child=NULL;
         for (int i=0; i<children.size(); ++i) {
-            child=this->createElement(children[i]);
+            child=this->buildElement(children[i]);
             if (child) {
                 parent->addChild(child);
             }
@@ -130,9 +123,30 @@ unsigned int UIBuilder::getDataVersion(yhge::Json::Value root)
     return root[kPropertyNameVersion].asUInt();
 }
 
-void UIBuilder::setElementPropertiesWithDefine(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent)
+
+CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData)
 {
-    setElementProperties(node,defineData[kPropertyNameType],defineData[kPropertyNameProperties], parent);
+    yhge::Json::Value type=defineData[kPropertyNameType];
+    
+    //get element creator
+    ElementCreator* elementCreator=m_elementCreatorFactory->getElementCreator(type);
+    if(elementCreator){
+        //create element
+        return elementCreator->createElement(defineData);
+    }
+    
+    return NULL;
+}
+
+void UIBuilder::parseElement(CCNode* element,const yhge::Json::Value& defineData,CCNode* parent)
+{
+    yhge::Json::Value type=defineData[kPropertyNameType];
+    
+    //set element property
+    setElementProperties(element,type,defineData[kPropertyNameProperties], parent);
+    
+    //register event
+    registerElementEvents(element,type,defineData[kPropertyNameEvents],parent);
 }
 
 void UIBuilder::setElementProperties(CCNode* node,const yhge::Json::Value& type,const yhge::Json::Value& properties)

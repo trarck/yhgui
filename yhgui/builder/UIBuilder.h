@@ -36,11 +36,11 @@ public:
     
     CCNode* buildUI(const yhge::Json::Value& json,CCNode* parent);
     
-    CCNode* createElement(const yhge::Json::Value& defineData);
+    CCNode* buildElement(const yhge::Json::Value& defineData);
     
-    CCNode* createElement(const yhge::Json::Value& defineData,CCNode* parent);
+    CCNode* buildElement(const yhge::Json::Value& defineData,CCNode* parent);
     
-    void createChildren(const yhge::Json::Value& children,CCNode* parent);
+    void buildChildren(const yhge::Json::Value& children,CCNode* parent);
     
     unsigned int getDataFormat(yhge::Json::Value root);
     
@@ -49,13 +49,20 @@ public:
 protected:
     
     /**
-     * @brief 设置元素的属性
+     * @brief 创建一个元素
      *
+     * @param defineData 元素的定义数据
+     */
+    virtual CCNode* createElement(const yhge::Json::Value& defineData);
+    
+    /**
+     * @brief 处理元素
+     * 包括处理元素的属性，事件，还有其它属性
      * @param node 需要设置属性的元素
-     * @param properties 元素的属性集。一个json对象
+     * @param defineData 元素的属性集。一个json对象
      * @param parent 父结点
      */
-    void setElementPropertiesWithDefine(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent);
+    virtual void parseElement(CCNode* node,const yhge::Json::Value& defineData,CCNode* parent);
     
     /**
      * @brief 设置元素的属性
