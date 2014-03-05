@@ -20,6 +20,7 @@ const char* kElementTypeLabelTTF ="LabelTTF";
 const char* kElementTypePanel ="Panel";
 const char* kElementTypeList ="List";
 const char* kElementTypeScrollPanel ="ScrollPanel";
+const char* kElementTypeInclude ="Include";
 
 
 //==================element property==================//
@@ -29,6 +30,7 @@ const char* kPropertyNameProperties="properties";
 const char* kPropertyNameChildren="children";
 const char* kPropertyNameVersion="version";
 const char* kPropertyNameGraphData ="graphData";
+const char* kPropertyNameFile="file";
 
 //struct point
 const char* kPropertyNameX ="x";

@@ -53,6 +53,7 @@ void ElementParserFactory::setupStringKeyDefaultParser()
     registerElementParser(kElementTypeCCLabelTTF, LabelTTFParser::create());
     registerElementParser(kElementTypeCCLabelBMFont, LabelBMFontParser::create());
     registerElementParser(kElementTypeCCLableAtlas, LabelAtlasParser::create());
+    registerElementParser(kElementTypeInclude, NodeParser::create());
     registerElementParser(kElementTypeComponent, ComponentParser::create());
     registerElementParser(kElementTypeNormalButton, NormalButtonParser::create());
 }

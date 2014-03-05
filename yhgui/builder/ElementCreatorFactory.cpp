@@ -60,6 +60,7 @@ void ElementCreatorFactory::setupStringKeyDefaultCreator()
     registerElementCreator(kElementTypeCCLabelTTF, LabelTTFCreator::creator());
     registerElementCreator(kElementTypeCCLabelBMFont, LabelBMFontCreator::creator());
     registerElementCreator(kElementTypeCCLableAtlas, LabelAtlasCreator::creator());
+    registerElementCreator(kElementTypeInclude, IncludeCreator::creator());
     registerElementCreator(kElementTypeComponent, ComponentCreator::creator());
     registerElementCreator(kElementTypeNormalButton, NormalButtonCreator::creator());
 }

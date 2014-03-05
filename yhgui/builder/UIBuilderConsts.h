@@ -22,7 +22,7 @@ extern const char* kElementTypeLabelTTF;
 extern const char* kElementTypePanel;
 extern const char* kElementTypeList;
 extern const char* kElementTypeScrollPanel;
-
+extern const char* kElementTypeInclude;
 
 
 //==================element property==================//
@@ -33,6 +33,7 @@ extern const char* kPropertyNameProperties;
 extern const char* kPropertyNameChildren;
 extern const char* kPropertyNameVersion;
 extern const char* kPropertyNameGraphData;
+extern const char* kPropertyNameFile;
 
 //struct point
 extern const char* kPropertyNameX; //also for Point

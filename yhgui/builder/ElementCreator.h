@@ -20,10 +20,11 @@
 
 NS_CC_YHGUI_BEGIN
 
+class UIBuilder;
+
 class ElementCreator:public CCObject
 {
 public:
-    
     YHGUI_PURE_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(CCNode);
     
 };
@@ -46,10 +47,7 @@ class SpriteCreator:public ElementCreator
 {
 public:
     
-//    YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(CCSprite);
-    virtual CCSprite * createElement(const yhge::Json::Value& defineData) {
-        return yhge::CCAdaptSprite::createWithTexture(yhge::CCDefaultTexture::getInstance()->getTexture());
-    }
+    virtual CCSprite * createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder);
     
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(SpriteCreator,creator);
 };
@@ -83,7 +81,7 @@ class LabelAtlasCreator:public ElementCreator
 {
 public:
     
-    virtual CCLabelAtlas * createElement(const yhge::Json::Value& defineData);
+    virtual CCLabelAtlas * createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(LabelAtlasCreator,creator);
 };
 
@@ -101,6 +99,18 @@ public:
     
     YHGUI_VIRTUAL_NEW_AUTORELEASE_CREATE_ELEMENT_METHOD(yhgui::NormalButton);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(NormalButtonCreator,creator);
+};
+
+/**
+ * @brief include 结点创建
+ * 创建的结点由include的文件决定
+ */
+class IncludeCreator:public ElementCreator
+{
+public:
+    
+    virtual CCNode * createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder);
+    YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(IncludeCreator,creator);
 };
 
 NS_CC_YHGUI_END
