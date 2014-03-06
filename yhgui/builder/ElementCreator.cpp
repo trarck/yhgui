@@ -7,22 +7,22 @@
 USING_NS_CC_YHGE;
 NS_CC_YHGUI_BEGIN
 
-CCSprite * SpriteCreator::createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder) {
+CCSprite * SpriteCreator::createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder,CCNode* parent) {
     return yhge::CCAdaptSprite::createWithTexture(yhge::CCDefaultTexture::getInstance()->getTexture());
 }
 
-CCLabelAtlas * LabelAtlasCreator::createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder){
+CCLabelAtlas * LabelAtlasCreator::createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder,CCNode* parent){
     yhge::Json::Value properties=defineData[kPropertyNameProperties];
     yhge::Json::Value textValue=properties[kPropertyNameText];
     yhge::Json::Value fonFileValue=properties[kPropertyNameFntFile];
     return CCLabelAtlas::create(textValue.asCString(), fonFileValue.asCString());
 }
 
-CCNode * IncludeCreator::createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder)
+CCNode * IncludeCreator::createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder,CCNode* parent)
 {
     yhge::Json::Value fileValue=defineData[kPropertyNameFile];
     if (!fileValue.isNull()) {
-        return builder->buildWithJSONFile(fileValue.asCString());
+        return builder->buildWithJSONFile(builder->getRelationPath(fileValue.asString()));
     }
     
     return NULL;

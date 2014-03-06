@@ -47,7 +47,7 @@ class SpriteCreator:public ElementCreator
 {
 public:
     
-    virtual CCSprite * createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder);
+    virtual CCSprite * createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder,CCNode* parent);
     
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(SpriteCreator,creator);
 };
@@ -81,7 +81,7 @@ class LabelAtlasCreator:public ElementCreator
 {
 public:
     
-    virtual CCLabelAtlas * createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder);
+    virtual CCLabelAtlas * createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(LabelAtlasCreator,creator);
 };
 
@@ -109,7 +109,7 @@ class IncludeCreator:public ElementCreator
 {
 public:
     
-    virtual CCNode * createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder);
+    virtual CCNode * createElement(const yhge::Json::Value& defineData,yhgui::UIBuilder* builder,CCNode* parent);
     YHGUI_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(IncludeCreator,creator);
 };
 

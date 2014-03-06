@@ -36,6 +36,7 @@
 #include "builder/element_parsers/NodeParser.h"
 #include "builder/property_parsers/NodePropertyParser.h"
 #include "builder/property_parsers/LabelPropertyParser.h"
+#include "builder/PropertyParserCompiler.h"
 #include "builder/ElementCreatorFactory.h"
 #include "builder/ElementParserFactory.h"
 #include "builder/ElementEventParser.h"

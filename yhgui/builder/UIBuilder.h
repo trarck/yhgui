@@ -28,17 +28,31 @@ public:
     
     bool init();
     
-    virtual CCNode* buildWithJSONFile(const char* jsonFile);
+    bool init(ElementCreatorFactory* elementCreatorFactory,ElementParserFactory* elementParserFactory,ElementEventParser* elementEventParser);
+    
+    virtual CCNode* buildWithJSONFile(const std::string& jsonFile);
+    
+    virtual CCNode* buildWithJSONFile(const std::string& jsonFile,CCNode* parent);
+    
+    virtual CCNode* buildWithJSONFile(const std::string& jsonFile,CCNode* parent,bool autoAddToParent);
     
     virtual CCNode* buildWithJSONData(const char* jsonString);
+    
+    virtual CCNode* buildWithJSONData(const char* jsonString,CCNode* parent);
+    
+    virtual CCNode* buildWithJSONData(const char* jsonString,CCNode* parent,bool autoAddToParent);
     
     virtual CCNode* buildUI(const yhge::Json::Value& json);
     
     virtual CCNode* buildUI(const yhge::Json::Value& json,CCNode* parent);
     
+    virtual CCNode* buildUI(const yhge::Json::Value& json,CCNode* parent,bool autoAddToParent);
+    
     virtual CCNode* buildElement(const yhge::Json::Value& defineData);
     
     virtual CCNode* buildElement(const yhge::Json::Value& defineData,CCNode* parent);
+    
+    virtual CCNode* buildElement(const yhge::Json::Value& defineData,CCNode* parent,bool autoAddToParent);
     
     virtual void buildChildren(const yhge::Json::Value& children,CCNode* parent);
     
@@ -46,6 +60,14 @@ public:
     
     unsigned int getDataVersion(yhge::Json::Value root);
 
+    /**
+     * @brief 取得资源的路径
+     * 原始路径以/开头的不是系统的更目录，而是相对程序的运行时的目录。通常是相对路径
+     * @param 需要转换的路径
+     * @return 转换后的路径
+     */
+    virtual std::string getRelationPath(const std::string& path);
+    
 protected:
     
     /**
@@ -53,7 +75,7 @@ protected:
      *
      * @param defineData 元素的定义数据
      */
-    virtual CCNode* createElement(const yhge::Json::Value& defineData);
+    virtual CCNode* createElement(const yhge::Json::Value& defineData,CCNode* parent);
     
     /**
      * @brief 处理元素
@@ -147,6 +169,30 @@ public:
     {
         return m_elementEventParser;
     }
+    
+    inline void setCurrentFile(const std::string& currentFile)
+    {
+        m_currentFile = currentFile;
+    }
+    
+    inline const std::string& getCurrentFile()
+    {
+        return m_currentFile;
+    }
+    
+    inline void setResourcePath(const std::string& resourcePath)
+    {
+        if(resourcePath.substr(resourcePath.length()-1)!="/"){
+            m_resourcePath = resourcePath+"/";
+        }else{
+            m_resourcePath=resourcePath;
+        }
+    }
+    
+    inline const std::string& getResourcePath()
+    {
+        return m_resourcePath;
+    }
 
 protected:
     
@@ -158,6 +204,12 @@ protected:
     
     //事件处理
     ElementEventParser* m_elementEventParser;
+    
+    //当前文件路径。如果包含其它文件，通常是相对文件。
+    std::string m_currentFile;
+    
+    //资源路径。用于确定文件位置
+    std::string m_resourcePath;
 };
 
 NS_CC_YHGUI_END

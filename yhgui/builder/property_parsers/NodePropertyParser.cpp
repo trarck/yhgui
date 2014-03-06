@@ -7,19 +7,23 @@ NS_CC_YHGUI_BEGIN
 
 void PositionPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
+    bool haveValue=false;
     float x=0.0f,y=0.0f;
     
     yhge::Json::Value xValue=properties[kPropertyNameX];
     if(!xValue.isNull()){
         x=xValue.asDouble();
+        haveValue=true;
     }
     
     yhge::Json::Value yValue=properties[kPropertyNameY];
     if(!yValue.isNull()){
         y=yValue.asDouble();
+        haveValue=true;
     }
     
-    node->setPosition(ccp(x,y));
+    if(haveValue)
+        node->setPosition(ccp(x,y));
 }
 
 void SizePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
@@ -28,38 +32,45 @@ void SizePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,
 //    for (yhge::Json::Value::Members::iterator iter=members.begin(); iter!=members.end(); ++iter) {
 //        CCLOG("%s",(*iter).c_str());
 //    }
-    
+    bool haveValue=false;
     //parse size
     float width=0.0f,height=0.0f;
     
     yhge::Json::Value widthValue=properties[kPropertyNameWidth];
     if(!widthValue.isNull()){
         width=widthValue.asDouble();
+        haveValue=true;
     }
     
     yhge::Json::Value heightValue=properties[kPropertyNameHeight];
     if(!heightValue.isNull()){
         height=heightValue.asDouble();
+        haveValue=true;
     }
 //    CCLOG("Size:%f,%f",width,height);
-    node->setContentSize(CCSizeMake(width, height));
+    if(haveValue) node->setContentSize(CCSizeMake(width, height));
 }
 
 void AnchorPropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)
 {
+    bool haveValue=false;
+    
     float anchorX=0.0f,anchorY=0.0f;
     
     yhge::Json::Value anchorXValue=properties[kPropertyNameAnchorX];
     if(!anchorXValue.isNull()){
         anchorX=anchorXValue.asDouble();
+        haveValue=true;
     }
     
     yhge::Json::Value anchorYValue=properties[kPropertyNameAnchorY];
     if(!anchorYValue.isNull()){
         anchorY=anchorYValue.asDouble();
+        haveValue=true;
     }
     
-    node->setAnchorPoint(ccp(anchorX, anchorY));
+    if(haveValue)
+        node->setAnchorPoint(ccp(anchorX, anchorY));
 }
 
 void ScalePropertyParser::parse(CCNode* node,const yhge::Json::Value& properties,CCNode* parent,UIBuilder* builder)

@@ -7,6 +7,8 @@ UIBuilder::UIBuilder()
 :m_elementCreatorFactory(NULL)
 ,m_elementParserFactory(NULL)
 ,m_elementEventParser(NULL)
+,m_currentFile("")
+,m_resourcePath("")
 {
     
 }
@@ -32,10 +34,31 @@ bool UIBuilder::init()
     return true;
 }
 
-CCNode* UIBuilder::buildWithJSONFile(const char* jsonFile)
+bool UIBuilder::init(ElementCreatorFactory* elementCreatorFactory,ElementParserFactory* elementParserFactory,ElementEventParser* elementEventParser)
 {
+    setElementCreatorFactory(elementCreatorFactory);
+    setElementParserFactory(elementParserFactory);
+    setElementEventParser(elementEventParser);
+    
+    return true;
+}
+
+CCNode* UIBuilder::buildWithJSONFile(const std::string& jsonFile)
+{
+    return  buildWithJSONFile(jsonFile,NULL,false);
+}
+
+CCNode* UIBuilder::buildWithJSONFile(const std::string& jsonFile,CCNode* parent)
+{
+    return  buildWithJSONFile(jsonFile,parent,true);
+}
+
+CCNode* UIBuilder::buildWithJSONFile(const std::string& jsonFile,CCNode* parent,bool autoAddToParent)
+{
+    m_currentFile=jsonFile;
+    
     unsigned long size = 0;
-    unsigned char * pBytes=CCFileUtils::sharedFileUtils()->getFileData(jsonFile, "rb", &size);
+    unsigned char * pBytes=CCFileUtils::sharedFileUtils()->getFileData(jsonFile.c_str(), "rb", &size);
     
     CCNode* root=buildWithJSONData((char*)pBytes);
     
@@ -46,12 +69,22 @@ CCNode* UIBuilder::buildWithJSONFile(const char* jsonFile)
 
 CCNode* UIBuilder::buildWithJSONData(const char* jsonString)
 {
+    return buildWithJSONData(jsonString,NULL,false);
+}
+
+CCNode* UIBuilder::buildWithJSONData(const char* jsonString,CCNode* parent)
+{
+    return buildWithJSONData(jsonString,parent,true);;
+}
+
+CCNode* UIBuilder::buildWithJSONData(const char* jsonString,CCNode* parent,bool autoAddToParent)
+{
     yhge::Json::Reader reader;
     yhge::Json::Value root;
     
     bool parsingSuccessful=reader.parse(jsonString, root,false);
     if (parsingSuccessful) {
-        return buildUI(root);
+        return buildUI(root,parent,autoAddToParent);
     }
     
     return NULL;
@@ -64,9 +97,14 @@ CCNode* UIBuilder::buildUI(const yhge::Json::Value& json)
 
 CCNode* UIBuilder::buildUI(const yhge::Json::Value& json,CCNode* parent)
 {
+    return buildUI(json,parent,true);
+}
+
+CCNode* UIBuilder::buildUI(const yhge::Json::Value& json,CCNode* parent,bool autoAddToParent)
+{
     unsigned int dataVersion=this->getDataVersion(json);
     
-    CCNode* root=this->buildElement(json[kPropertyNameGraphData],parent);
+    CCNode* root=this->buildElement(json[kPropertyNameGraphData],parent,autoAddToParent);
     
     return root;
 }
@@ -78,19 +116,24 @@ CCNode* UIBuilder::buildElement(const yhge::Json::Value& defineData)
 
 CCNode* UIBuilder::buildElement(const yhge::Json::Value& defineData,CCNode* parent)
 {
+    return buildElement(defineData, parent, true);
+}
+
+CCNode* UIBuilder::buildElement(const yhge::Json::Value& defineData,CCNode* parent,bool autoAddToParent)
+{
     yhge::Json::Value type=defineData[kPropertyNameType];
     
-    CCNode* element=createElement(defineData);
+    CCNode* element=createElement(defineData,parent);
     
     if(element){
         
         //parse element
         parseElement(element, defineData,parent);
-
+        
         //create element children
         buildChildren(defineData[kPropertyNameChildren], element);
         
-        if(parent)
+        if(parent && autoAddToParent)
             parent->addChild(element);
         
     }else{
@@ -124,7 +167,7 @@ unsigned int UIBuilder::getDataVersion(yhge::Json::Value root)
 }
 
 
-CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData)
+CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData,CCNode* parent)
 {
     yhge::Json::Value type=defineData[kPropertyNameType];
     
@@ -132,7 +175,7 @@ CCNode* UIBuilder::createElement(const yhge::Json::Value& defineData)
     ElementCreator* elementCreator=m_elementCreatorFactory->getElementCreator(type);
     if(elementCreator){
         //create element
-        return elementCreator->createElement(defineData);
+        return elementCreator->createElement(defineData,this,parent);
     }
     
     return NULL;
@@ -184,6 +227,30 @@ void UIBuilder::registerElementEvents(CCNode* node,const yhge::Json::Value& type
 unsigned int UIBuilder::tanslateElementTypeFromStringToInteger(const std::string& typeString)
 {
     return 0;
+}
+
+std::string UIBuilder::getRelationPath(const std::string& path)
+{
+    //如果是绝对路径，直接返回
+    if (path.substr(0,1)=="/") {
+        return path;
+    }
+    
+    std::string newPath;
+    
+    int pos=m_currentFile.find_last_of("/");
+    
+    if (pos != std::string::npos)
+    {
+        //没有指定资源路径，直接使用程序运动目录
+        std::string dir = m_currentFile.substr(0, pos + 1);
+        newPath = dir + path;
+    }else{
+        //使用资源路径
+        newPath=m_resourcePath+path;
+    }
+    
+    return newPath;
 }
 
 NS_CC_YHGUI_END
