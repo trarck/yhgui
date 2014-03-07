@@ -148,10 +148,10 @@ void UIBuilder::buildChildren(const yhge::Json::Value& children,CCNode* parent)
     if (!children.isNull() && parent) {
         CCNode* child=NULL;
         for (int i=0; i<children.size(); ++i) {
-            child=this->buildElement(children[i]);
-            if (child) {
-                parent->addChild(child);
-            }
+            child=this->buildElement(children[i],parent);
+//            if (child) {
+//                parent->addChild(child);
+//            }
         }
     }
 }
