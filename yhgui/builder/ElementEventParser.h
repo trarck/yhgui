@@ -38,6 +38,8 @@ public:
     
     void addEventHandle(const std::string& name,CCObject* target,yhge::SEL_EventHandle handle);
 
+    CREATE_FUNC(ElementEventParser);
+    
 public:
     
     void setEventHandleMaps(CCDictionary* eventHandleMaps)

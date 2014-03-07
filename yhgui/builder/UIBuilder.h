@@ -68,6 +68,16 @@ public:
      */
     virtual std::string getRelationPath(const std::string& path);
     
+    /**
+     * @brief 复制自己
+     */
+    virtual UIBuilder* clone();
+    
+    /**
+     * @brief 复制属性
+     */
+    void cloneProperties(UIBuilder* builder);
+    
 protected:
     
     /**

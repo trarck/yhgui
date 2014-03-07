@@ -253,4 +253,23 @@ std::string UIBuilder::getRelationPath(const std::string& path)
     return newPath;
 }
 
+
+UIBuilder* UIBuilder::clone()
+{
+    UIBuilder* newBuilder=new UIBuilder();
+    
+    cloneProperties(newBuilder);
+    
+    newBuilder->autorelease();
+    
+    return newBuilder;
+}
+
+void UIBuilder::cloneProperties(UIBuilder* builder)
+{
+    builder->init(m_elementCreatorFactory, m_elementParserFactory, m_elementEventParser);
+    builder->setCurrentFile(m_currentFile);
+    builder->setResourcePath(m_resourcePath);
+}
+
 NS_CC_YHGUI_END
