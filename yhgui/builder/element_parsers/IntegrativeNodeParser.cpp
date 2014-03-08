@@ -121,7 +121,7 @@ bool IntegrativeNodeParser::getVisible(const yhge::Json::Value& properties,CCNod
 {
     yhge::Json::Value visibleValue=properties[kPropertyNameVisible];
     if(!visibleValue.isNull()){
-        return visibleValue.asInt();
+        return visibleValue.asInt()!=0;
     }
     
     return true;

@@ -105,6 +105,7 @@ ElementCreator* ElementCreatorFactory::getElementCreator(const yhge::Json::Value
         return static_cast<ElementCreator*>(m_elementCreaters->objectForKey(elementType.asString()));
     }else{
         CCAssert(false, "ElementCreatorFactory::getElementCreator unkonw elementType");
+        return NULL;
     }
 }
 

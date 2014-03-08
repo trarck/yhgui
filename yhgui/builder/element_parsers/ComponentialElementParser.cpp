@@ -1,5 +1,4 @@
 #include "ComponentialElementParser.h"
-#include "PropertyParser.h"
 
 NS_CC_YHGUI_BEGIN
 
