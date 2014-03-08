@@ -168,6 +168,12 @@
     <ClCompile Include="..\yhgui\builder\UIBuilderConsts.cpp">
       <Filter>yhgui\builder</Filter>
     </ClCompile>
+    <ClCompile Include="..\yhgui\builder\element_parsers\IntegrativeNodeParser.cpp">
+      <Filter>yhgui\builder\element_parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\yhgui\builder\property_parsers\ComponentPropertyParser.cpp">
+      <Filter>yhgui\builder\property_parsers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\yhgui\Component.h">
@@ -322,6 +328,12 @@
     </ClInclude>
     <ClInclude Include="..\yhgui\builder\UIBuilderMacros.h">
       <Filter>yhgui\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\element_parsers\IntegrativeNodeParser.h">
+      <Filter>yhgui\builder\element_parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\yhgui\builder\property_parsers\ComponentPropertyParser.h">
+      <Filter>yhgui\builder\property_parsers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
