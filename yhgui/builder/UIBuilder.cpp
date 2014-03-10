@@ -60,7 +60,10 @@ CCNode* UIBuilder::buildWithJSONFile(const std::string& jsonFile,CCNode* parent,
     unsigned long size = 0;
     unsigned char * pBytes=CCFileUtils::sharedFileUtils()->getFileData(jsonFile.c_str(), "rb", &size);
     
-    CCNode* root=buildWithJSONData((char*)pBytes);
+    CCNode* root=NULL;
+    if (size) {
+        root=buildWithJSONData((char*)pBytes);
+    }
     
     CC_SAFE_DELETE_ARRAY(pBytes);
     
