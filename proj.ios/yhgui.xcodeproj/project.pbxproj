@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57243EE918B6EEFE0070163A /* NormalDocumentTreeOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57243EE718B6EEFE0070163A /* NormalDocumentTreeOrganizer.cpp */; };
 		57243EEC18B6F05F0070163A /* IndependentNormalDocumentTreeOrganizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57243EEA18B6F05F0070163A /* IndependentNormalDocumentTreeOrganizer.cpp */; };
+		57489DF718F5396C005F540E /* UIEventNames.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57489DF618F5396C005F540E /* UIEventNames.cpp */; };
 		57549A921872578700D88296 /* LabelTTF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A901872578700D88296 /* LabelTTF.cpp */; };
 		57549A9618726A5300D88296 /* LabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A9418726A5300D88296 /* LabelBMFont.cpp */; };
 		57549A9F1872773100D88296 /* LabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57549A9D1872773100D88296 /* LabelAtlas.cpp */; };
@@ -79,6 +80,7 @@
 		57243EE818B6EEFE0070163A /* NormalDocumentTreeOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalDocumentTreeOrganizer.h; sourceTree = "<group>"; };
 		57243EEA18B6F05F0070163A /* IndependentNormalDocumentTreeOrganizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndependentNormalDocumentTreeOrganizer.cpp; sourceTree = "<group>"; };
 		57243EEB18B6F05F0070163A /* IndependentNormalDocumentTreeOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndependentNormalDocumentTreeOrganizer.h; sourceTree = "<group>"; };
+		57489DF618F5396C005F540E /* UIEventNames.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIEventNames.cpp; sourceTree = "<group>"; };
 		57549A901872578700D88296 /* LabelTTF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelTTF.cpp; sourceTree = "<group>"; };
 		57549A911872578700D88296 /* LabelTTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTTF.h; sourceTree = "<group>"; };
 		57549A9418726A5300D88296 /* LabelBMFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelBMFont.cpp; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			children = (
 				577A7957186C032C00F1B5D5 /* UIEventListenerManager.cpp */,
 				577A7958186C032C00F1B5D5 /* UIEventListenerManager.h */,
+				57489DF618F5396C005F540E /* UIEventNames.cpp */,
 				577A7959186C032C00F1B5D5 /* UIEventNames.h */,
 			);
 			path = event;
@@ -504,6 +507,7 @@
 				577A7988186C032C00F1B5D5 /* BuilderHandle.cpp in Sources */,
 				575AD85D187B97D900AA0477 /* ScaleButton.cpp in Sources */,
 				577A798B186C032C00F1B5D5 /* Component.cpp in Sources */,
+				57489DF718F5396C005F540E /* UIEventNames.cpp in Sources */,
 				577A7989186C032C00F1B5D5 /* UIBuilder.cpp in Sources */,
 				577A799B186C032C00F1B5D5 /* OrganizerItem.cpp in Sources */,
 				577A7993186C032C00F1B5D5 /* IndependentDocumentTreeOrganizer.cpp in Sources */,
