@@ -34,9 +34,7 @@ bool Utils::isTouchInside(CCTouch* touch,CCNode* target)
  * 点是否在target内
  */
 bool Utils::isPointInside(const CCPoint& point,CCNode* target)
-{
-    CCPoint parentPoint=target->getParent()->convertToNodeSpace(point);
-    
+{    
     CCPoint localPoint=target->convertToNodeSpace(point);
     CCSize contentSize=target->getContentSize();
     

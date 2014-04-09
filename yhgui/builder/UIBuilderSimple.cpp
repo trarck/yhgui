@@ -42,7 +42,7 @@ CCNode* UIBuilderSimple::buildWithJSONData(const char* jsonString)
 
 CCNode* UIBuilderSimple::buildUI(const yhge::Json::Value& json)
 {
-    unsigned int dataVersion=this->getDataVersion(json);
+//    unsigned int dataVersion=this->getDataVersion(json);
     
     CCNode* root=this->createElement(json);
     

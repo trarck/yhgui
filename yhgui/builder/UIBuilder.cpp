@@ -105,7 +105,7 @@ CCNode* UIBuilder::buildUI(const yhge::Json::Value& json,CCNode* parent)
 
 CCNode* UIBuilder::buildUI(const yhge::Json::Value& json,CCNode* parent,bool autoAddToParent)
 {
-    unsigned int dataVersion=this->getDataVersion(json);
+//    unsigned int dataVersion=this->getDataVersion(json);
     
     CCNode* root=this->buildElement(json[kPropertyNameGraphData],parent,autoAddToParent);
     
