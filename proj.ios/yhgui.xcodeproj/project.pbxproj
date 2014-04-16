@@ -57,6 +57,7 @@
 		57BEBA0518C0992000AA720B /* ElementEventParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BEBA0318C0992000AA720B /* ElementEventParser.cpp */; };
 		57BEBA0918C42B8500AA720B /* ComponentPropertyParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BEBA0718C42B8500AA720B /* ComponentPropertyParser.cpp */; };
 		57BEBA0E18C477D200AA720B /* PropertyParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57BEBA0D18C477D200AA720B /* PropertyParser.cpp */; };
+		57F0132318FE160E00CB32E9 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57F0132118FE160E00CB32E9 /* Image.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -181,6 +182,8 @@
 		57BEBA0718C42B8500AA720B /* ComponentPropertyParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentPropertyParser.cpp; sourceTree = "<group>"; };
 		57BEBA0818C42B8500AA720B /* ComponentPropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentPropertyParser.h; sourceTree = "<group>"; };
 		57BEBA0D18C477D200AA720B /* PropertyParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PropertyParser.cpp; sourceTree = "<group>"; };
+		57F0132118FE160E00CB32E9 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
+		57F0132218FE160E00CB32E9 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -418,6 +421,8 @@
 		577A7984186C032C00F1B5D5 /* widgets */ = {
 			isa = PBXGroup;
 			children = (
+				57F0132118FE160E00CB32E9 /* Image.cpp */,
+				57F0132218FE160E00CB32E9 /* Image.h */,
 				577A7A201871130600F1B5D5 /* List.cpp */,
 				577A7A211871130600F1B5D5 /* List.h */,
 				577A7A221871130600F1B5D5 /* Panel.cpp */,
@@ -500,6 +505,7 @@
 				577A798E186C032C00F1B5D5 /* ComplexButton.cpp in Sources */,
 				577A7999186C032C00F1B5D5 /* OrderedListOrganizer.cpp in Sources */,
 				577A798C186C032C00F1B5D5 /* Container.cpp in Sources */,
+				57F0132318FE160E00CB32E9 /* Image.cpp in Sources */,
 				577A79A1186C032C00F1B5D5 /* View.cpp in Sources */,
 				576B0E1B18BC39C100A6F3C4 /* ComponentialElementParser.cpp in Sources */,
 				576B0E2D18BD8B3600A6F3C4 /* UIBuilderConsts.cpp in Sources */,
