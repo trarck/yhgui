@@ -1,5 +1,5 @@
-#ifndef COCOS_YHGUI_COMPONENT_H_
-#define COCOS_YHGUI_COMPONENT_H_
+#ifndef YHGUI_COMPONENT_H_
+#define YHGUI_COMPONENT_H_
 
 #include "cocos2d.h"
 #include "YHGUIMacros.h"
@@ -248,4 +248,4 @@ protected:
 
 NS_CC_YHGUI_END
 
-#endif // COCOS_YHGUI_COMPONENT_H_
+#endif // YHGUI_COMPONENT_H_

@@ -1,5 +1,5 @@
-#ifndef COCOS_YHGUI_LIST_H_
-#define COCOS_YHGUI_LIST_H_
+#ifndef YHGUI_WIDGETS_LIST_H_
+#define YHGUI_WIDGETS_LIST_H_
 
 #include "../Container.h"
 
@@ -61,4 +61,4 @@ protected:
 
 NS_CC_YHGUI_END
 
-#endif // COCOS_YHGUI_LIST_H_
+#endif // YHGUI_WIDGETS_LIST_H_

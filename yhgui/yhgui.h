@@ -14,6 +14,8 @@
 #include "control/NormalButton.h"
 #include "control/ComplexButton.h"
 
+#include "widgets/Image.h"
+
 //交互项
 #include "interactive/Organizer.h"
 #include "interactive/DocumentTreeOrganizer.h"

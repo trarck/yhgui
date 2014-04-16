@@ -1,5 +1,5 @@
-#ifndef YHGUI_WIDGETS_PANEL_H_
-#define YHGUI_WIDGETS_PANEL_H_
+#ifndef COCOS_YHGUI_PANEL_H_
+#define COCOS_YHGUI_PANEL_H_
 
 #include "../Container.h"
 
@@ -24,4 +24,4 @@ private:
 
 NS_CC_YHGUI_END
 
-#endif // YHGUI_WIDGETS_PANEL_H_
+#endif // COCOS_YHGUI_PANEL_H_
