@@ -150,6 +150,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\control\Control.cpp" />
     <ClCompile Include="..\yhgui\control\NormalButton.cpp" />
     <ClCompile Include="..\yhgui\event\UIEventListenerManager.cpp" />
+    <ClCompile Include="..\yhgui\event\UIEventNames.cpp" />
     <ClCompile Include="..\yhgui\interactive\DocumentTreeOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\IndependentDocumentTreeOrganizer.cpp" />
     <ClCompile Include="..\yhgui\interactive\IndependentListOrganizer.cpp" />
@@ -171,6 +172,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\yhgui\mobie\ScrollView.cpp" />
     <ClCompile Include="..\yhgui\mobie\View.cpp" />
     <ClCompile Include="..\yhgui\utils\Utils.cpp" />
+    <ClCompile Include="..\yhgui\widgets\Image.cpp" />
     <ClCompile Include="..\yhgui\widgets\List.cpp" />
     <ClCompile Include="..\yhgui\widgets\Panel.cpp" />
     <ClCompile Include="..\yhgui\widgets\ScrollPanel.cpp" />
@@ -224,6 +226,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\yhgui\mobie\ScrollView.h" />
     <ClInclude Include="..\yhgui\mobie\View.h" />
     <ClInclude Include="..\yhgui\utils\Utils.h" />
+    <ClInclude Include="..\yhgui\widgets\Image.h" />
     <ClInclude Include="..\yhgui\widgets\List.h" />
     <ClInclude Include="..\yhgui\widgets\Panel.h" />
     <ClInclude Include="..\yhgui\widgets\ScrollPanel.h" />
